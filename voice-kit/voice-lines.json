@@ -1,0 +1,682 @@
+[
+  {
+    "file": "l-0e0820b0.mp3",
+    "text": "Welcome to Victoria's Merry Quizmas. Pick a question, and make it merry!",
+    "tts": "[cheerfully] Welcome to Victoria's Merry Quizmas. Pick a question... and make it merry!"
+  },
+  {
+    "file": "l-3435f3f1.mp3",
+    "text": "Welcome to Victoria's Merry Quizmas! Tonight, our teams compete for glory, and for prizes. Here is how it works.",
+    "tts": "[warmly] Welcome to Victoria's Merry Quizmas! Tonight, our teams compete for glory... and for prizes. Here is how it works."
+  },
+  {
+    "file": "l-fef1e347.mp3",
+    "text": "Rules of the game. Pick a question from the board. Watch out for the naughty list, and for Krampus. Survive two rounds and the Christmas Eve finale.",
+    "tts": "[warmly] Rules of the game. Pick a question from the board. [mischievously] Watch out for the naughty list... and for Krampus. [cheerfully] Survive two rounds... and the Christmas Eve finale."
+  },
+  {
+    "file": "l-964fe525.mp3",
+    "text": "Pick a question. Five categories with five questions each. The higher the value, the harder the question. Teams take turns choosing a cell.",
+    "tts": "Pick a question. Five categories with five questions each. The higher the value, the harder the question. Teams take turns choosing a cell."
+  },
+  {
+    "file": "l-7f45ca59.mp3",
+    "text": "30 seconds. The question is read aloud, then the clock starts. Only the team that picked it may answer. Everyone else stays quiet. Right: win the points. Wrong: lose them.",
+    "tts": "30 seconds. The question is read aloud, then the clock starts. Only the team that picked it may answer. Everyone else stays quiet. Right: win the points. Wrong: lose them."
+  },
+  {
+    "file": "l-46923170.mp3",
+    "text": "Play fair. No phones and no Googling. The host has the final word on close answers. Only one team saves Christmas and wins.",
+    "tts": "Play fair. No phones and no Googling. The host has the final word on close answers. Only one team saves Christmas and wins."
+  },
+  {
+    "file": "l-dd25693a.mp3",
+    "text": "Ready? The first team, pick a question. Good luck, and may the merriest team win.",
+    "tts": "[cheerfully] Ready? The first team, pick a question. Good luck... and may the merriest team win! [laughs]"
+  },
+  {
+    "file": "l-f118166b.mp3",
+    "text": "Double trouble. Five new categories. Every value is doubled: 200 to 1,000. Same rules, bigger risks.",
+    "tts": "Double trouble. Five new categories. Every value is doubled: 200 to 1,000. Same rules, bigger risks."
+  },
+  {
+    "file": "l-f89db972.mp3",
+    "text": "Christmas Eve. One final question. You see only the category first. Secretly wager up to half of your score. Low on points? You can always bet up to 500. You get 60 seconds. Right: add your wager. Wrong: lose it.",
+    "tts": "Christmas Eve. One final question. You see only the category first. Secretly wager up to half of your score. Low on points? You can always bet up to 500. You get 60 seconds. Right: add your wager. Wrong: lose it."
+  },
+  {
+    "file": "l-c90bf364.mp3",
+    "text": "Naughty or nice? You found a lump of coal! The team that found it must give this question to another team.",
+    "tts": "[mischievously] Naughty or nice? You found a lump of coal! The team that found it... must give this question to another team."
+  },
+  {
+    "file": "l-0f79c267.mp3",
+    "text": "Who gets the coal?",
+    "tts": "[mischievously] So... who gets the coal?"
+  },
+  {
+    "file": "l-b2178fea.mp3",
+    "text": "A bargain with Krampus!",
+    "tts": "[whispers] A bargain... [mischievously] with Krampus!"
+  },
+  {
+    "file": "l-6c2a5c65.mp3",
+    "text": "And now, with one of you, I shall strike a bargain! My first draw picks the price. My second draw picks the team that must answer. Answer right, and win it. Answer wrong, and lose it.",
+    "tts": "[whispers] And now... [mischievously] with one of you... I shall strike a bargain! [laughs] My first draw picks the price. My second draw picks the team that must answer. Answer right... and win it. Answer wrong... [whispers] and lose it."
+  },
+  {
+    "file": "l-85b11123.mp3",
+    "text": "It's a tie! Time for a tiebreaker.",
+    "tts": "[gasps] It's a tie! Time for a tiebreaker."
+  },
+  {
+    "file": "l-e65a9ea4.mp3",
+    "text": "Under which plant are people traditionally supposed to kiss at Christmas?",
+    "tts": "Under which plant are people traditionally supposed to kiss at Christmas?"
+  },
+  {
+    "file": "l-ed31cd0b.mp3",
+    "text": "The answer is: Mistletoe. The kissing custom was popular in 18th-century England. Traditionally, a berry was picked off for every kiss.",
+    "tts": "The answer is: Mistletoe. The kissing custom was popular in 18th-century England. Traditionally, a berry was picked off for every kiss."
+  },
+  {
+    "file": "l-7fd02085.mp3",
+    "text": "What is the English name for the Christmas cake shaped like a log, known in French as bûche de Noël?",
+    "tts": "What is the English name for the Christmas cake shaped like a log, known in French as bûche de Noël?"
+  },
+  {
+    "file": "l-b48db667.mp3",
+    "text": "The answer is: Yule log. It recalls the old custom of burning a huge log in the hearth over the Christmas season.",
+    "tts": "The answer is: Yule log. It recalls the old custom of burning a huge log in the hearth over the Christmas season."
+  },
+  {
+    "file": "l-ea30e837.mp3",
+    "text": "Prince Albert helped make the decorated Christmas tree popular in Britain. In which country did the tradition begin?",
+    "tts": "Prince Albert helped make the decorated Christmas tree popular in Britain. In which country did the tradition begin?"
+  },
+  {
+    "file": "l-f8429c69.mp3",
+    "text": "The answer is: Germany. A famous 1848 drawing of Queen Victoria and Albert's family around their tree made it fashionable across the English-speaking world.",
+    "tts": "The answer is: Germany. A famous 1848 drawing of Queen Victoria and Albert's family around their tree made it fashionable across the English-speaking world."
+  },
+  {
+    "file": "l-0fb14a92.mp3",
+    "text": "On what date does the first door of most Advent calendars open?",
+    "tts": "On what date does the first door of most Advent calendars open?"
+  },
+  {
+    "file": "l-48380b9a.mp3",
+    "text": "The answer is: December 1. The church season of Advent starts on a Sunday, but most calendars simply count December 1 to 24.",
+    "tts": "The answer is: December 1. The church season of Advent starts on a Sunday, but most calendars simply count December 1 to 24."
+  },
+  {
+    "file": "l-92852579.mp3",
+    "text": "Which 4th-century bishop of Myra, known for secret gift-giving, inspired the figure of Santa Claus?",
+    "tts": "Which 4th-century bishop of Myra, known for secret gift-giving, inspired the figure of Santa Claus?"
+  },
+  {
+    "file": "l-6898bcfc.mp3",
+    "text": "The answer is: Saint Nicholas. Myra was in what is now Turkey. The Dutch name Sinterklaas turned into Santa Claus in America.",
+    "tts": "The answer is: Saint Nicholas. Myra was in what is now Turkey. The Dutch name Sinterklaas turned into Santa Claus in America."
+  },
+  {
+    "file": "l-8f78074a.mp3",
+    "text": "Canada Post delivers children's letters to Santa at a special postal code. What is it?",
+    "tts": "Canada Post delivers children's letters to Santa at a special postal code. What is it?"
+  },
+  {
+    "file": "l-ed4fba76.mp3",
+    "text": "The answer is: H0H 0H0. Volunteer elves have helped Santa answer millions of letters since the program began in 1982.",
+    "tts": "The answer is: H0H 0H0. Volunteer elves have helped Santa answer millions of letters since the program began in 1982."
+  },
+  {
+    "file": "l-3794d528.mp3",
+    "text": "Mummering, when people in costume and disguise visit neighbours at Christmas, is a tradition of which province?",
+    "tts": "Mummering, when people in costume and disguise visit neighbours at Christmas, is a tradition of which province?"
+  },
+  {
+    "file": "l-6e36b25b.mp3",
+    "text": "The answer is: Newfoundland and Labrador. Hosts have to guess who the mummers are before offering them a drink and a treat.",
+    "tts": "The answer is: Newfoundland and Labrador. Hosts have to guess who the mummers are before offering them a drink and a treat."
+  },
+  {
+    "file": "l-f0e0186b.mp3",
+    "text": "Which spiced meat pie is a classic dish at the French-Canadian Christmas Eve feast, the réveillon?",
+    "tts": "Which spiced meat pie is a classic dish at the French-Canadian Christmas Eve feast, the réveillon?"
+  },
+  {
+    "file": "l-642a0e57.mp3",
+    "text": "The answer is: Tourtière. It is usually made with pork, and sometimes beef or game, seasoned with cloves and cinnamon.",
+    "tts": "The answer is: Tourtière. It is usually made with pork, and sometimes beef or game, seasoned with cloves and cinnamon."
+  },
+  {
+    "file": "l-ccfe794d.mp3",
+    "text": "Every year Nova Scotia sends a giant Christmas tree to which American city, as thanks for its help after the 1917 Halifax Explosion?",
+    "tts": "Every year Nova Scotia sends a giant Christmas tree to which American city, as thanks for its help after the 1917 Halifax Explosion?"
+  },
+  {
+    "file": "l-8c7161e1.mp3",
+    "text": "The answer is: Boston. Boston sent doctors, nurses and supplies within hours. The tree lights up Boston Common.",
+    "tts": "The answer is: Boston. Boston sent doctors, nurses and supplies within hours. The tree lights up Boston Common."
+  },
+  {
+    "file": "l-aeb61b7d.mp3",
+    "text": "The Huron Carol, Canada's oldest Christmas song, was written around 1642 by Jesuit missionary Jean de Brébeuf. In which language?",
+    "tts": "The Huron Carol, Canada's oldest Christmas song, was written around 1642 by Jesuit missionary Jean de Brébeuf. In which language?"
+  },
+  {
+    "file": "l-5ad9af0d.mp3",
+    "text": "The answer is: Wendat (Huron). The English words most people know today were written in 1926 by Jesse Edgar Middleton.",
+    "tts": "The answer is: Wendat (Huron). The English words most people know today were written in 1926 by Jesse Edgar Middleton."
+  },
+  {
+    "file": "l-7d6fa57d.mp3",
+    "text": "What flavour is a classic red and white candy cane?",
+    "tts": "What flavour is a classic red and white candy cane?"
+  },
+  {
+    "file": "l-44b3676a.mp3",
+    "text": "The answer is: Peppermint. Candy canes were plain white at first. The red stripes were added around 1900.",
+    "tts": "The answer is: Peppermint. Candy canes were plain white at first. The red stripes were added around 1900."
+  },
+  {
+    "file": "l-cede076a.mp3",
+    "text": "Eggnog is made with milk, cream and sugar, plus which main ingredient that gives it its name?",
+    "tts": "Eggnog is made with milk, cream and sugar, plus which main ingredient that gives it its name?"
+  },
+  {
+    "file": "l-45a56c58.mp3",
+    "text": "The answer is: Eggs. Many recipes also add nutmeg, and grown-up versions add rum, brandy or bourbon.",
+    "tts": "The answer is: Eggs. Many recipes also add nutmeg, and grown-up versions add rum, brandy or bourbon."
+  },
+  {
+    "file": "l-c7f0e924.mp3",
+    "text": "Gingerbread houses became popular in which country in the 1800s, after the Brothers Grimm published Hansel and Gretel?",
+    "tts": "Gingerbread houses became popular in which country in the 1800s, after the Brothers Grimm published Hansel and Gretel?"
+  },
+  {
+    "file": "l-d9dffeb0.mp3",
+    "text": "The answer is: Germany. In the fairy tale, the witch's house in the forest is made of bread and cake.",
+    "tts": "The answer is: Germany. In the fairy tale, the witch's house in the forest is made of bread and cake."
+  },
+  {
+    "file": "l-0b8a3ab9.mp3",
+    "text": "What is the name of the tall, domed Italian Christmas bread with candied fruit and raisins, first made in Milan?",
+    "tts": "What is the name of the tall, domed Italian Christmas bread with candied fruit and raisins, first made in Milan?"
+  },
+  {
+    "file": "l-292c6592.mp3",
+    "text": "The answer is: Panettone. Its dough rises slowly over several days, which makes it light and fluffy.",
+    "tts": "The answer is: Panettone. Its dough rises slowly over several days, which makes it light and fluffy."
+  },
+  {
+    "file": "l-9298a631.mp3",
+    "text": "Stollen, a fruit bread covered in icing sugar, is the pride of the Christmas market in which German city?",
+    "tts": "Stollen, a fruit bread covered in icing sugar, is the pride of the Christmas market in which German city?"
+  },
+  {
+    "file": "l-f3b3299a.mp3",
+    "text": "The answer is: Dresden. Dresden's market, the Striezelmarkt, dates back to 1434 and holds a Stollen festival with a giant loaf.",
+    "tts": "The answer is: Dresden. Dresden's market, the Striezelmarkt, dates back to 1434 and holds a Stollen festival with a giant loaf."
+  },
+  {
+    "file": "l-a6810d99.mp3",
+    "text": "In Home Alone (1990), which city is the McCallister family flying to when they leave Kevin behind?",
+    "tts": "In Home Alone (1990), which city is the McCallister family flying to when they leave Kevin behind?"
+  },
+  {
+    "file": "l-517b6b02.mp3",
+    "text": "The answer is: Paris. Kevin is left alone in the family's house near Chicago.",
+    "tts": "The answer is: Paris. Kevin is left alone in the family's house near Chicago."
+  },
+  {
+    "file": "l-a447d2b6.mp3",
+    "text": "What is the name of Will Ferrell's character, a human raised by elves, in the 2003 film Elf?",
+    "tts": "What is the name of Will Ferrell's character, a human raised by elves, in the 2003 film Elf?"
+  },
+  {
+    "file": "l-78401f8e.mp3",
+    "text": "The answer is: Buddy. Buddy travels from the North Pole to New York City to find his father.",
+    "tts": "The answer is: Buddy. Buddy travels from the North Pole to New York City to find his father."
+  },
+  {
+    "file": "l-2fa77172.mp3",
+    "text": "In Dr. Seuss's How the Grinch Stole Christmas, what is the name of the Grinch's dog?",
+    "tts": "In Dr. Seuss's How the Grinch Stole Christmas, what is the name of the Grinch's dog?"
+  },
+  {
+    "file": "l-887bcaa5.mp3",
+    "text": "The answer is: Max. The Grinch ties an antler to Max's head to make him look like a reindeer.",
+    "tts": "The answer is: Max. The Grinch ties an antler to Max's head to make him look like a reindeer."
+  },
+  {
+    "file": "l-aa7f1fc0.mp3",
+    "text": "In It's a Wonderful Life (1946), what is the first name of George Bailey's guardian angel?",
+    "tts": "In It's a Wonderful Life (1946), what is the first name of George Bailey's guardian angel?"
+  },
+  {
+    "file": "l-ef47df18.mp3",
+    "text": "The answer is: Clarence. Clarence Odbody is an angel second class who still has to earn his wings.",
+    "tts": "The answer is: Clarence. Clarence Odbody is an angel second class who still has to earn his wings."
+  },
+  {
+    "file": "l-3c5760ef.mp3",
+    "text": "In Miracle on 34th Street (1947), Kris Kringle works as Santa at which New York department store?",
+    "tts": "In Miracle on 34th Street (1947), Kris Kringle works as Santa at which New York department store?"
+  },
+  {
+    "file": "l-63f98cca.mp3",
+    "text": "The answer is: Macy's. The film opens at the real Macy's Thanksgiving Day Parade.",
+    "tts": "The answer is: Macy's. The film opens at the real Macy's Thanksgiving Day Parade."
+  },
+  {
+    "file": "l-70748c7b.mp3",
+    "text": "How many sides or points does a snowflake crystal have?",
+    "tts": "How many sides or points does a snowflake crystal have?"
+  },
+  {
+    "file": "l-2439455b.mp3",
+    "text": "The answer is: Six. Water molecules freeze into a hexagonal pattern, so every snowflake is built on six.",
+    "tts": "The answer is: Six. Water molecules freeze into a hexagonal pattern, so every snowflake is built on six."
+  },
+  {
+    "file": "l-8966196f.mp3",
+    "text": "What do we call a large mass of snow that suddenly slides down a mountainside?",
+    "tts": "What do we call a large mass of snow that suddenly slides down a mountainside?"
+  },
+  {
+    "file": "l-bf6aa639.mp3",
+    "text": "The answer is: An avalanche. Western Canada's mountains see thousands of avalanches every winter.",
+    "tts": "The answer is: An avalanche. Western Canada's mountains see thousands of avalanches every winter."
+  },
+  {
+    "file": "l-acde3d76.mp3",
+    "text": "What is the name of the snowman mascot of the Quebec Winter Carnival?",
+    "tts": "What is the name of the snowman mascot of the Quebec Winter Carnival?"
+  },
+  {
+    "file": "l-80423365.mp3",
+    "text": "The answer is: Bonhomme. Bonhomme Carnaval wears a red toque and a colourful sash called a ceinture fléchée.",
+    "tts": "The answer is: Bonhomme. Bonhomme Carnaval wears a red toque and a colourful sash called a ceinture fléchée."
+  },
+  {
+    "file": "l-a8a97fc8.mp3",
+    "text": "At what temperature do the Celsius and Fahrenheit scales show the same number?",
+    "tts": "At what temperature do the Celsius and Fahrenheit scales show the same number?"
+  },
+  {
+    "file": "l-fbb7eae7.mp3",
+    "text": "The answer is: Minus 40. −40 °C is exactly −40 °F, a number many Prairie winters know well.",
+    "tts": "The answer is: Minus 40. −40 °C is exactly −40 °F, a number many Prairie winters know well."
+  },
+  {
+    "file": "l-26ba0894.mp3",
+    "text": "What is the name for the feathery white ice crystals that form on trees and grass on cold, clear nights?",
+    "tts": "What is the name for the feathery white ice crystals that form on trees and grass on cold, clear nights?"
+  },
+  {
+    "file": "l-b10ce5f5.mp3",
+    "text": "The answer is: Hoarfrost. It forms when water vapour turns straight into ice, skipping the liquid stage.",
+    "tts": "The answer is: Hoarfrost. It forms when water vapour turns straight into ice, skipping the liquid stage."
+  },
+  {
+    "file": "l-d18972a4.mp3",
+    "text": "Round Two. The stakes just went up.",
+    "tts": "Round Two. [mischievously] The stakes just went up."
+  },
+  {
+    "file": "l-4d83ea20.mp3",
+    "text": "In the 1823 poem 'A Visit from St. Nicholas', how many reindeer pull Santa's sleigh?",
+    "tts": "In the 1823 poem 'A Visit from St. Nicholas', how many reindeer pull Santa's sleigh?"
+  },
+  {
+    "file": "l-0ff81731.mp3",
+    "text": "The answer is: Eight. Rudolph came later, in 1939, so he is not in the poem.",
+    "tts": "The answer is: Eight. Rudolph came later, in 1939, so he is not in the poem."
+  },
+  {
+    "file": "l-fd6046a3.mp3",
+    "text": "Which of Santa's reindeer shares its name with the Roman god of love?",
+    "tts": "Which of Santa's reindeer shares its name with the Roman god of love?"
+  },
+  {
+    "file": "l-ec6a6218.mp3",
+    "text": "The answer is: Cupid. The others in the poem are Dasher, Dancer, Prancer, Vixen, Comet, Donner and Blitzen.",
+    "tts": "The answer is: Cupid. The others in the poem are Dasher, Dancer, Prancer, Vixen, Comet, Donner and Blitzen."
+  },
+  {
+    "file": "l-85d9dc1f.mp3",
+    "text": "In the Netherlands, Sinterklaas arrives in mid-November by steamboat. Which country is he said to sail from?",
+    "tts": "In the Netherlands, Sinterklaas arrives in mid-November by steamboat. Which country is he said to sail from?"
+  },
+  {
+    "file": "l-d68c74f5.mp3",
+    "text": "The answer is: Spain. Dutch children leave out a shoe with a carrot for his horse.",
+    "tts": "The answer is: Spain. Dutch children leave out a shoe with a carrot for his horse."
+  },
+  {
+    "file": "l-a030fee0.mp3",
+    "text": "Rudolph the Red-Nosed Reindeer was created in 1939 for a free booklet handed out by which department store chain?",
+    "tts": "Rudolph the Red-Nosed Reindeer was created in 1939 for a free booklet handed out by which department store chain?"
+  },
+  {
+    "file": "l-563e26eb.mp3",
+    "text": "The answer is: Montgomery Ward. Copywriter Robert L. May wrote the story. Millions of copies were given away that first Christmas.",
+    "tts": "The answer is: Montgomery Ward. Copywriter Robert L. May wrote the story. Millions of copies were given away that first Christmas."
+  },
+  {
+    "file": "l-502cffa5.mp3",
+    "text": "In the first version of 'A Visit from St. Nicholas', two reindeer were called Dunder and Blixem. What do these Dutch words mean?",
+    "tts": "In the first version of 'A Visit from St. Nicholas', two reindeer were called Dunder and Blixem. What do these Dutch words mean?"
+  },
+  {
+    "file": "l-459e9f78.mp3",
+    "text": "The answer is: Thunder and lightning. Later printings changed them to Donder and Blitzen. Today most people say Donner and Blitzen.",
+    "tts": "The answer is: Thunder and lightning. Later printings changed them to Donder and Blitzen. Today most people say Donner and Blitzen."
+  },
+  {
+    "file": "l-14c89e13.mp3",
+    "text": "In which country is fried chicken from KFC a popular Christmas dinner?",
+    "tts": "In which country is fried chicken from KFC a popular Christmas dinner?"
+  },
+  {
+    "file": "l-26ce9735.mp3",
+    "text": "The answer is: Japan. It began with a 1974 ad campaign. Families often order their Christmas bucket weeks ahead.",
+    "tts": "The answer is: Japan. It began with a 1974 ad campaign. Families often order their Christmas bucket weeks ahead."
+  },
+  {
+    "file": "l-8d44103f.mp3",
+    "text": "In Mexico, what are the nine nights of candlelit processions before Christmas called?",
+    "tts": "In Mexico, what are the nine nights of candlelit processions before Christmas called?"
+  },
+  {
+    "file": "l-5755ce0a.mp3",
+    "text": "The answer is: Las Posadas. From December 16 to 24, people act out Mary and Joseph's search for shelter.",
+    "tts": "The answer is: Las Posadas. From December 16 to 24, people act out Mary and Joseph's search for shelter."
+  },
+  {
+    "file": "l-9aea2116.mp3",
+    "text": "Which country gives London a giant Christmas tree for Trafalgar Square every year, as thanks for help in the Second World War?",
+    "tts": "Which country gives London a giant Christmas tree for Trafalgar Square every year, as thanks for help in the Second World War?"
+  },
+  {
+    "file": "l-02ea14e3.mp3",
+    "text": "The answer is: Norway. The tradition started in 1947. The tree comes from the forests around Oslo.",
+    "tts": "The answer is: Norway. The tradition started in 1947. The tree comes from the forests around Oslo."
+  },
+  {
+    "file": "l-17c191e4.mp3",
+    "text": "In Italy, which kind old witch flies on a broom to bring sweets to children on the night before January 6?",
+    "tts": "In Italy, which kind old witch flies on a broom to bring sweets to children on the night before January 6?"
+  },
+  {
+    "file": "l-084a7815.mp3",
+    "text": "The answer is: La Befana. Good children get sweets and naughty ones get a lump of coal, often made of black sugar.",
+    "tts": "The answer is: La Befana. Good children get sweets and naughty ones get a lump of coal, often made of black sugar."
+  },
+  {
+    "file": "l-05dd6c1c.mp3",
+    "text": "In Catalonia, which smiling wooden log is 'fed' for weeks and then hit with sticks until it gives out sweets?",
+    "tts": "In Catalonia, which smiling wooden log is 'fed' for weeks and then hit with sticks until it gives out sweets?"
+  },
+  {
+    "file": "l-6f58a48e.mp3",
+    "text": "The answer is: Tió de Nadal. It wears a red cap and a blanket. Children sing to it while they tap it on Christmas Eve or Day.",
+    "tts": "The answer is: Tió de Nadal. It wears a red cap and a blanket. Children sing to it while they tap it on Christmas Eve or Day."
+  },
+  {
+    "file": "l-46eb2e53.mp3",
+    "text": "Krampus is a horned creature from Alpine folklore who travels with Saint Nicholas. Whom does he punish?",
+    "tts": "Krampus is a horned creature from Alpine folklore who travels with Saint Nicholas. Whom does he punish?"
+  },
+  {
+    "file": "l-c99b2829.mp3",
+    "text": "The answer is: Naughty children. Saint Nicholas rewards good children, and Krampus deals with the rest.",
+    "tts": "The answer is: Naughty children. Saint Nicholas rewards good children, and Krampus deals with the rest."
+  },
+  {
+    "file": "l-1c36913a.mp3",
+    "text": "In Iceland, how many mischievous Yule Lads visit children in the nights before Christmas?",
+    "tts": "In Iceland, how many mischievous Yule Lads visit children in the nights before Christmas?"
+  },
+  {
+    "file": "l-bb427eed.mp3",
+    "text": "The answer is: Thirteen. They arrive one at a time, starting December 12, and leave gifts or rotten potatoes in shoes.",
+    "tts": "The answer is: Thirteen. They arrive one at a time, starting December 12, and leave gifts or rotten potatoes in shoes."
+  },
+  {
+    "file": "l-55a9cd30.mp3",
+    "text": "Which giant cat from Icelandic folklore is said to eat people who don't get new clothes before Christmas?",
+    "tts": "Which giant cat from Icelandic folklore is said to eat people who don't get new clothes before Christmas?"
+  },
+  {
+    "file": "l-105653ff.mp3",
+    "text": "The answer is: The Yule Cat (Jólakötturinn). The legend encouraged people to finish their wool work before the holidays.",
+    "tts": "The answer is: The Yule Cat (Jólakötturinn). The legend encouraged people to finish their wool work before the holidays."
+  },
+  {
+    "file": "l-dd6c07d4.mp3",
+    "text": "Krampusnacht, when people in Krampus costumes parade through Alpine towns, is held on which date?",
+    "tts": "Krampusnacht, when people in Krampus costumes parade through Alpine towns, is held on which date?"
+  },
+  {
+    "file": "l-ff432edc.mp3",
+    "text": "The answer is: December 5. It is the eve of Saint Nicholas Day, December 6.",
+    "tts": "The answer is: December 5. It is the eve of Saint Nicholas Day, December 6."
+  },
+  {
+    "file": "l-d0eab341.mp3",
+    "text": "In a Ukrainian Christmas legend, which creature decorated a poor family's tree overnight, which is why it appears on tree ornaments?",
+    "tts": "In a Ukrainian Christmas legend, which creature decorated a poor family's tree overnight, which is why it appears on tree ornaments?"
+  },
+  {
+    "file": "l-72371bd4.mp3",
+    "text": "The answer is: A spider. In the story, the spider's webs turned to silver and gold in the morning light, the origin of tinsel.",
+    "tts": "The answer is: A spider. In the story, the spider's webs turned to silver and gold in the morning light, the origin of tinsel."
+  },
+  {
+    "file": "l-dd70ac9e.mp3",
+    "text": "Who sang the 1994 hit 'All I Want for Christmas Is You'?",
+    "tts": "Who sang the 1994 hit 'All I Want for Christmas Is You'?"
+  },
+  {
+    "file": "l-1ea175f6.mp3",
+    "text": "The answer is: Mariah Carey. It first reached number one on the US Billboard Hot 100 in 2019, 25 years after its release.",
+    "tts": "The answer is: Mariah Carey. It first reached number one on the US Billboard Hot 100 in 2019, 25 years after its release."
+  },
+  {
+    "file": "l-8c3f34c4.mp3",
+    "text": "Which Canadian singer from Burnaby, B.C., released the hugely popular 2011 album 'Christmas'?",
+    "tts": "Which Canadian singer from Burnaby, B.C., released the hugely popular 2011 album 'Christmas'?"
+  },
+  {
+    "file": "l-7435ad88.mp3",
+    "text": "The answer is: Michael Bublé. Its songs return to the charts every December.",
+    "tts": "The answer is: Michael Bublé. Its songs return to the charts every December."
+  },
+  {
+    "file": "l-26793747.mp3",
+    "text": "'Silent Night' was first performed on Christmas Eve 1818 in a small village church in which country?",
+    "tts": "'Silent Night' was first performed on Christmas Eve 1818 in a small village church in which country?"
+  },
+  {
+    "file": "l-58539380.mp3",
+    "text": "The answer is: Austria. Joseph Mohr wrote the words and Franz Xaver Gruber the music, in Oberndorf near Salzburg.",
+    "tts": "The answer is: Austria. Joseph Mohr wrote the words and Franz Xaver Gruber the music, in Oberndorf near Salzburg."
+  },
+  {
+    "file": "l-2fc87a4e.mp3",
+    "text": "'White Christmas', one of the best-selling singles of all time, was written by which American songwriter?",
+    "tts": "'White Christmas', one of the best-selling singles of all time, was written by which American songwriter?"
+  },
+  {
+    "file": "l-bd0b5e54.mp3",
+    "text": "The answer is: Irving Berlin. Bing Crosby's 1942 recording has sold tens of millions of copies.",
+    "tts": "The answer is: Irving Berlin. Bing Crosby's 1942 recording has sold tens of millions of copies."
+  },
+  {
+    "file": "l-3810fd03.mp3",
+    "text": "In December 1965, astronauts on which NASA mission played 'Jingle Bells' on a harmonica and bells, the first song played in space?",
+    "tts": "In December 1965, astronauts on which NASA mission played 'Jingle Bells' on a harmonica and bells, the first song played in space?"
+  },
+  {
+    "file": "l-e20feb8e.mp3",
+    "text": "The answer is: Gemini 6A. Wally Schirra and Tom Stafford first joked that they had spotted a UFO in a red suit.",
+    "tts": "The answer is: Gemini 6A. Wally Schirra and Tom Stafford first joked that they had spotted a UFO in a red suit."
+  },
+  {
+    "file": "l-104aa88d.mp3",
+    "text": "Which 1843 novella by Charles Dickens tells the story of Ebenezer Scrooge?",
+    "tts": "Which 1843 novella by Charles Dickens tells the story of Ebenezer Scrooge?"
+  },
+  {
+    "file": "l-179737a8.mp3",
+    "text": "The answer is: A Christmas Carol. The first printing sold out in days.",
+    "tts": "The answer is: A Christmas Carol. The first printing sold out in days."
+  },
+  {
+    "file": "l-8fed696a.mp3",
+    "text": "The first commercial Christmas cards were printed in 1843 in which country?",
+    "tts": "The first commercial Christmas cards were printed in 1843 in which country?"
+  },
+  {
+    "file": "l-b1510ab3.mp3",
+    "text": "The answer is: England (United Kingdom). Sir Henry Cole ordered 1,000 cards because he had no time to write letters by hand.",
+    "tts": "The answer is: England (United Kingdom). Sir Henry Cole ordered 1,000 cards because he had no time to write letters by hand."
+  },
+  {
+    "file": "l-ab9464c1.mp3",
+    "text": "What does the 'X' in 'Xmas' originally stand for?",
+    "tts": "What does the 'X' in 'Xmas' originally stand for?"
+  },
+  {
+    "file": "l-c8ee8107.mp3",
+    "text": "The answer is: The Greek letter chi, for Christ. Chi, written X, is the first letter of 'Christ' in Greek, so Xmas is centuries old, not a modern shortcut.",
+    "tts": "The answer is: The Greek letter chi, for Christ. Chi, written X, is the first letter of 'Christ' in Greek, so Xmas is centuries old, not a modern shortcut."
+  },
+  {
+    "file": "l-33698803.mp3",
+    "text": "Electric Christmas tree lights were first shown in 1882 by Edward H. Johnson, a business partner of which inventor?",
+    "tts": "Electric Christmas tree lights were first shown in 1882 by Edward H. Johnson, a business partner of which inventor?"
+  },
+  {
+    "file": "l-de46142f.mp3",
+    "text": "The answer is: Thomas Edison. Johnson's tree in New York had 80 red, white and blue bulbs.",
+    "tts": "The answer is: Thomas Edison. Johnson's tree in New York had 80 red, white and blue bulbs."
+  },
+  {
+    "file": "l-5d048da9.mp3",
+    "text": "From 1659 to 1681, celebrating Christmas was against the law in the Massachusetts Bay Colony. Which group passed the ban?",
+    "tts": "From 1659 to 1681, celebrating Christmas was against the law in the Massachusetts Bay Colony. Which group passed the ban?"
+  },
+  {
+    "file": "l-398354bc.mp3",
+    "text": "The answer is: The Puritans. Anyone caught celebrating could be fined five shillings.",
+    "tts": "The answer is: The Puritans. Anyone caught celebrating could be fined five shillings."
+  },
+  {
+    "file": "l-898750a4.mp3",
+    "text": "Christmas Eve has come. The final category is: A Christmas Miracle. Write down your secret wagers. You may bet up to half of your score, or up to 500 if that is more.",
+    "tts": "[whispers] Christmas Eve has come. The final category is: A Christmas Miracle. Write down your secret wagers. You may bet up to half of your score, or up to 500 if that is more."
+  },
+  {
+    "file": "l-86512492.mp3",
+    "text": "In December 1914, during the First World War, British and German soldiers on the Western Front stopped fighting, sang carols and met in no man's land. What is this event called?",
+    "tts": "In December 1914, during the First World War, British and German soldiers on the Western Front stopped fighting, sang carols and met in no man's land. What is this event called?"
+  },
+  {
+    "file": "l-fbc43afc.mp3",
+    "text": "The answer is: The Christmas Truce. The ceasefire was unofficial. In some places it lasted into the new year.",
+    "tts": "The answer is: The Christmas Truce. The ceasefire was unofficial. In some places it lasted into the new year."
+  },
+  {
+    "file": "l-dd3c0f99.mp3",
+    "text": "In what year did Gene Autry release his famous recording of 'Rudolph the Red-Nosed Reindeer'?",
+    "tts": "In what year did Gene Autry release his famous recording of 'Rudolph the Red-Nosed Reindeer'?"
+  },
+  {
+    "file": "l-bd24bfcf.mp3",
+    "text": "The answer is: 1949. It sold more than 2 million copies in its first year.",
+    "tts": "The answer is: 1949. It sold more than 2 million copies in its first year."
+  },
+  {
+    "file": "l-d14339a5.mp3",
+    "text": "Team Elves saved Christmas!",
+    "tts": "[excited] Team Elves saved Christmas! [applause]"
+  },
+  {
+    "file": "l-eb737d70.mp3",
+    "text": "Team Reindeer saved Christmas!",
+    "tts": "[excited] Team Reindeer saved Christmas! [applause]"
+  },
+  {
+    "file": "l-8afc97b5.mp3",
+    "text": "Team Snowmen saved Christmas!",
+    "tts": "[excited] Team Snowmen saved Christmas! [applause]"
+  },
+  {
+    "file": "l-aa9b7ec8.mp3",
+    "text": "Team Gingerbread saved Christmas!",
+    "tts": "[excited] Team Gingerbread saved Christmas! [applause]"
+  },
+  {
+    "file": "l-d212a1cc.mp3",
+    "text": "The price: 100 points!",
+    "tts": "[mischievously] The price... 100 points!"
+  },
+  {
+    "file": "l-494dcb81.mp3",
+    "text": "The price: 200 points!",
+    "tts": "[mischievously] The price... 200 points!"
+  },
+  {
+    "file": "l-53fff7fa.mp3",
+    "text": "The price: 300 points!",
+    "tts": "[mischievously] The price... 300 points!"
+  },
+  {
+    "file": "l-3f1e82cf.mp3",
+    "text": "The price: 400 points!",
+    "tts": "[mischievously] The price... 400 points!"
+  },
+  {
+    "file": "l-2e88ad90.mp3",
+    "text": "The price: 500 points!",
+    "tts": "[mischievously] The price... 500 points!"
+  },
+  {
+    "file": "l-cbe0a1b5.mp3",
+    "text": "The price: 600 points!",
+    "tts": "[mischievously] The price... 600 points!"
+  },
+  {
+    "file": "l-cc27cd63.mp3",
+    "text": "The price: 800 points!",
+    "tts": "[mischievously] The price... 800 points!"
+  },
+  {
+    "file": "l-b9ee2660.mp3",
+    "text": "The price: 1000 points!",
+    "tts": "[mischievously] The price... 1000 points!"
+  },
+  {
+    "file": "l-171a5731.mp3",
+    "text": "Team Elves, the bargain is yours!",
+    "tts": "Team Elves, the bargain is yours!"
+  },
+  {
+    "file": "l-a882c0f8.mp3",
+    "text": "Team Reindeer, the bargain is yours!",
+    "tts": "Team Reindeer, the bargain is yours!"
+  },
+  {
+    "file": "l-5baa5ae1.mp3",
+    "text": "Team Snowmen, the bargain is yours!",
+    "tts": "Team Snowmen, the bargain is yours!"
+  },
+  {
+    "file": "l-658bae90.mp3",
+    "text": "Team Gingerbread, the bargain is yours!",
+    "tts": "Team Gingerbread, the bargain is yours!"
+  }
+]

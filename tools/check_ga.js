@@ -1,0 +1,24 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1366,height:768}});const errs=[];p.on('pageerror',e=>errs.push(e.message));
+await p.route(/googletagmanager/,r=>r.fulfill({status:200,contentType:'application/javascript',body:''}));
+await p.goto('http://localhost:8765/');await p.evaluate(()=>{localStorage.clear();sessionStorage.clear()});await p.reload();await p.waitForTimeout(500);
+await p.fill('input >> nth=0','Secret Team Name');
+await p.click('text=Start the game');await p.waitForTimeout(300);
+const step=async(code)=>{await p.evaluate(code);await p.waitForTimeout(150);};
+await step(()=>{S.screen='board';S.round=0;render();});
+await step(()=>{S.q={c:0,i:0,value:100,special:null,picker:0,team:0,bid:null,judged:{},stage:'ask'};render();});
+await step(()=>{S.q=null;render();});
+await step(()=>{S.q={c:1,i:3,value:400,special:'cat',picker:0,team:null,bid:null,judged:{},stage:'intro'};render();});
+await step(()=>{S.q=null;S.round=1;render();});
+await step(()=>{S.screen='final';S.final={stage:'category',wagers:[],judged:[]};render();});
+await step(()=>{S.screen='podium';S.final.stage='done';render();});
+await step(()=>{S.screen='podium';render();});
+const ev=await p.evaluate(()=>dataLayer.filter(a=>a[0]==='event').map(a=>a[1]+' '+JSON.stringify(a[2]||{})));
+const consent=await p.evaluate(()=>dataLayer.filter(a=>a[0]==='consent').length);
+const leak=JSON.stringify(await p.evaluate(()=>dataLayer.map(a=>Array.from(a)))).includes('Secret Team');
+console.log(ev.join('\n'));console.log('consent defaults:',consent,'team name leaked:',leak,'errors:',errs);
+// content page events
+await p.goto('http://localhost:8765/halloween-trivia-questions/');await p.waitForTimeout(300);
+await p.click('#q3 summary');await p.click('[data-toggle-all]');await p.click('.cta-row a[href="/"]',{noWaitAfter:true}).catch(()=>{});
+await p.waitForTimeout(500);
+console.log('pages ok');await b.close();})();
