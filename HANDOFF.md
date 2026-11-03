@@ -88,6 +88,20 @@ Needs `fontpkgs/` (see above), Node with Playwright, and Pillow. Intermediate fi
 - **Mirror** (no-redirect copy on github.io): `python3 tools/build_mirror.py <site_dir> <mirror_repo>`; `MIRROR_BASE = /game-nights-play` (repo not created).
 - **Offline single file:** `python3 tools/build_offline.py christmas <out.html>` (or `halloween`): game + audio + fonts, about 24 MB, no network.
 
+## Money and growth plan (agreed November 3, 2026; do it when the site is published)
+
+She liked this three-step test of demand and wants it built **together with the website**:
+
+1. **Donations this winter.** Ko-fi page in the brand's name (she creates it and sends the link). Links: on the podium screen at the end of a game ("Enjoyed the game? Buy Victoria a hot chocolate"), small "Support the games" link on the home page and in every footer, an FAQ item "How can I support the games?". GA event `support_click`. Wording "Support"/"Tip", not "Donate" (only registered charities give donation receipts; tips are income).
+2. **"Want a custom office edition? Contact us"** on every game page and the home page, to test the most expensive product. Needs a contact address or form from her (forms on a static site need a service such as Formspree, or just an email address shown as text).
+3. **Paid full version** from Valentine's Day or St. Patrick's Day, once Analytics shows real traffic.
+
+Pricing hypothesis (USD, to test): full game $19–29 one-time; office edition $99–249 (logo, company name, 5–10 office questions she writes, narrator says the company name); annual pass $49–99 once there are 4–5+ games; Etsy PDF packs $5–9. Revenue math at $19: 10,000 seasonal visitors × 1% ≈ $1,900; real income comes from many games per year plus office editions.
+
+Payments: Stripe works for a Saskatchewan sole proprietor and is cheapest (~2.9% + 30¢), but she is then the seller of record for foreign taxes (EU/UK VAT on digital sales to consumers from the first sale; US states have high thresholds; Canada GST/HST only above $30k). Merchant-of-record services (Lemon Squeezy, owned by Stripe; Paddle; ~5% + 50¢) handle all of that; check whether Stripe's own merchant-of-record option (Managed Payments) is available in Canada. Plan: Stripe if selling mainly to Canada/US, a merchant of record if selling worldwide. She should see an accountant before paid sales start. When selling starts, move hosting from GitHub Pages to Cloudflare Pages or Netlify.
+
+Direction: **the whole English-speaking world, US first**, neutral English for the rest. Ideas agreed in principle: swappable local category per country (Oh, Canada! / Stars & Stripes / Rule, Britannia / Down Under), dates in words, units in both systems, US spelling (decide; site is en_CA now), prices in USD. Holiday calendar for 2027 (launch 4–6 weeks ahead): Valentine's Day (~Jan 20), St. Patrick's Day (~Feb 10), all-year Team Trivia (spring, basis for the paid version), Canada Day / July 4, Thanksgiving (Canada October + US November), Halloween and Christmas with local packs; also International Women's Day and Employee Appreciation Day for HR buyers. Avoid trademarked names (Olympics, Super Bowl, Oscars, Eurovision, World Cup) and solemn days; cultural and religious holidays only with review by people from that culture. Before many new games: refactor to one engine + a theme file per game (questions, art, colours, narrator lines) instead of text replacement.
+
 ## Next steps (in order)
 
 1. **Domain for Victoria's Game Nights.** Suggestions: victoriasgamenights.com / .ca. She checks on Namecheap and buys it; then set `URL` in `tools/site_common.py`. DNS like Night of Frights: four A records `185.199.108.153` to `185.199.111.153`, CNAME `www` to `vaku0004.github.io.`, remove the Namecheap parking redirect, set the custom domain in GitHub Pages, **Enforce HTTPS** once the certificate is issued (about a day last time; removing and re-adding the domain helped).
