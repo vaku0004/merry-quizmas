@@ -1,6 +1,6 @@
 """Make a local test copy of a built page with fonts loaded from the fontsource packages (no network)."""
-import glob, sys
-S = "."
+import glob, os, sys
+S = os.path.abspath(".")
 src, out = sys.argv[1], sys.argv[2]
 h = open(src, encoding="utf-8").read()
 F = f"{S}/fontpkgs"

@@ -1,17 +1,19 @@
-"""Copy the main site (night-of-frights repo) into the night-of-frights-game repo, which GitHub Pages serves at
-https://vaku0004.github.io/night-of-frights-game/ with no redirect to the custom domain.
+"""Copy the built Merry Quizmas site into the mirror repo (MIRROR_BASE in site_common.py, e.g. merry-quizmas-game),
+which GitHub Pages serves at https://vaku0004.github.io/merry-quizmas-game/ with no redirect to the custom domain.
 
-python3 build_mirror.py <main_repo_dir> <mirror_repo_dir>
+python3 tools/build_mirror.py <site_dir> <mirror_repo_dir>
 
 What differs from the main site:
 - no CNAME (that file is what makes GitHub redirect), no Search Console / IndexNow files, no sitemap or robots.txt;
-- root links ("/faq/", "/assets/...") get the /night-of-frights-game prefix, because the copy lives in a subfolder;
-- every page says noindex and keeps its canonical URL on nightoffrights.monster, so search engines see one site, not two.
+- root links ("/faq/", "/assets/...") get the MIRROR_BASE prefix, because the copy lives in a subfolder;
+- every page says noindex and keeps its canonical URL on the main domain, so search engines see one site, not two.
 """
 import os, re, shutil, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from site_common import MIRROR_BASE, URL, NAME
 
 MAIN, MIRROR = sys.argv[1], sys.argv[2]
-BASE = "/night-of-frights-game"
+BASE = MIRROR_BASE
 SKIP = {"CNAME", "sitemap.xml", "robots.txt", ".git"}
 SKIP_RE = re.compile(r"^(google[0-9a-f]+\.html|[0-9a-f]{32}\.txt)$")
 
@@ -55,13 +57,10 @@ for root, dirs, files in os.walk(MIRROR):
             t = t.replace('"start_url": "/"', f'"start_url": "{BASE}/"').replace('"src": "/', f'"src": "{BASE}/')
             open(p, "w", encoding="utf-8").write(t)
 
-readme = os.path.join(MIRROR, "README.md")
-t = open(readme, encoding="utf-8").read()
-t = t.replace("# Viktoriia's Night of Frights 🎃\n",
-              "# Viktoriia's Night of Frights 🎃\n\n"
-              "> A copy of [nightoffrights.monster](https://nightoffrights.monster/) that opens on GitHub Pages without "
-              "redirecting: **https://vaku0004.github.io/night-of-frights-game/**. "
-              "The main project lives in [vaku0004/night-of-frights](https://github.com/vaku0004/night-of-frights); "
-              "this repository is updated from it.\n", 1)
-open(readme, "w", encoding="utf-8").write(t)
+# The mirror's README (rewritten every time, since the folder is cleaned above)
+open(os.path.join(MIRROR, "README.md"), "w", encoding="utf-8").write(
+    f"# {NAME.replace('Victoria', 'Viktoriia')} 🎄\n\n"
+    f"> A copy of [{URL.split('/')[2]}]({URL}) that opens on GitHub Pages without redirecting: "
+    f"**https://vaku0004.github.io{BASE}/**. The main project lives in "
+    "[vaku0004/merry-quizmas](https://github.com/vaku0004/merry-quizmas); this repository is updated from it.\n")
 print("html files adjusted:", changed)

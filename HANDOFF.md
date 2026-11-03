@@ -49,12 +49,24 @@ python3 tools/build_quizmas.py night-of-frights.html quizmas/merry-quizmas.html
 - `node tools/export_lines.js <built page> quizmas/voice-lines.json` lists every narrator line (file name = `l-<fnv32 of text>.mp3`).
 - Website build: `python3 tools/build_index.py quizmas/merry-quizmas.html index.html --site` (full page, SEO tags, phone layout).
 
-**The website tools still contain Night of Frights values.** Before using them for Merry Quizmas, change:
-- `tools/build_index.py`: URL, NAME, TITLE, DESC, OG text, static no-JS text, links to content pages.
-- `tools/site_common.py`: `GA_ID` (needs a **new** GA4 property, see below). The consent-mode and game-events code can stay.
-- `tools/build_pages.py`: page texts, categories (`CATS`), slugs and FAQ are Halloween content. Use it as a template for Christmas pages.
-- `tools/build_mirror.py`: `BASE` path for the github.io copy.
-- `tools/make_og.py`, `tools/make_page_og.py`: preview images.
+### Website build (ready since November 3, 2026)
+
+The website tools are converted to Merry Quizmas. One command builds the whole site:
+
+```
+python3 tools/build_site.py <site_dir>
+```
+
+It makes `index.html` (game + SEO tags + no-JS text + phone layout), four content pages (`/christmas-trivia-questions/`, `/virtual-christmas-games-for-work/`, `/how-to-host-a-christmas-game-night/`, `/faq/`), preview images (`og-image.png`, `assets/og/*.png`), game screenshots (`assets/shots/*.webp`), icons, `favicon.ico`, `site.webmanifest`, `robots.txt`, `sitemap.xml`, `CNAME`, and copies `audio/` if the narrator files are in the repo. Intermediate files go to `build/` (ignored by git). Needs `fontpkgs/` (see above), Playwright and Pillow.
+
+- **Settings in one place: `tools/site_common.py`.** `URL` is a placeholder (`https://merryquizmas.com/`) until she buys the domain; `GA_ID` is empty, and with an empty ID no Analytics code goes on the pages. Fill both in, then rebuild.
+- Page texts, FAQ and category intros: `tools/build_pages.py`. Main page texts: `tools/build_index.py`. Page styles: `pages-src/pages.css`. Preview images: `tools/make_og.py`; screenshots: `tools/shoot_site.js`.
+- GA events: `game_start`, `round_two`, `christmas_eve`, `tiebreaker`, `game_complete`, `question_open` (special = `naughty_or_nice` / `krampus` / `none`), plus the content-page events. Session key `mq-ga`.
+- The FAQ links to nightoffrights.monster ("Is there a Halloween version?").
+- Mirror (no-redirect copy): `python3 tools/build_mirror.py <site_dir> <mirror_repo_dir>`; path `MIRROR_BASE = /merry-quizmas-game` (a repo `vaku0004/merry-quizmas-game` still has to be created).
+- Offline single file: `python3 tools/build_offline.py <out.html>` (needs `audio/manifest.json` + MP3s in the repo).
+- Checks: serve the site folder on port 8765 (`python3 -m http.server 8765`), then `node tools/check_links.js <site_dir>`. Last run: 16 internal URLs, nothing broken, no JS errors, no horizontal scroll on a 390px phone.
+- Open question: where the site is published. Simplest: build into `docs/` of this repo and set GitHub Pages to "main branch, /docs" (the repo must be public for free Pages), or a separate site repo like Night of Frights had.
 
 ## Next steps (in order)
 
@@ -64,7 +76,7 @@ python3 tools/build_quizmas.py night-of-frights.html quizmas/merry-quizmas.html
 
    Then generate audio **on her PC**: ElevenLabs is not reachable from the cloud. `voice-kit/start-voice.bat` runs `generate-voice.ps1`, which reads `voice-lines.json`, asks for the key (hidden input), the voice and a YES, voices only new lines and writes `audio/manifest.json` plus MP3s. Her PC folder for the Halloween kit was `C:\Работа\Текущие проекты\Клод\NightsOfFrights`. Use a new folder for Christmas, otherwise the manifests mix. If her PC is linked to the session, copy files with the device tools; otherwise she uploads the `audio` folder.
 3. **Domain.** Suggestions: merryquizmas.com, merryquizmas.fun, merry-quizmas.ca. Check availability on Namecheap in her Chrome; she buys it herself. DNS like Night of Frights: four A records `185.199.108.153` to `185.199.111.153`, CNAME `www` to `vaku0004.github.io.`, remove the Namecheap parking redirect, set the custom domain in GitHub Pages, then **Enforce HTTPS** once the certificate is issued (it took about a day last time; removing and re-adding the domain helped).
-4. **Website repo.** Publish the site (index.html, `audio/`, icons, robots.txt, sitemap.xml, content pages) to GitHub Pages. This repo can hold it, or a separate one. Then a no-redirect copy on github.io (like `night-of-frights-game`).
+4. **Website repo.** Tools are ready (see "Website build"). Publish the site (index.html, `audio/`, icons, robots.txt, sitemap.xml, content pages) to GitHub Pages. This repo can hold it, or a separate one. Then a no-redirect copy on github.io (like `night-of-frights-game`).
 5. **SEO pages** like Night of Frights: Christmas trivia questions with answers, virtual and hybrid Christmas games for work, host guide, FAQ (neutral voice, no first person; she was fine publishing the game's own questions). Then Google Search Console (verify with an HTML file in the repo; she can't give Namecheap passwords), sitemap, Request indexing, IndexNow for Bing.
 6. **Google Analytics 4**: a new property in her existing account ("Default Account for Firebase", **not** inside BYSO; her other properties there are BYSO, francabulaire, thumbnail, Night of Frights). Time zone Regina, CAD, 14-month retention, custom dimensions special / team_count / round / from_page.
 7. Offline single-file build (`tools/build_offline.py`) as a backup for the party.

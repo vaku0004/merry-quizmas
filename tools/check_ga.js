@@ -18,7 +18,7 @@ const consent=await p.evaluate(()=>dataLayer.filter(a=>a[0]==='consent').length)
 const leak=JSON.stringify(await p.evaluate(()=>dataLayer.map(a=>Array.from(a)))).includes('Secret Team');
 console.log(ev.join('\n'));console.log('consent defaults:',consent,'team name leaked:',leak,'errors:',errs);
 // content page events
-await p.goto('http://localhost:8765/halloween-trivia-questions/');await p.waitForTimeout(300);
+await p.goto('http://localhost:8765/christmas-trivia-questions/');await p.waitForTimeout(300);
 await p.click('#q3 summary');await p.click('[data-toggle-all]');await p.click('.cta-row a[href="/"]',{noWaitAfter:true}).catch(()=>{});
 await p.waitForTimeout(500);
 console.log('pages ok');await b.close();})();

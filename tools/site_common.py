@@ -1,13 +1,21 @@
-"""Shared bits for every page of nightoffrights.monster (not used by the artifact or the offline file)."""
+"""Shared bits for every page of the Merry Quizmas website (not used by the artifact or the offline file).
 
-GA_ID = "G-JL1KBEZPQX"
+Site settings live here, so the domain or the Analytics ID change in one place.
+"""
+
+URL = "https://merryquizmas.com/"     # TODO: the domain Victoria buys (with the trailing slash)
+HOST = URL.split("/")[2]
+NAME = "Victoria’s Merry Quizmas"
+SHORT = "Merry Quizmas"
+MIRROR_BASE = "/merry-quizmas-game"     # the no-redirect copy: https://vaku0004.github.io/merry-quizmas-game/
+GA_ID = ""                              # TODO: the new GA4 property ("G-..."). Empty = no Analytics code on the pages.
 
 # Consent Mode v2: no ads storage anywhere. Analytics cookies are off by default in the EEA, the UK,
 # Switzerland and Quebec (Google then receives cookieless pings only); elsewhere analytics is on.
 _STRICT = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
            "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH", "CA-QC"]
 
-GA_HEAD = f'''<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+GA_HEAD = '' if not GA_ID else f'''<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){{dataLayer.push(arguments);}}
@@ -25,8 +33,8 @@ GAME_EVENTS_JS = '''<script>
   var app = document.getElementById('app'), last = '', fired = {};
   var store = { get: function(k){ try { return sessionStorage.getItem(k); } catch(e){ return null; } },
                 set: function(k,v){ try { sessionStorage.setItem(k,v); } catch(e){} } };
-  try { fired = JSON.parse(store.get('nof-ga') || '{}'); } catch(e){ fired = {}; }
-  var once = function(name, params){ if (fired[name]) return; fired[name] = 1; store.set('nof-ga', JSON.stringify(fired)); gtag('event', name, params || {}); };
+  try { fired = JSON.parse(store.get('mq-ga') || '{}'); } catch(e){ fired = {}; }
+  var once = function(name, params){ if (fired[name]) return; fired[name] = 1; store.set('mq-ga', JSON.stringify(fired)); gtag('event', name, params || {}); };
   var check = function(){
     var s; try { s = S; } catch(e){ return; }
     if (!s) return;
@@ -35,15 +43,15 @@ GAME_EVENTS_JS = '''<script>
     var prev = last; last = key;
     var teams = s.teamCount;
     if (s.screen === 'rules' && s.deck === 'intro' && prev.indexOf('setup') === 0){
-      fired = {}; store.set('nof-ga', '{}');
+      fired = {}; store.set('mq-ga', '{}');
       once('game_start', { team_count: teams });
     }
     if (s.screen === 'board' && s.round === 1) once('round_two', { team_count: teams });
-    if (s.screen === 'final') once('midnight', { team_count: teams });
+    if (s.screen === 'final') once('christmas_eve', { team_count: teams });
     if (s.screen === 'tiebreak') once('tiebreaker', { team_count: teams });
     if (s.screen === 'podium') once('game_complete', { team_count: teams });
     if (s.screen === 'board' && s.q && prev.split('|')[3] !== key.split('|')[3]){
-      gtag('event', 'question_open', { round: s.round + 1, value: s.q.value, special: s.q.special || 'none' });
+      gtag('event', 'question_open', { round: s.round + 1, value: s.q.value, special: ({cat: 'naughty_or_nice', witch: 'krampus'})[s.q.special] || 'none' });
     }
   };
   new MutationObserver(check).observe(app, { childList: true });
