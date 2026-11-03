@@ -4,6 +4,7 @@ A Christmas quiz game for office parties: two rounds, Naughty or Nice, Krampus's
 
 - Game: `quizmas/merry-quizmas.html` (built by `tools/build_quizmas.py`)
 - Questions: `quizmas/questions.js`
+- Website (Victoria's Game Nights, all games): `tools/build_site.py`
 - Plan and decisions: [HANDOFF.md](HANDOFF.md)
 
 Game, questions and design by **Viktoriia**.

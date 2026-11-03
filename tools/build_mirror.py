@@ -1,5 +1,5 @@
-"""Copy the built Merry Quizmas site into the mirror repo (MIRROR_BASE in site_common.py, e.g. merry-quizmas-game),
-which GitHub Pages serves at https://vaku0004.github.io/merry-quizmas-game/ with no redirect to the custom domain.
+"""Copy the built Victoria's Game Nights site into the mirror repo (MIRROR_BASE in site_common.py),
+which GitHub Pages serves at https://vaku0004.github.io<MIRROR_BASE>/ with no redirect to the custom domain.
 
 python3 tools/build_mirror.py <site_dir> <mirror_repo_dir>
 
@@ -10,11 +10,11 @@ What differs from the main site:
 """
 import os, re, shutil, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from site_common import MIRROR_BASE, URL, NAME
+from site_common import MIRROR_BASE, URL, BRAND
 
 MAIN, MIRROR = sys.argv[1], sys.argv[2]
 BASE = MIRROR_BASE
-SKIP = {"CNAME", "sitemap.xml", "robots.txt", ".git"}
+SKIP = {"CNAME", "sitemap.xml", "robots.txt", ".git", "404.html"}
 SKIP_RE = re.compile(r"^(google[0-9a-f]+\.html|[0-9a-f]{32}\.txt)$")
 
 # Start clean (keep .git) so files deleted from the main site disappear from the copy too
@@ -59,8 +59,8 @@ for root, dirs, files in os.walk(MIRROR):
 
 # The mirror's README (rewritten every time, since the folder is cleaned above)
 open(os.path.join(MIRROR, "README.md"), "w", encoding="utf-8").write(
-    f"# {NAME.replace('Victoria', 'Viktoriia')} 🎄\n\n"
+    f"# {BRAND} 🎲\n\n"
     f"> A copy of [{URL.split('/')[2]}]({URL}) that opens on GitHub Pages without redirecting: "
     f"**https://vaku0004.github.io{BASE}/**. The main project lives in "
-    "[vaku0004/merry-quizmas](https://github.com/vaku0004/merry-quizmas); this repository is updated from it.\n")
+    "[vaku0004/game-nights](https://github.com/vaku0004/game-nights); this repository is updated from it.\n")
 print("html files adjusted:", changed)

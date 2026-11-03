@@ -1,14 +1,13 @@
-"""Shared bits for every page of the Merry Quizmas website (not used by the artifact or the offline file).
+"""Shared bits for every page of Victoria's Game Nights (not used by the artifact or the offline file).
 
 Site settings live here, so the domain or the Analytics ID change in one place.
 """
 
-URL = "https://merryquizmas.com/"     # TODO: the domain Victoria buys (with the trailing slash)
+URL = "https://victoriasgamenights.com/"   # TODO: the domain Victoria buys (with the trailing slash)
 HOST = URL.split("/")[2]
-NAME = "Victoria’s Merry Quizmas"
-SHORT = "Merry Quizmas"
-MIRROR_BASE = "/merry-quizmas-game"     # the no-redirect copy: https://vaku0004.github.io/merry-quizmas-game/
-GA_ID = ""                              # TODO: the new GA4 property ("G-..."). Empty = no Analytics code on the pages.
+BRAND = "Victoria’s Game Nights"
+GA_ID = "G-JL1KBEZPQX"                      # the Night of Frights GA4 property, reused for the whole site
+MIRROR_BASE = "/game-nights-play"           # the no-redirect copy on github.io (repo still to be created)
 
 # Consent Mode v2: no ads storage anywhere. Analytics cookies are off by default in the EEA, the UK,
 # Switzerland and Quebec (Google then receives cookieless pings only); elsewhere analytics is on.
@@ -27,14 +26,15 @@ gtag('config', '{GA_ID}', {{allow_google_signals:false, allow_ad_personalization
 
 # Game events, read from the game's own state after each screen change. Only numbers and fixed labels
 # are sent: never team names, answers or anything typed in the editor.
-GAME_EVENTS_JS = '''<script>
+def game_events_js(game):
+    return ('''<script>
 (function(){
   if (typeof gtag !== 'function') return;
   var app = document.getElementById('app'), last = '', fired = {};
   var store = { get: function(k){ try { return sessionStorage.getItem(k); } catch(e){ return null; } },
                 set: function(k,v){ try { sessionStorage.setItem(k,v); } catch(e){} } };
-  try { fired = JSON.parse(store.get('mq-ga') || '{}'); } catch(e){ fired = {}; }
-  var once = function(name, params){ if (fired[name]) return; fired[name] = 1; store.set('mq-ga', JSON.stringify(fired)); gtag('event', name, params || {}); };
+  try { fired = JSON.parse(store.get('__KEY__') || '{}'); } catch(e){ fired = {}; }
+  var once = function(name, params){ if (fired[name]) return; fired[name] = 1; store.set('__KEY__', JSON.stringify(fired)); gtag('event', name, params || {}); };
   var check = function(){
     var s; try { s = S; } catch(e){ return; }
     if (!s) return;
@@ -43,15 +43,15 @@ GAME_EVENTS_JS = '''<script>
     var prev = last; last = key;
     var teams = s.teamCount;
     if (s.screen === 'rules' && s.deck === 'intro' && prev.indexOf('setup') === 0){
-      fired = {}; store.set('mq-ga', '{}');
+      fired = {}; store.set('__KEY__', '{}');
       once('game_start', { team_count: teams });
     }
     if (s.screen === 'board' && s.round === 1) once('round_two', { team_count: teams });
-    if (s.screen === 'final') once('christmas_eve', { team_count: teams });
+    if (s.screen === 'final') once('final_round', { team_count: teams });
     if (s.screen === 'tiebreak') once('tiebreaker', { team_count: teams });
     if (s.screen === 'podium') once('game_complete', { team_count: teams });
     if (s.screen === 'board' && s.q && prev.split('|')[3] !== key.split('|')[3]){
-      gtag('event', 'question_open', { round: s.round + 1, value: s.q.value, special: ({cat: 'naughty_or_nice', witch: 'krampus'})[s.q.special] || 'none' });
+      gtag('event', 'question_open', { round: s.round + 1, value: s.q.value, special: (__SPECIALS__)[s.q.special] || 'none' });
     }
   };
   new MutationObserver(check).observe(app, { childList: true });
@@ -64,15 +64,15 @@ GAME_EVENTS_JS = '''<script>
   }, true);
   check();
 })();
-</script>'''
+</script>''').replace('__KEY__', game['slug'] + '-ga').replace('__SPECIALS__', __import__('json').dumps(game['specials']))
 
 # Content pages: clicks that lead into the game, printing and copying.
 PAGE_EVENTS_JS = '''<script>
 (function(){
   if (typeof gtag !== 'function') return;
-  var page = location.pathname.replace(/\\//g, '') || 'home';
+  var page = location.pathname.replace(/^\\/|\\/$/g, '').replace(/\\//g, '-') || 'home';
   document.addEventListener('click', function(e){
-    var a = e.target.closest && e.target.closest('a[href="/"]');
+    var a = e.target.closest && e.target.closest('a[data-play]');
     if (a) gtag('event', 'play_click', { from_page: page, link_text: (a.textContent || '').trim().slice(0, 40) });
     var p = e.target.closest && e.target.closest('[data-print]');
     if (p) gtag('event', 'print_questions', { with_answers: p.getAttribute('data-print') === 'answers' ? 'yes' : 'no' });

@@ -1,4 +1,4 @@
-# Victoria's Merry Quizmas: handoff
+# Victoria's Game Nights (Merry Quizmas, Night of Frights): handoff
 
 Start here. This file carries everything decided so far, so a new session can continue without the original chat.
 
@@ -23,7 +23,7 @@ Decisions she made (November 2, 2026):
 | Final (was Midnight) | **Christmas Eve**, secret wagers (up to half the score, or 500) |
 | Winner line | "Team X saved Christmas!" |
 | Party date | Shortly before the holidays, about **December 20–23, 2026** |
-| Hosting | **New domain + GitHub Pages**, plus a no-redirect copy on github.io (same as Night of Frights) |
+| Hosting | ~~Own domain~~ → replaced on Nov 3 by one brand site, **Victoria's Game Nights** (see below) |
 
 Done so far:
 
@@ -47,39 +47,55 @@ python3 tools/build_quizmas.py night-of-frights.html quizmas/merry-quizmas.html
 - Storage keys are `mq-state-v1`, `mq-questions-v1`, `mq-voice-v1`.
 - Run tools from the repo root. Local screenshots need the fonts: `cd fontpkgs && npm pack @fontsource/<font>@5` for pirata-one, alegreya, alegreya-sans, oswald and mountains-of-christmas, then unpack each into `fontpkgs/fontsource-<name>-<version>/` (see `tools/fontify.py`). Playwright and Chromium are preinstalled in cloud sessions.
 - `node tools/export_lines.js <built page> quizmas/voice-lines.json` lists every narrator line (file name = `l-<fnv32 of text>.mp3`).
-- Website build: `python3 tools/build_index.py quizmas/merry-quizmas.html index.html --site` (full page, SEO tags, phone layout).
+- Website build: see "Victoria's Game Nights" below.
 
-### Website build (ready since November 3, 2026)
+## Victoria's Game Nights (decided November 3, 2026)
 
-The website tools are converted to Merry Quizmas. One command builds the whole site:
+Not one site per game any more: **one brand site, Victoria's Game Nights**, with every game on it. Decisions:
+
+- **Halloween moves** from nightoffrights.monster to `/halloween/` on the new site. The old domain then forwards every page (tool ready, see below). Run it only after the new site is live.
+- **Christmas** goes on the site on **November 15, 2026** (`launch` in `tools/games.py`). Before that date the home page shows a "coming November 15" card and no Christmas pages are built.
+- **Valentine's Day**: a "Coming in February" card only (`status: "soon"`). Game not started.
+- **New repo** for the site: `vaku0004/game-nights` (she creates it; it did not exist yet on November 3). This repo (merry-quizmas) holds all the sources for now; move them there once it exists.
+- Long term she may sell games. Ideas discussed: free + paid full version, office editions on order, Etsy printables, annual pass; merchant-of-record payments (Lemon Squeezy, Paddle); GitHub Pages forbids sites mainly for selling, so move to Cloudflare Pages or Netlify then; ElevenLabs audio needs a paid plan for commercial use; GST small-supplier threshold $30k. Nothing decided yet.
+
+### Site layout
 
 ```
-python3 tools/build_site.py <site_dir>
+/                          home: brand, game cards, how it works, FAQ        (tools/build_home.py)
+/privacy/  /404.html
+/<game>/                   the game (tools/build_index.py game_page) + /<game>/audio/ + /<game>/og-image.png
+/<game>/trivia-questions/  /<game>/virtual-games-for-work/  /<game>/how-to-host-a-game-night/  /<game>/faq/
+/assets/<game>/pages.css   theme colours per game; also shots/*.webp, og/*.png, favicon.svg
 ```
 
-It makes `index.html` (game + SEO tags + no-JS text + phone layout), four content pages (`/christmas-trivia-questions/`, `/virtual-christmas-games-for-work/`, `/how-to-host-a-christmas-game-night/`, `/faq/`), preview images (`og-image.png`, `assets/og/*.png`), game screenshots (`assets/shots/*.webp`), icons, `favicon.ico`, `site.webmanifest`, `robots.txt`, `sitemap.xml`, `CNAME`, and copies `audio/` if the narrator files are in the repo. Intermediate files go to `build/` (ignored by git). Needs `fontpkgs/` (see above), Playwright and Pillow.
+### Build
 
-- **Settings in one place: `tools/site_common.py`.** `URL` is a placeholder (`https://merryquizmas.com/`) until she buys the domain; `GA_ID` is empty, and with an empty ID no Analytics code goes on the pages. Fill both in, then rebuild.
-- Page texts, FAQ and category intros: `tools/build_pages.py`. Main page texts: `tools/build_index.py`. Page styles: `pages-src/pages.css`. Preview images: `tools/make_og.py`; screenshots: `tools/shoot_site.js`.
-- GA events: `game_start`, `round_two`, `christmas_eve`, `tiebreaker`, `game_complete`, `question_open` (special = `naughty_or_nice` / `krampus` / `none`), plus the content-page events. Session key `mq-ga`.
-- The FAQ links to nightoffrights.monster ("Is there a Halloween version?").
-- Mirror (no-redirect copy): `python3 tools/build_mirror.py <site_dir> <mirror_repo_dir>`; path `MIRROR_BASE = /merry-quizmas-game` (a repo `vaku0004/merry-quizmas-game` still has to be created).
-- Offline single file: `python3 tools/build_offline.py <out.html>` (needs `audio/manifest.json` + MP3s in the repo).
-- Checks: serve the site folder on port 8765 (`python3 -m http.server 8765`), then `node tools/check_links.js <site_dir>`. Last run: 16 internal URLs, nothing broken, no JS errors, no horizontal scroll on a 390px phone.
-- Open question: where the site is published. Simplest: build into `docs/` of this repo and set GitHub Pages to "main branch, /docs" (the repo must be public for free Pages), or a separate site repo like Night of Frights had.
+```
+python3 tools/build_site.py <site_dir>                 # what is published today
+python3 tools/build_site.py <site_dir> --preview       # also games not launched yet
+python3 tools/build_site.py <site_dir> --today 2026-11-15
+```
+
+Needs `fontpkgs/` (see above), Node with Playwright, and Pillow. Intermediate files go to `build/` (ignored by git).
+
+- **Settings:** `tools/site_common.py`. `URL` is a placeholder (`https://victoriasgamenights.com/`) until she buys the domain. `GA_ID` = the Night of Frights property `G-JL1KBEZPQX`, reused for the whole site (rename the property in GA to "Victoria's Game Nights"). Games are told apart by page path.
+- **Games:** `tools/games.py` (names, colours, fonts, art, texts for the game page and the home card, launch status). Content pages: `tools/pages_halloween.py`, `tools/pages_christmas.py`. In content, `href="/"` means "play this game"; `href="/" data-home` means the home page. Page frame and theme CSS: `tools/page_shell.py` + `pages-src/pages.css`. Preview images and icons: `tools/make_og.py`, rendered by `tools/shoot_site.js`.
+- **Sources per game:** Halloween = `night-of-frights.html` (identical to the live game), audio `audio/halloween/` (copied from the night-of-frights repo, voice "Spooky Narrator" `K2A5xiNNI7XXY6YGaeGW`), shots `games/halloween/shots/`. Christmas = `quizmas/merry-quizmas.html` (built by `tools/build_quizmas.py`), audio `audio/christmas/` (voice "Santa" `eFPFwIAgneOfhQZArsFc`), shots `games/christmas/shots/` (delete the folder to retake them).
+- **GA events:** `game_start`, `round_two`, `final_round`, `tiebreaker`, `game_complete`, `question_open` (special = black_cat / witch / naughty_or_nice / krampus / none), `open_question_editor`, `open_voice_settings`, `questions_edited`; on pages `play_click` (links with `data-play`), `print_questions`, `show_all_answers`, `copy_invite`, `show_answer`. The Halloween final used to be `midnight`, now `final_round`.
+- **Check:** serve the site folder (`python3 -m http.server 8765`), then `node tools/check_site.js <shots_dir> <fonts.css> http://localhost:8765` (fonts.css = base64 @font-face rules from fontpkgs, served in place of Google Fonts). Last run (preview build, Nov 3): 32 URLs, nothing broken, no JS errors, no horizontal scroll at 390px, both games load their 136 audio lines.
+- **Old domain:** `python3 tools/build_redirects.py <night-of-frights repo>` replaces that repo's site with forwarding pages (canonical + meta refresh + JS) and keeps CNAME and the Search Console / IndexNow files. Tested on a copy only; the real repo is untouched.
+- **Mirror** (no-redirect copy on github.io): `python3 tools/build_mirror.py <site_dir> <mirror_repo>`; `MIRROR_BASE = /game-nights-play` (repo not created).
+- **Offline single file:** `python3 tools/build_offline.py christmas <out.html>` (or `halloween`): game + audio + fonts, about 24 MB, no network.
 
 ## Next steps (in order)
 
-1. **Victoria reviews the game and questions** in the artifact and sends changes.
-2. **Narrator voice.** Done on November 3: Voice Design, grandfather storyteller (she was choosing between a Canadian and a soft southern English accent), voice ID `eFPFwIAgneOfhQZArsFc`, now the default in `voice-kit/generate-voice.ps1`. Prompts: `voice-kit/voice-design-prompts.md`. **Audio done (November 3):** all 136 lines voiced on her PC (voice name in ElevenLabs: "Santa", model eleven_v4), checked against `voice-lines.json` and committed to `audio/` (17.7 MB). If any narrator text changes later, re-export the lines, send her the new `voice-lines.json`, and she reruns the kit in the same folder (only changed lines are voiced). She sent the folder as a .rar; `node-unrar-js` (npm, WASM) extracts it in the cloud. Original note: she creates a voice in ElevenLabs (Voices → Voice Design) and sends the voice ID. Suggested prompt:
-   > A warm, jolly storyteller in his sixties with a rich, slightly husky baritone and a gentle Canadian accent. He sounds like a beloved grandfather reading a Christmas story by the fireplace: cosy, twinkly and full of good humour, with a soft chuckle in his voice. Clear diction and an unhurried pace, perfect for reading trivia questions aloud to a room. For mischievous moments he can drop into a playful, slightly sly tone, but he is never scary.
-
-   Then generate audio **on her PC**: ElevenLabs is not reachable from the cloud. `voice-kit/start-voice.bat` runs `generate-voice.ps1`, which reads `voice-lines.json`, asks for the key (hidden input), the voice and a YES, voices only new lines and writes `audio/manifest.json` plus MP3s. Her PC folder for the Halloween kit was `C:\Работа\Текущие проекты\Клод\NightsOfFrights`. Use a new folder for Christmas, otherwise the manifests mix. If her PC is linked to the session, copy files with the device tools; otherwise she uploads the `audio` folder.
-3. **Domain.** Suggestions: merryquizmas.com, merryquizmas.fun, merry-quizmas.ca. Check availability on Namecheap in her Chrome; she buys it herself. DNS like Night of Frights: four A records `185.199.108.153` to `185.199.111.153`, CNAME `www` to `vaku0004.github.io.`, remove the Namecheap parking redirect, set the custom domain in GitHub Pages, then **Enforce HTTPS** once the certificate is issued (it took about a day last time; removing and re-adding the domain helped).
-4. **Website repo.** Tools are ready (see "Website build"). Publish the site (index.html, `audio/`, icons, robots.txt, sitemap.xml, content pages) to GitHub Pages. This repo can hold it, or a separate one. Then a no-redirect copy on github.io (like `night-of-frights-game`).
-5. **SEO pages** like Night of Frights: Christmas trivia questions with answers, virtual and hybrid Christmas games for work, host guide, FAQ (neutral voice, no first person; she was fine publishing the game's own questions). Then Google Search Console (verify with an HTML file in the repo; she can't give Namecheap passwords), sitemap, Request indexing, IndexNow for Bing.
-6. **Google Analytics 4**: a new property in her existing account ("Default Account for Firebase", **not** inside BYSO; her other properties there are BYSO, francabulaire, thumbnail, Night of Frights). Time zone Regina, CAD, 14-month retention, custom dimensions special / team_count / round / from_page.
-7. Offline single-file build (`python3 tools/build_offline.py <out.html>`) as a backup for the party. Works with the real audio (24 MB, no network needed); rebuild it after any change to the game.
+1. **Domain for Victoria's Game Nights.** Suggestions: victoriasgamenights.com / .ca. She checks on Namecheap and buys it; then set `URL` in `tools/site_common.py`. DNS like Night of Frights: four A records `185.199.108.153` to `185.199.111.153`, CNAME `www` to `vaku0004.github.io.`, remove the Namecheap parking redirect, set the custom domain in GitHub Pages, **Enforce HTTPS** once the certificate is issued (about a day last time; removing and re-adding the domain helped).
+2. **Repo `vaku0004/game-nights`:** she creates it (public, for free Pages) and adds it to the session. Move the sources there, or keep the sources here and publish only the built site there. Publish the `build_site.py` output (without Christmas until Nov 15).
+3. **After the new site is live:** run `build_redirects.py` on the night-of-frights repo and push. Search Console: add the new domain (HTML-file verification, she can't give Namecheap passwords), submit the sitemap, use the Change of Address tool from nightoffrights.monster; IndexNow for Bing. Update or retire the night-of-frights-game mirror. In GA: rename the property, add the new domain.
+4. **November 15:** rebuild (Christmas appears by date), push, request indexing for the Christmas pages.
+5. **She reviews the Christmas game** (offline file sent on Nov 3) and sends changes in one list. Changed narrator text needs re-voicing of those lines only (`voice-kit/start-voice.bat` on her PC, same folder; ElevenLabs is not reachable from the cloud). She sends audio as .rar; `node-unrar-js` (npm, WASM) extracts it in the cloud.
+6. **Valentine's Day game:** name, questions, art, voice. Launch by about January 20 so search engines find it before February 14.
 
 ## Things to keep in mind
 

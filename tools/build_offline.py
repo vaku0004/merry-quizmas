@@ -1,18 +1,23 @@
 """Build one self-contained HTML file: game + narrator audio + fonts, no network needed (a backup for the party).
 
-python3 tools/build_offline.py <out.html>      (run from the repo root; audio comes from audio/, fonts from fontpkgs/)
+python3 tools/build_offline.py <game> <out.html>    e.g. christmas build/merry-quizmas-offline.html
+(run from the repo root; the game's source and audio folder come from tools/games.py, fonts from fontpkgs/)
 """
 import base64, json, os, sys, glob, subprocess
 S = "."
-out = sys.argv[1]
+sys.path.insert(0, os.path.join(S, 'tools'))
+import games as G
+game = next(g for g in G.PLAYABLE if g['slug'] == sys.argv[1])
+out = sys.argv[2]
+A = f"{S}/{game['audio']}"
 os.makedirs(f"{S}/build", exist_ok=True)
-subprocess.run(["python3", f"{S}/tools/build_index.py", f"{S}/quizmas/merry-quizmas.html", f"{S}/build/_page.html", "--mobile"], check=True)
+subprocess.run(["python3", f"{S}/tools/build_index.py", f"{S}/{game['src']}", f"{S}/build/_page.html", "--mobile"], check=True)
 html = open(f"{S}/build/_page.html", encoding="utf-8").read()
 
 # 1. fonts: replace Google Fonts links with embedded @font-face rules
 def b64(p): return base64.b64encode(open(p, "rb").read()).decode()
 F = f"{S}/fontpkgs"
-faces = [("Mountains of Christmas", "mountains-of-christmas", [(700, "normal")]),
+faces = [(game["display"][0], game["display"][2], [(game["display"][1], "normal")]),
          ("Alegreya", "alegreya", [(400,"normal"),(500,"normal"),(700,"normal"),(400,"italic"),(500,"italic"),(700,"italic")]),
          ("Alegreya Sans", "alegreya-sans", [(400,"normal"),(500,"normal"),(700,"normal"),(800,"normal")]),
          ("Oswald", "oswald", [(400,"normal"),(500,"normal"),(600,"normal")])]
@@ -27,8 +32,8 @@ html = html[:start] + "<style>" + "\n".join(css) + "</style>" + html[end:]
 assert "fonts.googleapis.com" not in html and "fonts.gstatic.com" not in html
 
 # 2. narrator audio: every line as a data URI, read by loadPack instead of fetching audio/manifest.json
-m = json.load(open(f"{S}/audio/manifest.json", encoding="utf-8-sig"))
-lines = {text: "data:audio/mpeg;base64," + b64(f"{S}/audio/{f}") for text, f in m["lines"].items()}
+m = json.load(open(f"{A}/manifest.json", encoding="utf-8-sig"))
+lines = {text: "data:audio/mpeg;base64," + b64(f"{A}/{f}") for text, f in m["lines"].items()}
 pack = {"base": "", "voice": m.get("voice", ""), "model": m.get("model", ""), "lines": lines}
 pack_js = "<script>window.__NOF_PACK = " + json.dumps(pack, ensure_ascii=False).replace("</", "<\\/") + ";</script>\n"
 html = html.replace("<div id=\"app\"></div>", "<div id=\"app\"></div>\n" + pack_js, 1)

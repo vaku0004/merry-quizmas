@@ -1,116 +1,12 @@
-"""Build the static content pages of the Merry Quizmas website into a folder.
+"""Content pages of Victoria’s Merry Quizmas (/christmas/...). Rendered by tools/build_site.py through tools/page_shell.py.
 
-Normally called by tools/build_site.py (it needs build/pages-data-q.json and build/pageshots/*.webp first).
-
-Pages: /christmas-trivia-questions/, /virtual-christmas-games-for-work/,
-/how-to-host-a-christmas-game-night/, /faq/ (+ assets/pages.css, assets/shots/*.webp).
-Questions come from the game itself (build/pages-data-q.json, dumped from DEFAULT_Q).
+NAME and Q (the game's questions) are set by build_site.py before rendering. href="/" in the content means "play the game".
 """
-import html, json, os, re, shutil, sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from site_common import GA_HEAD, PAGE_EVENTS_JS, URL, NAME, SHORT, HOST
+import re
+from page_shell import e, fig, play_box
 
-S = "."
-B = f"{S}/build"
-TODAY = "2026-11-02"
-Q = json.load(open(f"{B}/pages-data-q.json", encoding="utf-8"))
-e = lambda s: html.escape(s, quote=True)
-
-# The Christmas tree from quizmas/art.js, with the theme colours filled in
-_COLS = {"var(--good)": "#5fae6e", "var(--bone)": "#f6f1e6", "var(--candle)": "#e6b34c", "var(--bad)": "#e2554f"}
-TREE = re.search(r"^const TREE_SVG = `(.*?)`;$", open(f"{S}/quizmas/art.js", encoding="utf-8").read(), re.M).group(1).replace(' class="glyph"', "")
-for _k, _v in _COLS.items():
-    TREE = TREE.replace(_k, _v)
-
-NAV = [("christmas-trivia-questions", "Trivia questions"),
-       ("virtual-christmas-games-for-work", "Remote & hybrid teams"),
-       ("how-to-host-a-christmas-game-night", "Host guide"),
-       ("faq", "FAQ")]
-
-
-def fig(name, alt, caption, w=1366, h=768):
-    return (f'<figure><img src="/assets/shots/{name}.webp" width="{w}" height="{h}" loading="lazy" decoding="async" alt="{e(alt)}">'
-            f'<figcaption>{caption}</figcaption></figure>')
-
-
-def play_box(title="Play it free tonight", text="Open the game on the computer connected to your big screen, name your teams and press Start. No sign-up, no download, nothing for players to install."):
-    return f'''<section class="play" aria-labelledby="play-h">
-  <div><h2 id="play-h">{title}</h2><p>{text}</p>
-  <div class="cta-row"><a class="btn primary big" href="/">Play {e(NAME)}</a></div></div>
-  {TREE}
-</section>'''
-
-
-def page(slug, title, desc, og_title, h1, eyebrow, body, extra_ld=None, crumb=None, scripts=""):
-    url = URL + slug + "/"
-    graph = [
-        {"@type": "WebPage", "@id": url + "#page", "url": url, "name": title, "description": desc, "inLanguage": "en",
-         "isPartOf": {"@id": URL + "#website"}, "primaryImageOfPage": URL + f"assets/og/{slug}.png", "dateModified": TODAY},
-        {"@type": "BreadcrumbList", "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": NAME, "item": URL},
-            {"@type": "ListItem", "position": 2, "name": crumb or h1, "item": url}]},
-    ] + (extra_ld or [])
-    ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False).replace("</", "<\\/")
-    nav = "".join(f'<a href="/{s}/"{" aria-current=\"page\"" if s == slug else ""}>{t}</a>' for s, t in NAV)
-    foot = "".join(f'<a href="/{s}/">{t}</a>' for s, t in NAV)
-    return f'''<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-{GA_HEAD}<title>{e(title)}</title>
-<meta name="description" content="{e(desc)}">
-<link rel="canonical" href="{url}">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="theme-color" content="#0d1714">
-<link rel="icon" href="/favicon.ico" sizes="48x48">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="{e(NAME)}">
-<meta property="og:locale" content="en_CA">
-<meta property="og:url" content="{url}">
-<meta property="og:title" content="{e(og_title)}">
-<meta property="og:description" content="{e(desc)}">
-<meta property="og:image" content="{URL}assets/og/{slug}.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="{e(og_title)}">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{e(og_title)}">
-<meta name="twitter:description" content="{e(desc)}">
-<meta name="twitter:image" content="{URL}assets/og/{slug}.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,400&family=Alegreya+Sans:wght@400;700;800&family=Oswald:wght@400;500&family=Mountains+of+Christmas:wght@700&display=swap">
-<link rel="stylesheet" href="/assets/pages.css">
-<script type="application/ld+json">{ld}</script>
-</head>
-<body>
-<a class="btn" href="#main" style="position:absolute;left:-9999px" onfocus="this.style.left='12px';this.style.top='12px';this.style.zIndex=9">Skip to content</a>
-<header class="site-head"><div class="wrap">
-  <a class="brand" href="/">{TREE}<span>{SHORT}</span></a>
-  <nav class="site-nav" aria-label="Main">{nav}<a class="btn primary" href="/">Play free</a></nav>
-</div></header>
-<main id="main" class="wrap">
-  <div class="hero">
-    <p class="crumbs"><a href="/">{SHORT}</a> › {e(crumb or h1)}</p>
-    <p class="eyebrow" style="margin-top:22px">{eyebrow}</p>
-    <h1>{h1}</h1>
-  </div>
-{body}
-</main>
-<footer class="site-foot"><div class="wrap">
-  <nav aria-label="Footer"><a href="/">Play the game</a>{foot}</nav>
-  <span>{e(NAME)} · a free Christmas quiz game for teams · <a href="/faq/#privacy">Privacy</a> · Updated November 2026</span>
-</div></footer>
-{scripts}
-{PAGE_EVENTS_JS}
-</body>
-</html>
-'''
-
+NAME = ""
+Q = {}
 
 # ---------------------------------------------------------------- 1. Trivia questions
 CATS = {
@@ -196,9 +92,9 @@ def trivia_body():
 {play_sec}
 <section aria-labelledby="more"><h2 id="more">More for your holiday party</h2>
 <div class="prose"><ul>
-<li><a href="/how-to-host-a-christmas-game-night/">How to host a Christmas game night at work</a>: equipment, teams, timing and prizes.</li>
-<li><a href="/virtual-christmas-games-for-work/">Christmas games for remote and hybrid teams</a>: how to include coworkers on a video call.</li>
-<li><a href="/faq/">Questions about the game</a>: players, time, browsers and editing questions.</li>
+<li><a href="/christmas/how-to-host-a-game-night/">How to host a Christmas game night at work</a>: equipment, teams, timing and prizes.</li>
+<li><a href="/christmas/virtual-games-for-work/">Christmas games for remote and hybrid teams</a>: how to include coworkers on a video call.</li>
+<li><a href="/christmas/faq/">Questions about the game</a>: players, time, browsers and editing questions.</li>
 </ul></div></section>
 {play_box("Turn this list into a game", "Fifty of these questions are already on a game board with a narrator, a timer and scores. Open it on the big screen, name your teams and press Start.")}'''
 
@@ -286,7 +182,7 @@ def virtual_body():
 <div class="copybox" id="invite">{e(invite)}<button class="btn" type="button" data-copy="invite">Copy</button></div>
 
 {play_box("Ready for a hybrid holiday party?", "Open the game, share it with sound on, and let the narrator do the talking. Free, no sign-up, nothing for players to install.")}
-<div class="prose" style="margin-top:28px"><p class="muted">Also useful: <a href="/how-to-host-a-christmas-game-night/">the host guide</a>, <a href="/christmas-trivia-questions/">all 50 trivia questions with answers</a> and <a href="/faq/">frequently asked questions</a>.</p></div>'''
+<div class="prose" style="margin-top:28px"><p class="muted">Also useful: <a href="/christmas/how-to-host-a-game-night/">the host guide</a>, <a href="/christmas/trivia-questions/">all 50 trivia questions with answers</a> and <a href="/christmas/faq/">frequently asked questions</a>.</p></div>'''
 
 
 COPY_JS = '''<script>
@@ -312,7 +208,7 @@ def host_body():
 <li><b>A presentation clicker</b> (optional). Its arrow buttons move through the rules slides.</li>
 <li><b>Paper and pens</b> for the final round, where teams write a secret wager and an answer.</li>
 <li><b>Prizes</b> for the winning team, and holiday treats for everyone.</li>
-<li><b>A video call</b> if some people join remotely. See <a href="/virtual-christmas-games-for-work/">how to set it up for hybrid teams</a>.</li>
+<li><b>A video call</b> if some people join remotely. See <a href="/christmas/virtual-games-for-work/">how to set it up for hybrid teams</a>.</li>
 </ul></div>
 
 <h2>Before the day</h2>
@@ -392,7 +288,7 @@ def host_body():
 </ul></div>
 
 {play_box("Your game night is ready", "Everything above is built into the game: rules slides, the narrator, the timer, scores and the podium. Open it, name your teams and press Start.")}
-<div class="prose" style="margin-top:28px"><p class="muted">Also useful: <a href="/christmas-trivia-questions/">all 50 trivia questions with answers</a>, <a href="/virtual-christmas-games-for-work/">Christmas games for remote and hybrid teams</a> and <a href="/faq/">frequently asked questions</a>.</p></div>'''
+<div class="prose" style="margin-top:28px"><p class="muted">Also useful: <a href="/christmas/trivia-questions/">all 50 trivia questions with answers</a>, <a href="/christmas/virtual-games-for-work/">Christmas games for remote and hybrid teams</a> and <a href="/christmas/faq/">frequently asked questions</a>.</p></div>'''
 
 
 # ---------------------------------------------------------------- 4. FAQ
@@ -402,9 +298,9 @@ FAQ = [
     ("How many people can play?",
      "The game is built for 2 to 4 teams. It works best with about 6 to 20 players: with more people, make the teams bigger rather than adding more of them."),
     ("How long does a game take?",
-     "About an hour. A full board of 50 questions takes longer, but you don’t need to open every cell: the host can move on to the next round at any time. The <a href=\"/how-to-host-a-christmas-game-night/\">host guide</a> has a one-hour timeline."),
+     "About an hour. A full board of 50 questions takes longer, but you don’t need to open every cell: the host can move on to the next round at any time. The <a href=\"/christmas/how-to-host-a-game-night/\">host guide</a> has a one-hour timeline."),
     ("Can remote coworkers play?",
-     "Yes. Share the game in Microsoft Teams, Zoom or Google Meet with computer sound turned on, and put remote players on teams with people in the room. See <a href=\"/virtual-christmas-games-for-work/\">Christmas games for remote and hybrid teams</a>."),
+     "Yes. Share the game in Microsoft Teams, Zoom or Google Meet with computer sound turned on, and put remote players on teams with people in the room. See <a href=\"/christmas/virtual-games-for-work/\">Christmas games for remote and hybrid teams</a>."),
     ("Do players need their phones?",
      "No. Everything happens on one screen. Teams only need paper and a pen for the final round."),
     ("What do I need to run it?",
@@ -418,13 +314,15 @@ FAQ = [
     ("Is it appropriate for work and for kids?",
      "Yes. The questions are about holiday traditions, food, movies, songs, winter and history. Krampus and the Yule Cat appear only as playful folklore, so the game suits all ages; younger kids may need a grown-up on their team."),
     ("Can I see all the questions before playing?",
-     "Yes, all 50 questions and answers are on the <a href=\"/christmas-trivia-questions/\">Christmas trivia questions</a> page. You can also print them for a quiz without a screen."),
+     "Yes, all 50 questions and answers are on the <a href=\"/christmas/trivia-questions/\">Christmas trivia questions</a> page. You can also print them for a quiz without a screen."),
     ("Which browser works best?",
      "Chrome or Microsoft Edge on a laptop or desktop computer. Other modern browsers should work too."),
     ("Is there a Halloween version?",
-     "Yes: <a href=\"https://nightoffrights.monster/\">Victoria’s Night of Frights</a> is the same game with Halloween questions, a black cat, a witch and a midnight wager."),
+     "Yes: <a href=\"/halloween/\" data-home>Victoria’s Night of Frights</a> is the same game with Halloween questions, a black cat, a witch and a midnight wager."),
     ("Does the site collect any data?",
      "The site uses Google Analytics to count visits and to see which parts of the game are used, for example how many games are started and finished. It does not collect team names, answers or anything typed into the question editor, and it does not use advertising cookies. For visitors in the European Economic Area, the UK, Switzerland and Quebec, analytics cookies are turned off. You can also block analytics with any browser privacy setting or extension; the game works the same."),
+    ("Are there games for other holidays?",
+     "Yes. Victoria’s Merry Quizmas is one of the free quiz games on <a href=\"/\" data-home>Victoria’s Game Nights</a>, with a new game for each season."),
     ("Who made the game?",
      f"{NAME} was designed and written by Victoria for an office holiday party, then shared free for anyone to use."),
 ]
@@ -443,54 +341,32 @@ def faq_ld():
 
 
 PAGES = [
-    dict(slug="christmas-trivia-questions",
+    dict(slug="trivia-questions",
          title="50 Christmas Trivia Questions and Answers for Work & Parties",
          desc="Holiday trivia for adults and teams: traditions, movies, treats, Santa’s reindeer and Canadian Christmas. Every answer comes with a short explanation.",
          og_title="50 Christmas Trivia Questions and Answers",
          h1="50 Christmas Trivia Questions and Answers", crumb="Christmas trivia questions",
          eyebrow="For office parties, team events and quiz nights", body=trivia_body, scripts=TRIVIA_JS,
-         og=("Trivia with answers", "50 Christmas Trivia Questions", "Traditions · movies · treats · Canada"), art="TREE_SVG"),
-    dict(slug="virtual-christmas-games-for-work",
+         og=("Trivia with answers", "50 Christmas Trivia Questions", "Traditions · movies · treats · Canada")),
+    dict(slug="virtual-games-for-work",
          title="Virtual & Hybrid Christmas Games for Work (Free, No Sign-Up)",
          desc="Christmas games for teams where part of the group joins by video: a free trivia game with a narrator, setup steps for Teams, Zoom and Meet, and more ideas.",
          og_title="Christmas Games for Remote and Hybrid Teams",
          h1="Christmas Games for Remote and Hybrid Teams", crumb="Remote & hybrid teams",
          eyebrow="Office plus video call", body=virtual_body, scripts=COPY_JS,
-         og=("Office plus video call", "Christmas Games for Hybrid Teams", "Teams · Zoom · Google Meet"), art="GIFT_SVG"),
-    dict(slug="how-to-host-a-christmas-game-night",
+         og=("Office plus video call", "Christmas Games for Hybrid Teams", "Teams · Zoom · Google Meet")),
+    dict(slug="how-to-host-a-game-night",
          title="How to Host a Christmas Game Night at Work: Step-by-Step Guide",
          desc="Everything a host needs for an office Christmas game: equipment, teams, a one-hour timeline, prize ideas and quick fixes for common problems.",
          og_title="How to Host a Christmas Game Night at Work",
          h1="How to Host a Christmas Game Night at Work", crumb="Host guide",
          eyebrow="A step-by-step guide for the host", body=host_body,
-         og=("Step-by-step host guide", "Host a Christmas Game Night", "Teams · timeline · prizes"), art="STAR_SVG"),
+         og=("Step-by-step host guide", "Host a Christmas Game Night", "Teams · timeline · prizes")),
     dict(slug="faq",
          title="Merry Quizmas FAQ: Free Christmas Trivia Game for Teams",
          desc="Answers about the free Christmas trivia game: how many players, how long it takes, remote coworkers, editing questions and what you need to run it.",
          og_title="Merry Quizmas: Frequently Asked Questions",
          h1="Frequently Asked Questions", crumb="FAQ",
          eyebrow=NAME, body=faq_body, ld=faq_ld,
-         og=("Questions and answers", "Merry Quizmas FAQ", "Free · no sign-up · 2–4 teams"), art="KRAMPUS_SVG"),
+         og=("Questions and answers", "Merry Quizmas FAQ", "Free · no sign-up · 2–4 teams")),
 ]
-SHOTS = ["board", "question", "krampus", "coal", "final", "podium"]
-
-def build(OUT):
-    os.makedirs(f"{OUT}/assets/shots", exist_ok=True)
-    shutil.copy(f"{S}/pages-src/pages.css", f"{OUT}/assets/pages.css")
-    for n in SHOTS:
-        shutil.copy(f"{B}/pageshots/{n}.webp", f"{OUT}/assets/shots/{n}.webp")
-    for p in PAGES:
-        os.makedirs(f"{OUT}/{p['slug']}", exist_ok=True)
-        out = page(p["slug"], p["title"], p["desc"], p["og_title"], p["h1"], p["eyebrow"], p["body"](),
-                   extra_ld=p.get("ld", lambda: None)(), crumb=p.get("crumb"), scripts=p.get("scripts", ""))
-        open(f"{OUT}/{p['slug']}/index.html", "w", encoding="utf-8").write(out)
-        print(" ", p["slug"], "| title", len(p["title"]), "| description", len(p["desc"]))
-
-
-def write_og_list():
-    json.dump([dict(slug=p["slug"], og=p["og"], art=p["art"]) for p in PAGES], open(f"{B}/pages-og.json", "w"))
-
-
-if __name__ == "__main__":
-    write_og_list()
-    build(sys.argv[1])
