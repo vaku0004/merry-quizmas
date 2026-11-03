@@ -1,4 +1,4 @@
-# Night of Frights - narrator generator (ElevenLabs, Eleven v4)
+# Merry Quizmas - narrator generator (ElevenLabs, Eleven v4)
 # Keep this file, voice-lines.json and this folder together.
 # What it does:
 #   1. Reads every line the game says from voice-lines.json.
@@ -20,7 +20,7 @@ $configPath = Join-Path $here "voice-config.json"
 $reportPath = Join-Path $here "generate-report.txt"
 $utf8 = New-Object System.Text.UTF8Encoding($false)
 
-[IO.File]::WriteAllText($reportPath, ("Night of Frights - narrator generator ({0})`r`n" -f (Get-Date -Format "yyyy-MM-dd HH:mm")), $utf8)
+[IO.File]::WriteAllText($reportPath, ("Merry Quizmas - narrator generator ({0})`r`n" -f (Get-Date -Format "yyyy-MM-dd HH:mm")), $utf8)
 function Say([string]$t = "", [string]$color = "Gray") { Write-Host $t -ForegroundColor $color; [IO.File]::AppendAllText($reportPath, $t + "`r`n", $utf8) }
 function Quit([string]$msg) { Say $msg "Red"; Write-Host ""; Read-Host "Press Enter to close" | Out-Null; exit 1 }
 
@@ -68,7 +68,20 @@ Say ("Model: {0} ({1}), credits per character: {2}" -f $model.name, $model.model
 
 # ---------- voice ----------
 $voiceId = $null; $voiceName = $null
-if (Test-Path $configPath) {
+# The Merry Quizmas narrator (made in Voice Design, November 2026). Used unless voice-config.json says otherwise.
+$defaultVoiceId = "eFPFwIAgneOfhQZArsFc"
+if (-not (Test-Path $configPath)) {
+  $ans = Read-Host "Use the Merry Quizmas narrator voice ($defaultVoiceId)? Press Enter for yes, or type C to choose another"
+  if ($ans -ne "C" -and $ans -ne "c") {
+    $voiceId = $defaultVoiceId
+    $info = $null
+    try { $info = Invoke-RestMethod -Uri ("{0}/v1/voices/{1}" -f $api, $voiceId) -Headers $headers -Method Get } catch { $info = $null }
+    if ($info -and $info.name) { $voiceName = $info.name }
+    else { $voiceName = "Narrator"; Say "  (Could not read the voice's name; if voicing fails, check that the key belongs to the account where the voice was saved.)" "Yellow" }
+    [IO.File]::WriteAllText($configPath, (@{ voice_id = $voiceId; voice_name = $voiceName } | ConvertTo-Json), $utf8)
+  }
+}
+if ((-not $voiceId) -and (Test-Path $configPath)) {
   $cfg = [IO.File]::ReadAllText($configPath, [Text.Encoding]::UTF8) | ConvertFrom-Json
   if ($cfg.voice_id) {
     $ans = Read-Host ("Use the narrator voice '{0}'? Press Enter for yes, or type C to choose another" -f $cfg.voice_name)
@@ -144,7 +157,7 @@ if ($go -ne "YES" -and $go -ne "yes") { Quit "Stopped. No credits were used." }
 $n = 0; $failed = 0
 foreach ($l in $todo) {
   $n++
-  Write-Progress -Activity "Voicing Night of Frights" -Status ("{0} of {1}" -f $n, $todo.Count) -PercentComplete (100 * $n / $todo.Count)
+  Write-Progress -Activity "Voicing Merry Quizmas" -Status ("{0} of {1}" -f $n, $todo.Count) -PercentComplete (100 * $n / $todo.Count)
   $out = Join-Path $audioDir $l.file; $tmp = $out + ".part"
   $body = [Text.Encoding]::UTF8.GetBytes((@{ text = $l.tts; model_id = $model.model_id } | ConvertTo-Json))
   $ok = $false
@@ -169,7 +182,7 @@ foreach ($l in $todo) {
   }
   if ($ok) { $done[$l.file] = $l.tts; if ($n % 10 -eq 0) { Save-Manifest } } else { $failed++ }
 }
-Write-Progress -Activity "Voicing Night of Frights" -Completed
+Write-Progress -Activity "Voicing Merry Quizmas" -Completed
 Save-Manifest
 
 $after = Get-Api "/v1/user/subscription"

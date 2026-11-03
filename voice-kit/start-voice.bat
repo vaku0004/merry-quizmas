@@ -1,5 +1,5 @@
 @echo off
-rem Night of Frights - starts the narrator generator and keeps this window open
+rem Merry Quizmas - starts the narrator generator and keeps this window open
 cd /d "%~dp0"
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0generate-voice.ps1"
 echo.
