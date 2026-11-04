@@ -113,6 +113,16 @@ Decisions she made: name **Victoria's Pot o' Gold**; surprise 1 **Leprechaun's T
 - Checks: game test (`tools/e2e_game.js`) passes; preview site 58 URLs OK; home page now shows the game cards 2 × 2.
 - Voice made on Nov 4: ID `t6vJ4FT1TpF4LOWRQV9n` (prompts in `games/stpatricks/voice-design-prompts.md`). Kit with it as default: `games/stpatricks/voice-kit/` (sent as PotOGold-voice.zip). **Audio done (Nov 4):** 136/136 lines (voice name in ElevenLabs "Patrick", eleven_v4) checked and committed to `audio/stpatricks/`.
 
+## Big Brain Battle (all-year general-knowledge game, made November 4, 2026)
+
+Decisions she made: name **Victoria's Big Brain Battle**; surprise 1 **Wild Card** (`"cat"`); surprise 2 **Mystery Box** (`"witch"`: two tickets, price then team); final **All In**; winner line "Team X win the Big Brain Battle!"; Round Two slide "Brain boost". Made for **National Trivia Day (January 4, US)** as a hook, but it is an any-day game: **status "live"**. Publish the site by early December so search engines find it before January 4.
+
+- Files: `games/trivia/` (theme.py, questions.js, art.js, game.html, voice-lines.json, voice-design-prompts.md, shots/); site pages `tools/pages_trivia.py` (FAQ has a National Trivia Day item). games.py: `holiday="Any day"`, `footer_kind`, `trivia_label="General knowledge questions"` (new optional fields, used by build_index, build_home and page_shell). Storage keys `bb-state-v1`, `bb-questions-v1`, `bb-voice-v1`. Teams: Brainiacs, Know-It-Alls, Smarty Pants, Quizzards. Narrator name "Quizmaster Quinn".
+- Look: deep teal night `#0b1a22`, electric yellow `#ffd23f`, violet `#b48cff`; display font **Lilita One** (fontsource `lilita-one`); yellow and violet specks; bouncy game-show tune with the engine's ticking clock. Art: pink brain, wild card, mystery gift box, stack of poker chips (All In), light bulb, ticket.
+- Questions: 50 + final "Wonders of the World" (Great Pyramid of Giza) + tiebreaker (Eiffel Tower height with antennas, 330 m). Categories R1: Planet Earth, Science Lab, Food & Drink, Animal Kingdom, Words & Wordplay; R2: History Mystery, Space, Numbers Game, Sports & Games, Art & Music. Checked from memory.
+- Checks: game test passes; preview site (6 games) 84 URLs OK.
+- **Voice not made yet:** prompts in `games/trivia/voice-design-prompts.md` (main: female TV quiz host; B: male). 136 lines, 10,213 characters.
+
 ## Decades Showdown (all-year retro game, made November 4, 2026)
 
 Decisions she made: name **Victoria's Decades Showdown**, decades **'80s, '90s and 2000s**; surprise 1 **Tangled Tape** (`"cat"`); surprise 2 **Time Machine** (`"witch"`: two trips, price then team); final **The Time Capsule**; winner line "Team X rocked the decades!"; Round Two slide "Fast forward". Audience: whole world, US first. **Status "live"** (no holiday, so it goes on the site at launch; set `status`/`launch` in `tools/games.py` to hold it back).

@@ -119,7 +119,7 @@ def page(slug, title, desc, og_title, h1, eyebrow, body, extra_ld=None, crumb=No
 </main>
 <footer class="site-foot"><div class="wrap">
   <nav aria-label="Footer"><a href="/{g['slug']}/" data-play>Play the game</a>{foot}<a href="/">All games</a></nav>
-  <span>{e(g['name'])} · a free {g['holiday']} quiz game for teams · part of <a href="/">{e(BRAND)}</a> · <a href="/privacy/">Privacy</a></span>
+  <span>{e(g['name'])} · a free {g.get('footer_kind', g['holiday'])} quiz game for teams · part of <a href="/">{e(BRAND)}</a> · <a href="/privacy/">Privacy</a></span>
 </div></footer>
 {scripts}
 {PAGE_EVENTS_JS}

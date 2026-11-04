@@ -13,7 +13,7 @@ OUT = f"{S}/build/seo"
 F = f"{S}/fontpkgs"
 font = lambda slug, w, st: os.path.abspath(glob.glob(f"{F}/fontsource-{slug}-[0-9]*/package/files/{slug}-latin-{w}-{st}.woff2")[0])
 FACES = "".join(f"@font-face{{font-family:'{fam}';font-style:{st};font-weight:{w};src:url(file://{font(slug, w, st)})}}"
-                for fam, slug, w, st in [("Mountains of Christmas", "mountains-of-christmas", 700, "normal"), ("Pirata One", "pirata-one", 400, "normal"), ("Yeseva One", "yeseva-one", 400, "normal"), ("Eagle Lake", "eagle-lake", 400, "normal"), ("Righteous", "righteous", 400, "normal"),
+                for fam, slug, w, st in [("Mountains of Christmas", "mountains-of-christmas", 700, "normal"), ("Pirata One", "pirata-one", 400, "normal"), ("Yeseva One", "yeseva-one", 400, "normal"), ("Eagle Lake", "eagle-lake", 400, "normal"), ("Righteous", "righteous", 400, "normal"), ("Lilita One", "lilita-one", 400, "normal"),
                                          ("Alegreya", "alegreya", 500, "italic"), ("Alegreya", "alegreya", 800, "normal"), ("Alegreya", "alegreya", 800, "italic"),
                                          ("Alegreya Sans", "alegreya-sans", 500, "normal"), ("Alegreya Sans", "alegreya-sans", 800, "normal")])
 SNOW = "".join(f'<i style="left:{(i * 137) % 1200}px;top:{(i * 89) % 630}px;width:{2 + i % 4}px;height:{2 + i % 4}px;opacity:{0.15 + (i % 5) / 12:.2f}"></i>'

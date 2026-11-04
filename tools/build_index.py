@@ -100,7 +100,7 @@ def game_page(g, src):
 <noscript><p><strong>This game needs JavaScript.</strong> Please turn it on to play.</p></noscript>
 </main></div>'''
     # Links to the content pages and the other games: on the start screen only, hidden while a game is on screen.
-    links = "".join(f'<a href="/{g["slug"]}/{s}/">{"%s trivia questions" % g["holiday"] if s == "trivia-questions" else t.replace("&", "&amp;")}</a>\n'
+    links = "".join(f'<a href="/{g["slug"]}/{s}/">{g.get("trivia_label", "%s trivia questions" % g["holiday"]) if s == "trivia-questions" else t.replace("&", "&amp;")}</a>\n'
                     for s, t in G.PAGES)
     nav = f'''<nav class="nof-links" aria-label="More about the game">
 {links}<a href="/">All games</a>

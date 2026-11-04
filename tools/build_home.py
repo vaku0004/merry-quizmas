@@ -110,7 +110,7 @@ def _card(g, out):
 <p class="blurb">{e(g['card'])}</p>
 <ul class="chips">{chips}</ul>
 <div><a class="btn primary" href="/{g['slug']}/" data-play>Play {e(g['short'])}</a></div>
-<div class="links"><a href="/{g['slug']}/trivia-questions/">{e(g['holiday'])} trivia questions</a><a href="/{g['slug']}/how-to-host-a-game-night/">Host guide</a><a href="/{g['slug']}/faq/">FAQ</a></div>
+<div class="links"><a href="/{g['slug']}/trivia-questions/">{e(g.get('trivia_label', g['holiday'] + ' trivia questions'))}</a><a href="/{g['slug']}/how-to-host-a-game-night/">Host guide</a><a href="/{g['slug']}/faq/">FAQ</a></div>
 </article>'''
 
 

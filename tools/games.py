@@ -127,7 +127,7 @@ STPATRICKS = dict(
 
 DECADES = dict(
     slug="decades", status="live", launch=None,
-    name="Victoria’s Decades Showdown", short="Decades Showdown", holiday="Retro",
+    name="Victoria’s Decades Showdown", short="Decades Showdown", holiday="Retro", footer_kind="retro",
     src="games/decades/game.html", art_src="games/decades/art.js", audio="audio/decades", state_key="ds-state-v1",
     icon="CASSETTE_SVG", specials={"cat": "tangled_tape", "witch": "time_machine"},
     theme=dict(night="#120d24", dusk="#1c1533", cell="#281d47", line="#43356e", bone="#f5f0ff", ash="#b3a8d6",
@@ -151,7 +151,34 @@ DECADES = dict(
     shots=["board", "question", "timemachine", "tape", "final", "podium"],
 )
 
-GAMES = [DECADES, HALLOWEEN, CHRISTMAS, VALENTINES, STPATRICKS]
+TRIVIA = dict(
+    slug="trivia", status="live", launch=None,
+    name="Victoria’s Big Brain Battle", short="Big Brain Battle", holiday="Any day", footer_kind="general-knowledge",
+    trivia_label="General knowledge questions",
+    src="games/trivia/game.html", art_src="games/trivia/art.js", audio="audio/trivia", state_key="bb-state-v1",
+    icon="BRAIN_SVG", specials={"cat": "wild_card", "witch": "mystery_box"},
+    theme=dict(night="#0b1a22", dusk="#12262f", cell="#18323d", line="#2c5363", bone="#f2f7f8", ash="#a6c0c8",
+               candle="#ffd23f", ember="#fff0a8", good="#5fe08a", witch="#b48cff", bad="#ff6b6b"),
+    rgb=dict(night="11,26,34", dusk="18,38,47", glow="255,210,63", glow2="180,140,255"), tag2="var(--witch)",
+    display=("Lilita One", 400, "lilita-one", '"Lilita One","Arial Rounded MT Bold",Helvetica,sans-serif'),
+    gfont="Lilita+One",
+    title="Victoria’s Big Brain Battle · Free Team Trivia Game for Work",
+    desc="Free general-knowledge trivia game for office parties and team events: a game-show board, a wild card, a mystery box and an all-in final wager. Great for National Trivia Day.",
+    og_desc="A free team trivia game for the whole office: general knowledge on a game-show board, a wild card, a mystery box and an all-in wager, with a narrator.",
+    og_alt="a team trivia game for the whole office, with a glowing brain",
+    eyebrow="A trivia quiz for the whole office",
+    intro="A free general-knowledge trivia game for office parties and team events, made for a big screen and for any day of the year. Teams pick questions on a game-show board, think for 30 seconds and answer. A narrator reads every question aloud.",
+    rules=[("Two rounds", "of five categories: geography, science, food, animals, words, history, space, numbers, sports and art, worth 100–500 and then 200–1,000 points."),
+           ("Wild Card:", "the team that draws the wild card must hand the question to another team."),
+           ("Mystery Box:", "two tickets from the box pick a random price and the team that must answer."),
+           ("All In:", "one final question with secret wagers, then a podium for the team that wins the Big Brain Battle.")],
+    chips=[("WILDCARD_SVG", "Wild Card"), ("MYSTERYBOX_SVG", "Mystery Box"), ("CHIPS_SVG", "All-in wager")],
+    card="General-knowledge trivia for any day of the year: geography, science, food, animals, history and more, with a wild card, a mystery box and an all-in wager.",
+    page_art={"trivia-questions": "BRAIN_SVG", "virtual-games-for-work": "BULB_SVG", "how-to-host-a-game-night": "MYSTERYBOX_SVG", "faq": "WILDCARD_SVG"},
+    shots=["board", "question", "mysterybox", "wildcard", "final", "podium"],
+)
+
+GAMES = [TRIVIA, DECADES, HALLOWEEN, CHRISTMAS, VALENTINES, STPATRICKS]
 PLAYABLE = [g for g in GAMES if g["status"] in ("live", "scheduled")]
 
 # Content pages every playable game has (slug, nav label). Content: tools/pages_<game>.py
