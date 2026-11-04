@@ -1,0 +1,682 @@
+[
+  {
+    "file": "l-df932f1b.mp3",
+    "text": "Welcome to Victoria's Countdown Quiz. Pick a question, and let the countdown begin!",
+    "tts": "[cheerfully] Welcome to Victoria's Countdown Quiz. Pick a question... and let the countdown begin!"
+  },
+  {
+    "file": "l-916743b5.mp3",
+    "text": "Welcome to Victoria's Countdown Quiz! Tonight, our teams compete to end the year on top. Here is how it works.",
+    "tts": "[warmly] Welcome to Victoria's Countdown Quiz! Tonight, our teams compete to end the year... on top. Here is how it works."
+  },
+  {
+    "file": "l-617dff6a.mp3",
+    "text": "Rules of the game. Pick a question from the board. Watch out for the party popper, and for the fortune cookie. Play two rounds and the Midnight Countdown.",
+    "tts": "[warmly] Rules of the game. Pick a question from the board. [mischievously] Watch out for the party popper... and for the fortune cookie. [cheerfully] Play two rounds... and the Midnight Countdown."
+  },
+  {
+    "file": "l-964fe525.mp3",
+    "text": "Pick a question. Five categories with five questions each. The higher the value, the harder the question. Teams take turns choosing a cell.",
+    "tts": "Pick a question. Five categories with five questions each. The higher the value, the harder the question. Teams take turns choosing a cell."
+  },
+  {
+    "file": "l-7f45ca59.mp3",
+    "text": "30 seconds. The question is read aloud, then the clock starts. Only the team that picked it may answer. Everyone else stays quiet. Right: win the points. Wrong: lose them.",
+    "tts": "30 seconds. The question is read aloud, then the clock starts. Only the team that picked it may answer. Everyone else stays quiet. Right: win the points. Wrong: lose them."
+  },
+  {
+    "file": "l-6d712f36.mp3",
+    "text": "Play fair. No phones and no Googling. The host has the final word on close answers. Only one team rings in the New Year as champions.",
+    "tts": "Play fair. No phones and no Googling. The host has the final word on close answers. Only one team rings in the New Year as champions."
+  },
+  {
+    "file": "l-6805703c.mp3",
+    "text": "Ready? The first team, pick a question. Good luck, and may the best team ring in the New Year as champions.",
+    "tts": "[cheerfully] Ready? The first team, pick a question. Good luck... and may the best team ring in the New Year as champions! [laughs]"
+  },
+  {
+    "file": "l-9ec0a1be.mp3",
+    "text": "The last hour. Five new categories. Every value is doubled: 200 to 1,000. Same rules, bigger risks.",
+    "tts": "The last hour. Five new categories. Every value is doubled: 200 to 1,000. Same rules, bigger risks."
+  },
+  {
+    "file": "l-9d6f2f44.mp3",
+    "text": "The Midnight Countdown. One final question. You see only the category first. Secretly wager up to half of your score. Low on points? You can always bet up to 500. You get 60 seconds. Right: add your wager. Wrong: lose it.",
+    "tts": "The Midnight Countdown. One final question. You see only the category first. Secretly wager up to half of your score. Low on points? You can always bet up to 500. You get 60 seconds. Right: add your wager. Wrong: lose it."
+  },
+  {
+    "file": "l-1a889d5e.mp3",
+    "text": "Pop! A party popper! The team that found it must give this question to another team.",
+    "tts": "[excited] Pop! A party popper! [mischievously] The team that found it... must give this question to another team."
+  },
+  {
+    "file": "l-3f1fe7d0.mp3",
+    "text": "Who gets the party popper?",
+    "tts": "[mischievously] So... who gets the party popper?"
+  },
+  {
+    "file": "l-b41d9a90.mp3",
+    "text": "A fortune cookie!",
+    "tts": "[whispers] A fortune... [excited] cookie!"
+  },
+  {
+    "file": "l-5e94a95e.mp3",
+    "text": "Let's crack open the fortune cookies! The first fortune picks the price. The second fortune picks the team that must answer. Answer right, and win it. Answer wrong, and lose it.",
+    "tts": "[excited] Let's crack open the fortune cookies! [laughs] The first fortune picks the price. The second fortune picks the team that must answer. Answer right... and win it. Answer wrong... [whispers] and lose it."
+  },
+  {
+    "file": "l-85b11123.mp3",
+    "text": "It's a tie! Time for a tiebreaker.",
+    "tts": "[gasps] It's a tie! Time for a tiebreaker."
+  },
+  {
+    "file": "l-13845f6a.mp3",
+    "text": "In Spain, how many grapes do people eat at midnight, one for each chime of the clock?",
+    "tts": "In Spain, how many grapes do people eat at midnight, one for each chime of the clock?"
+  },
+  {
+    "file": "l-1904fd63.mp3",
+    "text": "The answer is: Twelve. One grape for each month of the coming year. Eating them all in time is harder than it sounds.",
+    "tts": "The answer is: Twelve. One grape for each month of the coming year. Eating them all in time is harder than it sounds."
+  },
+  {
+    "file": "l-1f30cffd.mp3",
+    "text": "In which country do people go 'first-footing' after midnight, as part of Hogmanay?",
+    "tts": "In which country do people go 'first-footing' after midnight, as part of Hogmanay?"
+  },
+  {
+    "file": "l-c2291f27.mp3",
+    "text": "The answer is: Scotland. The first guest over the doorstep is said to bring luck, especially one carrying coal, salt or shortbread.",
+    "tts": "The answer is: Scotland. The first guest over the doorstep is said to bring luck, especially one carrying coal, salt or shortbread."
+  },
+  {
+    "file": "l-8893ddfa.mp3",
+    "text": "In Denmark, people jump off what piece of furniture at midnight to leap into the New Year?",
+    "tts": "In Denmark, people jump off what piece of furniture at midnight to leap into the New Year?"
+  },
+  {
+    "file": "l-c902729c.mp3",
+    "text": "The answer is: A chair. Danes also leave broken plates on friends' doorsteps. A big pile means lots of friends.",
+    "tts": "The answer is: A chair. Danes also leave broken plates on friends' doorsteps. A big pile means lots of friends."
+  },
+  {
+    "file": "l-ff72bca7.mp3",
+    "text": "On Brazil's beaches, people dressed in white jump over how many waves at midnight for luck?",
+    "tts": "On Brazil's beaches, people dressed in white jump over how many waves at midnight for luck?"
+  },
+  {
+    "file": "l-d435ac88.mp3",
+    "text": "The answer is: Seven. One wish for each wave. Many also leave flowers in the sea for Iemanjá, the goddess of the sea.",
+    "tts": "The answer is: Seven. One wish for each wave. Many also leave flowers in the sea for Iemanjá, the goddess of the sea."
+  },
+  {
+    "file": "l-a0576822.mp3",
+    "text": "In Japan, Buddhist temples ring their great bells how many times on New Year's Eve?",
+    "tts": "In Japan, Buddhist temples ring their great bells how many times on New Year's Eve?"
+  },
+  {
+    "file": "l-32f5b925.mp3",
+    "text": "The answer is: 108. The ceremony is called joya no kane. Each ring stands for one of 108 earthly desires.",
+    "tts": "The answer is: 108. The ceremony is called joya no kane. Each ring stands for one of 108 earthly desires."
+  },
+  {
+    "file": "l-b884a090.mp3",
+    "text": "In New York's Times Square, what drops down a pole in the last 60 seconds of the year?",
+    "tts": "In New York's Times Square, what drops down a pole in the last 60 seconds of the year?"
+  },
+  {
+    "file": "l-038cd488.mp3",
+    "text": "The answer is: A giant ball (the Times Square Ball). Today's ball is covered in thousands of crystal triangles and lit by LEDs.",
+    "tts": "The answer is: A giant ball (the Times Square Ball). Today's ball is covered in thousands of crystal triangles and lit by LEDs."
+  },
+  {
+    "file": "l-fb26fd61.mp3",
+    "text": "Which famous London bell chimes in the New Year on British TV and radio?",
+    "tts": "Which famous London bell chimes in the New Year on British TV and radio?"
+  },
+  {
+    "file": "l-27193e50.mp3",
+    "text": "The answer is: Big Ben. Big Ben is the great bell. Its tower was named the Elizabeth Tower in 2012.",
+    "tts": "The answer is: Big Ben. Big Ben is the great bell. Its tower was named the Elizabeth Tower in 2012."
+  },
+  {
+    "file": "l-5e1cbfa7.mp3",
+    "text": "Which Australian city's Harbour Bridge and Opera House light up with one of the first big fireworks shows of the night?",
+    "tts": "Which Australian city's Harbour Bridge and Opera House light up with one of the first big fireworks shows of the night?"
+  },
+  {
+    "file": "l-f27b6c2f.mp3",
+    "text": "The answer is: Sydney. Sydney also holds a 'family' fireworks show at 9 p.m. for those who can't stay up.",
+    "tts": "The answer is: Sydney. Sydney also holds a 'family' fireworks show at 9 p.m. for those who can't stay up."
+  },
+  {
+    "file": "l-6d548291.mp3",
+    "text": "Which Pacific island nation, home to Kiritimati, is the first country to welcome the New Year?",
+    "tts": "Which Pacific island nation, home to Kiritimati, is the first country to welcome the New Year?"
+  },
+  {
+    "file": "l-9a5a582f.mp3",
+    "text": "The answer is: Kiribati. Its Line Islands are 14 hours ahead of Greenwich time (UTC+14).",
+    "tts": "The answer is: Kiribati. Its Line Islands are 14 hours ahead of Greenwich time (UTC+14)."
+  },
+  {
+    "file": "l-7c37efbd.mp3",
+    "text": "In which year did Samoa skip December 30 completely, moving to the other side of the International Date Line?",
+    "tts": "In which year did Samoa skip December 30 completely, moving to the other side of the International Date Line?"
+  },
+  {
+    "file": "l-d66da783.mp3",
+    "text": "The answer is: 2011. Samoa went straight from December 29 to December 31, and from one of the last places to see the New Year to one of the first.",
+    "tts": "The answer is: 2011. Samoa went straight from December 29 to December 31, and from one of the last places to see the New Year to one of the first."
+  },
+  {
+    "file": "l-56f2da40.mp3",
+    "text": "Which sparkling wine, named after a region of France, is the classic New Year's toast?",
+    "tts": "Which sparkling wine, named after a region of France, is the classic New Year's toast?"
+  },
+  {
+    "file": "l-5173c7cd.mp3",
+    "text": "The answer is: Champagne. Only sparkling wine from the Champagne region of France may carry the name.",
+    "tts": "The answer is: Champagne. Only sparkling wine from the Champagne region of France may carry the name."
+  },
+  {
+    "file": "l-2a0e3247.mp3",
+    "text": "In the American South, which beans are eaten on New Year's Day for luck, often in a dish called Hoppin' John?",
+    "tts": "In the American South, which beans are eaten on New Year's Day for luck, often in a dish called Hoppin' John?"
+  },
+  {
+    "file": "l-604573c4.mp3",
+    "text": "The answer is: Black-eyed peas. They often come with collard greens for money and cornbread for gold.",
+    "tts": "The answer is: Black-eyed peas. They often come with collard greens for money and cornbread for gold."
+  },
+  {
+    "file": "l-090b812c.mp3",
+    "text": "In Italy, lentils are eaten on New Year's Eve because they look like what?",
+    "tts": "In Italy, lentils are eaten on New Year's Eve because they look like what?"
+  },
+  {
+    "file": "l-4bfaaf8b.mp3",
+    "text": "The answer is: Coins. They are often served with cotechino, a rich pork sausage.",
+    "tts": "The answer is: Coins. They are often served with cotechino, a rich pork sausage."
+  },
+  {
+    "file": "l-cf4efd6f.mp3",
+    "text": "What is the name of the Greek New Year's cake with a coin hidden inside?",
+    "tts": "What is the name of the Greek New Year's cake with a coin hidden inside?"
+  },
+  {
+    "file": "l-8cf9d743.mp3",
+    "text": "The answer is: Vasilopita (St. Basil's cake). Whoever finds the coin in their slice is said to have luck all year.",
+    "tts": "The answer is: Vasilopita (St. Basil's cake). Whoever finds the coin in their slice is said to have luck all year."
+  },
+  {
+    "file": "l-409f81b2.mp3",
+    "text": "Which round, fried Dutch treats, dusted with powdered sugar, are eaten in the Netherlands on New Year's Eve?",
+    "tts": "Which round, fried Dutch treats, dusted with powdered sugar, are eaten in the Netherlands on New Year's Eve?"
+  },
+  {
+    "file": "l-da6118cf.mp3",
+    "text": "The answer is: Oliebollen. The name means 'oil balls'. Many have raisins inside.",
+    "tts": "The answer is: Oliebollen. The name means 'oil balls'. Many have raisins inside."
+  },
+  {
+    "file": "l-f9acad87.mp3",
+    "text": "What do we call a promise to start or stop a habit in the New Year?",
+    "tts": "What do we call a promise to start or stop a habit in the New Year?"
+  },
+  {
+    "file": "l-309080dc.mp3",
+    "text": "The answer is: A New Year's resolution. The most popular ones are about exercise, eating better and saving money.",
+    "tts": "The answer is: A New Year's resolution. The most popular ones are about exercise, eating better and saving money."
+  },
+  {
+    "file": "l-10527a0e.mp3",
+    "text": "About 4,000 years ago, what did the ancient Babylonians often promise their gods at their New Year festival?",
+    "tts": "About 4,000 years ago, what did the ancient Babylonians often promise their gods at their New Year festival?"
+  },
+  {
+    "file": "l-a2595e41.mp3",
+    "text": "The answer is: To pay back their debts (and return borrowed things). Their new year began in spring, with a festival called Akitu.",
+    "tts": "The answer is: To pay back their debts (and return borrowed things). Their new year began in spring, with a festival called Akitu."
+  },
+  {
+    "file": "l-e5dcef2a.mp3",
+    "text": "Which month is named after Janus, the Roman god of beginnings, who has two faces looking forward and back?",
+    "tts": "Which month is named after Janus, the Roman god of beginnings, who has two faces looking forward and back?"
+  },
+  {
+    "file": "l-e745d6fc.mp3",
+    "text": "The answer is: January. Janus was also the god of doors and gateways.",
+    "tts": "The answer is: January. Janus was also the god of doors and gateways."
+  },
+  {
+    "file": "l-56b5909f.mp3",
+    "text": "In 'Dry January', what do people give up for the whole month?",
+    "tts": "In 'Dry January', what do people give up for the whole month?"
+  },
+  {
+    "file": "l-e10eceac.mp3",
+    "text": "The answer is: Alcohol. It started as a campaign in the United Kingdom in 2013.",
+    "tts": "The answer is: Alcohol. It started as a campaign in the United Kingdom in 2013."
+  },
+  {
+    "file": "l-2938581e.mp3",
+    "text": "In 'Veganuary', what do people try for the whole month of January?",
+    "tts": "In 'Veganuary', what do people try for the whole month of January?"
+  },
+  {
+    "file": "l-76bfc482.mp3",
+    "text": "The answer is: Eating vegan (no meat, dairy or other animal products). The campaign began in the United Kingdom in 2014.",
+    "tts": "The answer is: Eating vegan (no meat, dairy or other animal products). The campaign began in the United Kingdom in 2014."
+  },
+  {
+    "file": "l-8ff5e8cf.mp3",
+    "text": "How many days are there in a leap year?",
+    "tts": "How many days are there in a leap year?"
+  },
+  {
+    "file": "l-575a92cd.mp3",
+    "text": "The answer is: 366. The extra day is February 29.",
+    "tts": "The answer is: 366. The extra day is February 29."
+  },
+  {
+    "file": "l-9e1772ab.mp3",
+    "text": "The calendar used across most of the world today is named after which pope?",
+    "tts": "The calendar used across most of the world today is named after which pope?"
+  },
+  {
+    "file": "l-039e616a.mp3",
+    "text": "The answer is: Pope Gregory XIII (the Gregorian calendar). He introduced it in 1582.",
+    "tts": "The answer is: Pope Gregory XIII (the Gregorian calendar). He introduced it in 1582."
+  },
+  {
+    "file": "l-c9909553.mp3",
+    "text": "Which Roman leader's calendar, which took effect in 45 BC, made January 1 the start of the year?",
+    "tts": "Which Roman leader's calendar, which took effect in 45 BC, made January 1 the start of the year?"
+  },
+  {
+    "file": "l-a97fcc17.mp3",
+    "text": "The answer is: Julius Caesar. It is called the Julian calendar, and some churches still use it to set their holidays.",
+    "tts": "The answer is: Julius Caesar. It is called the Julian calendar, and some churches still use it to set their holidays."
+  },
+  {
+    "file": "l-7053117b.mp3",
+    "text": "What is the extra second sometimes added to clocks to keep them in step with Earth's spin called?",
+    "tts": "What is the extra second sometimes added to clocks to keep them in step with Earth's spin called?"
+  },
+  {
+    "file": "l-8f6ec22f.mp3",
+    "text": "The answer is: A leap second. The last one was added on New Year's Eve 2016, so that night's clocks read 23:59:60.",
+    "tts": "The answer is: A leap second. The last one was added on New Year's Eve 2016, so that night's clocks read 23:59:60."
+  },
+  {
+    "file": "l-17fbb737.mp3",
+    "text": "Before 1752, in Britain and its American colonies, on which date did the new year officially begin?",
+    "tts": "Before 1752, in Britain and its American colonies, on which date did the new year officially begin?"
+  },
+  {
+    "file": "l-91b296b3.mp3",
+    "text": "The answer is: March 25. A law of 1750 moved the start of the year to January 1, from 1752.",
+    "tts": "The answer is: March 25. A law of 1750 moved the start of the year to January 1, from 1752."
+  },
+  {
+    "file": "l-d18972a4.mp3",
+    "text": "Round Two. The stakes just went up.",
+    "tts": "Round Two. [mischievously] The stakes just went up."
+  },
+  {
+    "file": "l-de6d058d.mp3",
+    "text": "How many animals are there in the Chinese zodiac?",
+    "tts": "How many animals are there in the Chinese zodiac?"
+  },
+  {
+    "file": "l-32c8ce03.mp3",
+    "text": "The answer is: Twelve. Each year belongs to one animal, so the cycle repeats every twelve years.",
+    "tts": "The answer is: Twelve. Each year belongs to one animal, so the cycle repeats every twelve years."
+  },
+  {
+    "file": "l-bfd8bffc.mp3",
+    "text": "Which color is lucky at Lunar New Year, and is used for the envelopes of money given as gifts?",
+    "tts": "Which color is lucky at Lunar New Year, and is used for the envelopes of money given as gifts?"
+  },
+  {
+    "file": "l-58408d45.mp3",
+    "text": "The answer is: Red. The envelopes are called hongbao in Mandarin.",
+    "tts": "The answer is: Red. The envelopes are called hongbao in Mandarin."
+  },
+  {
+    "file": "l-de95d715.mp3",
+    "text": "Which animal comes first in the Chinese zodiac?",
+    "tts": "Which animal comes first in the Chinese zodiac?"
+  },
+  {
+    "file": "l-d33a3955.mp3",
+    "text": "The answer is: The Rat. Legend says the rat won the great race by riding on the ox's back and jumping ahead at the finish.",
+    "tts": "The answer is: The Rat. Legend says the rat won the great race by riding on the ox's back and jumping ahead at the finish."
+  },
+  {
+    "file": "l-4dc7acd2.mp3",
+    "text": "What is the Vietnamese name for the Lunar New Year festival?",
+    "tts": "What is the Vietnamese name for the Lunar New Year festival?"
+  },
+  {
+    "file": "l-f519f9ce.mp3",
+    "text": "The answer is: Tết. Its full name, Tết Nguyên Đán, means 'Festival of the First Morning'.",
+    "tts": "The answer is: Tết. Its full name, Tết Nguyên Đán, means 'Festival of the First Morning'."
+  },
+  {
+    "file": "l-eca46ad2.mp3",
+    "text": "2026 was the Year of the Horse. Which animal follows the horse, for the Lunar New Year of 2027?",
+    "tts": "2026 was the Year of the Horse. Which animal follows the horse, for the Lunar New Year of 2027?"
+  },
+  {
+    "file": "l-f4989fe9.mp3",
+    "text": "The answer is: The Goat (or Sheep). Lunar New Year 2027 begins in early February.",
+    "tts": "The answer is: The Goat (or Sheep). Lunar New Year 2027 begins in early February."
+  },
+  {
+    "file": "l-cf87eca0.mp3",
+    "text": "What do we call the handheld firework on a stick that throws off bright sparks?",
+    "tts": "What do we call the handheld firework on a stick that throws off bright sparks?"
+  },
+  {
+    "file": "l-cd6089f6.mp3",
+    "text": "The answer is: A sparkler. A sparkler can burn at over 1,000 °C (about 1,800 °F), much hotter than it looks.",
+    "tts": "The answer is: A sparkler. A sparkler can burn at over 1,000 °C (about 1,800 °F), much hotter than it looks."
+  },
+  {
+    "file": "l-e6e065e5.mp3",
+    "text": "Which country is believed to have invented fireworks, more than a thousand years ago?",
+    "tts": "Which country is believed to have invented fireworks, more than a thousand years ago?"
+  },
+  {
+    "file": "l-ddf629a6.mp3",
+    "text": "The answer is: China. The first ones were bamboo stalks that burst with a bang in the fire.",
+    "tts": "The answer is: China. The first ones were bamboo stalks that burst with a bang in the fire."
+  },
+  {
+    "file": "l-75e56fe9.mp3",
+    "text": "The bubbles in Champagne are made of which gas?",
+    "tts": "The bubbles in Champagne are made of which gas?"
+  },
+  {
+    "file": "l-ce8a09ee.mp3",
+    "text": "The answer is: Carbon dioxide. It forms during a second fermentation, inside the bottle.",
+    "tts": "The answer is: Carbon dioxide. It forms during a second fermentation, inside the bottle."
+  },
+  {
+    "file": "l-496f1444.mp3",
+    "text": "Blue is the hardest firework color to make. Which metal's compounds give fireworks a blue glow?",
+    "tts": "Blue is the hardest firework color to make. Which metal's compounds give fireworks a blue glow?"
+  },
+  {
+    "file": "l-52f2f335.mp3",
+    "text": "The answer is: Copper. If the flame is too hot, the blue fades to white.",
+    "tts": "The answer is: Copper. If the flame is too hot, the blue fades to white."
+  },
+  {
+    "file": "l-e6ea1c6c.mp3",
+    "text": "Fireworks get their red color from which element, named after a village in Scotland?",
+    "tts": "Fireworks get their red color from which element, named after a village in Scotland?"
+  },
+  {
+    "file": "l-90f76c04.mp3",
+    "text": "The answer is: Strontium. It was found in rocks from the village of Strontian in the 1790s.",
+    "tts": "The answer is: Strontium. It was found in rocks from the village of Strontian in the 1790s."
+  },
+  {
+    "file": "l-e8198a9e.mp3",
+    "text": "Which song, written down by the Scottish poet Robert Burns, is sung at midnight in many countries?",
+    "tts": "Which song, written down by the Scottish poet Robert Burns, is sung at midnight in many countries?"
+  },
+  {
+    "file": "l-ff51de48.mp3",
+    "text": "The answer is: Auld Lang Syne. Burns sent it to a song collection in 1788, saying he had heard it from an old man.",
+    "tts": "The answer is: Auld Lang Syne. Burns sent it to a song collection in 1788, saying he had heard it from an old man."
+  },
+  {
+    "file": "l-765c4dd2.mp3",
+    "text": "In plain English, what does 'auld lang syne' mean?",
+    "tts": "In plain English, what does 'auld lang syne' mean?"
+  },
+  {
+    "file": "l-49d04a5f.mp3",
+    "text": "The answer is: 'Old long since', or times gone by. The song asks whether old friends should be forgotten.",
+    "tts": "The answer is: 'Old long since', or times gone by. The song asks whether old friends should be forgotten."
+  },
+  {
+    "file": "l-8a617870.mp3",
+    "text": "Which Swedish pop group sang 'Happy New Year', released in 1980?",
+    "tts": "Which Swedish pop group sang 'Happy New Year', released in 1980?"
+  },
+  {
+    "file": "l-a964489a.mp3",
+    "text": "The answer is: ABBA. It was on their album 'Super Trouper'.",
+    "tts": "The answer is: ABBA. It was on their album 'Super Trouper'."
+  },
+  {
+    "file": "l-42a2a647.mp3",
+    "text": "Which bandleader's orchestra played 'Auld Lang Syne' on American New Year's Eve broadcasts for almost fifty years?",
+    "tts": "Which bandleader's orchestra played 'Auld Lang Syne' on American New Year's Eve broadcasts for almost fifty years?"
+  },
+  {
+    "file": "l-7a1595c5.mp3",
+    "text": "The answer is: Guy Lombardo (and His Royal Canadians). Many Americans called him 'Mr. New Year's Eve'.",
+    "tts": "The answer is: Guy Lombardo (and His Royal Canadians). Many Americans called him 'Mr. New Year's Eve'."
+  },
+  {
+    "file": "l-3b87b961.mp3",
+    "text": "Which Irish rock band released the single 'New Year's Day' in 1983?",
+    "tts": "Which Irish rock band released the single 'New Year's Day' in 1983?"
+  },
+  {
+    "file": "l-e665a283.mp3",
+    "text": "The answer is: U2. It was on their album 'War'.",
+    "tts": "The answer is: U2. It was on their album 'War'."
+  },
+  {
+    "file": "l-d863664a.mp3",
+    "text": "In 'When Harry Met Sally...' (1989), at what kind of party does Harry tell Sally he loves her?",
+    "tts": "In 'When Harry Met Sally...' (1989), at what kind of party does Harry tell Sally he loves her?"
+  },
+  {
+    "file": "l-dc65af6f.mp3",
+    "text": "The answer is: A New Year's Eve party. He runs across New York to reach her before midnight.",
+    "tts": "The answer is: A New Year's Eve party. He runs across New York to reach her before midnight."
+  },
+  {
+    "file": "l-81e99d74.mp3",
+    "text": "Which TV host created 'New Year's Rockin' Eve' in 1972 and was its face for four decades?",
+    "tts": "Which TV host created 'New Year's Rockin' Eve' in 1972 and was its face for four decades?"
+  },
+  {
+    "file": "l-717ee031.mp3",
+    "text": "The answer is: Dick Clark. He also hosted 'American Bandstand' for more than thirty years.",
+    "tts": "The answer is: Dick Clark. He also hosted 'American Bandstand' for more than thirty years."
+  },
+  {
+    "file": "l-9e7186af.mp3",
+    "text": "In which 1972 film does a giant wave turn an ocean liner upside down on New Year's Eve?",
+    "tts": "In which 1972 film does a giant wave turn an ocean liner upside down on New Year's Eve?"
+  },
+  {
+    "file": "l-477d5d44.mp3",
+    "text": "The answer is: The Poseidon Adventure. The survivors must climb up through the ship to reach its bottom.",
+    "tts": "The answer is: The Poseidon Adventure. The survivors must climb up through the ship to reach its bottom."
+  },
+  {
+    "file": "l-0194977b.mp3",
+    "text": "Which Billy Wilder film, starring Jack Lemmon and Shirley MacLaine, ends on New Year's Eve and won the Oscar for Best Picture?",
+    "tts": "Which Billy Wilder film, starring Jack Lemmon and Shirley MacLaine, ends on New Year's Eve and won the Oscar for Best Picture?"
+  },
+  {
+    "file": "l-14db0210.mp3",
+    "text": "The answer is: The Apartment (1960). It ends with a game of cards.",
+    "tts": "The answer is: The Apartment (1960). It ends with a game of cards."
+  },
+  {
+    "file": "l-fee00d54.mp3",
+    "text": "In 'Bridget Jones's Diary' (2001), at what kind of New Year's Day party does Bridget meet Mark Darcy?",
+    "tts": "In 'Bridget Jones's Diary' (2001), at what kind of New Year's Day party does Bridget meet Mark Darcy?"
+  },
+  {
+    "file": "l-53c88240.mp3",
+    "text": "The answer is: A turkey curry buffet. That's where she resolves to start her diary.",
+    "tts": "The answer is: A turkey curry buffet. That's where she resolves to start her diary."
+  },
+  {
+    "file": "l-7e665733.mp3",
+    "text": "What time does the clock show one minute before midnight?",
+    "tts": "What time does the clock show one minute before midnight?"
+  },
+  {
+    "file": "l-7f2a83a7.mp3",
+    "text": "The answer is: 11:59 p.m.. On a 24-hour clock it reads 23:59.",
+    "tts": "The answer is: 11:59 p.m.. On a 24-hour clock it reads 23:59."
+  },
+  {
+    "file": "l-0ed405a3.mp3",
+    "text": "Which Roman numeral stands for 1,000?",
+    "tts": "Which Roman numeral stands for 1,000?"
+  },
+  {
+    "file": "l-c3b274e1.mp3",
+    "text": "The answer is: M. So 2027 is written MMXXVII.",
+    "tts": "The answer is: M. So 2027 is written MMXXVII."
+  },
+  {
+    "file": "l-550c300d.mp3",
+    "text": "The 'Y2K bug' made people worry that computers would fail at midnight going into which year?",
+    "tts": "The 'Y2K bug' made people worry that computers would fail at midnight going into which year?"
+  },
+  {
+    "file": "l-faccee4d.mp3",
+    "text": "The answer is: 2000. Many old programs stored years with two digits, so 2000 looked like 1900.",
+    "tts": "The answer is: 2000. Many old programs stored years with two digits, so 2000 looked like 1900."
+  },
+  {
+    "file": "l-f2291851.mp3",
+    "text": "Most years divisible by 4 are leap years. Which was NOT a leap year: 1900 or 2000?",
+    "tts": "Most years divisible by 4 are leap years. Which was NOT a leap year: 1900 or 2000?"
+  },
+  {
+    "file": "l-ff5ac152.mp3",
+    "text": "The answer is: 1900. Century years are leap years only if they divide by 400, as 2000 does.",
+    "tts": "The answer is: 1900. Century years are leap years only if they divide by 400, as 2000 does."
+  },
+  {
+    "file": "l-637944d1.mp3",
+    "text": "To two decimal places, how many days does it take Earth to go once around the Sun?",
+    "tts": "To two decimal places, how many days does it take Earth to go once around the Sun?"
+  },
+  {
+    "file": "l-502e30e7.mp3",
+    "text": "The answer is: About 365.24 days. That extra quarter day is why we add a leap day about every four years.",
+    "tts": "The answer is: About 365.24 days. That extra quarter day is why we add a leap day about every four years."
+  },
+  {
+    "file": "l-441cbc9d.mp3",
+    "text": "It is time for the Midnight Countdown. The final category is: Midnight History. Write down your secret wagers. You may bet up to half of your score, or up to 500 if that is more.",
+    "tts": "[whispers] It is time for the Midnight Countdown. The final category is: Midnight History. Write down your secret wagers. You may bet up to half of your score, or up to 500 if that is more."
+  },
+  {
+    "file": "l-32b277f5.mp3",
+    "text": "Times Square is named after which newspaper, whose new tower hosted the first New Year's Eve party there in 1904?",
+    "tts": "Times Square is named after which newspaper, whose new tower hosted the first New Year's Eve party there in 1904?"
+  },
+  {
+    "file": "l-154ec8be.mp3",
+    "text": "The answer is: The New York Times. The paper's owner, Adolph Ochs, celebrated the tower's opening with fireworks.",
+    "tts": "The answer is: The New York Times. The paper's owner, Adolph Ochs, celebrated the tower's opening with fireworks."
+  },
+  {
+    "file": "l-22208a37.mp3",
+    "text": "In what year did the first New Year's Eve ball drop in Times Square?",
+    "tts": "In what year did the first New Year's Eve ball drop in Times Square?"
+  },
+  {
+    "file": "l-69f3c2fc.mp3",
+    "text": "The answer is: 1907. The first ball was made of iron and wood and lit by 100 light bulbs.",
+    "tts": "The answer is: 1907. The first ball was made of iron and wood and lit by 100 light bulbs."
+  },
+  {
+    "file": "l-064e4f58.mp3",
+    "text": "Team Confetti ring in the New Year!",
+    "tts": "[excited] Team Confetti ring in the New Year! [applause]"
+  },
+  {
+    "file": "l-c0db4889.mp3",
+    "text": "Team Sparklers ring in the New Year!",
+    "tts": "[excited] Team Sparklers ring in the New Year! [applause]"
+  },
+  {
+    "file": "l-bdf834f2.mp3",
+    "text": "Team Party Hats ring in the New Year!",
+    "tts": "[excited] Team Party Hats ring in the New Year! [applause]"
+  },
+  {
+    "file": "l-63e1ace4.mp3",
+    "text": "Team Midnight ring in the New Year!",
+    "tts": "[excited] Team Midnight ring in the New Year! [applause]"
+  },
+  {
+    "file": "l-d212a1cc.mp3",
+    "text": "The price: 100 points!",
+    "tts": "[mischievously] The price... 100 points!"
+  },
+  {
+    "file": "l-494dcb81.mp3",
+    "text": "The price: 200 points!",
+    "tts": "[mischievously] The price... 200 points!"
+  },
+  {
+    "file": "l-53fff7fa.mp3",
+    "text": "The price: 300 points!",
+    "tts": "[mischievously] The price... 300 points!"
+  },
+  {
+    "file": "l-3f1e82cf.mp3",
+    "text": "The price: 400 points!",
+    "tts": "[mischievously] The price... 400 points!"
+  },
+  {
+    "file": "l-2e88ad90.mp3",
+    "text": "The price: 500 points!",
+    "tts": "[mischievously] The price... 500 points!"
+  },
+  {
+    "file": "l-cbe0a1b5.mp3",
+    "text": "The price: 600 points!",
+    "tts": "[mischievously] The price... 600 points!"
+  },
+  {
+    "file": "l-cc27cd63.mp3",
+    "text": "The price: 800 points!",
+    "tts": "[mischievously] The price... 800 points!"
+  },
+  {
+    "file": "l-b9ee2660.mp3",
+    "text": "The price: 1000 points!",
+    "tts": "[mischievously] The price... 1000 points!"
+  },
+  {
+    "file": "l-dd791cc2.mp3",
+    "text": "Team Confetti, the fortune cookie picked you!",
+    "tts": "Team Confetti, the fortune cookie picked you!"
+  },
+  {
+    "file": "l-1876840b.mp3",
+    "text": "Team Sparklers, the fortune cookie picked you!",
+    "tts": "Team Sparklers, the fortune cookie picked you!"
+  },
+  {
+    "file": "l-ef1af45c.mp3",
+    "text": "Team Party Hats, the fortune cookie picked you!",
+    "tts": "Team Party Hats, the fortune cookie picked you!"
+  },
+  {
+    "file": "l-d5087666.mp3",
+    "text": "Team Midnight, the fortune cookie picked you!",
+    "tts": "Team Midnight, the fortune cookie picked you!"
+  }
+]

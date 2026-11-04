@@ -14,7 +14,7 @@ HEART = ('<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 56 C14 43 6 3
          'stroke="#ffd1dc" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/></svg>')
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;0,800;1,400;1,700'
-         '&family=Alegreya+Sans:wght@400;700;800&family=Pirata+One&family=Mountains+of+Christmas:wght@700&display=swap">')
+         '&family=Alegreya+Sans:wght@400;700;800' + "".join(f"&family={g['gfont']}" for g in G.GAMES if "gfont" in g) + '&display=swap">')   # every card's title font
 
 CSS = """
 :root{color-scheme:dark;--night:%(night)s;--dusk:%(dusk)s;--cell:%(cell)s;--line:%(line)s;--bone:%(bone)s;--ash:%(ash)s;
@@ -79,7 +79,7 @@ h2{font-weight:800;font-size:clamp(1.8rem,4vw,2.4rem);line-height:1.1;margin:2em
 
 def _gvars(g):
     th = g["theme"]
-    if g["status"] == "soon":
+    if "rgb" not in g:
         return (f"--g-night:{th['night']};--g-line:{th['line']};--g-bone:#f6e8ee;--g-ash:#d6a9b8;--g-ember:{th['ember']};"
                 f"--g-candle:{th['candle']};--g-glow:231,122,149;--g-font:var(--f-text);--g-w:800")
     return (f"--g-night:{th['night']};--g-line:{th['line']};--g-bone:{th['bone']};--g-ash:{th['ash']};--g-ember:{th['ember']};"
@@ -87,21 +87,19 @@ def _gvars(g):
 
 
 def _card(g, out):
-    if g["status"] == "soon":
-        return f'''<article class="game soon" style="{_gvars(g)}">{HEART}
-<p class="when">{e(g['holiday'])} · {e(g['coming'])}</p>
-<h3>Coming soon</h3>
-<p class="blurb">{e(g['card'])}</p>
-<span class="btn" aria-disabled="true">{e(g['coming'])}</span>
-</article>'''
+    art = G.art(g, g["icon"]) if "art_src" in g else HEART
     if not out:
-        d = g["launch"]
-        month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][int(d[5:7]) - 1]
-        return f'''<article class="game soon" style="{_gvars(g)}">{G.art(g, g['icon'])}
-<p class="when">{e(g['holiday'])} · coming {month} {int(d[8:10])}</p>
+        if g["status"] == "soon":
+            when, btn = "coming soon", "Coming soon"
+        else:
+            d = g["launch"]
+            month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][int(d[5:7]) - 1]
+            when, btn = f"coming {month} {int(d[8:10])}", f"Opens {month} {int(d[8:10])}"
+        return f'''<article class="game soon" style="{_gvars(g)}">{art}
+<p class="when">{e(g['holiday'])} · {when}</p>
 <h3>{e(g['short'])}</h3>
 <p class="blurb">{e(g['card'])}</p>
-<span class="btn" aria-disabled="true">Opens {month} {int(d[8:10])}</span>
+<span class="btn" aria-disabled="true">{btn}</span>
 </article>'''
     chips = "".join(f"<li>{e(t)}</li>" for _, t in g["chips"])
     return f'''<article class="game" style="{_gvars(g)}">{G.art(g, g['icon'])}
@@ -176,7 +174,7 @@ def _shell(title, desc, canonical, body, ld=None, og_img=None):
 
 def home_page(out_slugs, today):
     playable = [g for g in G.GAMES if g["slug"] in out_slugs]
-    upcoming = [g for g in G.GAMES if g["slug"] not in out_slugs]
+    upcoming = sorted((g for g in G.GAMES if g["slug"] not in out_slugs), key=lambda g: (g["status"] == "soon", g.get("launch") or ""))
     cards = "\n".join(_card(g, True) for g in playable)
     soon = "\n".join(_card(g, False) for g in upcoming)
     soon_block = f'''<h3 class="soon-h">Coming soon</h3>

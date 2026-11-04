@@ -74,7 +74,7 @@ CHRISTMAS = dict(
 )
 
 VALENTINES = dict(
-    slug="valentines", status="scheduled", launch="2027-01-20",
+    slug="valentines", status="soon", launch="2027-01-20",
     name="Victoria’s Sweetheart Showdown", short="Sweetheart Showdown", holiday="Valentine’s Day",
     src="games/valentines/game.html", art_src="games/valentines/art.js", audio="audio/valentines", state_key="ss-state-v1",
     icon="HEART_SVG", specials={"cat": "cupids_arrow", "witch": "box_of_chocolates"},
@@ -100,7 +100,7 @@ VALENTINES = dict(
 )
 
 STPATRICKS = dict(
-    slug="stpatricks", status="scheduled", launch="2027-02-10",
+    slug="stpatricks", status="soon", launch="2027-02-10",
     name="Victoria’s Pot o’ Gold", short="Pot o’ Gold", holiday="St. Patrick’s Day",
     src="games/stpatricks/game.html", art_src="games/stpatricks/art.js", audio="audio/stpatricks", state_key="pg-state-v1",
     icon="SHAMROCK_SVG", specials={"cat": "leprechauns_trick", "witch": "over_the_rainbow"},
@@ -126,7 +126,7 @@ STPATRICKS = dict(
 )
 
 DECADES = dict(
-    slug="decades", status="live", launch=None,
+    slug="decades", status="soon", launch=None,
     name="Victoria’s Decades Showdown", short="Decades Showdown", holiday="Retro", footer_kind="retro",
     src="games/decades/game.html", art_src="games/decades/art.js", audio="audio/decades", state_key="ds-state-v1",
     icon="CASSETTE_SVG", specials={"cat": "tangled_tape", "witch": "time_machine"},
@@ -152,7 +152,7 @@ DECADES = dict(
 )
 
 TRIVIA = dict(
-    slug="trivia", status="live", launch=None,
+    slug="trivia", status="soon", launch=None,
     name="Victoria’s Big Brain Battle", short="Big Brain Battle", holiday="Any day", footer_kind="general-knowledge",
     trivia_label="General knowledge questions",
     src="games/trivia/game.html", art_src="games/trivia/art.js", audio="audio/trivia", state_key="bb-state-v1",
@@ -204,7 +204,33 @@ MOVIES = dict(
     shots=["board", "question", "popcorn", "twist", "final", "podium"],
 )
 
-GAMES = [TRIVIA, MOVIES, DECADES, HALLOWEEN, CHRISTMAS, VALENTINES, STPATRICKS]
+NEWYEAR = dict(
+    slug="newyear", status="scheduled", launch="2026-12-01",
+    name="Victoria’s Countdown Quiz", short="Countdown Quiz", holiday="New Year’s Eve",
+    src="games/newyear/game.html", art_src="games/newyear/art.js", audio="audio/newyear", state_key="ny-state-v1",
+    icon="CLOCK_SVG", specials={"cat": "party_popper", "witch": "fortune_cookie"},
+    theme=dict(night="#0d0f24", dusk="#151838", cell="#1f2350", line="#363b78", bone="#f4f3ff", ash="#aeb2d6",
+               candle="#f5cf6b", ember="#fff0bf", good="#6ee0a8", witch="#f0a35e", bad="#ff6b81"),
+    rgb=dict(night="13,15,36", dusk="21,24,56", glow="245,207,107", glow2="255,107,129"), tag2="var(--witch)",
+    display=("Bungee", 400, "bungee", '"Bungee",Impact,"Arial Black",sans-serif'),
+    gfont="Bungee",
+    title="Victoria’s Countdown Quiz · Free New Year’s Eve Trivia Game for Teams",
+    desc="Free New Year’s Eve trivia game for office parties and team events: a game-show board, a party popper, a fortune cookie and a Midnight Countdown wager.",
+    og_desc="A free New Year’s quiz for the whole office: midnight traditions around the world on a game-show board, a party popper, a fortune cookie and a Midnight Countdown wager, with a narrator.",
+    og_alt="a New Year’s quiz for the whole office, with a clock at midnight",
+    eyebrow="A New Year’s quiz for the whole office",
+    intro="A free New Year’s Eve trivia game for office parties and team events, made for a big screen. Teams pick questions on a game-show board, think for 30 seconds and answer. A narrator reads every question aloud.",
+    rules=[("Two rounds", "of five categories: traditions around the world, midnight across the time zones, party food, resolutions, calendars, Lunar New Year, fireworks, songs for midnight, New Year on screen and countdown numbers, worth 100–500 and then 200–1,000 points."),
+           ("Party Popper:", "the team that pops a party popper must hand the question to another team."),
+           ("Fortune Cookie:", "two fortune cookies pick a random price and the team that must answer."),
+           ("The Midnight Countdown:", "one final question with secret wagers, then a podium for the team that rings in the New Year as champions.")],
+    chips=[("POPPER_SVG", "Party Popper"), ("COOKIE_SVG", "Fortune Cookie"), ("FIREWORK_SVG", "Midnight wager")],
+    card="New Year’s trivia for the last party of the year: midnight traditions around the world, party food, resolutions, fireworks and songs, with a party popper, a fortune cookie and a Midnight Countdown wager.",
+    page_art={"trivia-questions": "CLOCK_SVG", "virtual-games-for-work": "PARTYHAT_SVG", "how-to-host-a-game-night": "POPPER_SVG", "faq": "FIREWORK_SVG"},
+    shots=["board", "question", "cookie", "popper", "final", "podium"],
+)
+
+GAMES = [TRIVIA, MOVIES, DECADES, HALLOWEEN, CHRISTMAS, NEWYEAR, VALENTINES, STPATRICKS]
 PLAYABLE = [g for g in GAMES if g["status"] in ("live", "scheduled")]
 
 # Content pages every playable game has (slug, nav label). Content: tools/pages_<game>.py
