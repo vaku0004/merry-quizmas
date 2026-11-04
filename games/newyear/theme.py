@@ -32,6 +32,7 @@ body::before,body::after{content:"";position:fixed;inset:-20vh 0 0;pointer-event
 body::after{background-size:420px 420px;animation-duration:56s;opacity:.38;filter:blur(.6px)}
 @keyframes snow{from{transform:translateY(0)}to{transform:translateY(20vh)}}
 #app{position:relative;z-index:1}
+.title{font-size:clamp(2.6rem,5.4vw,5rem)}   /* Bungee is very wide: keep COUNTDOWN inside its column */
 .title,.round-name,.slide-title,.big-cat,.cat-ask,.cat-team,.reel-face,.special h3{letter-spacing:.01em}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
