@@ -82,7 +82,7 @@ h1 i{{color:{th['candle']}}}
 .row{{position:absolute;right:84px;bottom:52px;display:flex;gap:14px}}
 .a svg{{width:68px;height:68px;filter:drop-shadow(0 0 22px rgba(240,180,76,.35))}}
 </style></head><body><div class="frame"></div>
-<div class="text"><div class="eyebrow">Free team games for the big screen</div><h1>Victoria’s <i>Game Nights</i></h1>
+<div class="text"><div class="eyebrow">Team games for the big screen</div><h1>Victoria’s <i>Game Nights</i></h1>
 <div class="sub">Quiz games for office parties, for the holidays and any day of the year, with a narrator.</div></div>
 <div class="row">{arts}</div><div class="url">{HOST.upper()}</div></body></html>"""
     open(f"{OUT}/og.html", "w", encoding="utf-8").write(og)

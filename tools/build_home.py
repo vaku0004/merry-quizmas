@@ -115,7 +115,7 @@ def _card(g, out):
 
 
 FAQ = [
-    ("Are the games really free?", "Yes. Open a game, name your teams and play. No account, no download, no ads."),
+    ("How much do the games cost?", "The games on this site can be played for free right now: open a game, name your teams and play, with no account and no ads. Some games, question packs or custom office editions may become paid later, and anything paid will be clearly marked."),
     ("What do we need?", "A computer with Chrome or Edge, a big screen or projector and speakers. Players only need their voices, and paper and pens for the final round."),
     ("Can remote coworkers play?", "Yes. Share the game in Teams, Zoom or Google Meet with computer sound on, and mix remote players into teams with people in the room. Each game has a page on how to set it up."),
     ("How many people can play?", "2 to 4 teams, ideally 6 to 20 people. With a bigger group, make bigger teams."),
@@ -166,7 +166,7 @@ def _shell(title, desc, canonical, body, ld=None, og_img=None):
 </main>
 <footer class="site-foot"><div class="wrap">
   <nav aria-label="Footer"><a href="/">All games</a><a href="/privacy/">Privacy</a></nav>
-  <span>{e(BRAND)} · free quiz games for office parties and team events, made in Regina, Saskatchewan.</span>
+  <span>{e(BRAND)} · quiz games for office parties and team events, made in Regina, Saskatchewan.</span>
 </div></footer>
 {PAGE_EVENTS_JS}
 </body>
@@ -186,7 +186,7 @@ def home_page(out_slugs, today):
     live = [g for g in G.GAMES if g["slug"] in out_slugs]
     faq = "".join(f"<h3>{e(q)}</h3><p>{a}</p>" for q, a in FAQ)
     body = f'''<section class="hero">
-<p class="eyebrow">Free team games for the big screen</p>
+<p class="eyebrow">Team games for the big screen</p>
 <h1>Victoria’s <i>Game Nights</i></h1>
 <p class="lede">Quiz games for office parties and team events, for the holidays and any day of the year. One laptop, one big screen, a narrator who reads every question, and teams playing in the room and on the video call.</p>
 <p class="muted">No sign-up, no download, nothing for players to install.</p>
@@ -215,8 +215,8 @@ def home_page(out_slugs, today):
             {"@type": "ListItem", "position": k + 1, "url": f"{URL}{g['slug']}/", "name": g["name"]} for k, g in enumerate(live)]},
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ]},
     ]}
-    return _shell(f"{BRAND} · Free Quiz Games for Office Parties and Teams",
-                  "Free trivia games for office parties and hybrid teams, for the holidays and any day of the year: a game-show board on the big screen, a narrator and teams in the room and on the call.",
+    return _shell(f"{BRAND} · Quiz Games for Office Parties and Teams",
+                  "Trivia games for office parties and hybrid teams, for the holidays and any day of the year: a game-show board on the big screen, a narrator and teams in the room and on the call.",
                   URL, body, ld)
 
 
