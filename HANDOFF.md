@@ -121,7 +121,7 @@ Decisions she made: name **Victoria's Movie Night**; surprise 1 **Plot Twist** (
 - Look: red-velvet night `#140b0d`, gold `#f2c14e`, butter orange `#ffa94d` for the popcorn bucket; display font **Limelight** (art-deco marquee; fontsource `limelight`); golden specks; a sweeping film-score tune with projector clatter. Art: clapperboard, plot-twist arrow with "?", striped popcorn bucket, film reel, 3D glasses, star.
 - Questions: 50 + final "Hollywood Legends" (Katharine Hepburn, four Best Actress Oscars) + tiebreaker (first Star Wars, 1977). Categories R1: Animated Classics, Superheroes, Movie Food, Famous Lines, Sequels & Series; R2: Behind the Scenes, Directors, Movie Music, Hollywood History, World Cinema. Checked from memory (one fix: Miyazaki won again in 2024).
 - Checks: game test passes; preview site (7 games) 97 URLs OK.
-- Voice made on Nov 4: ID `MgsaOm0mZXCSwbjBKimg` (prompts in `games/movies/voice-design-prompts.md`; suggested ElevenLabs name "Marquee Max"). Kit with it as default: `games/movies/voice-kit/` (sent as MovieNight-voice.zip). 136 lines, 11,533 characters. Remaining: she runs it in a **new folder** and sends `audio`; check against `games/movies/voice-lines.json` and put it in `audio/movies/`.
+- Voice made on Nov 4: ID `MgsaOm0mZXCSwbjBKimg` (prompts in `games/movies/voice-design-prompts.md`; suggested ElevenLabs name "Marquee Max"). Kit with it as default: `games/movies/voice-kit/` (sent as MovieNight-voice.zip). 136 lines, 11,533 characters. **Audio done (Nov 4):** 136/136 lines (voice "Marquee Max", eleven_v4) checked and committed to `audio/movies/`.
 
 ## Big Brain Battle (all-year general-knowledge game, made November 4, 2026)
 
