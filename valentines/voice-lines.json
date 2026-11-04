@@ -1,0 +1,682 @@
+[
+  {
+    "file": "l-381f0151.mp3",
+    "text": "Welcome to Victoria's Sweetheart Showdown. Pick a question, and play from the heart!",
+    "tts": "[warmly] Welcome to Victoria's Sweetheart Showdown. Pick a question... and play from the heart!"
+  },
+  {
+    "file": "l-c7283c76.mp3",
+    "text": "Welcome to Victoria's Sweetheart Showdown! Tonight, our teams compete for glory, and for chocolate. Here is how it works.",
+    "tts": "[warmly] Welcome to Victoria's Sweetheart Showdown! Tonight, our teams compete for glory... and for chocolate. Here is how it works."
+  },
+  {
+    "file": "l-57028bc3.mp3",
+    "text": "Rules of the game. Pick a question from the board. Watch out for Cupid's arrow, and for the box of chocolates. Play two rounds and the Love Letter finale.",
+    "tts": "[warmly] Rules of the game. Pick a question from the board. [playfully] Watch out for Cupid's arrow... and for the box of chocolates. [cheerfully] Play two rounds... and the Love Letter finale."
+  },
+  {
+    "file": "l-964fe525.mp3",
+    "text": "Pick a question. Five categories with five questions each. The higher the value, the harder the question. Teams take turns choosing a cell.",
+    "tts": "Pick a question. Five categories with five questions each. The higher the value, the harder the question. Teams take turns choosing a cell."
+  },
+  {
+    "file": "l-7f45ca59.mp3",
+    "text": "30 seconds. The question is read aloud, then the clock starts. Only the team that picked it may answer. Everyone else stays quiet. Right: win the points. Wrong: lose them.",
+    "tts": "30 seconds. The question is read aloud, then the clock starts. Only the team that picked it may answer. Everyone else stays quiet. Right: win the points. Wrong: lose them."
+  },
+  {
+    "file": "l-4e15154c.mp3",
+    "text": "Play fair. No phones and no Googling. The host has the final word on close answers. Only one team wins our hearts.",
+    "tts": "Play fair. No phones and no Googling. The host has the final word on close answers. Only one team wins our hearts."
+  },
+  {
+    "file": "l-8c3ca1bd.mp3",
+    "text": "Ready? The first team, pick a question. Good luck, and may the sweetest team win.",
+    "tts": "[cheerfully] Ready? The first team, pick a question. Good luck... and may the sweetest team win! [laughs]"
+  },
+  {
+    "file": "l-43705f6d.mp3",
+    "text": "Double the love. Five new categories. Every value is doubled: 200 to 1,000. Same rules, bigger risks.",
+    "tts": "Double the love. Five new categories. Every value is doubled: 200 to 1,000. Same rules, bigger risks."
+  },
+  {
+    "file": "l-a3505479.mp3",
+    "text": "The Love Letter. One final question. You see only the category first. Secretly wager up to half of your score. Low on points? You can always bet up to 500. You get 60 seconds. Right: add your wager. Wrong: lose it.",
+    "tts": "The Love Letter. One final question. You see only the category first. Secretly wager up to half of your score. Low on points? You can always bet up to 500. You get 60 seconds. Right: add your wager. Wrong: lose it."
+  },
+  {
+    "file": "l-a2830664.mp3",
+    "text": "Cupid's arrow! You've been struck. The team that found it must give this question to another team.",
+    "tts": "[gasps] Cupid's arrow! [playfully] You've been struck. The team that found it... must give this question to another team."
+  },
+  {
+    "file": "l-7cd310b3.mp3",
+    "text": "Who gets Cupid's arrow?",
+    "tts": "[playfully] So... who gets Cupid's arrow?"
+  },
+  {
+    "file": "l-3009f434.mp3",
+    "text": "A box of chocolates!",
+    "tts": "[whispers] A box... [playfully] of chocolates!"
+  },
+  {
+    "file": "l-875d160d.mp3",
+    "text": "Let's open a box of chocolates! The first chocolate picks the price. The second chocolate picks the team that must answer. Answer right, and win it. Answer wrong, and lose it.",
+    "tts": "[playfully] Let's open a box of chocolates! [laughs] The first chocolate picks the price. The second chocolate picks the team that must answer. Answer right... and win it. Answer wrong... [whispers] and lose it."
+  },
+  {
+    "file": "l-85b11123.mp3",
+    "text": "It's a tie! Time for a tiebreaker.",
+    "tts": "[gasps] It's a tie! Time for a tiebreaker."
+  },
+  {
+    "file": "l-eda706a6.mp3",
+    "text": "Which winged little figure from Roman mythology shoots arrows that make people fall in love?",
+    "tts": "Which winged little figure from Roman mythology shoots arrows that make people fall in love?"
+  },
+  {
+    "file": "l-17ef3194.mp3",
+    "text": "The answer is: Cupid. His mother was Venus, the goddess of love. In Greek myth he is Eros.",
+    "tts": "The answer is: Cupid. His mother was Venus, the goddess of love. In Greek myth he is Eros."
+  },
+  {
+    "file": "l-e6f28b7e.mp3",
+    "text": "At the end of a message, what do the letters 'XOXO' stand for?",
+    "tts": "At the end of a message, what do the letters 'XOXO' stand for?"
+  },
+  {
+    "file": "l-acb56ead.mp3",
+    "text": "The answer is: Hugs and kisses. X is a kiss and O is a hug. People have signed letters with an X for a kiss since at least the 1700s.",
+    "tts": "The answer is: Hugs and kisses. X is a kiss and O is a hug. People have signed letters with an X for a kiss since at least the 1700s."
+  },
+  {
+    "file": "l-dd05d06e.mp3",
+    "text": "Esther Howland, called the 'Mother of the American Valentine', began selling lace-trimmed cards in the 1840s in which US state?",
+    "tts": "Esther Howland, called the 'Mother of the American Valentine', began selling lace-trimmed cards in the 1840s in which US state?"
+  },
+  {
+    "file": "l-6b950a33.mp3",
+    "text": "The answer is: Massachusetts. She ran her valentine business from Worcester and turned it into an assembly line staffed by women.",
+    "tts": "The answer is: Massachusetts. She ran her valentine business from Worcester and turned it into an assembly line staffed by women."
+  },
+  {
+    "file": "l-21d2ed25.mp3",
+    "text": "In which century did the English poet Geoffrey Chaucer write one of the earliest known links between St. Valentine's Day and romantic love?",
+    "tts": "In which century did the English poet Geoffrey Chaucer write one of the earliest known links between St. Valentine's Day and romantic love?"
+  },
+  {
+    "file": "l-5c25898f.mp3",
+    "text": "The answer is: The 14th century. In his poem 'Parlement of Foules', from around 1380, birds gather to choose their mates on Saint Valentine's Day.",
+    "tts": "The answer is: The 14th century. In his poem 'Parlement of Foules', from around 1380, birds gather to choose their mates on Saint Valentine's Day."
+  },
+  {
+    "file": "l-655e705f.mp3",
+    "text": "Valentine's Day is often linked to which ancient Roman festival, held in mid-February?",
+    "tts": "Valentine's Day is often linked to which ancient Roman festival, held in mid-February?"
+  },
+  {
+    "file": "l-f1193436.mp3",
+    "text": "The answer is: Lupercalia. Lupercalia was a fertility festival held on February 15. Historians still debate whether it has any real connection to Valentine's Day.",
+    "tts": "The answer is: Lupercalia. Lupercalia was a fertility festival held on February 15. Historians still debate whether it has any real connection to Valentine's Day."
+  },
+  {
+    "file": "l-257445cb.mp3",
+    "text": "What are the small candy hearts printed with messages like 'BE MINE' and 'HUG ME' called?",
+    "tts": "What are the small candy hearts printed with messages like 'BE MINE' and 'HUG ME' called?"
+  },
+  {
+    "file": "l-667cb7f8.mp3",
+    "text": "The answer is: Conversation hearts (Sweethearts). The New England Confectionery Company made Sweethearts for more than a century. Since 2018 the brand has belonged to the Spangler Candy Company.",
+    "tts": "The answer is: Conversation hearts (Sweethearts). The New England Confectionery Company made Sweethearts for more than a century. Since 2018 the brand has belonged to the Spangler Candy Company."
+  },
+  {
+    "file": "l-ff956da3.mp3",
+    "text": "Which country is the world's largest producer of cocoa beans?",
+    "tts": "Which country is the world's largest producer of cocoa beans?"
+  },
+  {
+    "file": "l-75f47c43.mp3",
+    "text": "The answer is: Côte d'Ivoire (Ivory Coast). It grows roughly 40 percent of the world's cocoa. Neighboring Ghana is second.",
+    "tts": "The answer is: Côte d'Ivoire (Ivory Coast). It grows roughly 40 percent of the world's cocoa. Neighboring Ghana is second."
+  },
+  {
+    "file": "l-58072b26.mp3",
+    "text": "Richard Cadbury is credited with creating the first heart-shaped box of chocolates. In which decade?",
+    "tts": "Richard Cadbury is credited with creating the first heart-shaped box of chocolates. In which decade?"
+  },
+  {
+    "file": "l-70c25f45.mp3",
+    "text": "The answer is: The 1860s. He decorated the boxes himself, and people kept them long after the chocolates were gone to store letters and keepsakes.",
+    "tts": "The answer is: The 1860s. He decorated the boxes himself, and people kept them long after the chocolates were gone to store letters and keepsakes."
+  },
+  {
+    "file": "l-23fe9151.mp3",
+    "text": "Which ancient civilization drank chocolate as a bitter, spiced drink and used cacao beans as money?",
+    "tts": "Which ancient civilization drank chocolate as a bitter, spiced drink and used cacao beans as money?"
+  },
+  {
+    "file": "l-ecc58ec6.mp3",
+    "text": "The answer is: The Aztecs (the Maya before them). Sugar was added only after chocolate reached Europe in the 1500s.",
+    "tts": "The answer is: The Aztecs (the Maya before them). Sugar was added only after chocolate reached Europe in the 1500s."
+  },
+  {
+    "file": "l-fb6848c4.mp3",
+    "text": "White chocolate has no cocoa solids at all. Which part of the cacao bean does it contain?",
+    "tts": "White chocolate has no cocoa solids at all. Which part of the cacao bean does it contain?"
+  },
+  {
+    "file": "l-89de82ca.mp3",
+    "text": "The answer is: Cocoa butter. In the United States, white chocolate must contain at least 20 percent cocoa butter.",
+    "tts": "The answer is: Cocoa butter. In the United States, white chocolate must contain at least 20 percent cocoa butter."
+  },
+  {
+    "file": "l-04a8fe43.mp3",
+    "text": "In Shakespeare's play, Romeo is a Montague. Which family does Juliet belong to?",
+    "tts": "In Shakespeare's play, Romeo is a Montague. Which family does Juliet belong to?"
+  },
+  {
+    "file": "l-5e386a27.mp3",
+    "text": "The answer is: The Capulets. The play is set in Verona, where visitors still leave letters for Juliet.",
+    "tts": "The answer is: The Capulets. The play is set in Verona, where visitors still leave letters for Juliet."
+  },
+  {
+    "file": "l-ec875fa3.mp3",
+    "text": "Which queen of Egypt had famous romances with Julius Caesar and Mark Antony?",
+    "tts": "Which queen of Egypt had famous romances with Julius Caesar and Mark Antony?"
+  },
+  {
+    "file": "l-c29746b3.mp3",
+    "text": "The answer is: Cleopatra. She was Cleopatra VII, the last active ruler of the Ptolemaic Kingdom of Egypt.",
+    "tts": "The answer is: Cleopatra. She was Cleopatra VII, the last active ruler of the Ptolemaic Kingdom of Egypt."
+  },
+  {
+    "file": "l-cfe2dde5.mp3",
+    "text": "Which Mughal emperor built the Taj Mahal in memory of his wife Mumtaz Mahal?",
+    "tts": "Which Mughal emperor built the Taj Mahal in memory of his wife Mumtaz Mahal?"
+  },
+  {
+    "file": "l-c42fb58a.mp3",
+    "text": "The answer is: Shah Jahan. Work began around 1632 and took more than 20 years. He is buried there beside her.",
+    "tts": "The answer is: Shah Jahan. Work began around 1632 and took more than 20 years. He is buried there beside her."
+  },
+  {
+    "file": "l-c52ae4fd.mp3",
+    "text": "In Greek myth, which musician traveled to the underworld to bring back his wife Eurydice?",
+    "tts": "In Greek myth, which musician traveled to the underworld to bring back his wife Eurydice?"
+  },
+  {
+    "file": "l-187abc62.mp3",
+    "text": "The answer is: Orpheus. He could lead her out as long as he did not look back. At the last moment, he looked back.",
+    "tts": "The answer is: Orpheus. He could lead her out as long as he did not look back. At the last moment, he looked back."
+  },
+  {
+    "file": "l-8b3811d4.mp3",
+    "text": "Which married couple shared the 1903 Nobel Prize in Physics with Henri Becquerel?",
+    "tts": "Which married couple shared the 1903 Nobel Prize in Physics with Henri Becquerel?"
+  },
+  {
+    "file": "l-e34a4501.mp3",
+    "text": "The answer is: Marie and Pierre Curie. Marie Curie later won a second Nobel Prize, in Chemistry, in 1911.",
+    "tts": "The answer is: Marie and Pierre Curie. Marie Curie later won a second Nobel Prize, in Chemistry, in 1911."
+  },
+  {
+    "file": "l-54ba8906.mp3",
+    "text": "What color of rose traditionally stands for romantic love?",
+    "tts": "What color of rose traditionally stands for romantic love?"
+  },
+  {
+    "file": "l-6a0af2d9.mp3",
+    "text": "The answer is: Red. Red roses are by far the most popular flower for Valentine's Day.",
+    "tts": "The answer is: Red. Red roses are by far the most popular flower for Valentine's Day."
+  },
+  {
+    "file": "l-d0879eb6.mp3",
+    "text": "Rather than romance, what does a yellow rose usually stand for today?",
+    "tts": "Rather than romance, what does a yellow rose usually stand for today?"
+  },
+  {
+    "file": "l-1fb70639.mp3",
+    "text": "The answer is: Friendship. In the Victorian language of flowers it could also mean jealousy. Today it means friendship and joy.",
+    "tts": "The answer is: Friendship. In the Victorian language of flowers it could also mean jealousy. Today it means friendship and joy."
+  },
+  {
+    "file": "l-94822a11.mp3",
+    "text": "What is the name for the Victorian custom of sending secret messages through the choice of flowers?",
+    "tts": "What is the name for the Victorian custom of sending secret messages through the choice of flowers?"
+  },
+  {
+    "file": "l-533a777e.mp3",
+    "text": "The answer is: Floriography (the language of flowers). Dictionaries explained what each flower meant, so a bouquet could say what people could not say out loud.",
+    "tts": "The answer is: Floriography (the language of flowers). Dictionaries explained what each flower meant, so a bouquet could say what people could not say out loud."
+  },
+  {
+    "file": "l-183f38e2.mp3",
+    "text": "Most cut flowers sold in the United States, including Valentine's roses, are flown in from which South American country?",
+    "tts": "Most cut flowers sold in the United States, including Valentine's roses, are flown in from which South American country?"
+  },
+  {
+    "file": "l-e1b6508a.mp3",
+    "text": "The answer is: Colombia. Colombia is the largest supplier of cut flowers to the US, followed by Ecuador.",
+    "tts": "The answer is: Colombia. Colombia is the largest supplier of cut flowers to the US, followed by Ecuador."
+  },
+  {
+    "file": "l-60da3816.mp3",
+    "text": "Tulips are a symbol of the Netherlands, but in which empire were they first grown as garden flowers?",
+    "tts": "Tulips are a symbol of the Netherlands, but in which empire were they first grown as garden flowers?"
+  },
+  {
+    "file": "l-37268d62.mp3",
+    "text": "The answer is: The Ottoman Empire (today's Turkey). Tulips reached the Netherlands in the late 1500s. The 'tulip mania' price bubble peaked in 1637.",
+    "tts": "The answer is: The Ottoman Empire (today's Turkey). Tulips reached the Netherlands in the late 1500s. The 'tulip mania' price bubble peaked in 1637."
+  },
+  {
+    "file": "l-08ace8e0.mp3",
+    "text": "In Disney's 'Beauty and the Beast' (1991), what enchanted flower is kept under a glass dome?",
+    "tts": "In Disney's 'Beauty and the Beast' (1991), what enchanted flower is kept under a glass dome?"
+  },
+  {
+    "file": "l-ab4af0c0.mp3",
+    "text": "The answer is: A rose. If the last petal falls before the Beast learns to love and be loved, the spell lasts forever.",
+    "tts": "The answer is: A rose. If the last petal falls before the Beast learns to love and be loved, the spell lasts forever."
+  },
+  {
+    "file": "l-b1c4a5b7.mp3",
+    "text": "In 'Titanic' (1997), what is the name of Leonardo DiCaprio's character?",
+    "tts": "In 'Titanic' (1997), what is the name of Leonardo DiCaprio's character?"
+  },
+  {
+    "file": "l-a04cd6a1.mp3",
+    "text": "The answer is: Jack Dawson. Kate Winslet played Rose DeWitt Bukater.",
+    "tts": "The answer is: Jack Dawson. Kate Winslet played Rose DeWitt Bukater."
+  },
+  {
+    "file": "l-022887ca.mp3",
+    "text": "Which 1989 romantic comedy with Billy Crystal and Meg Ryan asks whether men and women can ever be just friends?",
+    "tts": "Which 1989 romantic comedy with Billy Crystal and Meg Ryan asks whether men and women can ever be just friends?"
+  },
+  {
+    "file": "l-01b4ded4.mp3",
+    "text": "The answer is: When Harry Met Sally.... The script was written by Nora Ephron.",
+    "tts": "The answer is: When Harry Met Sally.... The script was written by Nora Ephron."
+  },
+  {
+    "file": "l-9bb0a55b.mp3",
+    "text": "In 'Casablanca' (1942), what is the name of the nightclub owned by Humphrey Bogart's character?",
+    "tts": "In 'Casablanca' (1942), what is the name of the nightclub owned by Humphrey Bogart's character?"
+  },
+  {
+    "file": "l-e551f32b.mp3",
+    "text": "The answer is: Rick's Café Américain. Ingrid Bergman played Ilsa, the woman who walks back into Rick's life.",
+    "tts": "The answer is: Rick's Café Américain. Ingrid Bergman played Ilsa, the woman who walks back into Rick's life."
+  },
+  {
+    "file": "l-209c5d94.mp3",
+    "text": "Which 1953 film, about a princess exploring Rome with an American reporter, won Audrey Hepburn the Oscar for Best Actress?",
+    "tts": "Which 1953 film, about a princess exploring Rome with an American reporter, won Audrey Hepburn the Oscar for Best Actress?"
+  },
+  {
+    "file": "l-c70e9637.mp3",
+    "text": "The answer is: Roman Holiday. Gregory Peck played the reporter. It was Hepburn's first starring role in a Hollywood film.",
+    "tts": "The answer is: Roman Holiday. Gregory Peck played the reporter. It was Hepburn's first starring role in a Hollywood film."
+  },
+  {
+    "file": "l-d18972a4.mp3",
+    "text": "Round Two. The stakes just went up.",
+    "tts": "Round Two. [mischievously] The stakes just went up."
+  },
+  {
+    "file": "l-1438803c.mp3",
+    "text": "Which British band released 'All You Need Is Love' in 1967?",
+    "tts": "Which British band released 'All You Need Is Love' in 1967?"
+  },
+  {
+    "file": "l-78e07f43.mp3",
+    "text": "The answer is: The Beatles. They first performed it on 'Our World', one of the first live TV shows broadcast around the globe.",
+    "tts": "The answer is: The Beatles. They first performed it on 'Our World', one of the first live TV shows broadcast around the globe."
+  },
+  {
+    "file": "l-97aa5b55.mp3",
+    "text": "Which singer had a 2003 hit with 'Crazy in Love', featuring Jay-Z?",
+    "tts": "Which singer had a 2003 hit with 'Crazy in Love', featuring Jay-Z?"
+  },
+  {
+    "file": "l-de706b9e.mp3",
+    "text": "The answer is: Beyoncé. It was the lead single of her first solo album, 'Dangerously in Love'.",
+    "tts": "The answer is: Beyoncé. It was the lead single of her first solo album, 'Dangerously in Love'."
+  },
+  {
+    "file": "l-d6cee2e6.mp3",
+    "text": "Which singer, known as the 'King of Rock and Roll', had a 1961 hit with 'Can't Help Falling in Love'?",
+    "tts": "Which singer, known as the 'King of Rock and Roll', had a 1961 hit with 'Can't Help Falling in Love'?"
+  },
+  {
+    "file": "l-ba6dc6f0.mp3",
+    "text": "The answer is: Elvis Presley. He sang it in the film 'Blue Hawaii' and often closed his concerts with it.",
+    "tts": "The answer is: Elvis Presley. He sang it in the film 'Blue Hawaii' and often closed his concerts with it."
+  },
+  {
+    "file": "l-41bd0096.mp3",
+    "text": "Whitney Houston's 1992 hit 'I Will Always Love You' was written and first recorded by which country star?",
+    "tts": "Whitney Houston's 1992 hit 'I Will Always Love You' was written and first recorded by which country star?"
+  },
+  {
+    "file": "l-0838b710.mp3",
+    "text": "The answer is: Dolly Parton. Dolly Parton released it in 1974 as a goodbye to her mentor, Porter Wagoner.",
+    "tts": "The answer is: Dolly Parton. Dolly Parton released it in 1974 as a goodbye to her mentor, Porter Wagoner."
+  },
+  {
+    "file": "l-ff91a1ca.mp3",
+    "text": "Which Russian composer wrote the 1935 ballet 'Romeo and Juliet', famous for the 'Dance of the Knights'?",
+    "tts": "Which Russian composer wrote the 1935 ballet 'Romeo and Juliet', famous for the 'Dance of the Knights'?"
+  },
+  {
+    "file": "l-dad30918.mp3",
+    "text": "The answer is: Sergei Prokofiev. The ballet had its first full performance in 1938, in Brno, in what is now the Czech Republic.",
+    "tts": "The answer is: Sergei Prokofiev. The ballet had its first full performance in 1938, in Brno, in what is now the Czech Republic."
+  },
+  {
+    "file": "l-97efdfb0.mp3",
+    "text": "Which pink birds stand on one leg and gather in flocks called a 'flamboyance'?",
+    "tts": "Which pink birds stand on one leg and gather in flocks called a 'flamboyance'?"
+  },
+  {
+    "file": "l-b067068d.mp3",
+    "text": "The answer is: Flamingos. Their pink color comes from pigments in the algae and shrimp they eat.",
+    "tts": "The answer is: Flamingos. Their pink color comes from pigments in the algae and shrimp they eat."
+  },
+  {
+    "file": "l-13c3eca3.mp3",
+    "text": "Lovebirds, the small parrots that sit close together in pairs, come from which continent?",
+    "tts": "Lovebirds, the small parrots that sit close together in pairs, come from which continent?"
+  },
+  {
+    "file": "l-d60e4309.mp3",
+    "text": "The answer is: Africa. They are native to mainland Africa and Madagascar.",
+    "tts": "The answer is: Africa. They are native to mainland Africa and Madagascar."
+  },
+  {
+    "file": "l-059caeb8.mp3",
+    "text": "In which sea creature does the male carry the eggs and give birth to the young?",
+    "tts": "In which sea creature does the male carry the eggs and give birth to the young?"
+  },
+  {
+    "file": "l-99ed7cde.mp3",
+    "text": "The answer is: The seahorse. The female places her eggs in a pouch on the male's belly, and he carries them until they hatch.",
+    "tts": "The answer is: The seahorse. The female places her eggs in a pouch on the male's belly, and he carries them until they hatch."
+  },
+  {
+    "file": "l-477ecf30.mp3",
+    "text": "Which bird's males keep an egg warm on their feet through the Antarctic winter while the females are away at sea?",
+    "tts": "Which bird's males keep an egg warm on their feet through the Antarctic winter while the females are away at sea?"
+  },
+  {
+    "file": "l-702d866d.mp3",
+    "text": "The answer is: The emperor penguin. The males huddle together and go without food for about two months while the egg develops.",
+    "tts": "The answer is: The emperor penguin. The males huddle together and go without food for about two months while the egg develops."
+  },
+  {
+    "file": "l-fc641add.mp3",
+    "text": "Prairie voles are famous in science for which behavior, rare among mammals?",
+    "tts": "Prairie voles are famous in science for which behavior, rare among mammals?"
+  },
+  {
+    "file": "l-383ac061.mp3",
+    "text": "The answer is: Forming lifelong pair bonds. Studies of their brains helped show how oxytocin and vasopressin shape bonding.",
+    "tts": "The answer is: Forming lifelong pair bonds. Studies of their brains helped show how oxytocin and vasopressin shape bonding."
+  },
+  {
+    "file": "l-b758691e.mp3",
+    "text": "In which city did so many 'love locks' cover the Pont des Arts bridge that its railings were replaced with glass panels in 2015?",
+    "tts": "In which city did so many 'love locks' cover the Pont des Arts bridge that its railings were replaced with glass panels in 2015?"
+  },
+  {
+    "file": "l-9bcfa564.mp3",
+    "text": "The answer is: Paris. The weight of the padlocks had become a danger to the bridge.",
+    "tts": "The answer is: Paris. The weight of the padlocks had become a danger to the bridge."
+  },
+  {
+    "file": "l-51dd6c3d.mp3",
+    "text": "In Japan, women traditionally give chocolate on Valentine's Day. What is the day, one month later, when men return the favor?",
+    "tts": "In Japan, women traditionally give chocolate on Valentine's Day. What is the day, one month later, when men return the favor?"
+  },
+  {
+    "file": "l-b9f389bf.mp3",
+    "text": "The answer is: White Day (March 14). White Day began in Japan in the late 1970s and spread to South Korea, Taiwan and China.",
+    "tts": "The answer is: White Day (March 14). White Day began in Japan in the late 1970s and spread to South Korea, Taiwan and China."
+  },
+  {
+    "file": "l-7beab6b3.mp3",
+    "text": "In South Korea, people who got nothing on Valentine's Day or White Day gather on April 14 to eat noodles in black bean sauce. What is this day called?",
+    "tts": "In South Korea, people who got nothing on Valentine's Day or White Day gather on April 14 to eat noodles in black bean sauce. What is this day called?"
+  },
+  {
+    "file": "l-43ad40a3.mp3",
+    "text": "The answer is: Black Day. The noodle dish is called jajangmyeon.",
+    "tts": "The answer is: Black Day. The noodle dish is called jajangmyeon."
+  },
+  {
+    "file": "l-bb1118ea.mp3",
+    "text": "In Wales, January 25 is a day of love named after which Welsh patron saint of lovers?",
+    "tts": "In Wales, January 25 is a day of love named after which Welsh patron saint of lovers?"
+  },
+  {
+    "file": "l-28112c3a.mp3",
+    "text": "The answer is: Saint Dwynwen. In Welsh it is Dydd Santes Dwynwen, and people send cards just as they do on Valentine's Day.",
+    "tts": "The answer is: Saint Dwynwen. In Welsh it is Dydd Santes Dwynwen, and people send cards just as they do on Valentine's Day."
+  },
+  {
+    "file": "l-a5a9642f.mp3",
+    "text": "In Finland and Estonia, February 14 is not mainly about romance. What kind of day is it?",
+    "tts": "In Finland and Estonia, February 14 is not mainly about romance. What kind of day is it?"
+  },
+  {
+    "file": "l-0bd10fb7.mp3",
+    "text": "The answer is: Friendship Day. In Finnish it is Ystävänpäivä, 'friend's day', and people send cards to friends.",
+    "tts": "The answer is: Friendship Day. In Finnish it is Ystävänpäivä, 'friend's day', and people send cards to friends."
+  },
+  {
+    "file": "l-99f43975.mp3",
+    "text": "How many chambers does the human heart have?",
+    "tts": "How many chambers does the human heart have?"
+  },
+  {
+    "file": "l-84f7376e.mp3",
+    "text": "The answer is: Four. Two atria on top receive blood, and two ventricles below pump it out.",
+    "tts": "The answer is: Four. Two atria on top receive blood, and two ventricles below pump it out."
+  },
+  {
+    "file": "l-d6cd22ef.mp3",
+    "text": "What is a normal resting heart rate for an adult, in beats per minute?",
+    "tts": "What is a normal resting heart rate for an adult, in beats per minute?"
+  },
+  {
+    "file": "l-25d55f5d.mp3",
+    "text": "The answer is: 60 to 100. Well-trained athletes can have resting rates as low as 40.",
+    "tts": "The answer is: 60 to 100. Well-trained athletes can have resting rates as low as 40."
+  },
+  {
+    "file": "l-8f01fce9.mp3",
+    "text": "Which hormone, nicknamed the 'love hormone' or 'cuddle hormone', is released during hugs and bonding?",
+    "tts": "Which hormone, nicknamed the 'love hormone' or 'cuddle hormone', is released during hugs and bonding?"
+  },
+  {
+    "file": "l-fdd3944b.mp3",
+    "text": "The answer is: Oxytocin. It is made in the hypothalamus and released by the pituitary gland.",
+    "tts": "The answer is: Oxytocin. It is made in the hypothalamus and released by the pituitary gland."
+  },
+  {
+    "file": "l-3c8d0b5e.mp3",
+    "text": "Which extinct plant from ancient Libya, whose heart-shaped seed pod appeared on coins, is one theory for the origin of the heart symbol?",
+    "tts": "Which extinct plant from ancient Libya, whose heart-shaped seed pod appeared on coins, is one theory for the origin of the heart symbol?"
+  },
+  {
+    "file": "l-0950aec8.mp3",
+    "text": "The answer is: Silphium. The city of Cyrene grew rich trading it. It is one of several theories for where the heart shape came from.",
+    "tts": "The answer is: Silphium. The city of Cyrene grew rich trading it. It is one of several theories for where the heart shape came from."
+  },
+  {
+    "file": "l-a26e28af.mp3",
+    "text": "'Broken heart syndrome', a real heart condition triggered by sudden stress or grief, is also known by which Japanese name?",
+    "tts": "'Broken heart syndrome', a real heart condition triggered by sudden stress or grief, is also known by which Japanese name?"
+  },
+  {
+    "file": "l-6c2b7e4f.mp3",
+    "text": "The answer is: Takotsubo cardiomyopathy. During an attack the heart's main chamber takes the shape of a takotsubo, a Japanese octopus trap.",
+    "tts": "The answer is: Takotsubo cardiomyopathy. During an attack the heart's main chamber takes the shape of a takotsubo, a Japanese octopus trap."
+  },
+  {
+    "file": "l-b4a66038.mp3",
+    "text": "How do you say 'I love you' in French?",
+    "tts": "How do you say 'I love you' in French?"
+  },
+  {
+    "file": "l-8259e75b.mp3",
+    "text": "The answer is: Je t'aime. In Spanish it is 'te quiero' or 'te amo', and in Italian 'ti amo'.",
+    "tts": "The answer is: Je t'aime. In Spanish it is 'te quiero' or 'te amo', and in Italian 'ti amo'."
+  },
+  {
+    "file": "l-081faadb.mp3",
+    "text": "'Ich liebe dich' means 'I love you' in which language?",
+    "tts": "'Ich liebe dich' means 'I love you' in which language?"
+  },
+  {
+    "file": "l-7b63a814.mp3",
+    "text": "The answer is: German. German speakers also say 'Ich hab dich lieb' to family and close friends.",
+    "tts": "The answer is: German. German speakers also say 'Ich hab dich lieb' to family and close friends."
+  },
+  {
+    "file": "l-ae85569f.mp3",
+    "text": "Which English poet wrote the line 'How do I love thee? Let me count the ways'?",
+    "tts": "Which English poet wrote the line 'How do I love thee? Let me count the ways'?"
+  },
+  {
+    "file": "l-57501b83.mp3",
+    "text": "The answer is: Elizabeth Barrett Browning. It is Sonnet 43 from 'Sonnets from the Portuguese', published in 1850. She married the poet Robert Browning.",
+    "tts": "The answer is: Elizabeth Barrett Browning. It is Sonnet 43 from 'Sonnets from the Portuguese', published in 1850. She married the poet Robert Browning."
+  },
+  {
+    "file": "l-6c3aaf03.mp3",
+    "text": "Shakespeare's Sonnet 18 begins by asking whether the poet should compare his love to what?",
+    "tts": "Shakespeare's Sonnet 18 begins by asking whether the poet should compare his love to what?"
+  },
+  {
+    "file": "l-cbe1360f.mp3",
+    "text": "The answer is: A summer's day. The answer the poem gives is that the beloved is even 'more lovely and more temperate'.",
+    "tts": "The answer is: A summer's day. The answer the poem gives is that the beloved is even 'more lovely and more temperate'."
+  },
+  {
+    "file": "l-2321494f.mp3",
+    "text": "The ancient Greeks had several words for love. Which one meant the love between friends?",
+    "tts": "The ancient Greeks had several words for love. Which one meant the love between friends?"
+  },
+  {
+    "file": "l-dd7f2fd3.mp3",
+    "text": "The answer is: Philia. Eros was romantic love, agape selfless love and storge the love within a family.",
+    "tts": "The answer is: Philia. Eros was romantic love, agape selfless love and storge the love within a family."
+  },
+  {
+    "file": "l-545df660.mp3",
+    "text": "The Love Letter has arrived. The final category is: Royal Romance. Write down your secret wagers. You may bet up to half of your score, or up to 500 if that is more.",
+    "tts": "[whispers] The Love Letter has arrived. The final category is: Royal Romance. Write down your secret wagers. You may bet up to half of your score, or up to 500 if that is more."
+  },
+  {
+    "file": "l-1aead18e.mp3",
+    "text": "Which British king gave up the throne in 1936 so that he could marry the American Wallis Simpson?",
+    "tts": "Which British king gave up the throne in 1936 so that he could marry the American Wallis Simpson?"
+  },
+  {
+    "file": "l-6e974262.mp3",
+    "text": "The answer is: Edward VIII. He reigned for less than a year. His brother became King George VI.",
+    "tts": "The answer is: Edward VIII. He reigned for less than a year. His brother became King George VI."
+  },
+  {
+    "file": "l-0ad926d7.mp3",
+    "text": "In what year did Hershey's Kisses first go on sale?",
+    "tts": "In what year did Hershey's Kisses first go on sale?"
+  },
+  {
+    "file": "l-6c8d64bf.mp3",
+    "text": "The answer is: 1907. For years they were wrapped by hand. A machine took over in 1921.",
+    "tts": "The answer is: 1907. For years they were wrapped by hand. A machine took over in 1921."
+  },
+  {
+    "file": "l-7979c256.mp3",
+    "text": "Team Lovebirds won our hearts!",
+    "tts": "[excited] Team Lovebirds won our hearts! [applause]"
+  },
+  {
+    "file": "l-99aed017.mp3",
+    "text": "Team Sweethearts won our hearts!",
+    "tts": "[excited] Team Sweethearts won our hearts! [applause]"
+  },
+  {
+    "file": "l-1c53680a.mp3",
+    "text": "Team Roses won our hearts!",
+    "tts": "[excited] Team Roses won our hearts! [applause]"
+  },
+  {
+    "file": "l-02cd182d.mp3",
+    "text": "Team Truffles won our hearts!",
+    "tts": "[excited] Team Truffles won our hearts! [applause]"
+  },
+  {
+    "file": "l-d212a1cc.mp3",
+    "text": "The price: 100 points!",
+    "tts": "[mischievously] The price... 100 points!"
+  },
+  {
+    "file": "l-494dcb81.mp3",
+    "text": "The price: 200 points!",
+    "tts": "[mischievously] The price... 200 points!"
+  },
+  {
+    "file": "l-53fff7fa.mp3",
+    "text": "The price: 300 points!",
+    "tts": "[mischievously] The price... 300 points!"
+  },
+  {
+    "file": "l-3f1e82cf.mp3",
+    "text": "The price: 400 points!",
+    "tts": "[mischievously] The price... 400 points!"
+  },
+  {
+    "file": "l-2e88ad90.mp3",
+    "text": "The price: 500 points!",
+    "tts": "[mischievously] The price... 500 points!"
+  },
+  {
+    "file": "l-cbe0a1b5.mp3",
+    "text": "The price: 600 points!",
+    "tts": "[mischievously] The price... 600 points!"
+  },
+  {
+    "file": "l-cc27cd63.mp3",
+    "text": "The price: 800 points!",
+    "tts": "[mischievously] The price... 800 points!"
+  },
+  {
+    "file": "l-b9ee2660.mp3",
+    "text": "The price: 1000 points!",
+    "tts": "[mischievously] The price... 1000 points!"
+  },
+  {
+    "file": "l-2ba313b9.mp3",
+    "text": "Team Lovebirds, this chocolate is yours!",
+    "tts": "Team Lovebirds, this chocolate is yours!"
+  },
+  {
+    "file": "l-5e25f23c.mp3",
+    "text": "Team Sweethearts, this chocolate is yours!",
+    "tts": "Team Sweethearts, this chocolate is yours!"
+  },
+  {
+    "file": "l-54333c4d.mp3",
+    "text": "Team Roses, this chocolate is yours!",
+    "tts": "Team Roses, this chocolate is yours!"
+  },
+  {
+    "file": "l-e5947cda.mp3",
+    "text": "Team Truffles, this chocolate is yours!",
+    "tts": "Team Truffles, this chocolate is yours!"
+  }
+]

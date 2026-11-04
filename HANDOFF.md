@@ -88,6 +88,15 @@ Needs `fontpkgs/` (see above), Node with Playwright, and Pillow. Intermediate fi
 - **Mirror** (no-redirect copy on github.io): `python3 tools/build_mirror.py <site_dir> <mirror_repo>`; `MIRROR_BASE = /game-nights-play` (repo not created).
 - **Offline single file:** `python3 tools/build_offline.py christmas <out.html>` (or `halloween`): game + audio + fonts, about 24 MB, no network.
 
+## Sweetheart Showdown (Valentine's Day game, started November 4, 2026)
+
+Decisions she made: name **Victoria's Sweetheart Showdown** (on screen "Viktoriia's"); surprise 1 **Cupid's Arrow** (`special: "cat"`: the team that gets hit gives the question away); surprise 2 **Box of Chocolates** (`"witch"`: the first chocolate picks the price, the second the team); final **The Love Letter** (secret wagers); winner line "Team X won our hearts!"; Round Two slide "Double the love". Audience: **the whole English-speaking world, US first**, US spelling, no country category; love of every kind (friendship, chocolate, flowers, famous couples, movies, songs, animals, science, world traditions), nothing about dating coworkers. On the site from **January 20, 2027** (`launch` in `tools/games.py`).
+
+- Game: `valentines/sweetheart-showdown.html`, built by `python3 tools/build_valentines.py night-of-frights.html valentines/sweetheart-showdown.html` (same text-replacement method as Christmas; asserts every replacement). Questions `valentines/questions.js` (50 + final "Royal Romance" = Edward VIII + tiebreaker Hershey's Kisses 1907; facts checked from memory, no song lyrics). Art `valentines/art.js`: heart, arrow-through-heart, heart box of chocolates, love letter, rose, bonbon. Palette: wine night `#1a0f17`, rose `#ef7d9a`, blush `#ffd6e0`, caramel `#d4935f`; display font **Yeseva One** (fontsource `yeseva-one`, added to `fontify.py`); rosy sparkles drifting up instead of snow; slow music-box ballad in the final. Storage keys `ss-state-v1`, `ss-questions-v1`, `ss-voice-v1`. Team names: Lovebirds, Sweethearts, Roses, Truffles.
+- Site: `tools/pages_valentines.py` (four pages, made from the Christmas pages and rewritten), screenshots `games/valentines/shots/`. Preview build checked: 45 URLs, nothing broken, no JS errors.
+- Narrator: 136 lines, 13,210 characters, in `valentines/voice-lines.json`. **Voice not made yet**: prompts in `valentines/voice-design-prompts.md` (main choice: warm female radio host, light American accent; B: male crooner). After she sends the voice ID: put it in a copy of the voice kit (default voice in `generate-voice.ps1`) with this `voice-lines.json`, she runs it on her PC in a **new folder**, sends `audio`, put it in `audio/valentines/`.
+- Offline file for her review (browser voice, no audio): `python3 tools/build_offline.py valentines <out.html>` (works without audio now).
+
 ## Money and growth plan (agreed November 3, 2026; do it when the site is published)
 
 She liked this three-step test of demand and wants it built **together with the website**:
@@ -109,7 +118,7 @@ Direction: **the whole English-speaking world, US first**, neutral English for t
 3. **After the new site is live:** run `build_redirects.py` on the night-of-frights repo and push. Search Console: add the new domain (HTML-file verification, she can't give Namecheap passwords), submit the sitemap, use the Change of Address tool from nightoffrights.monster; IndexNow for Bing. Update or retire the night-of-frights-game mirror. In GA: rename the property, add the new domain.
 4. **November 15:** rebuild (Christmas appears by date), push, request indexing for the Christmas pages.
 5. **She reviews the Christmas game** (offline file sent on Nov 3) and sends changes in one list. Changed narrator text needs re-voicing of those lines only (`voice-kit/start-voice.bat` on her PC, same folder; ElevenLabs is not reachable from the cloud). She sends audio as .rar; `node-unrar-js` (npm, WASM) extracts it in the cloud.
-6. **Valentine's Day game:** name, questions, art, voice. Launch by about January 20 so search engines find it before February 14.
+6. **Valentine's Day game:** built on Nov 4 (see "Sweetheart Showdown"). Remaining: her review, the narrator voice and audio. Goes live by date on January 20, 2027.
 
 ## Things to keep in mind
 

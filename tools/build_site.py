@@ -30,7 +30,18 @@ print(f"Building {OUT} for {TODAY}{' (preview)' if PREVIEW else ''}: games", [g[
 TEAMS = [{"name": "Team Elves", "score": 1100}, {"name": "Team Reindeer", "score": -300}, {"name": "Team Snowmen", "score": 900}, {"name": "Team Gingerbread", "score": 400}]
 BASE = {"screen": "board", "teamCount": 4, "teams": TEAMS, "round": 0, "used": {"0-0-0": 1, "0-1-0": 1, "0-2-1": 1, "0-3-0": 1, "0-4-0": 1},
         "turn": 1, "q": None, "final": None, "sound": False}
-SHOT_STATES = {"christmas": {
+VTEAMS = [{"name": "Team Lovebirds", "score": 1100}, {"name": "Team Sweethearts", "score": -300}, {"name": "Team Roses", "score": 900}, {"name": "Team Truffles", "score": 400}]
+VBASE = {**BASE, "teams": VTEAMS}
+SHOT_STATES = {"valentines": {
+    "board": VBASE,
+    "question": {**VBASE, "q": {"c": 4, "i": 3, "value": 400, "special": None, "picker": 1, "team": 1, "bid": None, "judged": {}, "stage": "ask"}},
+    "arrow": {**VBASE, "q": {"c": 1, "i": 2, "value": 300, "special": "cat", "picker": 0, "team": None, "bid": None, "judged": {}, "stage": "intro", "catAsk": True}},
+    "chocolates": {**VBASE, "q": {"c": 4, "i": 4, "value": 500, "special": "witch", "picker": 0, "team": None, "bid": 300, "w": {"price": 300, "team": 2},
+                                  "judged": {}, "stage": "intro", "witchAsk": True}},
+    "final": {**VBASE, "screen": "final", "round": 1, "used": {}, "final": {"stage": "category", "wagers": [], "judged": []}},
+    "podium": {**VBASE, "screen": "podium", "round": 1, "used": {}, "final": {"stage": "done", "wagers": [], "judged": []},
+               "teams": [{"name": "Team Lovebirds", "score": 3400}, {"name": "Team Sweethearts", "score": 2100}, {"name": "Team Roses", "score": 2800}, {"name": "Team Truffles", "score": 900}]},
+}, "christmas": {
     "board": BASE,
     "question": {**BASE, "q": {"c": 3, "i": 3, "value": 400, "special": None, "picker": 1, "team": 1, "bid": None, "judged": {}, "stage": "ask"}},
     "coal": {**BASE, "q": {"c": 1, "i": 2, "value": 300, "special": "cat", "picker": 0, "team": None, "bid": None, "judged": {}, "stage": "intro", "catAsk": True}},

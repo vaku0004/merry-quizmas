@@ -32,7 +32,11 @@ html = html[:start] + "<style>" + "\n".join(css) + "</style>" + html[end:]
 assert "fonts.googleapis.com" not in html and "fonts.gstatic.com" not in html
 
 # 2. narrator audio: every line as a data URI, read by loadPack instead of fetching audio/manifest.json
-m = json.load(open(f"{A}/manifest.json", encoding="utf-8-sig"))
+if not os.path.isfile(f"{A}/manifest.json"):     # no narrator audio yet: the game uses the browser voice
+    print("no audio yet in", A)
+    m = {"lines": {}}
+else:
+    m = json.load(open(f"{A}/manifest.json", encoding="utf-8-sig"))
 lines = {text: "data:audio/mpeg;base64," + b64(f"{A}/{f}") for text, f in m["lines"].items()}
 pack = {"base": "", "voice": m.get("voice", ""), "model": m.get("model", ""), "lines": lines}
 pack_js = "<script>window.__NOF_PACK = " + json.dumps(pack, ensure_ascii=False).replace("</", "<\\/") + ";</script>\n"

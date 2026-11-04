@@ -73,7 +73,7 @@ h1{{font-family:'{fam}';font-weight:{w};font-size:{104 if w == 700 else 112}px;l
 def hub_sources(games_out):
     th = H.HUB
     css = base_css(th, "240,180,76", "231,122,149", False)
-    arts = "".join(f'<div class="a">{G.art(g, g["icon"])}</div>' for g in G.GAMES if g["status"] != "soon") + f'<div class="a">{H.HEART}</div>'
+    arts = "".join(f'<div class="a">{G.art(g, g["icon"]) if g["status"] != "soon" else H.HEART}</div>' for g in G.GAMES)
     og = f"""<!doctype html><html><head><meta charset="utf-8"><style>{css}
 .text{{position:absolute;left:84px;top:80px;width:1040px}}
 h1{{font-family:'Alegreya';font-weight:800;font-size:94px;line-height:1;margin:18px 0 0;white-space:nowrap;color:{th['ember']}}}

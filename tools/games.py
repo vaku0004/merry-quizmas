@@ -74,9 +74,29 @@ CHRISTMAS = dict(
 )
 
 VALENTINES = dict(
-    slug="valentines", status="soon", launch=None, name="A Valentine’s Day game", short="Valentine’s Day", holiday="Valentine’s Day",
-    theme=dict(night="#1a0f17", ember="#ffd1dc", candle="#e77a95", line="#4a2a3c"),
-    card="A sweet (and slightly cheeky) quiz for teams, just in time for February 14.", coming="Coming in February",
+    slug="valentines", status="scheduled", launch="2027-01-20",
+    name="Victoria’s Sweetheart Showdown", short="Sweetheart Showdown", holiday="Valentine’s Day",
+    src="valentines/sweetheart-showdown.html", art_src="valentines/art.js", audio="audio/valentines", state_key="ss-state-v1",
+    icon="HEART_SVG", specials={"cat": "cupids_arrow", "witch": "box_of_chocolates"},
+    theme=dict(night="#1a0f17", dusk="#251520", cell="#33192a", line="#4a2a3c", bone="#fbeff2", ash="#c7a9b6",
+               candle="#ef7d9a", ember="#ffd6e0", good="#7fc4a0", witch="#d4935f", bad="#e8485f"),
+    rgb=dict(night="26,15,23", dusk="37,21,32", glow="239,125,154", glow2="212,147,95"), tag2="var(--witch)",
+    display=("Yeseva One", 400, "yeseva-one", '"Yeseva One",Georgia,"Times New Roman",serif'),
+    gfont="Yeseva+One",
+    title="Victoria’s Sweetheart Showdown · Valentine’s Day Office Quiz Game",
+    desc="Free Valentine’s Day trivia game for office parties and team events: a game-show board, Cupid’s Arrow, a box of chocolates and a love-letter wager.",
+    og_desc="A free Valentine’s Day quiz for the whole office: sweet trivia, Cupid’s Arrow, a box of chocolates and a love-letter wager, with a narrator.",
+    og_alt="a Valentine’s Day quiz for the whole office, with a glowing heart",
+    eyebrow="A Valentine’s Day quiz for the whole office",
+    intro="A free Valentine’s Day trivia game for office parties and team events, made for a big screen. Teams pick sweet questions on a game-show board, think for 30 seconds and answer. A narrator reads every question aloud. Love of every kind, and nothing awkward for the office.",
+    rules=[("Two rounds", "of five categories about love, chocolate, flowers, movies, songs and more, worth 100–500 and then 200–1,000 points."),
+           ("Cupid’s Arrow:", "the team that gets hit by the arrow must hand the question to another team."),
+           ("Box of Chocolates:", "two chocolates pick a random price and the team that must answer."),
+           ("The Love Letter:", "one final question with secret wagers, then a podium for the team that won our hearts.")],
+    chips=[("ARROW_SVG", "Cupid’s Arrow"), ("CHOCOLATES_SVG", "Box of Chocolates"), ("LETTER_SVG", "Love Letter wager")],
+    card="Sweet trivia about love of every kind, Cupid’s Arrow, a box of chocolates and a love-letter wager. Nothing awkward for the office.",
+    page_art={"trivia-questions": "HEART_SVG", "virtual-games-for-work": "LETTER_SVG", "how-to-host-a-game-night": "ROSE_SVG", "faq": "CHOCOLATES_SVG"},
+    shots=["board", "question", "chocolates", "arrow", "final", "podium"],
 )
 
 GAMES = [HALLOWEEN, CHRISTMAS, VALENTINES]
