@@ -34,6 +34,7 @@ BASE = {"screen": "board", "teamCount": 4, "teams": TEAMS, "round": 0, "used": {
 VTEAMS = [{"name": "Team Lovebirds", "score": 1100}, {"name": "Team Sweethearts", "score": -300}, {"name": "Team Roses", "score": 900}, {"name": "Team Truffles", "score": 400}]
 VBASE = {**BASE, "teams": VTEAMS}
 PBASE = {**BASE, "teams": [{"name": "Team Shamrocks", "score": 1100}, {"name": "Team Leprechauns", "score": -300}, {"name": "Team Rainbows", "score": 900}, {"name": "Team Clovers", "score": 400}]}
+DBASE = {**BASE, "teams": [{"name": "Team Cassettes", "score": 1100}, {"name": "Team Arcade", "score": -300}, {"name": "Team Neon", "score": 900}, {"name": "Team Dial-Up", "score": 400}]}
 SHOT_STATES = {"valentines": {
     "board": VBASE,
     "question": {**VBASE, "q": {"c": 4, "i": 3, "value": 400, "special": None, "picker": 1, "team": 1, "bid": None, "judged": {}, "stage": "ask"}},
@@ -52,6 +53,15 @@ SHOT_STATES = {"valentines": {
     "final": {**PBASE, "screen": "final", "round": 1, "used": {}, "final": {"stage": "category", "wagers": [], "judged": []}},
     "podium": {**PBASE, "screen": "podium", "round": 1, "used": {}, "final": {"stage": "done", "wagers": [], "judged": []},
                "teams": [{"name": "Team Shamrocks", "score": 3400}, {"name": "Team Leprechauns", "score": 2100}, {"name": "Team Rainbows", "score": 2800}, {"name": "Team Clovers", "score": 900}]},
+}, "decades": {
+    "board": DBASE,
+    "question": {**DBASE, "q": {"c": 3, "i": 3, "value": 400, "special": None, "picker": 1, "team": 1, "bid": None, "judged": {}, "stage": "ask"}},
+    "tape": {**DBASE, "q": {"c": 1, "i": 2, "value": 300, "special": "cat", "picker": 0, "team": None, "bid": None, "judged": {}, "stage": "intro", "catAsk": True}},
+    "timemachine": {**DBASE, "q": {"c": 4, "i": 4, "value": 500, "special": "witch", "picker": 0, "team": None, "bid": 300, "w": {"price": 300, "team": 2},
+                                   "judged": {}, "stage": "intro", "witchAsk": True}},
+    "final": {**DBASE, "screen": "final", "round": 1, "used": {}, "final": {"stage": "category", "wagers": [], "judged": []}},
+    "podium": {**DBASE, "screen": "podium", "round": 1, "used": {}, "final": {"stage": "done", "wagers": [], "judged": []},
+               "teams": [{"name": "Team Cassettes", "score": 3400}, {"name": "Team Arcade", "score": 2100}, {"name": "Team Neon", "score": 2800}, {"name": "Team Dial-Up", "score": 900}]},
 }, "christmas": {
     "board": BASE,
     "question": {**BASE, "q": {"c": 3, "i": 3, "value": 400, "special": None, "picker": 1, "team": 1, "bid": None, "judged": {}, "stage": "ask"}},

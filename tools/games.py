@@ -125,7 +125,33 @@ STPATRICKS = dict(
     shots=["board", "question", "rainbow", "leprechaun", "final", "podium"],
 )
 
-GAMES = [HALLOWEEN, CHRISTMAS, VALENTINES, STPATRICKS]
+DECADES = dict(
+    slug="decades", status="live", launch=None,
+    name="Victoria’s Decades Showdown", short="Decades Showdown", holiday="Retro",
+    src="games/decades/game.html", art_src="games/decades/art.js", audio="audio/decades", state_key="ds-state-v1",
+    icon="CASSETTE_SVG", specials={"cat": "tangled_tape", "witch": "time_machine"},
+    theme=dict(night="#120d24", dusk="#1c1533", cell="#281d47", line="#43356e", bone="#f5f0ff", ash="#b3a8d6",
+               candle="#ff5aa8", ember="#ffd1ec", good="#3be8b0", witch="#3fd5ff", bad="#ff6b5a"),
+    rgb=dict(night="18,13,36", dusk="28,21,51", glow="255,90,168", glow2="63,213,255"), tag2="var(--witch)",
+    display=("Righteous", 400, "righteous", '"Righteous","Arial Rounded MT Bold",Helvetica,sans-serif'),
+    gfont="Righteous",
+    title="Victoria’s Decades Showdown · ’80s, ’90s and 2000s Office Quiz Game",
+    desc="Free retro trivia game for office parties and team events: ’80s, ’90s and 2000s questions on a game-show board, a tangled tape, a time machine and a final wager.",
+    og_desc="A free retro quiz for the whole office: ’80s, ’90s and 2000s trivia, a tangled tape, a time machine and a time-capsule wager, with a narrator.",
+    og_alt="a retro quiz for the whole office, with a neon cassette tape",
+    eyebrow="A retro quiz for the whole office",
+    intro="A free trivia game about the ’80s, ’90s and 2000s for office parties and team events, made for a big screen. Teams pick retro questions on a game-show board, think for 30 seconds and answer. A narrator reads every question aloud. Every generation in the office gets its moment.",
+    rules=[("Two rounds", "of five categories about toys, TV, movies, music, tech, fads and headlines from three decades, worth 100–500 and then 200–1,000 points."),
+           ("Tangled Tape:", "the team that finds the tangled tape must hand the question to another team."),
+           ("Time Machine:", "the time machine makes two trips and picks a random price and the team that must answer."),
+           ("The Time Capsule:", "one final question with secret wagers, then a podium for the team that rocked the decades.")],
+    chips=[("TANGLED_SVG", "Tangled Tape"), ("TIMEMACHINE_SVG", "Time Machine"), ("CAPSULE_SVG", "Time-capsule wager")],
+    card="’80s, ’90s and 2000s trivia: toys, TV, movies, music, tech and fads, with a tangled tape, a time machine and a time-capsule wager. Fun any time of year.",
+    page_art={"trivia-questions": "CASSETTE_SVG", "virtual-games-for-work": "BOOMBOX_SVG", "how-to-host-a-game-night": "TIMEMACHINE_SVG", "faq": "CAPSULE_SVG"},
+    shots=["board", "question", "timemachine", "tape", "final", "podium"],
+)
+
+GAMES = [DECADES, HALLOWEEN, CHRISTMAS, VALENTINES, STPATRICKS]
 PLAYABLE = [g for g in GAMES if g["status"] in ("live", "scheduled")]
 
 # Content pages every playable game has (slug, nav label). Content: tools/pages_<game>.py

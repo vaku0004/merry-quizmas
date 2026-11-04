@@ -58,6 +58,10 @@ h2{font-weight:800;font-size:clamp(1.8rem,4vw,2.4rem);line-height:1.1;margin:2em
 .game .links{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:14px;font-family:var(--f-ui);font-size:.95rem}
 .game .links a{color:var(--g-ash)}
 .game.soon{border-style:dashed}
+.soon-h{font-family:var(--f-ui);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.85rem;color:var(--ash);margin:34px 0 12px}
+.games.small{grid-template-columns:repeat(auto-fit,minmax(min(100%%,300px),1fr));margin-top:0}
+.games.small .game h3{font-size:2rem}
+.games.small .game svg{width:76px;height:76px}
 .game.soon .btn{background:transparent;border:1px dashed var(--g-line);color:var(--g-ash);cursor:default}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%%,240px),1fr));gap:16px;padding:0;margin:0;list-style:none;counter-reset:s}
 .steps li{border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:rgba(26,31,54,.7);font-family:var(--f-ui);font-size:1rem;line-height:1.45}
@@ -171,7 +175,14 @@ def _shell(title, desc, canonical, body, ld=None, og_img=None):
 
 
 def home_page(out_slugs, today):
-    cards = "\n".join(_card(g, g["slug"] in out_slugs) for g in G.GAMES)
+    playable = [g for g in G.GAMES if g["slug"] in out_slugs]
+    upcoming = [g for g in G.GAMES if g["slug"] not in out_slugs]
+    cards = "\n".join(_card(g, True) for g in playable)
+    soon = "\n".join(_card(g, False) for g in upcoming)
+    soon_block = f'''<h3 class="soon-h">Coming soon</h3>
+<div class="games small">
+{soon}
+</div>''' if upcoming else ""
     live = [g for g in G.GAMES if g["slug"] in out_slugs]
     faq = "".join(f"<h3>{e(q)}</h3><p>{a}</p>" for q, a in FAQ)
     body = f'''<section class="hero">
@@ -184,7 +195,8 @@ def home_page(out_slugs, today):
 <section id="games" aria-labelledby="games-h"><h2 id="games-h" style="margin-top:.6em">Pick a game</h2>
 <div class="games">
 {cards}
-</div></section>
+</div>
+{soon_block}</section>
 
 <section id="how" aria-labelledby="how-h"><h2 id="how-h">How a game night works</h2>
 <ol class="steps">

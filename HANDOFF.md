@@ -113,6 +113,17 @@ Decisions she made: name **Victoria's Pot o' Gold**; surprise 1 **Leprechaun's T
 - Checks: game test (`tools/e2e_game.js`) passes; preview site 58 URLs OK; home page now shows the game cards 2 × 2.
 - Voice made on Nov 4: ID `t6vJ4FT1TpF4LOWRQV9n` (prompts in `games/stpatricks/voice-design-prompts.md`). Kit with it as default: `games/stpatricks/voice-kit/` (sent as PotOGold-voice.zip). **Audio done (Nov 4):** 136/136 lines (voice name in ElevenLabs "Patrick", eleven_v4) checked and committed to `audio/stpatricks/`.
 
+## Decades Showdown (all-year retro game, made November 4, 2026)
+
+Decisions she made: name **Victoria's Decades Showdown**, decades **'80s, '90s and 2000s**; surprise 1 **Tangled Tape** (`"cat"`); surprise 2 **Time Machine** (`"witch"`: two trips, price then team); final **The Time Capsule**; winner line "Team X rocked the decades!"; Round Two slide "Fast forward". Audience: whole world, US first. **Status "live"** (no holiday, so it goes on the site at launch; set `status`/`launch` in `tools/games.py` to hold it back).
+
+- Files: `games/decades/` (theme.py, questions.js, art.js, game.html, voice-lines.json, voice-design-prompts.md, shots/); site pages `tools/pages_decades.py`; `holiday="Retro"` in games.py (used in "Retro trivia questions" links). Storage keys `ds-state-v1`, `ds-questions-v1`, `ds-voice-v1`. Teams: Cassettes, Arcade, Neon, Dial-Up. Narrator name "DJ Rewind".
+- Look: deep purple night `#120d24`, neon pink `#ff5aa8`, cyan `#3fd5ff`, mint `#3be8b0`; display font **Righteous** (fontsource `righteous`); a faint neon grid at the bottom and pink/cyan specks; synth arpeggio with off-beat hi-hats in the final. Art: cassette, tangled tape, time-machine clock, time capsule "2000", boombox, rewind icon.
+- Questions: 50 + final "Inventions That Changed Everything" (World Wide Web) + tiebreaker (first SMS, 1992). Categories R1: Totally ’80s, All That ’90s, Y2K & the 2000s, Toys & Games, TV Time; R2: Movie Flashback, Chart Toppers, Tech Flashback, Fads & Fashion, Headlines. Checked from memory.
+- Home page now: playable games 2 per row, then a "Coming soon" row of smaller cards. Preview images scale wide display fonts (Righteous, Eagle Lake) down.
+- Checks: game test passes; preview site 71 URLs OK; today's build shows Decades + Halloween playable.
+- **Voice not made yet:** prompts in `games/decades/voice-design-prompts.md` (main: retro radio DJ, male; B: female). 136 lines, 12,094 characters. After the voice ID: copy a voice kit, set the default voice ID and the name.
+
 ## Fact check of all questions (November 4, 2026)
 
 All 3 × 52 questions reviewed; doubtful facts checked online. Fixed: Halloween "Windsor Pumpkin Regatta" (the 2019 race was cancelled; now "for about twenty years from 1999", note says it ended when the lake was drained) and "Ganong" (first wrapped bar is the company's own claim: now "says it made the first wrapped chocolate bar in North America"; 1898 vs 1910 dates disputed, removed); Christmas tiebreaker note (Gene Autry's Rudolph: about 1.75 million copies in the first season, not "more than 2 million"); Valentine's "Colombia" question reworded (largest supplier of cut flowers to the US, not "most flowers sold").

@@ -13,7 +13,7 @@ const files = process.argv.slice(2);
     const p = await ctx.newPage();
     const errs = [], log = []; let played0 = 0; const fb0 = [];
     p.on('pageerror', e => errs.push(e.message));
-    p.on('console', m => { if (m.type() === 'error') errs.push('console: ' + m.text()); });
+    p.on('console', m => { if (m.type() === 'error' && !/Fetch API cannot load file:|ERR_TUNNEL_CONNECTION_FAILED/.test(m.text())) errs.push('console: ' + m.text()); });   // no audio over file://, no outside fonts in the sandbox
     await p.addInitScript(() => {
       window.__fallback = []; window.__played = 0;
       const sp = window.speechSynthesis && window.speechSynthesis.speak.bind(window.speechSynthesis);
