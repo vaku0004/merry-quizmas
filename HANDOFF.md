@@ -94,7 +94,7 @@ Decisions she made: name **Victoria's Sweetheart Showdown** (spelled "Victoria" 
 
 - Game: `valentines/sweetheart-showdown.html`, built by `python3 tools/build_valentines.py night-of-frights.html valentines/sweetheart-showdown.html` (same text-replacement method as Christmas; asserts every replacement). Questions `valentines/questions.js` (50 + final "Royal Romance" = Edward VIII + tiebreaker Hershey's Kisses 1907; facts checked from memory, no song lyrics). Art `valentines/art.js`: heart, arrow-through-heart, heart box of chocolates, love letter, rose, bonbon. Palette: wine night `#1a0f17`, rose `#ef7d9a`, blush `#ffd6e0`, caramel `#d4935f`; display font **Yeseva One** (fontsource `yeseva-one`, added to `fontify.py`); rosy sparkles drifting up instead of snow; slow music-box ballad in the final. Storage keys `ss-state-v1`, `ss-questions-v1`, `ss-voice-v1`. Team names: Lovebirds, Sweethearts, Roses, Truffles.
 - Site: `tools/pages_valentines.py` (four pages, made from the Christmas pages and rewritten), screenshots `games/valentines/shots/`. Preview build checked: 45 URLs, nothing broken, no JS errors.
-- Narrator: 136 lines, 13,210 characters, in `valentines/voice-lines.json`. Voice made on Nov 4: ID `7elAVxKk0tXJT7YGjurH` (prompts in `valentines/voice-design-prompts.md`). Kit with this voice as default: `valentines/voice-kit/` (sent to her as SweetheartShowdown-voice.zip). Remaining: she runs it on her PC in a **new folder** and sends `audio`; check it against `valentines/voice-lines.json` and put it in `audio/valentines/`.
+- Narrator: 136 lines, 13,210 characters, in `valentines/voice-lines.json`. Voice made on Nov 4: ID `7elAVxKk0tXJT7YGjurH` (prompts in `valentines/voice-design-prompts.md`). Kit with this voice as default: `valentines/voice-kit/` (sent to her as SweetheartShowdown-voice.zip). **Audio done (Nov 4):** 136/136 lines (voice name in ElevenLabs "Valentine Vic", eleven_v4) checked and committed to `audio/valentines/`.
 - Offline file for her review (browser voice, no audio): `python3 tools/build_offline.py valentines <out.html>` (works without audio now).
 
 ## Fact check of all questions (November 4, 2026)
@@ -123,7 +123,7 @@ Direction: **the whole English-speaking world, US first**, neutral English for t
 3. **After the new site is live:** run `build_redirects.py` on the night-of-frights repo and push. Search Console: add the new domain (HTML-file verification, she can't give Namecheap passwords), submit the sitemap, use the Change of Address tool from nightoffrights.monster; IndexNow for Bing. Update or retire the night-of-frights-game mirror. In GA: rename the property, add the new domain.
 4. **November 15:** rebuild (Christmas appears by date), push, request indexing for the Christmas pages.
 5. **She reviews the Christmas game** (offline file sent on Nov 3) and sends changes in one list. Changed narrator text needs re-voicing of those lines only (`voice-kit/start-voice.bat` on her PC, same folder; ElevenLabs is not reachable from the cloud). She sends audio as .rar; `node-unrar-js` (npm, WASM) extracts it in the cloud.
-6. **Valentine's Day game:** built on Nov 4 (see "Sweetheart Showdown"). Remaining: her review, the narrator voice and audio. Goes live by date on January 20, 2027.
+6. **Valentine's Day game:** built on Nov 4 (see "Sweetheart Showdown"). Voice and audio done. Remaining: her review. Goes live by date on January 20, 2027.
 
 ## Things to keep in mind
 
