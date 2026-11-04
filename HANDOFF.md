@@ -113,6 +113,16 @@ Decisions she made: name **Victoria's Pot o' Gold**; surprise 1 **Leprechaun's T
 - Checks: game test (`tools/e2e_game.js`) passes; preview site 58 URLs OK; home page now shows the game cards 2 × 2.
 - Voice made on Nov 4: ID `t6vJ4FT1TpF4LOWRQV9n` (prompts in `games/stpatricks/voice-design-prompts.md`). Kit with it as default: `games/stpatricks/voice-kit/` (sent as PotOGold-voice.zip). **Audio done (Nov 4):** 136/136 lines (voice name in ElevenLabs "Patrick", eleven_v4) checked and committed to `audio/stpatricks/`.
 
+## Movie Night (all-year movie game, made November 4, 2026)
+
+Decisions she made: name **Victoria's Movie Night**; surprise 1 **Plot Twist** (`"cat"`); surprise 2 **Popcorn Bucket** (`"witch"`: two tickets, price then team); final **The Final Cut**; winner line "Team X steal the show!"; Round Two slide "The sequel". **Status "live"** (any day). No "Oscar"/"Academy" in game or page names; facts about Oscars inside questions are fine.
+
+- Files: `games/movies/` (theme.py, questions.js, art.js, game.html, voice-lines.json, voice-design-prompts.md, shots/); site pages `tools/pages_movies.py`. games.py: `holiday="Movies"`, `footer_kind="movie"`, `trivia_label="Movie trivia questions"`. Storage keys `mn-state-v1`, `mn-questions-v1`, `mn-voice-v1`. Teams: Popcorn, Blockbusters, Spotlight, Red Carpet. Narrator name "Marquee Max".
+- Look: red-velvet night `#140b0d`, gold `#f2c14e`, butter orange `#ffa94d` for the popcorn bucket; display font **Limelight** (art-deco marquee; fontsource `limelight`); golden specks; a sweeping film-score tune with projector clatter. Art: clapperboard, plot-twist arrow with "?", striped popcorn bucket, film reel, 3D glasses, star.
+- Questions: 50 + final "Hollywood Legends" (Katharine Hepburn, four Best Actress Oscars) + tiebreaker (first Star Wars, 1977). Categories R1: Animated Classics, Superheroes, Movie Food, Famous Lines, Sequels & Series; R2: Behind the Scenes, Directors, Movie Music, Hollywood History, World Cinema. Checked from memory (one fix: Miyazaki won again in 2024).
+- Checks: game test passes; preview site (7 games) 97 URLs OK.
+- **Voice not made yet:** prompts in `games/movies/voice-design-prompts.md` (main: warm movie-trailer voice, male; B: old-Hollywood host, female). 136 lines, 11,533 characters.
+
 ## Big Brain Battle (all-year general-knowledge game, made November 4, 2026)
 
 Decisions she made: name **Victoria's Big Brain Battle**; surprise 1 **Wild Card** (`"cat"`); surprise 2 **Mystery Box** (`"witch"`: two tickets, price then team); final **All In**; winner line "Team X win the Big Brain Battle!"; Round Two slide "Brain boost". Made for **National Trivia Day (January 4, US)** as a hook, but it is an any-day game: **status "live"**. Publish the site by early December so search engines find it before January 4.

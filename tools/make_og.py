@@ -13,7 +13,7 @@ OUT = f"{S}/build/seo"
 F = f"{S}/fontpkgs"
 font = lambda slug, w, st: os.path.abspath(glob.glob(f"{F}/fontsource-{slug}-[0-9]*/package/files/{slug}-latin-{w}-{st}.woff2")[0])
 FACES = "".join(f"@font-face{{font-family:'{fam}';font-style:{st};font-weight:{w};src:url(file://{font(slug, w, st)})}}"
-                for fam, slug, w, st in [("Mountains of Christmas", "mountains-of-christmas", 700, "normal"), ("Pirata One", "pirata-one", 400, "normal"), ("Yeseva One", "yeseva-one", 400, "normal"), ("Eagle Lake", "eagle-lake", 400, "normal"), ("Righteous", "righteous", 400, "normal"), ("Lilita One", "lilita-one", 400, "normal"),
+                for fam, slug, w, st in [("Mountains of Christmas", "mountains-of-christmas", 700, "normal"), ("Pirata One", "pirata-one", 400, "normal"), ("Yeseva One", "yeseva-one", 400, "normal"), ("Eagle Lake", "eagle-lake", 400, "normal"), ("Righteous", "righteous", 400, "normal"), ("Lilita One", "lilita-one", 400, "normal"), ("Limelight", "limelight", 400, "normal"),
                                          ("Alegreya", "alegreya", 500, "italic"), ("Alegreya", "alegreya", 800, "normal"), ("Alegreya", "alegreya", 800, "italic"),
                                          ("Alegreya Sans", "alegreya-sans", 500, "normal"), ("Alegreya Sans", "alegreya-sans", 800, "normal")])
 SNOW = "".join(f'<i style="left:{(i * 137) % 1200}px;top:{(i * 89) % 630}px;width:{2 + i % 4}px;height:{2 + i % 4}px;opacity:{0.15 + (i % 5) / 12:.2f}"></i>'
@@ -46,7 +46,7 @@ def game_sources(g, page_ogs):
     og = f"""<!doctype html><html><head><meta charset="utf-8"><style>{css}
 .text{{position:absolute;left:84px;top:66px;width:760px}}
 .byline{{font-family:'Alegreya';font-style:italic;font-weight:500;font-size:50px;color:{th['candle']};margin-top:26px;line-height:1}}
-h1{{font-family:'{fam}';font-weight:{w};font-size:{int((136 if w == 700 else 150) * {'Righteous': 0.78, 'Eagle Lake': 0.85}.get(fam, 1))}px;line-height:.88;margin:4px 0 0;color:{th['ember']};text-shadow:0 0 40px rgba({rgb['glow']},.45)}}
+h1{{font-family:'{fam}';font-weight:{w};font-size:{int((136 if w == 700 else 150) * {'Righteous': 0.78, 'Eagle Lake': 0.85, 'Limelight': 0.85}.get(fam, 1))}px;line-height:.88;margin:4px 0 0;color:{th['ember']};text-shadow:0 0 40px rgba({rgb['glow']},.45)}}
 .chips{{display:flex;gap:10px;margin-top:30px;flex-wrap:nowrap}}
 .chip{{display:flex;align-items:center;gap:10px;border:1px solid {th['line']};background:rgba({rgb['dusk']},.88);border-radius:999px;padding:8px 16px 8px 10px;font-size:21px;font-weight:500;white-space:nowrap}}
 .chip svg{{width:28px;height:28px}}
@@ -59,7 +59,7 @@ h1{{font-family:'{fam}';font-weight:{w};font-size:{int((136 if w == 700 else 150
     for slug, (eyebrow, title, sub) in page_ogs:
         page = f"""<!doctype html><html><head><meta charset="utf-8"><style>{css}
 .t{{position:absolute;left:84px;top:84px;width:740px}}
-h1{{font-family:'{fam}';font-weight:{w};font-size:{int((104 if w == 700 else 112) * ({'Eagle Lake': 0.7, 'Righteous': 0.8}.get(fam, 1)))}px;line-height:.93;margin:22px 0 0;color:{th['ember']};text-shadow:0 0 40px rgba({rgb['glow']},.45)}}
+h1{{font-family:'{fam}';font-weight:{w};font-size:{int((104 if w == 700 else 112) * ({'Eagle Lake': 0.7, 'Righteous': 0.8, 'Limelight': 0.8}.get(fam, 1)))}px;line-height:.93;margin:22px 0 0;color:{th['ember']};text-shadow:0 0 40px rgba({rgb['glow']},.45)}}
 .sub{{margin-top:26px;font-size:30px;font-weight:500}}
 .art{{right:80px;top:150px;width:290px}}
 </style></head><body><div class="snow">{SNOW}</div><div class="frame"></div>

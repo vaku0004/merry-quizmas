@@ -36,6 +36,7 @@ VBASE = {**BASE, "teams": VTEAMS}
 PBASE = {**BASE, "teams": [{"name": "Team Shamrocks", "score": 1100}, {"name": "Team Leprechauns", "score": -300}, {"name": "Team Rainbows", "score": 900}, {"name": "Team Clovers", "score": 400}]}
 DBASE = {**BASE, "teams": [{"name": "Team Cassettes", "score": 1100}, {"name": "Team Arcade", "score": -300}, {"name": "Team Neon", "score": 900}, {"name": "Team Dial-Up", "score": 400}]}
 TBASE = {**BASE, "teams": [{"name": "Team Brainiacs", "score": 1100}, {"name": "Team Know-It-Alls", "score": -300}, {"name": "Team Smarty Pants", "score": 900}, {"name": "Team Quizzards", "score": 400}]}
+MBASE = {**BASE, "teams": [{"name": "Team Popcorn", "score": 1100}, {"name": "Team Blockbusters", "score": -300}, {"name": "Team Spotlight", "score": 900}, {"name": "Team Red Carpet", "score": 400}]}
 SHOT_STATES = {"valentines": {
     "board": VBASE,
     "question": {**VBASE, "q": {"c": 4, "i": 3, "value": 400, "special": None, "picker": 1, "team": 1, "bid": None, "judged": {}, "stage": "ask"}},
@@ -72,6 +73,15 @@ SHOT_STATES = {"valentines": {
     "final": {**TBASE, "screen": "final", "round": 1, "used": {}, "final": {"stage": "category", "wagers": [], "judged": []}},
     "podium": {**TBASE, "screen": "podium", "round": 1, "used": {}, "final": {"stage": "done", "wagers": [], "judged": []},
                "teams": [{"name": "Team Brainiacs", "score": 3400}, {"name": "Team Know-It-Alls", "score": 2100}, {"name": "Team Smarty Pants", "score": 2800}, {"name": "Team Quizzards", "score": 900}]},
+}, "movies": {
+    "board": MBASE,
+    "question": {**MBASE, "q": {"c": 3, "i": 3, "value": 400, "special": None, "picker": 1, "team": 1, "bid": None, "judged": {}, "stage": "ask"}},
+    "twist": {**MBASE, "q": {"c": 1, "i": 2, "value": 300, "special": "cat", "picker": 0, "team": None, "bid": None, "judged": {}, "stage": "intro", "catAsk": True}},
+    "popcorn": {**MBASE, "q": {"c": 4, "i": 4, "value": 500, "special": "witch", "picker": 0, "team": None, "bid": 300, "w": {"price": 300, "team": 2},
+                               "judged": {}, "stage": "intro", "witchAsk": True}},
+    "final": {**MBASE, "screen": "final", "round": 1, "used": {}, "final": {"stage": "category", "wagers": [], "judged": []}},
+    "podium": {**MBASE, "screen": "podium", "round": 1, "used": {}, "final": {"stage": "done", "wagers": [], "judged": []},
+               "teams": [{"name": "Team Popcorn", "score": 3400}, {"name": "Team Blockbusters", "score": 2100}, {"name": "Team Spotlight", "score": 2800}, {"name": "Team Red Carpet", "score": 900}]},
 }, "christmas": {
     "board": BASE,
     "question": {**BASE, "q": {"c": 3, "i": 3, "value": 400, "special": None, "picker": 1, "team": 1, "bid": None, "judged": {}, "stage": "ask"}},

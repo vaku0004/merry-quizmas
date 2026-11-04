@@ -178,7 +178,33 @@ TRIVIA = dict(
     shots=["board", "question", "mysterybox", "wildcard", "final", "podium"],
 )
 
-GAMES = [TRIVIA, DECADES, HALLOWEEN, CHRISTMAS, VALENTINES, STPATRICKS]
+MOVIES = dict(
+    slug="movies", status="live", launch=None,
+    name="Victoria’s Movie Night", short="Movie Night", holiday="Movies", footer_kind="movie", trivia_label="Movie trivia questions",
+    src="games/movies/game.html", art_src="games/movies/art.js", audio="audio/movies", state_key="mn-state-v1",
+    icon="CLAPPER_SVG", specials={"cat": "plot_twist", "witch": "popcorn_bucket"},
+    theme=dict(night="#140b0d", dusk="#1f1114", cell="#2c171b", line="#4a2a30", bone="#fbf3ea", ash="#c4aeb0",
+               candle="#f2c14e", ember="#ffe4a3", good="#6fcf8a", witch="#ffa94d", bad="#ef5b5b"),
+    rgb=dict(night="20,11,13", dusk="31,17,20", glow="242,193,78", glow2="239,91,91"), tag2="var(--witch)",
+    display=("Limelight", 400, "limelight", '"Limelight",Georgia,"Times New Roman",serif'),
+    gfont="Limelight",
+    title="Victoria’s Movie Night · Free Movie Trivia Game for Teams",
+    desc="Free movie trivia game for office parties and team events: a game-show board, a plot twist, a popcorn bucket and a Final Cut wager. Films of every era.",
+    og_desc="A free movie quiz for the whole office: films of every era on a game-show board, a plot twist, a popcorn bucket and a Final Cut wager, with a narrator.",
+    og_alt="a movie quiz for the whole office, with a clapperboard",
+    eyebrow="A movie quiz for the whole office",
+    intro="A free movie trivia game for office parties and team events, made for a big screen and for any day of the year. Teams pick questions on a game-show board, think for 30 seconds and answer. A narrator reads every question aloud.",
+    rules=[("Two rounds", "of five categories: animated classics, superheroes, movie food, famous lines, sequels, behind the scenes, directors, music, Hollywood history and world cinema, worth 100–500 and then 200–1,000 points."),
+           ("Plot Twist:", "the team that hits a plot twist must hand the question to another team."),
+           ("Popcorn Bucket:", "two tickets from the bucket pick a random price and the team that must answer."),
+           ("The Final Cut:", "one final question with secret wagers, then a podium for the team that steals the show.")],
+    chips=[("TWIST_SVG", "Plot Twist"), ("POPCORN_SVG", "Popcorn Bucket"), ("REEL_SVG", "Final Cut wager")],
+    card="Movie trivia for any day of the year: animated classics, superheroes, famous lines, directors, music and world cinema, with a plot twist, a popcorn bucket and a Final Cut wager.",
+    page_art={"trivia-questions": "CLAPPER_SVG", "virtual-games-for-work": "GLASSES_SVG", "how-to-host-a-game-night": "POPCORN_SVG", "faq": "REEL_SVG"},
+    shots=["board", "question", "popcorn", "twist", "final", "podium"],
+)
+
+GAMES = [TRIVIA, MOVIES, DECADES, HALLOWEEN, CHRISTMAS, VALENTINES, STPATRICKS]
 PLAYABLE = [g for g in GAMES if g["status"] in ("live", "scheduled")]
 
 # Content pages every playable game has (slug, nav label). Content: tools/pages_<game>.py

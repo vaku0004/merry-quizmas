@@ -1,0 +1,130 @@
+"""The Movie Night game's values for the engine slots (see engine/slots.py). Built by: python3 tools/build_game.py movies
+
+Victoria's Movie Night (films of every era, any day). Surprise 1 ("cat"): Plot Twist. Surprise 2 ("witch"): Popcorn Bucket. Final: The Final Cut.
+Helpers: file(name) reads a file next to this theme; art(name, as_name) takes an SVG from art.js under the engine's name;
+MOBILE_CSS is the phone layout from tools/site_common.py."""
+
+VALUES = {
+    'page_title': '<title>Victoria’s Movie Night</title>',
+    'font_link': '&family=Limelight&display=swap',
+    'css_comment_theme': 'Single dark theme by design (a red-velvet cinema night).',
+    'css_comment_table': 'one cosy game table in the front row',
+    'color_night': '--night:#140b0d',
+    'color_dusk': '--dusk:#1f1114',
+    'color_cell': '--cell:#2c171b',
+    'color_cell_hi': '--cell-hi:#3b1f25',
+    'color_line': '--line:#4a2a30',
+    'color_bone': '--bone:#fbf3ea',
+    'color_ash': '--ash:#c4aeb0',
+    'color_candle': '--candle:#f2c14e',
+    'color_ember': '--ember:#ffe4a3',
+    'color_good': '--good:#6fcf8a',
+    'color_bad': '--bad:#ef5b5b',
+    'color_witch': '--witch:#ffa94d',
+    'display_font': '--f-display:"Limelight","Georgia","Times New Roman",serif;',
+    'atmosphere_css': '''
+/* ---------- Spotlight dust: two slow layers of golden specks drifting up behind the game ---------- */
+body::before,body::after{content:"";position:fixed;inset:-20vh 0 0;pointer-events:none;z-index:0;
+  background-image:radial-gradient(2px 2px at 20px 30px,rgba(242,193,78,.5),transparent 60%),radial-gradient(1.5px 1.5px at 120px 80px,rgba(255,228,163,.4),transparent 60%),
+  radial-gradient(2.5px 2.5px at 200px 160px,rgba(239,91,91,.3),transparent 60%),radial-gradient(1.5px 1.5px at 60px 210px,rgba(242,193,78,.45),transparent 60%),
+  radial-gradient(2px 2px at 260px 250px,rgba(255,228,163,.3),transparent 60%);
+  background-size:300px 300px;animation:snow 46s linear infinite;opacity:.45}
+body::after{background-size:420px 420px;animation-duration:60s;opacity:.35;filter:blur(.6px)}
+@keyframes snow{from{transform:translateY(20vh)}to{transform:translateY(0)}}
+#app{position:relative;z-index:1}
+.title,.round-name,.slide-title,.big-cat,.cat-ask,.cat-team,.reel-face,.special h3{letter-spacing:.01em}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  body::before,body::after{display:none}
+}''',
+    'storage_keys': 'const KEY_S = "mn-state-v1", KEY_Q = "mn-questions-v1";',
+    'storage_key_voice': 'const KEY_V = "mn-voice-v1";',
+    'team_names': 'const TEAM_NAMES = ["Team Popcorn","Team Blockbusters","Team Spotlight","Team Red Carpet"];',
+    'questions': file("questions.js").strip() + "\n",
+    'migrate_old_questions': '',
+    'art_cat_svg': art('TWIST_SVG', 'CAT_SVG'),
+    'art_hat_svg': art('POPCORN_SVG', 'HAT_SVG'),
+    'art_moon_svg': art('REEL_SVG', 'MOON_SVG'),
+    'art_pumpkin_svg': art('CLAPPER_SVG', 'PUMPKIN_SVG'),
+    'art_ghost_svg': art('GLASSES_SVG', 'GHOST_SVG'),
+    'art_wand_svg': art('STAR_TICKET_SVG', 'WAND_SVG'),
+    'narrator_name': 'const NARRATOR = "Marquee Max";',
+    'narrator_lines': '''const LINES = {
+  test: "Welcome to Victoria's Movie Night. Pick a question, and lights, camera, action!",
+  welcome: "Welcome to Victoria's Movie Night! Tonight, our teams compete for glory, and for popcorn. Here is how it works.",
+  ready: "Ready? The first team, pick a question. Good luck, and may the best team steal the show.",
+  rules: "Rules of the game. Pick a question from the board. Watch out for the plot twist, and for the popcorn bucket. Play two rounds and the Final Cut.",
+  cat: "Plot twist! The team that found it must give this question to another team.",
+  catWho: "Who gets the plot twist?",
+  witchTitle: "The popcorn bucket!",
+  witch: "Let's dig into the popcorn bucket! The first ticket picks the price. The second ticket picks the team that must answer. Answer right, and win it. Answer wrong, and lose it.",
+  tie: "It's a tie! Time for a tiebreaker."
+};''',
+    'line_final_intro': 'const midnightLine = () => "It is time for the Final Cut. The final category is: "',
+    'line_winner': 'const winnerLine = name => name + " steal the show!";',
+    'line_surprise2_team': 'const dealLine = name => name + ", the popcorn bucket picked you!";',
+    'narrator_moods': '''    [LINES.test]: "[cheerfully] Welcome to Victoria's Movie Night. Pick a question... and lights, camera, action!",
+    [LINES.welcome]: "[warmly] Welcome to Victoria's Movie Night! Tonight, our teams compete for glory... and for popcorn. Here is how it works.",
+    [LINES.ready]: "[cheerfully] Ready? The first team, pick a question. Good luck... and may the best team steal the show! [laughs]",
+    [LINES.rules]: "[warmly] Rules of the game. Pick a question from the board. [mischievously] Watch out for the plot twist... and for the popcorn bucket. [cheerfully] Play two rounds... and the Final Cut.",
+    [LINES.cat]: "[gasps] Plot twist! [mischievously] The team that found it... must give this question to another team.",
+    [LINES.catWho]: "[mischievously] So... who gets the plot twist?",
+    [LINES.witchTitle]: "[whispers] The popcorn... [excited] bucket!",
+''',
+    'mood_surprise2': '    [LINES.witch]: "[excited] Let\'s dig into the popcorn bucket! [laughs] The first ticket picks the price. The second ticket picks the team that must answer. Answer right... and win it. Answer wrong... [whispers] and lose it.",',
+    'mood_winner': 'if (/ steal the show!$/.test(t)) return "[excited] " + t + " [applause]";',
+    'music_comment': '''/* ===================== Final Cut thinking music =====================
+   An original, sweeping film-score tune over a warm bass, with the soft clatter of an old projector.''',
+    'music_chords': 'const M_CHORDS = [[67,72,76],[69,72,77],[67,71,74],[64,67,72],[65,69,72],[67,71,74],[64,67,72],[62,67,71]];',
+    'music_bass': 'const M_BASS = [48,41,43,48,41,43,45,43];',
+    'music_tempo': 'const M_STEP = 60 / 96 / 2;    // eighth notes at 96 bpm',
+    'music_drone': 'o1.type = o2.type = "sine"; o1.frequency.value = 65.4; o2.frequency.value = 65.7;',
+    'music_drone_filter': 'f.type = "lowpass"; f.frequency.value = 450; g.gain.value = 0.025;',
+    'music_ticks': '    if (pos % 2 === 0) this.note(pos % 4 === 0 ? 2600 : 2200, t, 0.015, "square", 0.006);   // film projector clatter',
+    'sound_surprise1': 'cat(){ tone(392,.25,"sawtooth",.05,0); tone(370,.25,"sawtooth",.05,.25); tone(330,.7,"sawtooth",.06,.5); },',
+    'sound_surprise2': 'witch(){ [880,1200,700,1400,1000,1600].forEach((f,i)=>tone(f,.05,"square",.05,i*.08)); },',
+    'slide_welcome_title': '{ eyebrow: "Welcome to", title: "Victoria’s Movie Night", art: hero(PUMPKIN_SVG),',
+    'slide_welcome_text': 'Two rounds of movie trivia, two surprises on the board and one last wager in the Final Cut.',
+    'slide_rules_bullets': 'bullets: ["Pick a question from the board.", "Watch out for the plot twist and the popcorn bucket.", "Play two rounds and the Final Cut."],',
+    'slide_surprise1': '''{ eyebrow: "Surprise", title: "Plot Twist", art: hero(CAT_SVG),
+      bullets: ["Hit a plot twist and you must give the question away.", "You choose which team gets it.", "That team answers for the full value, right or wrong."] },''',
+    'slide_surprise2': '''{ eyebrow: "Surprise", title: "Popcorn Bucket", art: hero(HAT_SVG),
+      bullets: ["Two tickets hide in the popcorn bucket.", `The first ticket picks the price:''',
+    'slide_surprise2_second': '"The second ticket picks t',
+    'slide_final_title': '{ eyebrow: "The finale", title: "The Final Cut", art: hero(MOON_SVG),',
+    'slide_fair_play_last': '"Only one team steals the show."',
+    'deck_final_filter': 'if (deck === "midnight") return list.filter(sl => sl.title === "The Final Cut");',
+    'deck_intro_filter': 'return list.filter(sl => !["Plot Twist", "Popcorn Bucket", "The sequel", "The Final Cut"].includes(sl.title));',
+    'slide_round2_title': '{ eyebrow: "Round Two", title: "The sequel", art: ladder,',
+    'deck_round2_filter': 'if (deck === "round2") return list.filter(sl => sl.title === "The sequel");',
+    'start_eyebrow': '<div class="eyebrow">A movie quiz for the whole office</div>',
+    'start_title': '<h1 class="title"><span class="byline">Victoria’s</span>Movie Night</h1>',
+    'start_intro': 'Two rounds of movie trivia, from animated classics to Hollywood legends, two surprises on the board, and one last wager in the Final Cut.',
+    'start_surprise1': '<li>${CAT_SVG}<div><b>Plot Twist</b><p>The team that hits a plot twist must hand the question to another team.',
+    'start_surprise2': '<li>${HAT_SVG}<div><b>Popcorn Bucket</b><p>Two tickets come out of the popcorn bucket. The first picks a random price, the second picks the team that must answer.',
+    'start_final': '<li>${MOON_SVG}<div><b>The Final Cut</b><p>Round Two doubles every value.',
+    'board_next_label': 'const nextLabel = finalDone ? "Back to the standings" : isLast ? "Go to the Final Cut"',
+    'board_eyebrow': '<div class="eyebrow">Victoria’s Movie Night</div>',
+    'surprise1_card': '''<div class="special blackcat">${CAT_SVG}<div><h3>Plot Twist</h3>
+      <p>${esc(T[q.picker].name)} hit a plot twist and must hand this question to another team.''',
+    'surprise1_ask': '<h3 class="cat-ask">Who gets the plot twist?</h3>',
+    'surprise2_card': '''<div class="special witch">${HAT_SVG}<div><h3>Popcorn Bucket</h3>
+      ${q.witchAsk ? `<p class="witch-quote" style="animation:rise-in .5s ease both">“Let’s see what’s hiding in the popcorn…”</p>` : ""}''',
+    'surprise2_step1': '<span><b>First ticket</b> picks the price:',
+    'surprise2_step2': '<span><b>Second ticket</b> picks the team that must answer.',
+    'surprise2_reel1_label': '<div class="reel-label">First ticket · The price</div>',
+    'surprise2_reel1_button': '${WAND_SVG} Dig into the popcorn</button>',
+    'surprise2_reel2_label': '<div class="reel-label">Second ticket · The team</div>',
+    'surprise2_reel2_button': '${WAND_SVG} Dig again</button>',
+    'question_surprise1_tag': '${q.special==="cat"?`<div class="special blackcat">${CAT_SVG}<div><h3>Plot Twist</h3></div></div>`:""}',
+    'question_surprise2_tag': '${q.special==="witch"?`<div class="special witch">${HAT_SVG}<div><h3>Popcorn Bucket</h3></div></div>`:""}',
+    'final_eyebrow_category': '<div class="eyebrow">The Final Cut · final category</div>',
+    'final_eyebrow_question': '<div class="eyebrow">The Final Cut · ${esc(F.category)}</div>',
+    'podium_headline': 'const headline = winners.length === 1 ? esc(winners[0].name) + " steal the show"',
+    'podium_eyebrow': '<div class="eyebrow">Victoria’s Movie Night · final standings</div>',
+    'editor_surprise1_option': '<option value="cat" ${q.special==="cat"?"selected":""}>Plot Twist</option>',
+    'editor_surprise2_option': '<option value="witch" ${q.special==="witch"?"selected":""}>Popcorn Bucket</option>',
+    'editor_final_tab': 'data-t="final" aria-selected="${tab==="final"}">Final Cut</button>',
+    'voice_preset_name': '<button class="btn" data-act="vpreset" data-p="spooky">Trailer voice</button>',
+    'phone_layout': "</style>\n" + MOBILE_CSS + "\n\n<div id=\"app\"></div>",
+}
