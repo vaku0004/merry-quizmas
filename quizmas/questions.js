@@ -76,5 +76,5 @@ const DEFAULT_Q = {
     ]}
   ],
   final: { category: "A Christmas Miracle", q: "In December 1914, during the First World War, British and German soldiers on the Western Front stopped fighting, sang carols and met in no man's land. What is this event called?", a: "The Christmas Truce", note: "The ceasefire was unofficial. In some places it lasted into the new year." },
-  tiebreak: { q: "In what year did Gene Autry release his famous recording of 'Rudolph the Red-Nosed Reindeer'?", a: "1949", note: "It sold more than 2 million copies in its first year." }
+  tiebreak: { q: "In what year did Gene Autry release his famous recording of 'Rudolph the Red-Nosed Reindeer'?", a: "1949", note: "It sold about 1.75 million copies in its first Christmas season." }
 };

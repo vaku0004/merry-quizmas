@@ -97,6 +97,11 @@ Decisions she made: name **Victoria's Sweetheart Showdown** (spelled "Victoria" 
 - Narrator: 136 lines, 13,210 characters, in `valentines/voice-lines.json`. **Voice not made yet**: prompts in `valentines/voice-design-prompts.md` (main choice: warm female radio host, light American accent; B: male crooner). After she sends the voice ID: put it in a copy of the voice kit (default voice in `generate-voice.ps1`) with this `voice-lines.json`, she runs it on her PC in a **new folder**, sends `audio`, put it in `audio/valentines/`.
 - Offline file for her review (browser voice, no audio): `python3 tools/build_offline.py valentines <out.html>` (works without audio now).
 
+## Fact check of all questions (November 4, 2026)
+
+All 3 × 52 questions reviewed; doubtful facts checked online. Fixed: Halloween "Windsor Pumpkin Regatta" (the 2019 race was cancelled; now "for about twenty years from 1999", note says it ended when the lake was drained) and "Ganong" (first wrapped bar is the company's own claim: now "says it made the first wrapped chocolate bar in North America"; 1898 vs 1910 dates disputed, removed); Christmas tiebreaker note (Gene Autry's Rudolph: about 1.75 million copies in the first season, not "more than 2 million"); Valentine's "Colombia" question reworded (largest supplier of cut flowers to the US, not "most flowers sold").
+**Re-voicing needed:** Halloween 4 lines (540 characters), Christmas 1 line (85 characters). She puts the new `voice-lines.json` (`games/halloween/voice-lines.json` → her Halloween kit folder, `quizmas/voice-lines.json` → her Merry Quizmas kit folder) next to `generate-voice.ps1`, runs `start-voice.bat`; only changed lines are voiced. Then copy the new MP3s and `manifest.json` into `audio/halloween/` and `audio/christmas/`. Until then those lines fall back to the browser voice.
+
 ## Money and growth plan (agreed November 3, 2026; do it when the site is published)
 
 She liked this three-step test of demand and wants it built **together with the website**:
