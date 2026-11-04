@@ -1,0 +1,682 @@
+[
+  {
+    "file": "l-c53e0567.mp3",
+    "text": "Welcome to Victoria's Pot o' Gold. Pick a question, and may the luck be with you!",
+    "tts": "[cheerfully] Welcome to Victoria's Pot o' Gold. Pick a question... and may the luck be with you!"
+  },
+  {
+    "file": "l-6f2f7e1a.mp3",
+    "text": "Welcome to Victoria's Pot o' Gold! Tonight, our teams compete for glory, and for gold. Here is how it works.",
+    "tts": "[warmly] Welcome to Victoria's Pot o' Gold! Tonight, our teams compete for glory... and for gold. Here is how it works."
+  },
+  {
+    "file": "l-f6bfb1f7.mp3",
+    "text": "Rules of the game. Pick a question from the board. Watch out for the leprechaun, and for the rainbow. Play two rounds and the End of the Rainbow finale.",
+    "tts": "[warmly] Rules of the game. Pick a question from the board. [mischievously] Watch out for the leprechaun... and for the rainbow. [cheerfully] Play two rounds... and the End of the Rainbow finale."
+  },
+  {
+    "file": "l-964fe525.mp3",
+    "text": "Pick a question. Five categories with five questions each. The higher the value, the harder the question. Teams take turns choosing a cell.",
+    "tts": "Pick a question. Five categories with five questions each. The higher the value, the harder the question. Teams take turns choosing a cell."
+  },
+  {
+    "file": "l-7f45ca59.mp3",
+    "text": "30 seconds. The question is read aloud, then the clock starts. Only the team that picked it may answer. Everyone else stays quiet. Right: win the points. Wrong: lose them.",
+    "tts": "30 seconds. The question is read aloud, then the clock starts. Only the team that picked it may answer. Everyone else stays quiet. Right: win the points. Wrong: lose them."
+  },
+  {
+    "file": "l-810bc3c9.mp3",
+    "text": "Play fair. No phones and no Googling. The host has the final word on close answers. Only one team finds the pot of gold.",
+    "tts": "Play fair. No phones and no Googling. The host has the final word on close answers. Only one team finds the pot of gold."
+  },
+  {
+    "file": "l-d22b5449.mp3",
+    "text": "Ready? The first team, pick a question. Good luck, and may the luckiest team win.",
+    "tts": "[cheerfully] Ready? The first team, pick a question. Good luck... and may the luckiest team win! [laughs]"
+  },
+  {
+    "file": "l-d85d3a34.mp3",
+    "text": "Double the luck. Five new categories. Every value is doubled: 200 to 1,000. Same rules, bigger risks.",
+    "tts": "Double the luck. Five new categories. Every value is doubled: 200 to 1,000. Same rules, bigger risks."
+  },
+  {
+    "file": "l-6738c28b.mp3",
+    "text": "End of the Rainbow. One final question. You see only the category first. Secretly wager up to half of your score. Low on points? You can always bet up to 500. You get 60 seconds. Right: add your wager. Wrong: lose it.",
+    "tts": "End of the Rainbow. One final question. You see only the category first. Secretly wager up to half of your score. Low on points? You can always bet up to 500. You get 60 seconds. Right: add your wager. Wrong: lose it."
+  },
+  {
+    "file": "l-53c6110f.mp3",
+    "text": "A leprechaun's trick! He has snatched your question. The team that found him must give this question to another team.",
+    "tts": "[gasps] A leprechaun's trick! [mischievously] He has snatched your question. The team that found him... must give this question to another team."
+  },
+  {
+    "file": "l-2d4c77a7.mp3",
+    "text": "Who gets the leprechaun's question?",
+    "tts": "[mischievously] So... who gets the leprechaun's question?"
+  },
+  {
+    "file": "l-37671e5d.mp3",
+    "text": "Over the rainbow!",
+    "tts": "[whispers] Over... [cheerfully] the rainbow!"
+  },
+  {
+    "file": "l-407d249e.mp3",
+    "text": "And now, let's follow the rainbow! The first rainbow picks the price. The second rainbow picks the team that must answer. Answer right, and win it. Answer wrong, and lose it.",
+    "tts": "[cheerfully] And now, let's follow the rainbow! [laughs] The first rainbow picks the price. The second rainbow picks the team that must answer. Answer right... and win it. Answer wrong... [whispers] and lose it."
+  },
+  {
+    "file": "l-85b11123.mp3",
+    "text": "It's a tie! Time for a tiebreaker.",
+    "tts": "[gasps] It's a tie! Time for a tiebreaker."
+  },
+  {
+    "file": "l-2c62963e.mp3",
+    "text": "What is the capital city of Ireland?",
+    "tts": "What is the capital city of Ireland?"
+  },
+  {
+    "file": "l-25af1405.mp3",
+    "text": "The answer is: Dublin. Dublin sits on the River Liffey, on Ireland's east coast.",
+    "tts": "The answer is: Dublin. Dublin sits on the River Liffey, on Ireland's east coast."
+  },
+  {
+    "file": "l-9a4226f1.mp3",
+    "text": "Which musical instrument is the national symbol of Ireland, shown on its coins and passports?",
+    "tts": "Which musical instrument is the national symbol of Ireland, shown on its coins and passports?"
+  },
+  {
+    "file": "l-3762684b.mp3",
+    "text": "The answer is: The harp. The model is a medieval harp kept at Trinity College Dublin, often called the Brian Boru harp.",
+    "tts": "The answer is: The harp. The model is a medieval harp kept at Trinity College Dublin, often called the Brian Boru harp."
+  },
+  {
+    "file": "l-17eaf6ce.mp3",
+    "text": "What are the three colors of the Irish flag?",
+    "tts": "What are the three colors of the Irish flag?"
+  },
+  {
+    "file": "l-8efc4451.mp3",
+    "text": "The answer is: Green, white and orange. Green stands for the Gaelic tradition, orange for the supporters of William of Orange, and white for peace between them.",
+    "tts": "The answer is: Green, white and orange. Green stands for the Gaelic tradition, orange for the supporters of William of Orange, and white for peace between them."
+  },
+  {
+    "file": "l-1d85d4a3.mp3",
+    "text": "What is the longest river in Ireland?",
+    "tts": "What is the longest river in Ireland?"
+  },
+  {
+    "file": "l-5ad38c8f.mp3",
+    "text": "The answer is: The River Shannon. It runs for about 360 kilometers (224 miles), from County Cavan to the Atlantic.",
+    "tts": "The answer is: The River Shannon. It runs for about 360 kilometers (224 miles), from County Cavan to the Atlantic."
+  },
+  {
+    "file": "l-88686b8c.mp3",
+    "text": "Which famous sea cliffs on Ireland's west coast rise more than 200 meters (650 feet) above the Atlantic?",
+    "tts": "Which famous sea cliffs on Ireland's west coast rise more than 200 meters (650 feet) above the Atlantic?"
+  },
+  {
+    "file": "l-fb173e9f.mp3",
+    "text": "The answer is: The Cliffs of Moher. They are in County Clare and reach about 214 meters (702 feet) at their highest point.",
+    "tts": "The answer is: The Cliffs of Moher. They are in County Clare and reach about 214 meters (702 feet) at their highest point."
+  },
+  {
+    "file": "l-08684ad8.mp3",
+    "text": "How many leaves does a 'lucky' clover have?",
+    "tts": "How many leaves does a 'lucky' clover have?"
+  },
+  {
+    "file": "l-1fb51093.mp3",
+    "text": "The answer is: Four. Most clovers have three leaves. Four-leaf clovers are rare, roughly one in several thousand.",
+    "tts": "The answer is: Four. Most clovers have three leaves. Four-leaf clovers are rare, roughly one in several thousand."
+  },
+  {
+    "file": "l-6ae06257.mp3",
+    "text": "According to legend, what does a leprechaun keep hidden at the end of the rainbow?",
+    "tts": "According to legend, what does a leprechaun keep hidden at the end of the rainbow?"
+  },
+  {
+    "file": "l-2c55f043.mp3",
+    "text": "The answer is: A pot of gold. Catch a leprechaun, the stories say, and he must tell you where his gold is hidden.",
+    "tts": "The answer is: A pot of gold. Catch a leprechaun, the stories say, and he must tell you where his gold is hidden."
+  },
+  {
+    "file": "l-be44b8dc.mp3",
+    "text": "Kissing which stone, set high in a castle near Cork, is said to give you the 'gift of the gab'?",
+    "tts": "Kissing which stone, set high in a castle near Cork, is said to give you the 'gift of the gab'?"
+  },
+  {
+    "file": "l-a2b8ce6f.mp3",
+    "text": "The answer is: The Blarney Stone. Visitors lie on their backs and lean over a drop at the top of Blarney Castle to kiss it.",
+    "tts": "The answer is: The Blarney Stone. Visitors lie on their backs and lean over a drop at the top of Blarney Castle to kiss it."
+  },
+  {
+    "file": "l-327c0167.mp3",
+    "text": "In old Irish folklore, what is a leprechaun's trade?",
+    "tts": "In old Irish folklore, what is a leprechaun's trade?"
+  },
+  {
+    "file": "l-4cef906f.mp3",
+    "text": "The answer is: Shoemaker. In the tales, leprechauns mend the shoes of the fairies, which is why they are always busy.",
+    "tts": "The answer is: Shoemaker. In the tales, leprechauns mend the shoes of the fairies, which is why they are always busy."
+  },
+  {
+    "file": "l-fcea74cc.mp3",
+    "text": "In Irish folklore, what is a banshee said to do before a death in the family?",
+    "tts": "In Irish folklore, what is a banshee said to do before a death in the family?"
+  },
+  {
+    "file": "l-3b703463.mp3",
+    "text": "The answer is: Wail (keen). The name comes from the Irish 'bean sí', meaning 'woman of the fairy mound'.",
+    "tts": "The answer is: Wail (keen). The name comes from the Irish 'bean sí', meaning 'woman of the fairy mound'."
+  },
+  {
+    "file": "l-fb250738.mp3",
+    "text": "Which coastline of about 40,000 stone columns in Northern Ireland was, in legend, built by a giant so he could cross to Scotland?",
+    "tts": "Which coastline of about 40,000 stone columns in Northern Ireland was, in legend, built by a giant so he could cross to Scotland?"
+  },
+  {
+    "file": "l-3015b19c.mp3",
+    "text": "The answer is: The Giant's Causeway. Geologists say the columns formed when lava from an ancient volcanic eruption cooled and cracked.",
+    "tts": "The answer is: The Giant's Causeway. Geologists say the columns formed when lava from an ancient volcanic eruption cooled and cracked."
+  },
+  {
+    "file": "l-ec2762ca.mp3",
+    "text": "In Irish legend, Tír na nÓg is a magical land where no one ever does what?",
+    "tts": "In Irish legend, Tír na nÓg is a magical land where no one ever does what?"
+  },
+  {
+    "file": "l-8fdaebcf.mp3",
+    "text": "The answer is: Grows old. Its name means 'Land of the Young'.",
+    "tts": "The answer is: Grows old. Its name means 'Land of the Young'."
+  },
+  {
+    "file": "l-e8392262.mp3",
+    "text": "In the legend 'The Children of Lir', a jealous stepmother turns four children into which birds?",
+    "tts": "In the legend 'The Children of Lir', a jealous stepmother turns four children into which birds?"
+  },
+  {
+    "file": "l-a22258fd.mp3",
+    "text": "The answer is: Swans. The spell kept them as swans for 900 years.",
+    "tts": "The answer is: Swans. The spell kept them as swans for 900 years."
+  },
+  {
+    "file": "l-1cdd485f.mp3",
+    "text": "Which legendary Irish hero gained all the world's wisdom by burning his thumb on the Salmon of Knowledge?",
+    "tts": "Which legendary Irish hero gained all the world's wisdom by burning his thumb on the Salmon of Knowledge?"
+  },
+  {
+    "file": "l-97d19de1.mp3",
+    "text": "The answer is: Fionn mac Cumhaill (Finn McCool). Whenever he needed wisdom afterward, he only had to suck his thumb.",
+    "tts": "The answer is: Fionn mac Cumhaill (Finn McCool). Whenever he needed wisdom afterward, he only had to suck his thumb."
+  },
+  {
+    "file": "l-21c244e5.mp3",
+    "text": "What was the name of the old Celtic festival that marked the start of summer on May 1?",
+    "tts": "What was the name of the old Celtic festival that marked the start of summer on May 1?"
+  },
+  {
+    "file": "l-bca31740.mp3",
+    "text": "The answer is: Bealtaine (Beltane). It was one of four seasonal festivals, with Samhain, Imbolc and Lughnasadh.",
+    "tts": "The answer is: Bealtaine (Beltane). It was one of four seasonal festivals, with Samhain, Imbolc and Lughnasadh."
+  },
+  {
+    "file": "l-9b215cce.mp3",
+    "text": "Which two colors of paint do you mix to make green?",
+    "tts": "Which two colors of paint do you mix to make green?"
+  },
+  {
+    "file": "l-f2537211.mp3",
+    "text": "The answer is: Blue and yellow. On a screen, green is one of the three primary colors of light, with red and blue.",
+    "tts": "The answer is: Blue and yellow. On a screen, green is one of the three primary colors of light, with red and blue."
+  },
+  {
+    "file": "l-9dd9c2ce.mp3",
+    "text": "What green pigment lets plants turn sunlight into food?",
+    "tts": "What green pigment lets plants turn sunlight into food?"
+  },
+  {
+    "file": "l-1094b9a2.mp3",
+    "text": "The answer is: Chlorophyll. It absorbs red and blue light and reflects green, which is why leaves look green.",
+    "tts": "The answer is: Chlorophyll. It absorbs red and blue light and reflects green, which is why leaves look green."
+  },
+  {
+    "file": "l-e4ac47f9.mp3",
+    "text": "Which famous American statue turned green over time because its copper skin weathered?",
+    "tts": "Which famous American statue turned green over time because its copper skin weathered?"
+  },
+  {
+    "file": "l-445e4132.mp3",
+    "text": "The answer is: The Statue of Liberty. The green layer, called a patina, formed within a few decades and now protects the copper underneath.",
+    "tts": "The answer is: The Statue of Liberty. The green layer, called a patina, formed within a few decades and now protects the copper underneath."
+  },
+  {
+    "file": "l-7729ea5d.mp3",
+    "text": "Emeralds are a green variety of which mineral?",
+    "tts": "Emeralds are a green variety of which mineral?"
+  },
+  {
+    "file": "l-87c7b592.mp3",
+    "text": "The answer is: Beryl. Aquamarine is the same mineral in blue.",
+    "tts": "The answer is: Beryl. Aquamarine is the same mineral in blue."
+  },
+  {
+    "file": "l-38cbbc2f.mp3",
+    "text": "Which green fruit, once called the 'Chinese gooseberry', was renamed by New Zealand exporters in 1959?",
+    "tts": "Which green fruit, once called the 'Chinese gooseberry', was renamed by New Zealand exporters in 1959?"
+  },
+  {
+    "file": "l-7f6c98aa.mp3",
+    "text": "The answer is: The kiwifruit. It was named after the kiwi, New Zealand's small brown national bird.",
+    "tts": "The answer is: The kiwifruit. It was named after the kiwi, New Zealand's small brown national bird."
+  },
+  {
+    "file": "l-b6438c14.mp3",
+    "text": "Which US city dyes its river green every year for St. Patrick's Day?",
+    "tts": "Which US city dyes its river green every year for St. Patrick's Day?"
+  },
+  {
+    "file": "l-ac1e3e1a.mp3",
+    "text": "The answer is: Chicago. The tradition began in 1962. Oddly, the dye is an orange powder that turns the water green.",
+    "tts": "The answer is: Chicago. The tradition began in 1962. Oddly, the dye is an orange powder that turns the water green."
+  },
+  {
+    "file": "l-ad636316.mp3",
+    "text": "Which city holds the world's largest St. Patrick's Day parade, first marched in 1762?",
+    "tts": "Which city holds the world's largest St. Patrick's Day parade, first marched in 1762?"
+  },
+  {
+    "file": "l-553534c8.mp3",
+    "text": "The answer is: New York City. The first parade took place 14 years before the US Declaration of Independence.",
+    "tts": "The answer is: New York City. The first parade took place 14 years before the US Declaration of Independence."
+  },
+  {
+    "file": "l-837ab7c0.mp3",
+    "text": "On St. Patrick's Day, which famous building with sail-shaped roofs is lit up green in Australia?",
+    "tts": "On St. Patrick's Day, which famous building with sail-shaped roofs is lit up green in Australia?"
+  },
+  {
+    "file": "l-5889adab.mp3",
+    "text": "The answer is: The Sydney Opera House. It is one of hundreds of landmarks around the world that 'go green' for the day.",
+    "tts": "The answer is: The Sydney Opera House. It is one of hundreds of landmarks around the world that 'go green' for the day."
+  },
+  {
+    "file": "l-677ddda1.mp3",
+    "text": "Which Caribbean island, nicknamed 'the Emerald Isle of the Caribbean', has St. Patrick's Day as a public holiday?",
+    "tts": "Which Caribbean island, nicknamed 'the Emerald Isle of the Caribbean', has St. Patrick's Day as a public holiday?"
+  },
+  {
+    "file": "l-45362b0f.mp3",
+    "text": "The answer is: Montserrat. Many of its early European settlers were Irish.",
+    "tts": "The answer is: Montserrat. Many of its early European settlers were Irish."
+  },
+  {
+    "file": "l-aabeb956.mp3",
+    "text": "In what year did St. Patrick's Day become an official public holiday in Ireland?",
+    "tts": "In what year did St. Patrick's Day become an official public holiday in Ireland?"
+  },
+  {
+    "file": "l-2731f931.mp3",
+    "text": "The answer is: 1903. It became a bank holiday under the Bank Holiday (Ireland) Act of 1903.",
+    "tts": "The answer is: 1903. It became a bank holiday under the Bank Holiday (Ireland) Act of 1903."
+  },
+  {
+    "file": "l-d18972a4.mp3",
+    "text": "Round Two. The stakes just went up.",
+    "tts": "Round Two. [mischievously] The stakes just went up."
+  },
+  {
+    "file": "l-dabe2cbb.mp3",
+    "text": "Saint Patrick is the patron saint of which country?",
+    "tts": "Saint Patrick is the patron saint of which country?"
+  },
+  {
+    "file": "l-0afbd7b2.mp3",
+    "text": "The answer is: Ireland. He shares the title with Saint Brigid and Saint Columba.",
+    "tts": "The answer is: Ireland. He shares the title with Saint Brigid and Saint Columba."
+  },
+  {
+    "file": "l-b7ac0206.mp3",
+    "text": "According to tradition, St. Patrick used which three-leaf plant to explain the Holy Trinity?",
+    "tts": "According to tradition, St. Patrick used which three-leaf plant to explain the Holy Trinity?"
+  },
+  {
+    "file": "l-bb68b909.mp3",
+    "text": "The answer is: The shamrock. The story first appears in writing many centuries after his death.",
+    "tts": "The answer is: The shamrock. The story first appears in writing many centuries after his death."
+  },
+  {
+    "file": "l-47bceb53.mp3",
+    "text": "According to legend, St. Patrick drove which animals out of Ireland?",
+    "tts": "According to legend, St. Patrick drove which animals out of Ireland?"
+  },
+  {
+    "file": "l-36809118.mp3",
+    "text": "The answer is: Snakes. Scientists say Ireland had no snakes at all after the last Ice Age, so the legend is only a story.",
+    "tts": "The answer is: Snakes. Scientists say Ireland had no snakes at all after the last Ice Age, so the legend is only a story."
+  },
+  {
+    "file": "l-907dd178.mp3",
+    "text": "St. Patrick was not born in Ireland. Where was he born?",
+    "tts": "St. Patrick was not born in Ireland. Where was he born?"
+  },
+  {
+    "file": "l-467c0a3f.mp3",
+    "text": "The answer is: In Roman Britain. At 16 he was kidnapped by raiders and taken to Ireland as a slave. He escaped, then later returned as a missionary.",
+    "tts": "The answer is: In Roman Britain. At 16 he was kidnapped by raiders and taken to Ireland as a slave. He escaped, then later returned as a missionary."
+  },
+  {
+    "file": "l-a9c69cd7.mp3",
+    "text": "St. Patrick's Day is held on March 17. What does that date traditionally mark?",
+    "tts": "St. Patrick's Day is held on March 17. What does that date traditionally mark?"
+  },
+  {
+    "file": "l-32ed49b4.mp3",
+    "text": "The answer is: The day he died. He is thought to have died in the 5th century, but the exact year is unknown.",
+    "tts": "The answer is: The day he died. He is thought to have died in the 5th century, but the exact year is unknown."
+  },
+  {
+    "file": "l-77d0deb3.mp3",
+    "text": "In Ireland, what does the word 'craic' mean?",
+    "tts": "In Ireland, what does the word 'craic' mean?"
+  },
+  {
+    "file": "l-4c3cdc1f.mp3",
+    "text": "The answer is: Fun, a good time. It is pronounced 'crack'. 'What's the craic?' means 'What's new?'",
+    "tts": "The answer is: Fun, a good time. It is pronounced 'crack'. 'What's the craic?' means 'What's new?'"
+  },
+  {
+    "file": "l-80a1c096.mp3",
+    "text": "The Irish toast 'Sláinte!' means what?",
+    "tts": "The Irish toast 'Sláinte!' means what?"
+  },
+  {
+    "file": "l-03140bb7.mp3",
+    "text": "The answer is: Health (cheers). It is pronounced roughly 'SLAWN-cha'.",
+    "tts": "The answer is: Health (cheers). It is pronounced roughly 'SLAWN-cha'."
+  },
+  {
+    "file": "l-93d533a1.mp3",
+    "text": "Which English word, meaning tiny broken pieces, comes from the Irish word 'smidiríní'?",
+    "tts": "Which English word, meaning tiny broken pieces, comes from the Irish word 'smidiríní'?"
+  },
+  {
+    "file": "l-3811f35c.mp3",
+    "text": "The answer is: Smithereens. 'Smidirín' means a small fragment in Irish.",
+    "tts": "The answer is: Smithereens. 'Smidirín' means a small fragment in Irish."
+  },
+  {
+    "file": "l-a2f7233f.mp3",
+    "text": "What is the Irish-language name for Ireland, used in its constitution?",
+    "tts": "What is the Irish-language name for Ireland, used in its constitution?"
+  },
+  {
+    "file": "l-4148c997.mp3",
+    "text": "The answer is: Éire. The constitution says that in English the name of the state is Ireland.",
+    "tts": "The answer is: Éire. The constitution says that in English the name of the state is Ireland."
+  },
+  {
+    "file": "l-c48ddf94.mp3",
+    "text": "'Taoiseach' is the title of which Irish official?",
+    "tts": "'Taoiseach' is the title of which Irish official?"
+  },
+  {
+    "file": "l-709fbdbf.mp3",
+    "text": "The answer is: The prime minister (head of government). It is pronounced 'TEE-shock' and means 'chief' or 'leader'.",
+    "tts": "The answer is: The prime minister (head of government). It is pronounced 'TEE-shock' and means 'chief' or 'leader'."
+  },
+  {
+    "file": "l-172de0c7.mp3",
+    "text": "Which Irish rock band, fronted by Bono, formed in Dublin in 1976?",
+    "tts": "Which Irish rock band, fronted by Bono, formed in Dublin in 1976?"
+  },
+  {
+    "file": "l-f5497041.mp3",
+    "text": "The answer is: U2. The band members met as students at Mount Temple Comprehensive School.",
+    "tts": "The answer is: U2. The band members met as students at Mount Temple Comprehensive School."
+  },
+  {
+    "file": "l-d4d8ddee.mp3",
+    "text": "Which Irish writer wrote the 1726 satire 'Gulliver's Travels'?",
+    "tts": "Which Irish writer wrote the 1726 satire 'Gulliver's Travels'?"
+  },
+  {
+    "file": "l-2d44c2ce.mp3",
+    "text": "The answer is: Jonathan Swift. Swift was also dean of St. Patrick's Cathedral in Dublin.",
+    "tts": "The answer is: Jonathan Swift. Swift was also dean of St. Patrick's Cathedral in Dublin."
+  },
+  {
+    "file": "l-92e1d6ef.mp3",
+    "text": "Which Irish playwright, famous for his wit, wrote 'The Importance of Being Earnest'?",
+    "tts": "Which Irish playwright, famous for his wit, wrote 'The Importance of Being Earnest'?"
+  },
+  {
+    "file": "l-ec1aae84.mp3",
+    "text": "The answer is: Oscar Wilde. The play opened in London in 1895.",
+    "tts": "The answer is: Oscar Wilde. The play opened in London in 1895."
+  },
+  {
+    "file": "l-5be04832.mp3",
+    "text": "Which Irish writer's novel 'Ulysses' takes place in Dublin on a single day, June 16, 1904?",
+    "tts": "Which Irish writer's novel 'Ulysses' takes place in Dublin on a single day, June 16, 1904?"
+  },
+  {
+    "file": "l-88a0475d.mp3",
+    "text": "The answer is: James Joyce. Fans celebrate that date every year as Bloomsday, after the novel's hero, Leopold Bloom.",
+    "tts": "The answer is: James Joyce. Fans celebrate that date every year as Bloomsday, after the novel's hero, Leopold Bloom."
+  },
+  {
+    "file": "l-f583e5e0.mp3",
+    "text": "Which US president, elected in 1960, visited his ancestral home in County Wexford in 1963?",
+    "tts": "Which US president, elected in 1960, visited his ancestral home in County Wexford in 1963?"
+  },
+  {
+    "file": "l-0e9e0cf1.mp3",
+    "text": "The answer is: John F. Kennedy. He was the first Catholic president of the United States, and all eight of his great-grandparents were Irish.",
+    "tts": "The answer is: John F. Kennedy. He was the first Catholic president of the United States, and all eight of his great-grandparents were Irish."
+  },
+  {
+    "file": "l-2109e63f.mp3",
+    "text": "Which Irish dance show began as a seven-minute interval act at the 1994 Eurovision Song Contest in Dublin?",
+    "tts": "Which Irish dance show began as a seven-minute interval act at the 1994 Eurovision Song Contest in Dublin?"
+  },
+  {
+    "file": "l-6cec6635.mp3",
+    "text": "The answer is: Riverdance. It became a full stage show in 1995 and has been seen by millions around the world.",
+    "tts": "The answer is: Riverdance. It became a full stage show in 1995 and has been seen by millions around the world."
+  },
+  {
+    "file": "l-ffd2274f.mp3",
+    "text": "What is the name of the Irish frame drum, often played with a small stick called a tipper?",
+    "tts": "What is the name of the Irish frame drum, often played with a small stick called a tipper?"
+  },
+  {
+    "file": "l-8f030c72.mp3",
+    "text": "The answer is: The bodhrán. It is pronounced 'BOW-rawn'.",
+    "tts": "The answer is: The bodhrán. It is pronounced 'BOW-rawn'."
+  },
+  {
+    "file": "l-169404cc.mp3",
+    "text": "Which Irish singer from County Donegal had a worldwide hit in 1988 with 'Orinoco Flow'?",
+    "tts": "Which Irish singer from County Donegal had a worldwide hit in 1988 with 'Orinoco Flow'?"
+  },
+  {
+    "file": "l-8623dc4d.mp3",
+    "text": "The answer is: Enya. She is one of Ireland's best-selling solo artists.",
+    "tts": "The answer is: Enya. She is one of Ireland's best-selling solo artists."
+  },
+  {
+    "file": "l-b25166a9.mp3",
+    "text": "In traditional Irish step dancing, which part of the body do dancers keep very still?",
+    "tts": "In traditional Irish step dancing, which part of the body do dancers keep very still?"
+  },
+  {
+    "file": "l-6d2b7684.mp3",
+    "text": "The answer is: Their arms (upper body). All the speed and rhythm comes from the feet.",
+    "tts": "The answer is: Their arms (upper body). All the speed and rhythm comes from the feet."
+  },
+  {
+    "file": "l-02bf1856.mp3",
+    "text": "Which band from Limerick, fronted by Dolores O'Riordan, had a 1993 hit with 'Linger'?",
+    "tts": "Which band from Limerick, fronted by Dolores O'Riordan, had a 1993 hit with 'Linger'?"
+  },
+  {
+    "file": "l-5558e500.mp3",
+    "text": "The answer is: The Cranberries. It became the band's first big international hit.",
+    "tts": "The answer is: The Cranberries. It became the band's first big international hit."
+  },
+  {
+    "file": "l-ccf94733.mp3",
+    "text": "Irish soda bread rises without any yeast. What makes it rise?",
+    "tts": "Irish soda bread rises without any yeast. What makes it rise?"
+  },
+  {
+    "file": "l-fe37ffa6.mp3",
+    "text": "The answer is: Baking soda (with buttermilk). The acid in buttermilk reacts with the baking soda and makes bubbles.",
+    "tts": "The answer is: Baking soda (with buttermilk). The acid in buttermilk reacts with the baking soda and makes bubbles."
+  },
+  {
+    "file": "l-25e563f4.mp3",
+    "text": "Corned beef and cabbage is a St. Patrick's Day favorite in which country, more than in Ireland itself?",
+    "tts": "Corned beef and cabbage is a St. Patrick's Day favorite in which country, more than in Ireland itself?"
+  },
+  {
+    "file": "l-4596ff10.mp3",
+    "text": "The answer is: The United States. In Ireland, bacon and cabbage is the more traditional dish.",
+    "tts": "The answer is: The United States. In Ireland, bacon and cabbage is the more traditional dish."
+  },
+  {
+    "file": "l-64f17f90.mp3",
+    "text": "What is colcannon, a traditional Irish dish?",
+    "tts": "What is colcannon, a traditional Irish dish?"
+  },
+  {
+    "file": "l-90d0cdd0.mp3",
+    "text": "The answer is: Mashed potatoes with cabbage or kale. It is a traditional dish for October 31, sometimes with a coin or a ring hidden inside.",
+    "tts": "The answer is: Mashed potatoes with cabbage or kale. It is a traditional dish for October 31, sometimes with a coin or a ring hidden inside."
+  },
+  {
+    "file": "l-d79ed76f.mp3",
+    "text": "Which vegetable's crop failure in the 1840s caused the Great Famine in Ireland?",
+    "tts": "Which vegetable's crop failure in the 1840s caused the Great Famine in Ireland?"
+  },
+  {
+    "file": "l-4a304c64.mp3",
+    "text": "The answer is: The potato. About a million people died and more than a million emigrated, many to North America.",
+    "tts": "The answer is: The potato. About a million people died and more than a million emigrated, many to North America."
+  },
+  {
+    "file": "l-65418b58.mp3",
+    "text": "Boxty, a traditional dish from the north and west of Ireland, is a kind of what?",
+    "tts": "Boxty, a traditional dish from the north and west of Ireland, is a kind of what?"
+  },
+  {
+    "file": "l-09c4ddd3.mp3",
+    "text": "The answer is: Potato pancake. It is made from grated raw potato mixed with mashed potato and flour.",
+    "tts": "The answer is: Potato pancake. It is made from grated raw potato mixed with mashed potato and flour."
+  },
+  {
+    "file": "l-12d3a9a8.mp3",
+    "text": "We have reached the end of the rainbow. The final category is: Irish in America. Write down your secret wagers. You may bet up to half of your score, or up to 500 if that is more.",
+    "tts": "[whispers] We have reached the end of the rainbow. The final category is: Irish in America. Write down your secret wagers. You may bet up to half of your score, or up to 500 if that is more."
+  },
+  {
+    "file": "l-aba383b1.mp3",
+    "text": "Which Irish-born naval officer from County Wexford is often called the 'Father of the American Navy'?",
+    "tts": "Which Irish-born naval officer from County Wexford is often called the 'Father of the American Navy'?"
+  },
+  {
+    "file": "l-454695fa.mp3",
+    "text": "The answer is: John Barry. He was the first commissioned officer of the US Navy after the American Revolution.",
+    "tts": "The answer is: John Barry. He was the first commissioned officer of the US Navy after the American Revolution."
+  },
+  {
+    "file": "l-6e2ace4b.mp3",
+    "text": "In what year did Ireland join the European Economic Community, today's European Union?",
+    "tts": "In what year did Ireland join the European Economic Community, today's European Union?"
+  },
+  {
+    "file": "l-eb2e1121.mp3",
+    "text": "The answer is: 1973. Ireland, the United Kingdom and Denmark all joined on January 1, 1973.",
+    "tts": "The answer is: 1973. Ireland, the United Kingdom and Denmark all joined on January 1, 1973."
+  },
+  {
+    "file": "l-bf19dd4f.mp3",
+    "text": "Team Shamrocks found the pot of gold!",
+    "tts": "[excited] Team Shamrocks found the pot of gold! [applause]"
+  },
+  {
+    "file": "l-baa03e8a.mp3",
+    "text": "Team Leprechauns found the pot of gold!",
+    "tts": "[excited] Team Leprechauns found the pot of gold! [applause]"
+  },
+  {
+    "file": "l-b5a4cebd.mp3",
+    "text": "Team Rainbows found the pot of gold!",
+    "tts": "[excited] Team Rainbows found the pot of gold! [applause]"
+  },
+  {
+    "file": "l-5c5b3b46.mp3",
+    "text": "Team Clovers found the pot of gold!",
+    "tts": "[excited] Team Clovers found the pot of gold! [applause]"
+  },
+  {
+    "file": "l-d212a1cc.mp3",
+    "text": "The price: 100 points!",
+    "tts": "[mischievously] The price... 100 points!"
+  },
+  {
+    "file": "l-494dcb81.mp3",
+    "text": "The price: 200 points!",
+    "tts": "[mischievously] The price... 200 points!"
+  },
+  {
+    "file": "l-53fff7fa.mp3",
+    "text": "The price: 300 points!",
+    "tts": "[mischievously] The price... 300 points!"
+  },
+  {
+    "file": "l-3f1e82cf.mp3",
+    "text": "The price: 400 points!",
+    "tts": "[mischievously] The price... 400 points!"
+  },
+  {
+    "file": "l-2e88ad90.mp3",
+    "text": "The price: 500 points!",
+    "tts": "[mischievously] The price... 500 points!"
+  },
+  {
+    "file": "l-cbe0a1b5.mp3",
+    "text": "The price: 600 points!",
+    "tts": "[mischievously] The price... 600 points!"
+  },
+  {
+    "file": "l-cc27cd63.mp3",
+    "text": "The price: 800 points!",
+    "tts": "[mischievously] The price... 800 points!"
+  },
+  {
+    "file": "l-b9ee2660.mp3",
+    "text": "The price: 1000 points!",
+    "tts": "[mischievously] The price... 1000 points!"
+  },
+  {
+    "file": "l-d74ae88e.mp3",
+    "text": "Team Shamrocks, the rainbow ends with you!",
+    "tts": "Team Shamrocks, the rainbow ends with you!"
+  },
+  {
+    "file": "l-28e0b1f1.mp3",
+    "text": "Team Leprechauns, the rainbow ends with you!",
+    "tts": "Team Leprechauns, the rainbow ends with you!"
+  },
+  {
+    "file": "l-73c19014.mp3",
+    "text": "Team Rainbows, the rainbow ends with you!",
+    "tts": "Team Rainbows, the rainbow ends with you!"
+  },
+  {
+    "file": "l-8b048b25.mp3",
+    "text": "Team Clovers, the rainbow ends with you!",
+    "tts": "Team Clovers, the rainbow ends with you!"
+  }
+]

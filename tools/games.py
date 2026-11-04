@@ -99,7 +99,33 @@ VALENTINES = dict(
     shots=["board", "question", "chocolates", "arrow", "final", "podium"],
 )
 
-GAMES = [HALLOWEEN, CHRISTMAS, VALENTINES]
+STPATRICKS = dict(
+    slug="stpatricks", status="scheduled", launch="2027-02-10",
+    name="Victoria’s Pot o’ Gold", short="Pot o’ Gold", holiday="St. Patrick’s Day",
+    src="games/stpatricks/game.html", art_src="games/stpatricks/art.js", audio="audio/stpatricks", state_key="pg-state-v1",
+    icon="SHAMROCK_SVG", specials={"cat": "leprechauns_trick", "witch": "over_the_rainbow"},
+    theme=dict(night="#0c1a12", dusk="#13261b", cell="#1a3324", line="#2f5a3e", bone="#f4f1e4", ash="#a9c2ae",
+               candle="#e8b84a", ember="#ffe7a3", good="#5fbf73", witch="#7fb8e8", bad="#e2604f"),
+    rgb=dict(night="12,26,18", dusk="19,38,27", glow="232,184,74", glow2="95,191,115"), tag2="var(--witch)",
+    display=("Uncial Antiqua", 400, "uncial-antiqua", '"Uncial Antiqua",Georgia,"Times New Roman",serif'),
+    gfont="Uncial+Antiqua",
+    title="Victoria’s Pot o’ Gold · St. Patrick’s Day Office Quiz Game",
+    desc="Free St. Patrick’s Day trivia game for office parties and team events: a game-show board, a leprechaun’s trick, a rainbow and a pot-of-gold wager.",
+    og_desc="A free St. Patrick’s Day quiz for the whole office: Irish trivia, a leprechaun’s trick, a rainbow and a pot-of-gold wager, with a narrator.",
+    og_alt="a St. Patrick’s Day quiz for the whole office, with a glowing shamrock",
+    eyebrow="A St. Patrick’s Day quiz for the whole office",
+    intro="A free St. Patrick’s Day trivia game for office parties and team events, made for a big screen. Teams pick lucky questions on a game-show board, think for 30 seconds and answer. A narrator reads every question aloud.",
+    rules=[("Two rounds", "of five categories about Ireland, luck, legends, words, music, food and St. Patrick himself, worth 100–500 and then 200–1,000 points."),
+           ("Leprechaun’s Trick:", "the team that finds the leprechaun must hand the question to another team."),
+           ("Over the Rainbow:", "the rainbow appears twice and picks a random price and the team that must answer."),
+           ("End of the Rainbow:", "one final question with secret wagers, then a podium for the team that found the pot of gold.")],
+    chips=[("LEPRECHAUN_SVG", "Leprechaun’s Trick"), ("RAINBOW_SVG", "Over the Rainbow"), ("POT_SVG", "Pot-of-gold wager")],
+    card="Irish trivia, myths and legends, a leprechaun’s trick, a rainbow and a pot-of-gold wager, for the luckiest team in the office.",
+    page_art={"trivia-questions": "SHAMROCK_SVG", "virtual-games-for-work": "RAINBOW_SVG", "how-to-host-a-game-night": "POT_SVG", "faq": "LEPRECHAUN_SVG"},
+    shots=["board", "question", "rainbow", "leprechaun", "final", "podium"],
+)
+
+GAMES = [HALLOWEEN, CHRISTMAS, VALENTINES, STPATRICKS]
 PLAYABLE = [g for g in GAMES if g["status"] in ("live", "scheduled")]
 
 # Content pages every playable game has (slug, nav label). Content: tools/pages_<game>.py

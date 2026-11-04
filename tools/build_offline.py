@@ -40,7 +40,8 @@ else:
 lines = {text: "data:audio/mpeg;base64," + b64(f"{A}/{f}") for text, f in m["lines"].items()}
 pack = {"base": "", "voice": m.get("voice", ""), "model": m.get("model", ""), "lines": lines}
 pack_js = "<script>window.__NOF_PACK = " + json.dumps(pack, ensure_ascii=False).replace("</", "<\\/") + ";</script>\n"
-html = html.replace("<div id=\"app\"></div>", "<div id=\"app\"></div>\n" + pack_js, 1)
+if lines:   # without recordings, keep the game's own "no narrator audio yet" message
+    html = html.replace("<div id=\"app\"></div>", "<div id=\"app\"></div>\n" + pack_js, 1)
 old = "function loadPack(){\n  try {"
 assert old in html
 html = html.replace(old, "function loadPack(){\n  if (window.__NOF_PACK){ PACK = window.__NOF_PACK; return; }   // offline build: audio is embedded\n  try {", 1)

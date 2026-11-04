@@ -42,7 +42,7 @@ h1 i{font-style:italic;color:var(--candle)}
 .lede{font-size:1.3rem;margin:0 0 .6em}
 .muted{color:var(--ash)}
 h2{font-weight:800;font-size:clamp(1.8rem,4vw,2.4rem);line-height:1.1;margin:2em 0 .5em;color:var(--ember)}
-.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%%,320px),1fr));gap:20px;margin:18px 0 0}
+.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%%,440px),1fr));gap:20px;margin:18px 0 0}
 .game{position:relative;display:flex;flex-direction:column;border:1px solid var(--g-line);border-radius:20px;padding:26px 24px 24px;
  background:radial-gradient(ellipse 80%% 70%% at 100%% 0%%,rgba(var(--g-glow),.22),transparent 65%%),var(--g-night);color:var(--g-bone);overflow:hidden}
 .game svg{width:96px;height:96px;position:absolute;right:20px;top:20px;filter:drop-shadow(0 0 24px rgba(var(--g-glow),.45))}

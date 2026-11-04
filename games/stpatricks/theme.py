@@ -1,0 +1,130 @@
+"""The St. Patrick's Day game's values for the engine slots (see engine/slots.py). Built by: python3 tools/build_game.py stpatricks
+
+Victoria's Pot o' Gold. Surprise 1 ("cat"): Leprechaun's Trick. Surprise 2 ("witch"): Over the Rainbow. Final: End of the Rainbow.
+Helpers: file(name) reads a file next to this theme; art(name, as_name) takes an SVG from art.js under the engine's name;
+MOBILE_CSS is the phone layout from tools/site_common.py."""
+
+VALUES = {
+    'page_title': '<title>Victoria’s Pot o’ Gold</title>',
+    'font_link': '&family=Uncial+Antiqua&display=swap',
+    'css_comment_theme': "Single dark theme by design (a green St. Patrick's night).",
+    'css_comment_table': 'one cosy game table in the pub corner',
+    'color_night': '--night:#0c1a12',
+    'color_dusk': '--dusk:#13261b',
+    'color_cell': '--cell:#1a3324',
+    'color_cell_hi': '--cell-hi:#24452f',
+    'color_line': '--line:#2f5a3e',
+    'color_bone': '--bone:#f4f1e4',
+    'color_ash': '--ash:#a9c2ae',
+    'color_candle': '--candle:#e8b84a',
+    'color_ember': '--ember:#ffe7a3',
+    'color_good': '--good:#5fbf73',
+    'color_bad': '--bad:#e2604f',
+    'color_witch': '--witch:#7fb8e8',
+    'display_font': '--f-display:"Uncial Antiqua","Georgia","Times New Roman",serif;',
+    'atmosphere_css': '''
+/* ---------- Gold dust: two slow layers of golden and green specks drifting up behind the game ---------- */
+body::before,body::after{content:"";position:fixed;inset:-20vh 0 0;pointer-events:none;z-index:0;
+  background-image:radial-gradient(2px 2px at 20px 30px,rgba(232,184,74,.5),transparent 60%),radial-gradient(1.5px 1.5px at 120px 80px,rgba(255,231,163,.4),transparent 60%),
+  radial-gradient(2.5px 2.5px at 200px 160px,rgba(95,191,115,.35),transparent 60%),radial-gradient(1.5px 1.5px at 60px 210px,rgba(232,184,74,.45),transparent 60%),
+  radial-gradient(2px 2px at 260px 250px,rgba(255,231,163,.3),transparent 60%);
+  background-size:300px 300px;animation:snow 46s linear infinite;opacity:.45}
+body::after{background-size:420px 420px;animation-duration:60s;opacity:.35;filter:blur(.6px)}
+@keyframes snow{from{transform:translateY(20vh)}to{transform:translateY(0)}}
+#app{position:relative;z-index:1}
+.title,.round-name,.slide-title,.big-cat,.cat-ask,.cat-team,.reel-face,.special h3{letter-spacing:.01em}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  body::before,body::after{display:none}
+}''',
+    'storage_keys': 'const KEY_S = "pg-state-v1", KEY_Q = "pg-questions-v1";',
+    'storage_key_voice': 'const KEY_V = "pg-voice-v1";',
+    'team_names': 'const TEAM_NAMES = ["Team Shamrocks","Team Leprechauns","Team Rainbows","Team Clovers"];',
+    'questions': file("questions.js").strip() + "\n",
+    'migrate_old_questions': '',
+    'art_cat_svg': art('LEPRECHAUN_SVG', 'CAT_SVG'),
+    'art_hat_svg': art('RAINBOW_SVG', 'HAT_SVG'),
+    'art_moon_svg': art('POT_SVG', 'MOON_SVG'),
+    'art_pumpkin_svg': art('SHAMROCK_SVG', 'PUMPKIN_SVG'),
+    'art_ghost_svg': art('CLOVER4_SVG', 'GHOST_SVG'),
+    'art_wand_svg': art('COIN_SVG', 'WAND_SVG'),
+    'narrator_name': 'const NARRATOR = "Lucky Liam";',
+    'narrator_lines': '''const LINES = {
+  test: "Welcome to Victoria's Pot o' Gold. Pick a question, and may the luck be with you!",
+  welcome: "Welcome to Victoria's Pot o' Gold! Tonight, our teams compete for glory, and for gold. Here is how it works.",
+  ready: "Ready? The first team, pick a question. Good luck, and may the luckiest team win.",
+  rules: "Rules of the game. Pick a question from the board. Watch out for the leprechaun, and for the rainbow. Play two rounds and the End of the Rainbow finale.",
+  cat: "A leprechaun's trick! He has snatched your question. The team that found him must give this question to another team.",
+  catWho: "Who gets the leprechaun's question?",
+  witchTitle: "Over the rainbow!",
+  witch: "And now, let's follow the rainbow! The first rainbow picks the price. The second rainbow picks the team that must answer. Answer right, and win it. Answer wrong, and lose it.",
+  tie: "It's a tie! Time for a tiebreaker."
+};''',
+    'line_final_intro': 'const midnightLine = () => "We have reached the end of the rainbow. The final category is: "',
+    'line_winner': 'const winnerLine = name => name + " found the pot of gold!";',
+    'line_surprise2_team': 'const dealLine = name => name + ", the rainbow ends with you!";',
+    'narrator_moods': '''    [LINES.test]: "[cheerfully] Welcome to Victoria's Pot o' Gold. Pick a question... and may the luck be with you!",
+    [LINES.welcome]: "[warmly] Welcome to Victoria's Pot o' Gold! Tonight, our teams compete for glory... and for gold. Here is how it works.",
+    [LINES.ready]: "[cheerfully] Ready? The first team, pick a question. Good luck... and may the luckiest team win! [laughs]",
+    [LINES.rules]: "[warmly] Rules of the game. Pick a question from the board. [mischievously] Watch out for the leprechaun... and for the rainbow. [cheerfully] Play two rounds... and the End of the Rainbow finale.",
+    [LINES.cat]: "[gasps] A leprechaun's trick! [mischievously] He has snatched your question. The team that found him... must give this question to another team.",
+    [LINES.catWho]: "[mischievously] So... who gets the leprechaun's question?",
+    [LINES.witchTitle]: "[whispers] Over... [cheerfully] the rainbow!",
+''',
+    'mood_surprise2': '    [LINES.witch]: "[cheerfully] And now, let\'s follow the rainbow! [laughs] The first rainbow picks the price. The second rainbow picks the team that must answer. Answer right... and win it. Answer wrong... [whispers] and lose it.",',
+    'mood_winner': 'if (/ found the pot of gold!$/.test(t)) return "[excited] " + t + " [applause]";',
+    'music_comment': '''/* ===================== End of the Rainbow thinking music =====================
+   An original, lilting tune over a D-C-G drone-like bass, with light taps like a bodhrán.''',
+    'music_chords': 'const M_CHORDS = [[74,78,81],[72,76,79],[67,71,74],[74,78,81],[74,78,81],[72,76,79],[71,74,79],[69,73,76]];',
+    'music_bass': 'const M_BASS = [50,48,43,50,50,48,43,45];',
+    'music_tempo': 'const M_STEP = 60 / 112 / 2;   // eighth notes at 112 bpm',
+    'music_drone': 'o1.type = o2.type = "triangle"; o1.frequency.value = 73.4; o2.frequency.value = 73.7;',
+    'music_drone_filter': 'f.type = "lowpass"; f.frequency.value = 500; g.gain.value = 0.025;',
+    'music_ticks': '    if (pos % 2 === 0) this.note(pos % 4 === 0 ? 180 : 140, t, 0.08, "triangle", 0.03);   // soft bodhrán taps',
+    'sound_surprise1': 'cat(){ tone(784,.12,"triangle",.1,0); tone(988,.12,"triangle",.1,.12); tone(1175,.25,"triangle",.1,.24); },',
+    'sound_surprise2': 'witch(){ [523,587,659,784,880,1047].forEach((f,i)=>tone(f,.28,"sine",.06,i*.08)); },',
+    'slide_welcome_title': '{ eyebrow: "Welcome to", title: "Victoria’s Pot o’ Gold", art: hero(PUMPKIN_SVG),',
+    'slide_welcome_text': 'Two rounds of lucky trivia, two tricky surprises and one last wager at the end of the rainbow.',
+    'slide_rules_bullets': 'bullets: ["Pick a question from the board.", "Watch out for the leprechaun and the rainbow.", "Play two rounds and the End of the Rainbow finale."],',
+    'slide_surprise1': '''{ eyebrow: "Surprise", title: "Leprechaun’s Trick", art: hero(CAT_SVG),
+      bullets: ["Find the leprechaun and you must give the question away.", "You choose which team gets it.", "That team answers for the full value, right or wrong."] },''',
+    'slide_surprise2': '''{ eyebrow: "Surprise", title: "Over the Rainbow", art: hero(HAT_SVG),
+      bullets: ["The rainbow appears twice.", `The first rainbow picks the price:''',
+    'slide_surprise2_second': '"The second rainbow picks t',
+    'slide_final_title': '{ eyebrow: "The finale", title: "End of the Rainbow", art: hero(MOON_SVG),',
+    'slide_fair_play_last': '"Only one team finds the pot of gold."',
+    'deck_final_filter': 'if (deck === "midnight") return list.filter(sl => sl.title === "End of the Rainbow");',
+    'deck_intro_filter': 'return list.filter(sl => !["Leprechaun’s Trick", "Over the Rainbow", "Double the luck", "End of the Rainbow"].includes(sl.title));',
+    'slide_round2_title': '{ eyebrow: "Round Two", title: "Double the luck", art: ladder,',
+    'deck_round2_filter': 'if (deck === "round2") return list.filter(sl => sl.title === "Double the luck");',
+    'start_eyebrow': '<div class="eyebrow">A St. Patrick’s Day quiz for the whole office</div>',
+    'start_title': '<h1 class="title"><span class="byline">Victoria’s</span>Pot o’ Gold</h1>',
+    'start_intro': 'Two rounds of lucky trivia, two tricky surprises on the board, and one last wager at the end of the rainbow.',
+    'start_surprise1': '<li>${CAT_SVG}<div><b>Leprechaun’s Trick</b><p>The team that finds the leprechaun must hand the question to another team.',
+    'start_surprise2': '<li>${HAT_SVG}<div><b>Over the Rainbow</b><p>The rainbow appears twice. The first picks a random price, the second picks the team that must answer.',
+    'start_final': '<li>${MOON_SVG}<div><b>End of the Rainbow</b><p>Round Two doubles every value.',
+    'board_next_label': 'const nextLabel = finalDone ? "Back to the standings" : isLast ? "Go to the End of the Rainbow"',
+    'board_eyebrow': '<div class="eyebrow">Victoria’s Pot o’ Gold</div>',
+    'surprise1_card': '''<div class="special blackcat">${CAT_SVG}<div><h3>Leprechaun’s Trick</h3>
+      <p>${esc(T[q.picker].name)} found the leprechaun and must hand this question to another team.''',
+    'surprise1_ask': '<h3 class="cat-ask">Who gets the question?</h3>',
+    'surprise2_card': '''<div class="special witch">${HAT_SVG}<div><h3>Over the Rainbow</h3>
+      ${q.witchAsk ? `<p class="witch-quote" style="animation:rise-in .5s ease both">“Let’s see where the rainbow ends…”</p>` : ""}''',
+    'surprise2_step1': '<span><b>First rainbow</b> picks the price:',
+    'surprise2_step2': '<span><b>Second rainbow</b> picks the team that must answer.',
+    'surprise2_reel1_label': '<div class="reel-label">First rainbow · The price</div>',
+    'surprise2_reel1_button': '${WAND_SVG} Follow the rainbow</button>',
+    'surprise2_reel2_label': '<div class="reel-label">Second rainbow · The team</div>',
+    'surprise2_reel2_button': '${WAND_SVG} Follow it again</button>',
+    'question_surprise1_tag': '${q.special==="cat"?`<div class="special blackcat">${CAT_SVG}<div><h3>Leprechaun’s Trick</h3></div></div>`:""}',
+    'question_surprise2_tag': '${q.special==="witch"?`<div class="special witch">${HAT_SVG}<div><h3>Over the Rainbow</h3></div></div>`:""}',
+    'final_eyebrow_category': '<div class="eyebrow">End of the Rainbow · final category</div>',
+    'final_eyebrow_question': '<div class="eyebrow">End of the Rainbow · ${esc(F.category)}</div>',
+    'podium_headline': 'const headline = winners.length === 1 ? esc(winners[0].name) + " found the pot of gold"',
+    'podium_eyebrow': '<div class="eyebrow">Victoria’s Pot o’ Gold · final standings</div>',
+    'editor_surprise1_option': '<option value="cat" ${q.special==="cat"?"selected":""}>Leprechaun’s Trick</option>',
+    'editor_surprise2_option': '<option value="witch" ${q.special==="witch"?"selected":""}>Over the Rainbow</option>',
+    'editor_final_tab': 'data-t="final" aria-selected="${tab==="final"}">End of the Rainbow</button>',
+    'voice_preset_name': '<button class="btn" data-act="vpreset" data-p="spooky">Storyteller voice</button>',
+    'phone_layout': "</style>\n" + MOBILE_CSS + "\n\n<div id=\"app\"></div>",
+}
