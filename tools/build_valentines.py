@@ -27,7 +27,7 @@ def rep_re(pattern, new, count=1, flags=re.S):
 
 
 # ---------- Name, fonts, colours ----------
-rep("<title>Viktoriia’s Night of Frights</title>", "<title>Viktoriia’s Sweetheart Showdown</title>")
+rep("<title>Victoria’s Night of Frights</title>", "<title>Victoria’s Sweetheart Showdown</title>")
 rep("&family=Pirata+One&display=swap", "&family=Yeseva+One&display=swap")
 rep("Single dark theme by design (Halloween night).", "Single dark theme by design (a candlelit Valentine's evening).")
 rep("one candlelit game table", "one cosy candlelit game table")
@@ -121,8 +121,8 @@ rep('witch(){ [392,370,349,330].forEach((f,i)=>tone(f,.35,"sawtooth",.04,i*.13))
     'witch(){ [523,659,784,1047].forEach((f,i)=>tone(f,.3,"triangle",.07,i*.11)); },')
 
 # ---------- Rules slides ----------
-rep('{ eyebrow: "Welcome to", title: "Viktoriia’s Night of Frights", art: hero(PUMPKIN_SVG),',
-    '{ eyebrow: "Welcome to", title: "Viktoriia’s Sweetheart Showdown", art: hero(PUMPKIN_SVG),')
+rep('{ eyebrow: "Welcome to", title: "Victoria’s Night of Frights", art: hero(PUMPKIN_SVG),',
+    '{ eyebrow: "Welcome to", title: "Victoria’s Sweetheart Showdown", art: hero(PUMPKIN_SVG),')
 rep("Two rounds of spooky trivia, two cursed surprises and one last wager at midnight.",
     "Two rounds of sweet trivia, two surprises from Cupid and one last wager in a love letter.")
 rep('bullets: ["Pick a question from the board.", "Beware the black cat and the witch.", "Survive two rounds and the midnight finale."],',
@@ -143,7 +143,7 @@ rep('if (deck === "round2") return list.filter(sl => sl.title === "Double troubl
 
 # ---------- Start screen ----------
 rep('<div class="eyebrow">A Halloween quiz for the whole office</div>', '<div class="eyebrow">A Valentine’s Day quiz for the whole office</div>')
-rep('<h1 class="title"><span class="byline">Viktoriia’s</span>Night of Frights</h1>', '<h1 class="title"><span class="byline">Viktoriia’s</span>Sweetheart Showdown</h1>')
+rep('<h1 class="title"><span class="byline">Victoria’s</span>Night of Frights</h1>', '<h1 class="title"><span class="byline">Victoria’s</span>Sweetheart Showdown</h1>')
 rep("Two rounds of spooky trivia, two cursed surprises on the board, and one last wager at midnight.",
     "Two rounds of sweet trivia, two surprises from Cupid on the board, and one last wager in a love letter.")
 rep("<li>${CAT_SVG}<div><b>Black Cat in the Bag</b><p>The team that finds the black cat must hand the question to another team.",
@@ -154,7 +154,7 @@ rep("<li>${MOON_SVG}<div><b>Midnight</b><p>Round Two doubles every value.", "<li
 
 # ---------- Board, question cards, final, podium, editor ----------
 rep('const nextLabel = finalDone ? "Back to the standings" : isLast ? "Go to Midnight"', 'const nextLabel = finalDone ? "Back to the standings" : isLast ? "Go to the Love Letter"')
-rep('<div class="eyebrow">Viktoriia’s Night of Frights</div>', '<div class="eyebrow">Viktoriia’s Sweetheart Showdown</div>')
+rep('<div class="eyebrow">Victoria’s Night of Frights</div>', '<div class="eyebrow">Victoria’s Sweetheart Showdown</div>')
 rep('<div class="special blackcat">${CAT_SVG}<div><h3>Black Cat in the Bag</h3>\n      <p>${esc(T[q.picker].name)} found the black cat and must hand this question to another team.',
     '<div class="special blackcat">${CAT_SVG}<div><h3>Cupid’s Arrow</h3>\n      <p>${esc(T[q.picker].name)} got hit by Cupid’s arrow and must hand this question to another team.')
 rep('<h3 class="cat-ask">Who gets the cat?</h3>', '<h3 class="cat-ask">Who gets the arrow?</h3>')
@@ -173,7 +173,7 @@ rep('${q.special==="witch"?`<div class="special witch">${HAT_SVG}<div><h3>Deal w
 rep('<div class="eyebrow">Midnight · final category</div>', '<div class="eyebrow">The Love Letter · final category</div>')
 rep('<div class="eyebrow">Midnight · ${esc(F.category)}</div>', '<div class="eyebrow">The Love Letter · ${esc(F.category)}</div>', 2)
 rep('const headline = winners.length === 1 ? esc(winners[0].name) + " survive the night"', 'const headline = winners.length === 1 ? esc(winners[0].name) + " won our hearts"')
-rep('<div class="eyebrow">Viktoriia’s Night of Frights · final standings</div>', '<div class="eyebrow">Viktoriia’s Sweetheart Showdown · final standings</div>')
+rep('<div class="eyebrow">Victoria’s Night of Frights · final standings</div>', '<div class="eyebrow">Victoria’s Sweetheart Showdown · final standings</div>')
 rep('<option value="cat" ${q.special==="cat"?"selected":""}>Black Cat in the Bag</option>', '<option value="cat" ${q.special==="cat"?"selected":""}>Cupid’s Arrow</option>')
 rep('<option value="witch" ${q.special==="witch"?"selected":""}>Deal with the Witch</option>', '<option value="witch" ${q.special==="witch"?"selected":""}>Box of Chocolates</option>')
 rep('data-t="final" aria-selected="${tab==="final"}">Midnight</button>', 'data-t="final" aria-selected="${tab==="final"}">Love Letter</button>')

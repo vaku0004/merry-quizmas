@@ -1,4 +1,4 @@
-<title>Viktoriia’s Sweetheart Showdown</title>
+<title>Victoria’s Sweetheart Showdown</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -763,7 +763,7 @@ function slides(deck){
   const mini = `<div class="mini" aria-hidden="true">${r1.categories.map(c=>`<div class="h">${esc(c.name)}</div>`).join("")}${r1.values.map((v,i)=>r1.categories.map((c,ci)=>`<div class="v ${ci===2&&i===2?"pick":""}">${v}</div>`).join("")).join("")}</div>`;
   const ladder = `<div class="ladder" aria-hidden="true">${r2.values.map((v,i)=>`<div><s>${fmt(r1.values[i])}</s><span>${fmt(v)}</span></div>`).join("")}</div>`;
   const list = [
-    { eyebrow: "Welcome to", title: "Viktoriia’s Sweetheart Showdown", art: hero(PUMPKIN_SVG),
+    { eyebrow: "Welcome to", title: "Victoria’s Sweetheart Showdown", art: hero(PUMPKIN_SVG),
       body: `<p class="slide-big">Two rounds of sweet trivia, two surprises from Cupid and one last wager in a love letter.</p><div class="chips">${T.map(t=>`<span class="chip">${esc(t.name)}</span>`).join("")}</div>`,
       say: LINES.welcome },
     { eyebrow: "How to play", title: "Rules of the game", art: hero(CANDLE_SVG),
@@ -833,7 +833,7 @@ function viewSetup(){
   <div class="setup">
     <section>
       <div class="eyebrow">A Valentine’s Day quiz for the whole office</div>
-      <h1 class="title"><span class="byline">Viktoriia’s</span>Sweetheart Showdown</h1>
+      <h1 class="title"><span class="byline">Victoria’s</span>Sweetheart Showdown</h1>
       <p class="lede">Two rounds of sweet trivia, two surprises from Cupid on the board, and one last wager in a love letter. Teams pick a question, think it over for 30 seconds, and answer.</p>
       <ul class="rules">
         <li>${MOON_SVG}<div><b>Pick and answer</b><p>Teams take turns choosing a cell. The team that picks answers it. A wrong answer costs the cell's value. Other teams stay quiet.</p></div></li>
@@ -884,7 +884,7 @@ function viewBoard(){
   return `<div class="board-screen">
   <div class="topbar">
     <div>
-      <div class="eyebrow">Viktoriia’s Sweetheart Showdown</div>
+      <div class="eyebrow">Victoria’s Sweetheart Showdown</div>
       <h1 class="round-name">${esc(r.name)}</h1>
     </div>
     <div class="tools">
@@ -1062,7 +1062,7 @@ function viewPodium(){
   const order = ({1:[0], 2:[1,0], 3:[1,0,2], 4:[2,0,1,3]})[top.length] || top.map((_,k)=>k);
   const slot = t => `<div class="step p${Math.min(t.rank,3)}"><div class="who">${esc(t.name)}</div><div class="pts">${fmt(t.score)}</div><div class="block">${t.rank}</div></div>`;
   return `<div class="stage">
-    <div class="eyebrow">Viktoriia’s Sweetheart Showdown · final standings</div>
+    <div class="eyebrow">Victoria’s Sweetheart Showdown · final standings</div>
     <h1 class="big-cat">${headline}</h1>
     ${tied.length ? `<div class="special blackcat">${CAT_SVG}<div><h3>Tie!</h3>
       <p>${tied.map(t => esc(t.name)).join(", ")} have the same score. Play a tiebreaker to decide the winner: the closest number wins.</p></div></div>

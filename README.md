@@ -7,4 +7,4 @@ A Christmas quiz game for office parties: two rounds, Naughty or Nice, Krampus's
 - Website (Victoria's Game Nights, all games): `tools/build_site.py`
 - Plan and decisions: [HANDOFF.md](HANDOFF.md)
 
-Game, questions and design by **Viktoriia**.
+Game, questions and design by **Victoria**.

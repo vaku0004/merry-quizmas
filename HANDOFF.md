@@ -4,7 +4,7 @@ Start here. This file carries everything decided so far, so a new session can co
 
 ## Who and how
 
-- Owner: Viktoriia (Victoria), web designer in Regina, Saskatchewan. GitHub: `vaku0004`.
+- Owner: Victoria (legal spelling Viktoriia; she wants **"Victoria" everywhere** in the games and on the site), web designer in Regina, Saskatchewan. GitHub: `vaku0004`.
 - **Reply in Russian.** She writes in English or Russian. Thorough, structured answers. Use code (Python) for any arithmetic.
 - She hosts office game nights. Coworkers play in teams in the room, and one or two join by video call.
 - Never ask her to paste an ElevenLabs API key into chat. She types it only into the PowerShell generator on her PC.
@@ -17,7 +17,7 @@ Decisions she made (November 2, 2026):
 
 | Topic | Decision |
 |---|---|
-| Name | **Victoria's Merry Quizmas** (on screen: "Viktoriia's", like the Halloween game; the website name can be "Victoria's") |
+| Name | **Victoria's Merry Quizmas** (on Nov 4 she asked for "Victoria" everywhere: games, site, files; "Viktoriia" is gone) |
 | Surprise 1 (was Black Cat) | **Naughty or Nice**: the team that finds a lump of coal must give the question to another team |
 | Surprise 2 (was Deal with the Witch) | **Krampus's Bargain**: Krampus draws twice from his sack: first the price, then the team |
 | Final (was Midnight) | **Christmas Eve**, secret wagers (up to half the score, or 500) |
@@ -90,7 +90,7 @@ Needs `fontpkgs/` (see above), Node with Playwright, and Pillow. Intermediate fi
 
 ## Sweetheart Showdown (Valentine's Day game, started November 4, 2026)
 
-Decisions she made: name **Victoria's Sweetheart Showdown** (on screen "Viktoriia's"); surprise 1 **Cupid's Arrow** (`special: "cat"`: the team that gets hit gives the question away); surprise 2 **Box of Chocolates** (`"witch"`: the first chocolate picks the price, the second the team); final **The Love Letter** (secret wagers); winner line "Team X won our hearts!"; Round Two slide "Double the love". Audience: **the whole English-speaking world, US first**, US spelling, no country category; love of every kind (friendship, chocolate, flowers, famous couples, movies, songs, animals, science, world traditions), nothing about dating coworkers. On the site from **January 20, 2027** (`launch` in `tools/games.py`).
+Decisions she made: name **Victoria's Sweetheart Showdown** (spelled "Victoria" everywhere); surprise 1 **Cupid's Arrow** (`special: "cat"`: the team that gets hit gives the question away); surprise 2 **Box of Chocolates** (`"witch"`: the first chocolate picks the price, the second the team); final **The Love Letter** (secret wagers); winner line "Team X won our hearts!"; Round Two slide "Double the love". Audience: **the whole English-speaking world, US first**, US spelling, no country category; love of every kind (friendship, chocolate, flowers, famous couples, movies, songs, animals, science, world traditions), nothing about dating coworkers. On the site from **January 20, 2027** (`launch` in `tools/games.py`).
 
 - Game: `valentines/sweetheart-showdown.html`, built by `python3 tools/build_valentines.py night-of-frights.html valentines/sweetheart-showdown.html` (same text-replacement method as Christmas; asserts every replacement). Questions `valentines/questions.js` (50 + final "Royal Romance" = Edward VIII + tiebreaker Hershey's Kisses 1907; facts checked from memory, no song lyrics). Art `valentines/art.js`: heart, arrow-through-heart, heart box of chocolates, love letter, rose, bonbon. Palette: wine night `#1a0f17`, rose `#ef7d9a`, blush `#ffd6e0`, caramel `#d4935f`; display font **Yeseva One** (fontsource `yeseva-one`, added to `fontify.py`); rosy sparkles drifting up instead of snow; slow music-box ballad in the final. Storage keys `ss-state-v1`, `ss-questions-v1`, `ss-voice-v1`. Team names: Lovebirds, Sweethearts, Roses, Truffles.
 - Site: `tools/pages_valentines.py` (four pages, made from the Christmas pages and rewritten), screenshots `games/valentines/shots/`. Preview build checked: 45 URLs, nothing broken, no JS errors.

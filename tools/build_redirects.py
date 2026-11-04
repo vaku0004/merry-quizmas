@@ -47,7 +47,7 @@ for old, new in MAP.items():
 open(os.path.join(OLD, "404.html"), "w", encoding="utf-8").write(redirect(URL + "halloween/"))
 open(os.path.join(OLD, "robots.txt"), "w").write("User-agent: *\nAllow: /\n")
 open(os.path.join(OLD, "README.md"), "w", encoding="utf-8").write(
-    f"# Viktoriia's Night of Frights 🎃\n\nThe game has moved to **{BRAND}**: {URL}halloween/\n\n"
+    f"# Victoria's Night of Frights 🎃\n\nThe game has moved to **{BRAND}**: {URL}halloween/\n\n"
     "This repository only keeps nightoffrights.monster working: every old page forwards to the same page on the new site. "
     "The source lives in [vaku0004/merry-quizmas](https://github.com/vaku0004/merry-quizmas) (later vaku0004/game-nights).\n")
 print("redirect pages:", len(MAP) + 1)

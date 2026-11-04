@@ -121,8 +121,7 @@ def game_page(g, src):
 </script>'''
     body = body.replace('<div id="app"></div>', static, 1)
     body = body.rstrip() + "\n" + nav + "\n" + game_events_js(g)
-    # On the website the game screens use the site's spelling of her name (the artifact and offline file keep "Viktoriia’s").
-    return _doc(meta, head, body, True).replace("Viktoriia’s", "Victoria’s")
+    return _doc(meta, head, body, True)
 
 
 if __name__ == "__main__":
