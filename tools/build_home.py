@@ -188,7 +188,7 @@ def home_page(out_slugs, today):
     body = f'''<section class="hero">
 <p class="eyebrow">Free team games for the big screen</p>
 <h1>Victoria’s <i>Game Nights</i></h1>
-<p class="lede">Holiday quiz games for office parties and team events. One laptop, one big screen, a narrator who reads every question, and teams playing in the room and on the video call.</p>
+<p class="lede">Quiz games for office parties and team events, for the holidays and any day of the year. One laptop, one big screen, a narrator who reads every question, and teams playing in the room and on the video call.</p>
 <p class="muted">No sign-up, no download, nothing for players to install.</p>
 </section>
 
@@ -215,8 +215,8 @@ def home_page(out_slugs, today):
             {"@type": "ListItem", "position": k + 1, "url": f"{URL}{g['slug']}/", "name": g["name"]} for k, g in enumerate(live)]},
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ]},
     ]}
-    return _shell(f"{BRAND} · Free Holiday Quiz Games for Office Parties",
-                  "Free holiday trivia games for office parties and hybrid teams: a game-show board on the big screen, a narrator and teams in the room and on the call.",
+    return _shell(f"{BRAND} · Free Quiz Games for Office Parties and Teams",
+                  "Free trivia games for office parties and hybrid teams, for the holidays and any day of the year: a game-show board on the big screen, a narrator and teams in the room and on the call.",
                   URL, body, ld)
 
 

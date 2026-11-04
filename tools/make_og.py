@@ -79,11 +79,11 @@ def hub_sources(games_out):
 h1{{font-family:'Alegreya';font-weight:800;font-size:94px;line-height:1;margin:18px 0 0;white-space:nowrap;color:{th['ember']}}}
 h1 i{{color:{th['candle']}}}
 .sub{{margin-top:22px;font-size:32px;font-weight:500;max-width:760px}}
-.row{{position:absolute;right:84px;bottom:56px;display:flex;gap:22px}}
-.a svg{{width:92px;height:92px;filter:drop-shadow(0 0 22px rgba(240,180,76,.35))}}
+.row{{position:absolute;right:84px;bottom:52px;display:flex;gap:14px}}
+.a svg{{width:68px;height:68px;filter:drop-shadow(0 0 22px rgba(240,180,76,.35))}}
 </style></head><body><div class="frame"></div>
 <div class="text"><div class="eyebrow">Free team games for the big screen</div><h1>Victoria’s <i>Game Nights</i></h1>
-<div class="sub">Holiday quiz games for office parties, with a narrator, for teams in the room and on the call.</div></div>
+<div class="sub">Quiz games for office parties, for the holidays and any day of the year, with a narrator.</div></div>
 <div class="row">{arts}</div><div class="url">{HOST.upper()}</div></body></html>"""
     open(f"{OUT}/og.html", "w", encoding="utf-8").write(og)
     open(f"{OUT}/favicon.svg", "w", encoding="utf-8").write(BOARD)
