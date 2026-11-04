@@ -135,7 +135,7 @@ Decisions she made: name **Victoria's Countdown Quiz**; surprise 1 **Party Poppe
 - Look: midnight blue `#0d0f24`, gold `#f5cf6b`, pink `#ff6b81`, cookie orange `#f0a35e`; display font **Bungee** (fontsource `bungee`); falling confetti. Art: clock at midnight, party popper, fortune cookie, firework, party hat, sparkle.
 - Questions: 50 + final "Midnight History" (Times Square named after The New York Times, first party 1904) + tiebreaker (first ball drop, 1907). R1: Traditions Around the World, Midnight Around the Globe, Party Food & Drink, New Year New You, Calendars & Time; R2: Lunar New Year, Fireworks & Bubbles, Songs for Midnight (no lyrics), New Year on Screen, Countdown Numbers. Checked from memory.
 - Checks: game test passes; preview site 58 URLs OK, today's build 32 URLs OK.
-- Voice: not made yet. Prompts in `games/newyear/voice-design-prompts.md`; she sends the Voice ID, then build `voice-kit/` like the other games.
+- Voice made on Nov 4: ID `R5Ofd4ZMFC0vxt0QrdYU` (prompts in `games/newyear/voice-design-prompts.md`; suggested ElevenLabs name "Midnight Mae"). Kit with it as default: `games/newyear/voice-kit/` (sent as CountdownQuiz-voice.zip). 136 lines, 12,018 characters. Audio: waiting for her .rar, then check and copy to `audio/newyear/`.
 
 ## Big Brain Battle (all-year general-knowledge game, made November 4, 2026)
 
