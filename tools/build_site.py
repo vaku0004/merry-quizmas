@@ -5,7 +5,7 @@ python3 tools/build_site.py <site_dir> [--preview] [--today YYYY-MM-DD]
   --today     pretend it is another day (to test a launch date)
 
 Run from the repo root. Needs fontpkgs/ (see HANDOFF.md), Node with Playwright, and Pillow.
-Games and their texts: tools/games.py and tools/pages_<game>.py. Domain and Analytics: tools/site_common.py.
+Games: engine/ + games/<slug>/ (built by tools/build_game.py, run first), site texts in tools/games.py and tools/pages_<game>.py. Domain and Analytics: tools/site_common.py.
 Intermediate files go to build/ (not committed).
 """
 import datetime, importlib, json, os, shutil, subprocess, sys
@@ -23,6 +23,7 @@ os.makedirs(OUT, exist_ok=True); os.makedirs(f"{B}/seo", exist_ok=True)
 run = lambda *cmd: subprocess.run(list(cmd), check=True)
 write = lambda path, text: (os.makedirs(os.path.dirname(path), exist_ok=True), open(path, "w", encoding="utf-8").write(text))
 
+run("python3", f"{S}/tools/build_game.py", "--all")   # games from the engine and their themes
 out_games = [g for g in G.PLAYABLE if G.is_out(g, TODAY, PREVIEW)]
 print(f"Building {OUT} for {TODAY}{' (preview)' if PREVIEW else ''}: games", [g["slug"] for g in out_games])
 

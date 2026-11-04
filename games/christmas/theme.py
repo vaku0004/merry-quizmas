@@ -1,0 +1,127 @@
+"""The christmas game's values for the engine slots (see engine/slots.py). Built by: python3 tools/build_game.py christmas
+
+Helpers: file(name) reads a file next to this theme; art(name, as_name) takes an SVG from art.js under the engine's name;
+MOBILE_CSS is the phone layout from tools/site_common.py."""
+
+VALUES = {
+    'page_title': '<title>Victoria’s Merry Quizmas</title>',
+    'font_link': '&family=Mountains+of+Christmas:wght@700&display=swap',
+    'css_comment_theme': 'Single dark theme by design (a snowy Christmas night).',
+    'css_comment_table': 'one cosy game table by the tree',
+    'color_night': '--night:#0d1714',
+    'color_dusk': '--dusk:#15231e',
+    'color_cell': '--cell:#1c3029',
+    'color_cell_hi': '--cell-hi:#28443a',
+    'color_line': '--line:#33544a',
+    'color_bone': '--bone:#f6f1e6',
+    'color_ash': '--ash:#a8c0b6',
+    'color_candle': '--candle:#e6b34c',
+    'color_ember': '--ember:#ffe6a6',
+    'color_good': '--good:#5fae6e',
+    'color_bad': '--bad:#e2554f',
+    'color_witch': '--witch:#c9484f',
+    'display_font': '--f-display:"Mountains of Christmas","Georgia","Times New Roman",serif;',
+    'atmosphere_css': '''
+/* ---------- Snow: two slow layers of flakes behind the game ---------- */
+body::before,body::after{content:"";position:fixed;inset:-20vh 0 0;pointer-events:none;z-index:0;
+  background-image:radial-gradient(2px 2px at 20px 30px,rgba(255,255,255,.55),transparent 60%),radial-gradient(1.5px 1.5px at 120px 80px,rgba(255,255,255,.45),transparent 60%),
+  radial-gradient(2.5px 2.5px at 200px 160px,rgba(255,255,255,.35),transparent 60%),radial-gradient(1.5px 1.5px at 60px 210px,rgba(255,255,255,.5),transparent 60%),
+  radial-gradient(2px 2px at 260px 250px,rgba(255,255,255,.3),transparent 60%);
+  background-size:300px 300px;animation:snow 38s linear infinite;opacity:.55}
+body::after{background-size:420px 420px;animation-duration:60s;opacity:.35;filter:blur(.6px)}
+@keyframes snow{from{transform:translateY(0)}to{transform:translateY(20vh)}}
+#app{position:relative;z-index:1}
+.title,.round-name,.slide-title,.big-cat,.cat-ask,.cat-team,.reel-face,.special h3{letter-spacing:.01em}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  body::before,body::after{display:none}
+}''',
+    'storage_keys': 'const KEY_S = "mq-state-v1", KEY_Q = "mq-questions-v1";',
+    'storage_key_voice': 'const KEY_V = "mq-voice-v1";',
+    'team_names': 'const TEAM_NAMES = ["Team Elves","Team Reindeer","Team Snowmen","Team Gingerbread"];',
+    'questions': file("questions.js").strip() + "\n",
+    'migrate_old_questions': '',
+    'art_cat_svg': art('COAL_SVG', 'CAT_SVG'),
+    'art_hat_svg': art('KRAMPUS_SVG', 'HAT_SVG'),
+    'art_moon_svg': art('STAR_SVG', 'MOON_SVG'),
+    'art_pumpkin_svg': art('TREE_SVG', 'PUMPKIN_SVG'),
+    'art_ghost_svg': art('GIFT_SVG', 'GHOST_SVG'),
+    'art_wand_svg': art('SACK_SVG', 'WAND_SVG'),
+    'narrator_name': 'const NARRATOR = "Grandpa Noel";',
+    'narrator_lines': '''const LINES = {
+  test: "Welcome to Victoria's Merry Quizmas. Pick a question, and make it merry!",
+  welcome: "Welcome to Victoria's Merry Quizmas! Tonight, our teams compete for glory, and for prizes. Here is how it works.",
+  ready: "Ready? The first team, pick a question. Good luck, and may the merriest team win.",
+  rules: "Rules of the game. Pick a question from the board. Watch out for the naughty list, and for Krampus. Survive two rounds and the Christmas Eve finale.",
+  cat: "Naughty or nice? You found a lump of coal! The team that found it must give this question to another team.",
+  catWho: "Who gets the coal?",
+  witchTitle: "A bargain with Krampus!",
+  witch: "And now, with one of you, I shall strike a bargain! My first draw picks the price. My second draw picks the team that must answer. Answer right, and win it. Answer wrong, and lose it.",
+  tie: "It's a tie! Time for a tiebreaker."
+};''',
+    'line_final_intro': 'const midnightLine = () => "Christmas Eve has come. The final category is: "',
+    'line_winner': 'const winnerLine = name => name + " saved Christmas!";',
+    'line_surprise2_team': 'const dealLine = name => name + ", the bargain is yours!";',
+    'narrator_moods': '''    [LINES.test]: "[cheerfully] Welcome to Victoria's Merry Quizmas. Pick a question... and make it merry!",
+    [LINES.welcome]: "[warmly] Welcome to Victoria's Merry Quizmas! Tonight, our teams compete for glory... and for prizes. Here is how it works.",
+    [LINES.ready]: "[cheerfully] Ready? The first team, pick a question. Good luck... and may the merriest team win! [laughs]",
+    [LINES.rules]: "[warmly] Rules of the game. Pick a question from the board. [mischievously] Watch out for the naughty list... and for Krampus. [cheerfully] Survive two rounds... and the Christmas Eve finale.",
+    [LINES.cat]: "[mischievously] Naughty or nice? You found a lump of coal! The team that found it... must give this question to another team.",
+    [LINES.catWho]: "[mischievously] So... who gets the coal?",
+    [LINES.witchTitle]: "[whispers] A bargain... [mischievously] with Krampus!",
+''',
+    'mood_surprise2': '    [LINES.witch]: "[whispers] And now... [mischievously] with one of you... I shall strike a bargain! [laughs] My first draw picks the price. My second draw picks the team that must answer. Answer right... and win it. Answer wrong... [whispers] and lose it.",',
+    'mood_winner': 'if (/ saved Christmas!$/.test(t)) return "[excited] " + t + " [applause]";',
+    'music_comment': '''/* ===================== Christmas Eve thinking music =====================
+   An original music-box tune over a warm I-vi-IV-V bass, with soft sleigh bells.''',
+    'music_chords': 'const M_CHORDS = [[72,76,79],[69,72,76],[65,69,72],[67,71,74],[72,76,79],[69,72,76],[65,69,74],[67,71,77]];',
+    'music_bass': 'const M_BASS = [48,45,41,43,48,45,41,43];',
+    'music_tempo': 'const M_STEP = 60 / 96 / 2;    // eighth notes at 96 bpm',
+    'music_drone': 'o1.type = o2.type = "sine"; o1.frequency.value = 65.4; o2.frequency.value = 65.7;',
+    'music_drone_filter': 'f.type = "lowpass"; f.frequency.value = 400; g.gain.value = 0.02;',
+    'music_ticks': '    if (pos % 2 === 0){ this.note(pos % 4 === 0 ? 5200 : 6100, t, 0.06, "square", 0.006); this.note(pos % 4 === 0 ? 6700 : 7400, t + 0.02, 0.05, "square", 0.004); }   // sleigh bells',
+    'sound_surprise1': 'cat(){ tone(330,.35,"triangle",.12,0,250); tone(262,.5,"triangle",.1,.3,196); },',
+    'sound_surprise2': 'witch(){ [196,185,175,165].forEach((f,i)=>tone(f,.4,"sawtooth",.05,i*.14)); },',
+    'slide_welcome_title': '{ eyebrow: "Welcome to", title: "Victoria’s Merry Quizmas", art: hero(PUMPKIN_SVG),',
+    'slide_welcome_text': 'Two rounds of festive trivia, two naughty surprises and one last wager on Christmas Eve.',
+    'slide_rules_bullets': 'bullets: ["Pick a question from the board.", "Watch out for the naughty list and for Krampus.", "Survive two rounds and the Christmas Eve finale."],',
+    'slide_surprise1': '''{ eyebrow: "Surprise", title: "Naughty or Nice", art: hero(CAT_SVG),
+      bullets: ["Find a lump of coal and you must give the question away.", "You choose which team gets it.", "That team answers for the full value, right or wrong."] },''',
+    'slide_surprise2': '''{ eyebrow: "Surprise", title: "Krampus’s Bargain", art: hero(HAT_SVG),
+      bullets: ["Krampus reaches into his sack twice.", `The first draw picks the price:''',
+    'slide_surprise2_second': '"The second draw picks t',
+    'slide_final_title': '{ eyebrow: "The finale", title: "Christmas Eve", art: hero(MOON_SVG),',
+    'slide_fair_play_last': '"Only one team saves Christmas and wins."',
+    'deck_final_filter': 'if (deck === "midnight") return list.filter(sl => sl.title === "Christmas Eve");',
+    'deck_intro_filter': 'return list.filter(sl => !["Naughty or Nice", "Krampus’s Bargain", "Double trouble", "Christmas Eve"].includes(sl.title));',
+    'start_eyebrow': '<div class="eyebrow">A Christmas quiz for the whole office</div>',
+    'start_title': '<h1 class="title"><span class="byline">Victoria’s</span>Merry Quizmas</h1>',
+    'start_intro': 'Two rounds of festive trivia, two naughty surprises on the board, and one last wager on Christmas Eve.',
+    'start_surprise1': '<li>${CAT_SVG}<div><b>Naughty or Nice</b><p>The team that finds a lump of coal must hand the question to another team.',
+    'start_surprise2': '<li>${HAT_SVG}<div><b>Krampus’s Bargain</b><p>Krampus draws twice from his sack. The first draw picks a random price, the second picks the team that must answer.',
+    'start_final': '<li>${MOON_SVG}<div><b>Christmas Eve</b><p>Round Two doubles every value.',
+    'board_next_label': 'const nextLabel = finalDone ? "Back to the standings" : isLast ? "Go to Christmas Eve"',
+    'board_eyebrow': '<div class="eyebrow">Victoria’s Merry Quizmas</div>',
+    'surprise1_card': '''<div class="special blackcat">${CAT_SVG}<div><h3>Naughty or Nice</h3>
+      <p>${esc(T[q.picker].name)} found a lump of coal and must hand this question to another team.''',
+    'surprise1_ask': '<h3 class="cat-ask">Who gets the coal?</h3>',
+    'surprise2_card': '''<div class="special witch">${HAT_SVG}<div><h3>Krampus’s Bargain</h3>
+      ${q.witchAsk ? `<p class="witch-quote" style="animation:rise-in .5s ease both">“And now, with one of you, I shall strike a bargain!”</p>` : ""}''',
+    'surprise2_step1': '<span><b>First draw</b> picks the price:',
+    'surprise2_step2': '<span><b>Second draw</b> picks the team that must answer.',
+    'surprise2_reel1_label': '<div class="reel-label">First draw · The price</div>',
+    'surprise2_reel1_button': '${WAND_SVG} Draw from the sack</button>',
+    'surprise2_reel2_label': '<div class="reel-label">Second draw · The team</div>',
+    'surprise2_reel2_button': '${WAND_SVG} Draw again</button>',
+    'question_surprise1_tag': '${q.special==="cat"?`<div class="special blackcat">${CAT_SVG}<div><h3>Naughty or Nice</h3></div></div>`:""}',
+    'question_surprise2_tag': '${q.special==="witch"?`<div class="special witch">${HAT_SVG}<div><h3>Krampus’s Bargain</h3></div></div>`:""}',
+    'final_eyebrow_category': '<div class="eyebrow">Christmas Eve · final category</div>',
+    'final_eyebrow_question': '<div class="eyebrow">Christmas Eve · ${esc(F.category)}</div>',
+    'podium_headline': 'const headline = winners.length === 1 ? esc(winners[0].name) + " saved Christmas"',
+    'podium_eyebrow': '<div class="eyebrow">Victoria’s Merry Quizmas · final standings</div>',
+    'editor_surprise1_option': '<option value="cat" ${q.special==="cat"?"selected":""}>Naughty or Nice</option>',
+    'editor_surprise2_option': '<option value="witch" ${q.special==="witch"?"selected":""}>Krampus’s Bargain</option>',
+    'editor_final_tab': 'data-t="final" aria-selected="${tab==="final"}">Christmas Eve</button>',
+    'voice_preset_name': '<button class="btn" data-act="vpreset" data-p="spooky">Storyteller voice</button>',
+    'phone_layout': "</style>\n" + MOBILE_CSS + "\n\n<div id=\"app\"></div>",
+}

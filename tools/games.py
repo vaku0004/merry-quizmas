@@ -1,7 +1,7 @@
 """Every game on Victoria's Game Nights: names, colours, art, texts for the game page and the home-page card.
 
 status: "live" (published), "scheduled" (published on `launch`; before that only a "coming" card), "soon" (card only).
-Add a new game here, plus a pages_<slug>.py module with its content pages.
+Add a new game here, plus games/<slug>/ (theme.py, questions.js, art.js; see tools/build_game.py) and a pages_<slug>.py module with its content pages.
 """
 import re
 
@@ -24,7 +24,7 @@ def art(game, name):
 HALLOWEEN = dict(
     slug="halloween", status="live", launch=None,
     name="Victoria’s Night of Frights", short="Night of Frights", holiday="Halloween",
-    src="night-of-frights.html", art_src="night-of-frights.html", audio="audio/halloween", state_key="nof-state-v1",
+    src="games/halloween/game.html", art_src="engine/game.html", audio="audio/halloween", state_key="nof-state-v1",
     icon="PUMPKIN_SVG", specials={"cat": "black_cat", "witch": "witch"},
     theme=dict(night="#15111d", dusk="#1f1929", cell="#2b2239", line="#41355a", bone="#f2e9d8", ash="#ab9fbd",
                candle="#f2a24c", ember="#ffd58a", good="#84bd7c", witch="#a98be0", bad="#e66a5e"),
@@ -50,7 +50,7 @@ HALLOWEEN = dict(
 CHRISTMAS = dict(
     slug="christmas", status="scheduled", launch="2026-11-15",
     name="Victoria’s Merry Quizmas", short="Merry Quizmas", holiday="Christmas",
-    src="quizmas/merry-quizmas.html", art_src="quizmas/art.js", audio="audio/christmas", state_key="mq-state-v1",
+    src="games/christmas/game.html", art_src="games/christmas/art.js", audio="audio/christmas", state_key="mq-state-v1",
     icon="TREE_SVG", specials={"cat": "naughty_or_nice", "witch": "krampus"},
     theme=dict(night="#0d1714", dusk="#15231e", cell="#1c3029", line="#33544a", bone="#f6f1e6", ash="#a8c0b6",
                candle="#e6b34c", ember="#ffe6a6", good="#5fae6e", witch="#c9484f", bad="#e2554f"),
@@ -76,7 +76,7 @@ CHRISTMAS = dict(
 VALENTINES = dict(
     slug="valentines", status="scheduled", launch="2027-01-20",
     name="Victoria’s Sweetheart Showdown", short="Sweetheart Showdown", holiday="Valentine’s Day",
-    src="valentines/sweetheart-showdown.html", art_src="valentines/art.js", audio="audio/valentines", state_key="ss-state-v1",
+    src="games/valentines/game.html", art_src="games/valentines/art.js", audio="audio/valentines", state_key="ss-state-v1",
     icon="HEART_SVG", specials={"cat": "cupids_arrow", "witch": "box_of_chocolates"},
     theme=dict(night="#1a0f17", dusk="#251520", cell="#33192a", line="#4a2a3c", bone="#fbeff2", ash="#c7a9b6",
                candle="#ef7d9a", ember="#ffd6e0", good="#7fc4a0", witch="#d4935f", bad="#e8485f"),

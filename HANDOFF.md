@@ -34,20 +34,25 @@ Done so far:
 - Final-round music: warm music box with sleigh bells. Phone layout is built in.
 - Narrator lines exported to `quizmas/voice-lines.json` and `voice-kit/voice-lines.json` (136 lines, about 13,250 characters, about 13k credits on Eleven v4).
 
-## How the build works
+## How the build works (engine + themes, since November 4, 2026)
 
-`night-of-frights.html` is the Halloween game source (kept here as the base). `tools/build_quizmas.py` turns it into the Christmas game with exact, asserted text replacements:
+**Paths moved on Nov 4:** `night-of-frights.html` → `engine/game.html`, `quizmas/*` → `games/christmas/*` (`merry-quizmas.html` → `game.html`), `valentines/*` → `games/valentines/*` (`sweetheart-showdown.html` → `game.html`), `voice-kit/` → `games/christmas/voice-kit/`. Older notes below may still use the old paths.
 
 ```
-python3 tools/build_quizmas.py night-of-frights.html quizmas/merry-quizmas.html
+python3 tools/build_game.py --all          # or: christmas valentines halloween
 ```
 
-- Change questions in `quizmas/questions.js`, art in `quizmas/art.js`, everything else (texts, narrator lines, colours, music) in `tools/build_quizmas.py`. Then rebuild.
-- Internal ids stay Halloween-named on purpose (`special: "cat"` = Naughty or Nice, `"witch"` = Krampus, `wand1/wand2`, `--witch` colour). Don't rename them; the logic is tested.
-- Storage keys are `mq-state-v1`, `mq-questions-v1`, `mq-voice-v1`.
-- Run tools from the repo root. Local screenshots need the fonts: `cd fontpkgs && npm pack @fontsource/<font>@5` for pirata-one, alegreya, alegreya-sans, oswald and mountains-of-christmas, then unpack each into `fontpkgs/fontsource-<name>-<version>/` (see `tools/fontify.py`). Playwright and Chromium are preinstalled in cloud sessions.
-- `node tools/export_lines.js <built page> quizmas/voice-lines.json` lists every narrator line (file name = `l-<fnv32 of text>.mp3`).
-- Website build: see "Victoria's Game Nights" below.
+- `engine/game.html` is the complete game, and its own content is the Halloween game. **Fix or improve the game here, once, for all games.**
+- `engine/slots.py` lists the 86 places a game can change (texts, colours, font link, atmosphere CSS, storage keys, team names, questions, the 6 art SVGs, narrator name, lines and moods, sounds, music, rules slides, start screen, surprise screens, final, podium, editor). Each slot has the exact engine text (or a regex) and how often it must appear.
+- `games/<slug>/theme.py` gives one game's values for those slots (`VALUES = {slot: value}`); slots left out keep the engine's value. Helpers inside theme.py: `file("questions.js")`, `art("COAL_SVG", "CAT_SVG")` (an SVG from the game's art.js under the engine's constant name), `MOBILE_CSS`.
+- `tools/build_game.py` applies the slots in order, stops if any slot is not found exactly as expected, and warns if Halloween words show up in another game's visible text.
+- **Checked on Nov 4:** the new builds of all three games are byte-identical to the old ones (so the narrator audio still matches 136/136 per game). The old `build_quizmas.py` / `build_valentines.py` are deleted (in git history).
+- If an engine change breaks a slot (its text changed), update `find` in `engine/slots.py` and the theme values that depend on it, then rebuild all games.
+- **New game:** copy `games/valentines/` to `games/<slug>/`, rewrite `theme.py`, `questions.js`, `art.js`; add the game to `tools/games.py` and a `tools/pages_<slug>.py`; build; export lines with `node tools/export_lines.js games/<slug>/game.html games/<slug>/voice-lines.json`; make a voice kit (copy `games/valentines/voice-kit/`, change the default voice ID and the name).
+- Internal ids stay Halloween-named on purpose (`special: "cat"` = the pass-the-question surprise, `"witch"` = the random price/team surprise, `wand1/wand2`, `--witch` colour). Storage keys per game: `nof-`, `mq-`, `ss-` (`-state-v1`, `-questions-v1`, `-voice-v1`); never change them for a published game.
+- Run tools from the repo root. Local screenshots need the fonts: `cd fontpkgs && npm pack @fontsource/<font>@5` for pirata-one, alegreya, alegreya-sans, oswald, mountains-of-christmas and yeseva-one, then unpack each into `fontpkgs/fontsource-<name>-<version>/` (see `tools/fontify.py`). Playwright and Chromium are preinstalled in cloud sessions.
+- `node tools/export_lines.js <game.html> <out.json>` lists every narrator line (file name = `l-<fnv32 of text>.mp3`).
+- Website build: see "Victoria's Game Nights" below (it runs `build_game.py --all` first).
 
 ## Victoria's Game Nights (decided November 3, 2026)
 
@@ -92,7 +97,7 @@ Needs `fontpkgs/` (see above), Node with Playwright, and Pillow. Intermediate fi
 
 Decisions she made: name **Victoria's Sweetheart Showdown** (spelled "Victoria" everywhere); surprise 1 **Cupid's Arrow** (`special: "cat"`: the team that gets hit gives the question away); surprise 2 **Box of Chocolates** (`"witch"`: the first chocolate picks the price, the second the team); final **The Love Letter** (secret wagers); winner line "Team X won our hearts!"; Round Two slide "Double the love". Audience: **the whole English-speaking world, US first**, US spelling, no country category; love of every kind (friendship, chocolate, flowers, famous couples, movies, songs, animals, science, world traditions), nothing about dating coworkers. On the site from **January 20, 2027** (`launch` in `tools/games.py`).
 
-- Game: `valentines/sweetheart-showdown.html`, built by `python3 tools/build_valentines.py night-of-frights.html valentines/sweetheart-showdown.html` (same text-replacement method as Christmas; asserts every replacement). Questions `valentines/questions.js` (50 + final "Royal Romance" = Edward VIII + tiebreaker Hershey's Kisses 1907; facts checked from memory, no song lyrics). Art `valentines/art.js`: heart, arrow-through-heart, heart box of chocolates, love letter, rose, bonbon. Palette: wine night `#1a0f17`, rose `#ef7d9a`, blush `#ffd6e0`, caramel `#d4935f`; display font **Yeseva One** (fontsource `yeseva-one`, added to `fontify.py`); rosy sparkles drifting up instead of snow; slow music-box ballad in the final. Storage keys `ss-state-v1`, `ss-questions-v1`, `ss-voice-v1`. Team names: Lovebirds, Sweethearts, Roses, Truffles.
+- Game: `games/valentines/game.html`, built by `python3 tools/build_game.py valentines` from `games/valentines/theme.py`. Questions `valentines/questions.js` (50 + final "Royal Romance" = Edward VIII + tiebreaker Hershey's Kisses 1907; facts checked from memory, no song lyrics). Art `valentines/art.js`: heart, arrow-through-heart, heart box of chocolates, love letter, rose, bonbon. Palette: wine night `#1a0f17`, rose `#ef7d9a`, blush `#ffd6e0`, caramel `#d4935f`; display font **Yeseva One** (fontsource `yeseva-one`, added to `fontify.py`); rosy sparkles drifting up instead of snow; slow music-box ballad in the final. Storage keys `ss-state-v1`, `ss-questions-v1`, `ss-voice-v1`. Team names: Lovebirds, Sweethearts, Roses, Truffles.
 - Site: `tools/pages_valentines.py` (four pages, made from the Christmas pages and rewritten), screenshots `games/valentines/shots/`. Preview build checked: 45 URLs, nothing broken, no JS errors.
 - Narrator: 136 lines, 13,210 characters, in `valentines/voice-lines.json`. Voice made on Nov 4: ID `7elAVxKk0tXJT7YGjurH` (prompts in `valentines/voice-design-prompts.md`). Kit with this voice as default: `valentines/voice-kit/` (sent to her as SweetheartShowdown-voice.zip). **Audio done (Nov 4):** 136/136 lines (voice name in ElevenLabs "Valentine Vic", eleven_v4) checked and committed to `audio/valentines/`.
 - Offline file for her review (browser voice, no audio): `python3 tools/build_offline.py valentines <out.html>` (works without audio now).
