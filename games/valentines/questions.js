@@ -11,7 +11,7 @@ const DEFAULT_Q = {
       { name: "Sweet on You", qs: [
         { q: "What are the small candy hearts printed with messages like 'BE MINE' and 'HUG ME' called?", a: "Conversation hearts (Sweethearts)", note: "The New England Confectionery Company made Sweethearts for more than a century. Since 2018 the brand has belonged to the Spangler Candy Company." },
         { q: "Which country is the world's largest producer of cocoa beans?", a: "Côte d'Ivoire (Ivory Coast)", note: "It grows roughly 40 percent of the world's cocoa. Neighboring Ghana is second." },
-        { q: "Richard Cadbury is credited with creating the first heart-shaped box of chocolates. In which decade?", a: "The 1860s", special: "cat", note: "He decorated the boxes himself, and people kept them long after the chocolates were gone to store letters and keepsakes." },
+        { q: "Richard Cadbury is credited with creating the first heart-shaped box of chocolates. In which decade?", a: "The 1860s", note: "He decorated the boxes himself, and people kept them long after the chocolates were gone to store letters and keepsakes." },
         { q: "Which ancient civilization drank chocolate as a bitter, spiced drink and used cacao beans as money?", a: "The Aztecs (the Maya before them)", note: "Sugar was added only after chocolate reached Europe in the 1500s." },
         { q: "White chocolate has no cocoa solids at all. Which part of the cacao bean does it contain?", a: "Cocoa butter", note: "In the United States, white chocolate must contain at least 20 percent cocoa butter." }
       ]},
@@ -19,7 +19,7 @@ const DEFAULT_Q = {
         { q: "In Shakespeare's play, Romeo is a Montague. Which family does Juliet belong to?", a: "The Capulets", note: "The play is set in Verona, where visitors still leave letters for Juliet." },
         { q: "Which queen of Egypt had famous romances with Julius Caesar and Mark Antony?", a: "Cleopatra", note: "She was Cleopatra VII, the last active ruler of the Ptolemaic Kingdom of Egypt." },
         { q: "Which Mughal emperor built the Taj Mahal in memory of his wife Mumtaz Mahal?", a: "Shah Jahan", note: "Work began around 1632 and took more than 20 years. He is buried there beside her." },
-        { q: "In Greek myth, which musician traveled to the underworld to bring back his wife Eurydice?", a: "Orpheus", special: "cat", note: "He could lead her out as long as he did not look back. At the last moment, he looked back." },
+        { q: "In Greek myth, which musician traveled to the underworld to bring back his wife Eurydice?", a: "Orpheus", note: "He could lead her out as long as he did not look back. At the last moment, he looked back." },
         { q: "Which married couple shared the 1903 Nobel Prize in Physics with Henri Becquerel?", a: "Marie and Pierre Curie", note: "Marie Curie later won a second Nobel Prize, in Chemistry, in 1911." }
       ]},
       { name: "Say It with Flowers", qs: [
@@ -34,7 +34,7 @@ const DEFAULT_Q = {
         { q: "In 'Titanic' (1997), what is the name of Leonardo DiCaprio's character?", a: "Jack Dawson", note: "Kate Winslet played Rose DeWitt Bukater." },
         { q: "Which 1989 romantic comedy with Billy Crystal and Meg Ryan asks whether men and women can ever be just friends?", a: "When Harry Met Sally...", note: "The script was written by Nora Ephron." },
         { q: "In 'Casablanca' (1942), what is the name of the nightclub owned by Humphrey Bogart's character?", a: "Rick's Café Américain", note: "Ingrid Bergman played Ilsa, the woman who walks back into Rick's life." },
-        { q: "Which 1953 film, about a princess exploring Rome with an American reporter, won Audrey Hepburn the Oscar for Best Actress?", a: "Roman Holiday", special: "witch", note: "Gregory Peck played the reporter. It was Hepburn's first starring role in a Hollywood film." }
+        { q: "Which 1953 film, about a princess exploring Rome with an American reporter, won Audrey Hepburn the Oscar for Best Actress?", a: "Roman Holiday", note: "Gregory Peck played the reporter. It was Hepburn's first starring role in a Hollywood film." }
       ]}
     ]},
     { name: "Round Two", values: [200,400,600,800,1000], categories: [
@@ -48,7 +48,7 @@ const DEFAULT_Q = {
       { name: "Lovebirds", qs: [
         { q: "Which pink birds stand on one leg and gather in flocks called a 'flamboyance'?", a: "Flamingos", note: "Their pink color comes from pigments in the algae and shrimp they eat." },
         { q: "Lovebirds, the small parrots that sit close together in pairs, come from which continent?", a: "Africa", note: "They are native to mainland Africa and Madagascar." },
-        { q: "In which sea creature does the male carry the eggs and give birth to the young?", a: "The seahorse", special: "cat", note: "The female places her eggs in a pouch on the male's belly, and he carries them until they hatch." },
+        { q: "In which sea creature does the male carry the eggs and give birth to the young?", a: "The seahorse", note: "The female places her eggs in a pouch on the male's belly, and he carries them until they hatch." },
         { q: "Which bird's males keep an egg warm on their feet through the Antarctic winter while the females are away at sea?", a: "The emperor penguin", note: "The males huddle together and go without food for about two months while the egg develops." },
         { q: "Prairie voles are famous in science for which behavior, rare among mammals?", a: "Forming lifelong pair bonds", note: "Studies of their brains helped show how oxytocin and vasopressin shape bonding." }
       ]},
@@ -56,7 +56,7 @@ const DEFAULT_Q = {
         { q: "In which city did so many 'love locks' cover the Pont des Arts bridge that its railings were replaced with glass panels in 2015?", a: "Paris", note: "The weight of the padlocks had become a danger to the bridge." },
         { q: "In Japan, women traditionally give chocolate on Valentine's Day. What is the day, one month later, when men return the favor?", a: "White Day (March 14)", note: "White Day began in Japan in the late 1970s and spread to South Korea, Taiwan and China." },
         { q: "In South Korea, people who got nothing on Valentine's Day or White Day gather on April 14 to eat noodles in black bean sauce. What is this day called?", a: "Black Day", note: "The noodle dish is called jajangmyeon." },
-        { q: "In Wales, January 25 is a day of love named after which Welsh patron saint of lovers?", a: "Saint Dwynwen", special: "cat", note: "In Welsh it is Dydd Santes Dwynwen, and people send cards just as they do on Valentine's Day." },
+        { q: "In Wales, January 25 is a day of love named after which Welsh patron saint of lovers?", a: "Saint Dwynwen", note: "In Welsh it is Dydd Santes Dwynwen, and people send cards just as they do on Valentine's Day." },
         { q: "In Finland and Estonia, February 14 is not mainly about romance. What kind of day is it?", a: "Friendship Day", note: "In Finnish it is Ystävänpäivä, 'friend's day', and people send cards to friends." }
       ]},
       { name: "Science of the Heart", qs: [
@@ -71,7 +71,7 @@ const DEFAULT_Q = {
         { q: "'Ich liebe dich' means 'I love you' in which language?", a: "German", note: "German speakers also say 'Ich hab dich lieb' to family and close friends." },
         { q: "Which English poet wrote the line 'How do I love thee? Let me count the ways'?", a: "Elizabeth Barrett Browning", note: "It is Sonnet 43 from 'Sonnets from the Portuguese', published in 1850. She married the poet Robert Browning." },
         { q: "Shakespeare's Sonnet 18 begins by asking whether the poet should compare his love to what?", a: "A summer's day", note: "The answer the poem gives is that the beloved is even 'more lovely and more temperate'." },
-        { q: "The ancient Greeks had several words for love. Which one meant the love between friends?", a: "Philia", special: "witch", note: "Eros was romantic love, agape selfless love and storge the love within a family." }
+        { q: "The ancient Greeks had several words for love. Which one meant the love between friends?", a: "Philia", note: "Eros was romantic love, agape selfless love and storge the love within a family." }
       ]}
     ]}
   ],

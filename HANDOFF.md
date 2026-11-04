@@ -55,6 +55,10 @@ python3 tools/build_game.py --all          # or: christmas valentines halloween
 - `node tools/export_lines.js <game.html> <out.json>` lists every narrator line (file name = `l-<fnv32 of text>.mp3`).
 - Website build: see "Victoria's Game Nights" below (it runs `build_game.py --all` first).
 
+## Random surprises (November 4, 2026)
+
+Surprises are no longer fixed in the question files. At **Start the game** the engine deals them to random cells (`dealSpecials()` in `engine/game.html`, stored in `S.specials`, kept on reload, part of undo history): per round 2 × `"cat"` and 1 × `"witch"`, never on the two cheapest rows, never two of the same kind in one category. A question with `special` set in the editor ("Surprise in this cell") is pinned and always keeps it; the default option is "Random (the game decides)". `special:` was removed from every `questions.js` and from the engine's Halloween defaults, so the trivia pages no longer show surprise tags. Checked: 2,000 simulated deals (always 6, all 30 allowed cells used, rules hold), pinning works, each start gives a new layout, all 7 games' narrator lines unchanged, game test passes (it now reads the layout from `S.specials`), 97 site URLs OK. Hosts with edited questions saved in the browser from before keep their old specials as pins.
+
 ## Victoria's Game Nights (decided November 3, 2026)
 
 Not one site per game any more: **one brand site, Victoria's Game Nights**, with every game on it. Decisions:

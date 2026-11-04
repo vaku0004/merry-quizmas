@@ -11,7 +11,7 @@ const DEFAULT_Q = {
       { name: "Science Lab", qs: [
         { q: "Which gas do plants take in from the air to make their food?", a: "Carbon dioxide", note: "They give off oxygen in return." },
         { q: "What is the chemical symbol for gold?", a: "Au", note: "It comes from the Latin word for gold, 'aurum'." },
-        { q: "What is the hardest natural substance on Earth?", a: "Diamond", special: "cat", note: "A diamond is made of pure carbon, the same element as the graphite in a pencil." },
+        { q: "What is the hardest natural substance on Earth?", a: "Diamond", note: "A diamond is made of pure carbon, the same element as the graphite in a pencil." },
         { q: "How many bones are in the adult human body?", a: "206", note: "Babies are born with around 300 bones, and many of them fuse together as they grow." },
         { q: "What is the only metal that is liquid at normal room temperature?", a: "Mercury", note: "Gallium comes close: it melts at about 30 °C (86 °F), so it melts in your hand." }
       ]},
@@ -19,7 +19,7 @@ const DEFAULT_Q = {
         { q: "Guacamole is made mainly from which fruit?", a: "Avocado", note: "Yes, botanically the avocado is a fruit: a large berry with a single seed." },
         { q: "What is the main ingredient of hummus?", a: "Chickpeas", note: "They are blended with tahini, lemon juice, garlic and olive oil." },
         { q: "Which spice, made from the threads of a crocus flower, is the most expensive in the world by weight?", a: "Saffron", note: "Each flower has only three threads, and they are picked by hand." },
-        { q: "Which Italian city is the home of the pizza margherita?", a: "Naples", special: "cat", note: "Legend says it was named in 1889 for Queen Margherita, with toppings in the colors of the Italian flag." },
+        { q: "Which Italian city is the home of the pizza margherita?", a: "Naples", note: "Legend says it was named in 1889 for Queen Margherita, with toppings in the colors of the Italian flag." },
         { q: "Outside Japan, the 'wasabi' served with sushi is usually made mostly from which other plant?", a: "Horseradish", note: "Real wasabi is rare and expensive, so most of it is horseradish with mustard and green coloring." }
       ]},
       { name: "Animal Kingdom", qs: [
@@ -34,7 +34,7 @@ const DEFAULT_Q = {
         { q: "Which letter appears most often in English writing?", a: "E", note: "The least common letters include Z, Q and X." },
         { q: "What do you call a word made from the first letters of other words, like NASA?", a: "An acronym", note: "NASA stands for National Aeronautics and Space Administration." },
         { q: "What is special about the sentence 'The quick brown fox jumps over the lazy dog'?", a: "It uses every letter of the alphabet (a pangram)", note: "Typists have used it for more than a century to test keyboards." },
-        { q: "From which language does the English word 'kindergarten' come?", a: "German", special: "witch", note: "It means 'children's garden'. Friedrich Fröbel opened the first one in 1837." }
+        { q: "From which language does the English word 'kindergarten' come?", a: "German", note: "It means 'children's garden'. Friedrich Fröbel opened the first one in 1837." }
       ]}
     ]},
     { name: "Round Two", values: [200,400,600,800,1000], categories: [
@@ -48,7 +48,7 @@ const DEFAULT_Q = {
       { name: "Space", qs: [
         { q: "Which planet is known as the Red Planet?", a: "Mars", note: "Its red color comes from iron oxide, or rust, in its dust." },
         { q: "Who was the first person to walk on the Moon?", a: "Neil Armstrong", note: "He stepped onto the Moon on July 20, 1969, during the Apollo 11 mission." },
-        { q: "What is the largest planet in our solar system?", a: "Jupiter", special: "cat", note: "More than 1,000 Earths could fit inside it." },
+        { q: "What is the largest planet in our solar system?", a: "Jupiter", note: "More than 1,000 Earths could fit inside it." },
         { q: "About how long does sunlight take to reach Earth?", a: "About 8 minutes", note: "Light travels about 300,000 kilometers every second." },
         { q: "In 2006, which planet was reclassified as a dwarf planet?", a: "Pluto", note: "Astronomers decided a planet must clear its orbit of other objects, which Pluto does not." }
       ]},
@@ -56,7 +56,7 @@ const DEFAULT_Q = {
         { q: "How many sides does a hexagon have?", a: "Six", note: "Honeycomb cells are hexagons." },
         { q: "What is the Roman numeral for 50?", a: "L", note: "C is 100, D is 500 and M is 1,000." },
         { q: "How many minutes are in a full day?", a: "1,440", note: "24 hours times 60 minutes." },
-        { q: "What is 15 percent of 200?", a: "30", special: "cat", note: "10 percent is 20 and 5 percent is 10, so 15 percent is 30." },
+        { q: "What is 15 percent of 200?", a: "30", note: "10 percent is 20 and 5 percent is 10, so 15 percent is 30." },
         { q: "What is the smallest prime number?", a: "2", note: "It is also the only even prime number." }
       ]},
       { name: "Sports & Games", qs: [
@@ -71,7 +71,7 @@ const DEFAULT_Q = {
         { q: "How many keys does a standard piano have?", a: "88", note: "52 white keys and 36 black keys." },
         { q: "Which Dutch artist painted 'The Starry Night' in 1889?", a: "Vincent van Gogh", note: "He painted it at an asylum in Saint-Rémy, in southern France, based on the view from his window." },
         { q: "Which composer kept writing music after losing his hearing, including his famous Ninth Symphony?", a: "Ludwig van Beethoven", note: "At its first performance in 1824 he had to be turned around to see the audience applauding." },
-        { q: "Which Spanish artist co-founded Cubism and painted 'Guernica'?", a: "Pablo Picasso", special: "witch", note: "He founded Cubism with the French painter Georges Braque." }
+        { q: "Which Spanish artist co-founded Cubism and painted 'Guernica'?", a: "Pablo Picasso", note: "He founded Cubism with the French painter Georges Braque." }
       ]}
     ]}
   ],

@@ -11,7 +11,7 @@ const DEFAULT_Q = {
       { name: "All That ’90s", qs: [
         { q: "Which virtual pet from Japan, kept on a keychain, became a worldwide craze in 1997?", a: "Tamagotchi", note: "Bandai released it in Japan in 1996. Forget to feed it, and your pet would get sick." },
         { q: "In the TV show 'Friends', what is the name of the coffee shop where the friends hang out?", a: "Central Perk", note: "The show ran for ten seasons, from 1994 to 2004." },
-        { q: "Which British girl group, with members nicknamed Scary, Sporty, Baby, Ginger and Posh, had a 1996 hit with 'Wannabe'?", a: "The Spice Girls", special: "cat", note: "'Wannabe' reached number one in more than 30 countries." },
+        { q: "Which British girl group, with members nicknamed Scary, Sporty, Baby, Ginger and Posh, had a 1996 hit with 'Wannabe'?", a: "The Spice Girls", note: "'Wannabe' reached number one in more than 30 countries." },
         { q: "What was the name of the sheep that, in 1996, became the first mammal cloned from an adult cell?", a: "Dolly", note: "She was born at the Roslin Institute in Scotland." },
         { q: "Which Seattle band, fronted by Kurt Cobain, released the 1991 album 'Nevermind'?", a: "Nirvana", note: "Its single 'Smells Like Teen Spirit' helped bring grunge music to the world." }
       ]},
@@ -19,7 +19,7 @@ const DEFAULT_Q = {
         { q: "Which Apple music player, launched in 2001, promised '1,000 songs in your pocket'?", a: "The iPod", note: "The first model had a 5 GB hard drive and a scroll wheel." },
         { q: "Which social network did Mark Zuckerberg launch from his college dorm room in 2004?", a: "Facebook", note: "It started as 'TheFacebook', open only to Harvard students." },
         { q: "What was the 'Y2K bug' that people feared would crash computers on January 1, 2000?", a: "Many computers stored years with two digits, so 2000 could look like 1900", note: "Companies spent billions fixing it in advance, and very little went wrong." },
-        { q: "Which video-sharing website was founded in 2005 and bought by Google in 2006?", a: "YouTube", special: "cat", note: "The first video ever uploaded, 'Me at the zoo', is 19 seconds long." },
+        { q: "Which video-sharing website was founded in 2005 and bought by Google in 2006?", a: "YouTube", note: "The first video ever uploaded, 'Me at the zoo', is 19 seconds long." },
         { q: "Which Nintendo console, released in 2006, was famous for its motion-sensing remote?", a: "The Wii", note: "Its bowling game turned many grandparents into gamers." }
       ]},
       { name: "Toys & Games", qs: [
@@ -34,7 +34,7 @@ const DEFAULT_Q = {
         { q: "In the TV show 'Baywatch', what job do the main characters have?", a: "Lifeguards", note: "At its peak in the 1990s, it was one of the most-watched shows in the world." },
         { q: "Which 1990s children's TV show starred Tinky Winky, Dipsy, Laa-Laa and Po?", a: "Teletubbies", note: "The British show first aired in 1997." },
         { q: "Which reality show, first aired in the US in 2000, asks contestants on an island to 'outwit, outplay, outlast'?", a: "Survivor", note: "It was based on a Swedish show called 'Expedition Robinson'." },
-        { q: "Which sitcom, famously called 'a show about nothing', ended in 1998 after nine seasons?", a: "Seinfeld", special: "witch", note: "It starred Jerry Seinfeld as a version of himself, a comedian in New York." }
+        { q: "Which sitcom, famously called 'a show about nothing', ended in 1998 after nine seasons?", a: "Seinfeld", note: "It starred Jerry Seinfeld as a version of himself, a comedian in New York." }
       ]}
     ]},
     { name: "Round Two", values: [200,400,600,800,1000], categories: [
@@ -48,7 +48,7 @@ const DEFAULT_Q = {
       { name: "Chart Toppers", qs: [
         { q: "Which singer, called the 'Queen of Pop', had a 1985 hit with 'Material Girl'?", a: "Madonna", note: "She is often listed as the best-selling female recording artist of all time." },
         { q: "Which boy band had a 1999 hit with 'I Want It That Way'?", a: "The Backstreet Boys", note: "The group formed in Orlando, Florida, in 1993." },
-        { q: "Which Canadian singer released the hugely successful 1995 album 'Jagged Little Pill'?", a: "Alanis Morissette", special: "cat", note: "It has sold more than 30 million copies." },
+        { q: "Which Canadian singer released the hugely successful 1995 album 'Jagged Little Pill'?", a: "Alanis Morissette", note: "It has sold more than 30 million copies." },
         { q: "Which 1984 charity single, organized by Bob Geldof and Midge Ure, raised money for famine relief in Ethiopia?", a: "Do They Know It's Christmas? (Band Aid)", note: "It led to the Live Aid concerts in London and Philadelphia in 1985." },
         { q: "Which British singer named her 2008 debut album '19', after her age when she wrote it?", a: "Adele", note: "Her later albums were named '21', '25' and '30'." }
       ]},
@@ -56,7 +56,7 @@ const DEFAULT_Q = {
         { q: "What noisy device did people use in the 1990s to connect a home computer to the internet over a phone line?", a: "A dial-up modem", note: "While you were online, nobody could use the phone." },
         { q: "Which Microsoft operating system launched in 1995 with a brand-new 'Start' button?", a: "Windows 95", note: "Its launch ads used the Rolling Stones song 'Start Me Up'." },
         { q: "What does 'DVD' stand for?", a: "Digital Versatile Disc (first 'Digital Video Disc')", note: "DVDs went on sale in Japan in 1996 and in the US in 1997." },
-        { q: "Which Canadian company made the BlackBerry smartphone?", a: "Research In Motion (RIM)", special: "cat", note: "The company was based in Waterloo, Ontario, and renamed itself BlackBerry in 2013." },
+        { q: "Which Canadian company made the BlackBerry smartphone?", a: "Research In Motion (RIM)", note: "The company was based in Waterloo, Ontario, and renamed itself BlackBerry in 2013." },
         { q: "In 1997, which IBM computer became the first to beat a reigning world chess champion, Garry Kasparov, in a match?", a: "Deep Blue", note: "It won the six-game match 3½ to 2½." }
       ]},
       { name: "Fads & Fashion", qs: [
@@ -71,7 +71,7 @@ const DEFAULT_Q = {
         { q: "Which space telescope, launched in 1990, has taken some of the most famous pictures of the universe?", a: "The Hubble Space Telescope", note: "Its first pictures were blurry because of a flaw in its mirror. Astronauts fixed it in 1993." },
         { q: "Which tunnel, opened in 1994, links Britain and France under the sea?", a: "The Channel Tunnel", note: "It is about 50 kilometers (31 miles) long." },
         { q: "In 1997, the United Kingdom handed which territory back to China?", a: "Hong Kong", note: "The handover took place at midnight on June 30, 1997." },
-        { q: "Which currency went into circulation as coins and notes in 12 European countries on January 1, 2002?", a: "The euro", special: "witch", note: "It had existed only for banks and electronic payments since 1999." }
+        { q: "Which currency went into circulation as coins and notes in 12 European countries on January 1, 2002?", a: "The euro", note: "It had existed only for banks and electronic payments since 1999." }
       ]}
     ]}
   ],

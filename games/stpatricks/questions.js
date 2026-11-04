@@ -11,7 +11,7 @@ const DEFAULT_Q = {
       { name: "Luck & Legends", qs: [
         { q: "How many leaves does a 'lucky' clover have?", a: "Four", note: "Most clovers have three leaves. Four-leaf clovers are rare, roughly one in several thousand." },
         { q: "According to legend, what does a leprechaun keep hidden at the end of the rainbow?", a: "A pot of gold", note: "Catch a leprechaun, the stories say, and he must tell you where his gold is hidden." },
-        { q: "Kissing which stone, set high in a castle near Cork, is said to give you the 'gift of the gab'?", a: "The Blarney Stone", special: "cat", note: "Visitors lie on their backs and lean over a drop at the top of Blarney Castle to kiss it." },
+        { q: "Kissing which stone, set high in a castle near Cork, is said to give you the 'gift of the gab'?", a: "The Blarney Stone", note: "Visitors lie on their backs and lean over a drop at the top of Blarney Castle to kiss it." },
         { q: "In old Irish folklore, what is a leprechaun's trade?", a: "Shoemaker", note: "In the tales, leprechauns mend the shoes of the fairies, which is why they are always busy." },
         { q: "In Irish folklore, what is a banshee said to do before a death in the family?", a: "Wail (keen)", note: "The name comes from the Irish 'bean sí', meaning 'woman of the fairy mound'." }
       ]},
@@ -19,7 +19,7 @@ const DEFAULT_Q = {
         { q: "Which coastline of about 40,000 stone columns in Northern Ireland was, in legend, built by a giant so he could cross to Scotland?", a: "The Giant's Causeway", note: "Geologists say the columns formed when lava from an ancient volcanic eruption cooled and cracked." },
         { q: "In Irish legend, Tír na nÓg is a magical land where no one ever does what?", a: "Grows old", note: "Its name means 'Land of the Young'." },
         { q: "In the legend 'The Children of Lir', a jealous stepmother turns four children into which birds?", a: "Swans", note: "The spell kept them as swans for 900 years." },
-        { q: "Which legendary Irish hero gained all the world's wisdom by burning his thumb on the Salmon of Knowledge?", a: "Fionn mac Cumhaill (Finn McCool)", special: "cat", note: "Whenever he needed wisdom afterward, he only had to suck his thumb." },
+        { q: "Which legendary Irish hero gained all the world's wisdom by burning his thumb on the Salmon of Knowledge?", a: "Fionn mac Cumhaill (Finn McCool)", note: "Whenever he needed wisdom afterward, he only had to suck his thumb." },
         { q: "What was the name of the old Celtic festival that marked the start of summer on May 1?", a: "Bealtaine (Beltane)", note: "It was one of four seasonal festivals, with Samhain, Imbolc and Lughnasadh." }
       ]},
       { name: "Going Green", qs: [
@@ -34,7 +34,7 @@ const DEFAULT_Q = {
         { q: "Which city holds the world's largest St. Patrick's Day parade, first marched in 1762?", a: "New York City", note: "The first parade took place 14 years before the US Declaration of Independence." },
         { q: "On St. Patrick's Day, which famous building with sail-shaped roofs is lit up green in Australia?", a: "The Sydney Opera House", note: "It is one of hundreds of landmarks around the world that 'go green' for the day." },
         { q: "Which Caribbean island, nicknamed 'the Emerald Isle of the Caribbean', has St. Patrick's Day as a public holiday?", a: "Montserrat", note: "Many of its early European settlers were Irish." },
-        { q: "In what year did St. Patrick's Day become an official public holiday in Ireland?", a: "1903", special: "witch", note: "It became a bank holiday under the Bank Holiday (Ireland) Act of 1903." }
+        { q: "In what year did St. Patrick's Day become an official public holiday in Ireland?", a: "1903", note: "It became a bank holiday under the Bank Holiday (Ireland) Act of 1903." }
       ]}
     ]},
     { name: "Round Two", values: [200,400,600,800,1000], categories: [
@@ -48,7 +48,7 @@ const DEFAULT_Q = {
       { name: "Irish Words", qs: [
         { q: "In Ireland, what does the word 'craic' mean?", a: "Fun, a good time", note: "It is pronounced 'crack'. 'What's the craic?' means 'What's new?'" },
         { q: "The Irish toast 'Sláinte!' means what?", a: "Health (cheers)", note: "It is pronounced roughly 'SLAWN-cha'." },
-        { q: "Which English word, meaning tiny broken pieces, comes from the Irish word 'smidiríní'?", a: "Smithereens", special: "cat", note: "'Smidirín' means a small fragment in Irish." },
+        { q: "Which English word, meaning tiny broken pieces, comes from the Irish word 'smidiríní'?", a: "Smithereens", note: "'Smidirín' means a small fragment in Irish." },
         { q: "What is the Irish-language name for Ireland, used in its constitution?", a: "Éire", note: "The constitution says that in English the name of the state is Ireland." },
         { q: "'Taoiseach' is the title of which Irish official?", a: "The prime minister (head of government)", note: "It is pronounced 'TEE-shock' and means 'chief' or 'leader'." }
       ]},
@@ -56,7 +56,7 @@ const DEFAULT_Q = {
         { q: "Which Irish rock band, fronted by Bono, formed in Dublin in 1976?", a: "U2", note: "The band members met as students at Mount Temple Comprehensive School." },
         { q: "Which Irish writer wrote the 1726 satire 'Gulliver's Travels'?", a: "Jonathan Swift", note: "Swift was also dean of St. Patrick's Cathedral in Dublin." },
         { q: "Which Irish playwright, famous for his wit, wrote 'The Importance of Being Earnest'?", a: "Oscar Wilde", note: "The play opened in London in 1895." },
-        { q: "Which Irish writer's novel 'Ulysses' takes place in Dublin on a single day, June 16, 1904?", a: "James Joyce", special: "cat", note: "Fans celebrate that date every year as Bloomsday, after the novel's hero, Leopold Bloom." },
+        { q: "Which Irish writer's novel 'Ulysses' takes place in Dublin on a single day, June 16, 1904?", a: "James Joyce", note: "Fans celebrate that date every year as Bloomsday, after the novel's hero, Leopold Bloom." },
         { q: "Which US president, elected in 1960, visited his ancestral home in County Wexford in 1963?", a: "John F. Kennedy", note: "He was the first Catholic president of the United States, and all eight of his great-grandparents were Irish." }
       ]},
       { name: "Music & Dance", qs: [
@@ -71,7 +71,7 @@ const DEFAULT_Q = {
         { q: "Corned beef and cabbage is a St. Patrick's Day favorite in which country, more than in Ireland itself?", a: "The United States", note: "In Ireland, bacon and cabbage is the more traditional dish." },
         { q: "What is colcannon, a traditional Irish dish?", a: "Mashed potatoes with cabbage or kale", note: "It is a traditional dish for October 31, sometimes with a coin or a ring hidden inside." },
         { q: "Which vegetable's crop failure in the 1840s caused the Great Famine in Ireland?", a: "The potato", note: "About a million people died and more than a million emigrated, many to North America." },
-        { q: "Boxty, a traditional dish from the north and west of Ireland, is a kind of what?", a: "Potato pancake", special: "witch", note: "It is made from grated raw potato mixed with mashed potato and flour." }
+        { q: "Boxty, a traditional dish from the north and west of Ireland, is a kind of what?", a: "Potato pancake", note: "It is made from grated raw potato mixed with mashed potato and flour." }
       ]}
     ]}
   ],

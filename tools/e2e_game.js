@@ -56,8 +56,10 @@ const files = process.argv.slice(2);
       await step('rules');
       await click('[data-act=sskip]', 400);
       await step('board R1');
-      const Q = await p.evaluate(() => S.questions || DEFAULT_Q);
-      const find = (r, sp) => { for (const [c, cat] of Q.rounds[r].categories.entries()) for (const [i, q] of cat.qs.entries()) if ((q.special || null) === sp) return [c, i]; };
+      // Surprises are dealt at random when the game starts: read the layout from the game itself
+      const SP = await p.evaluate(() => S.specials || {});
+      const find = (r, sp) => { for (let c = 0; c < 5; c++) for (let i = 0; i < 5; i++) if ((SP[r + '-' + c + '-' + i] || null) === sp) return [c, i]; };
+      log.push('surprises this game: ' + Object.entries(SP).map(([k, v]) => k + '=' + v).join(' '));
       const [nc, ni] = find(0, null), [cc, ci] = find(0, 'cat'), [wc, wi] = find(0, 'witch');
       log.push('played ' + await playCell(nc, ni, 'ok')); await step('after right answer');
       log.push('played ' + await playCell(cc, ci, 'no')); await step('after surprise 1, wrong');

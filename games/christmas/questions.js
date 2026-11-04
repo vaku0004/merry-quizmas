@@ -11,7 +11,7 @@ const DEFAULT_Q = {
       { name: "Oh, Canada!", qs: [
         { q: "Canada Post delivers children's letters to Santa at a special postal code. What is it?", a: "H0H 0H0", note: "Volunteer elves have helped Santa answer millions of letters since the program began in 1982." },
         { q: "Mummering, when people in costume and disguise visit neighbours at Christmas, is a tradition of which province?", a: "Newfoundland and Labrador", note: "Hosts have to guess who the mummers are before offering them a drink and a treat." },
-        { q: "Which spiced meat pie is a classic dish at the French-Canadian Christmas Eve feast, the réveillon?", a: "Tourtière", note: "It is usually made with pork, and sometimes beef or game, seasoned with cloves and cinnamon.", special: "cat" },
+        { q: "Which spiced meat pie is a classic dish at the French-Canadian Christmas Eve feast, the réveillon?", a: "Tourtière", note: "It is usually made with pork, and sometimes beef or game, seasoned with cloves and cinnamon." },
         { q: "Every year Nova Scotia sends a giant Christmas tree to which American city, as thanks for its help after the 1917 Halifax Explosion?", a: "Boston", note: "Boston sent doctors, nurses and supplies within hours. The tree lights up Boston Common." },
         { q: "The Huron Carol, Canada's oldest Christmas song, was written around 1642 by Jesuit missionary Jean de Brébeuf. In which language?", a: "Wendat (Huron)", note: "The English words most people know today were written in 1926 by Jesse Edgar Middleton." }
       ]},
@@ -19,7 +19,7 @@ const DEFAULT_Q = {
         { q: "What flavour is a classic red and white candy cane?", a: "Peppermint", note: "Candy canes were plain white at first. The red stripes were added around 1900." },
         { q: "Eggnog is made with milk, cream and sugar, plus which main ingredient that gives it its name?", a: "Eggs", note: "Many recipes also add nutmeg, and grown-up versions add rum, brandy or bourbon." },
         { q: "Gingerbread houses became popular in which country in the 1800s, after the Brothers Grimm published Hansel and Gretel?", a: "Germany", note: "In the fairy tale, the witch's house in the forest is made of bread and cake." },
-        { q: "What is the name of the tall, domed Italian Christmas bread with candied fruit and raisins, first made in Milan?", a: "Panettone", note: "Its dough rises slowly over several days, which makes it light and fluffy.", special: "cat" },
+        { q: "What is the name of the tall, domed Italian Christmas bread with candied fruit and raisins, first made in Milan?", a: "Panettone", note: "Its dough rises slowly over several days, which makes it light and fluffy." },
         { q: "Stollen, a fruit bread covered in icing sugar, is the pride of the Christmas market in which German city?", a: "Dresden", note: "Dresden's market, the Striezelmarkt, dates back to 1434 and holds a Stollen festival with a giant loaf." }
       ]},
       { name: "Christmas at the Movies", qs: [
@@ -34,7 +34,7 @@ const DEFAULT_Q = {
         { q: "What do we call a large mass of snow that suddenly slides down a mountainside?", a: "An avalanche", note: "Western Canada's mountains see thousands of avalanches every winter." },
         { q: "What is the name of the snowman mascot of the Quebec Winter Carnival?", a: "Bonhomme", note: "Bonhomme Carnaval wears a red toque and a colourful sash called a ceinture fléchée." },
         { q: "At what temperature do the Celsius and Fahrenheit scales show the same number?", a: "Minus 40", note: "−40 °C is exactly −40 °F, a number many Prairie winters know well." },
-        { q: "What is the name for the feathery white ice crystals that form on trees and grass on cold, clear nights?", a: "Hoarfrost", note: "It forms when water vapour turns straight into ice, skipping the liquid stage.", special: "witch" }
+        { q: "What is the name for the feathery white ice crystals that form on trees and grass on cold, clear nights?", a: "Hoarfrost", note: "It forms when water vapour turns straight into ice, skipping the liquid stage." }
       ]}
     ]},
     { name: "Round Two", values: [200,400,600,800,1000], categories: [
@@ -48,7 +48,7 @@ const DEFAULT_Q = {
       { name: "Around the World", qs: [
         { q: "In which country is fried chicken from KFC a popular Christmas dinner?", a: "Japan", note: "It began with a 1974 ad campaign. Families often order their Christmas bucket weeks ahead." },
         { q: "In Mexico, what are the nine nights of candlelit processions before Christmas called?", a: "Las Posadas", note: "From December 16 to 24, people act out Mary and Joseph's search for shelter." },
-        { q: "Which country gives London a giant Christmas tree for Trafalgar Square every year, as thanks for help in the Second World War?", a: "Norway", note: "The tradition started in 1947. The tree comes from the forests around Oslo.", special: "cat" },
+        { q: "Which country gives London a giant Christmas tree for Trafalgar Square every year, as thanks for help in the Second World War?", a: "Norway", note: "The tradition started in 1947. The tree comes from the forests around Oslo." },
         { q: "In Italy, which kind old witch flies on a broom to bring sweets to children on the night before January 6?", a: "La Befana", note: "Good children get sweets and naughty ones get a lump of coal, often made of black sugar." },
         { q: "In Catalonia, which smiling wooden log is 'fed' for weeks and then hit with sticks until it gives out sweets?", a: "Tió de Nadal", note: "It wears a red cap and a blanket. Children sing to it while they tap it on Christmas Eve or Day." }
       ]},
@@ -56,7 +56,7 @@ const DEFAULT_Q = {
         { q: "Krampus is a horned creature from Alpine folklore who travels with Saint Nicholas. Whom does he punish?", a: "Naughty children", note: "Saint Nicholas rewards good children, and Krampus deals with the rest." },
         { q: "In Iceland, how many mischievous Yule Lads visit children in the nights before Christmas?", a: "Thirteen", note: "They arrive one at a time, starting December 12, and leave gifts or rotten potatoes in shoes." },
         { q: "Which giant cat from Icelandic folklore is said to eat people who don't get new clothes before Christmas?", a: "The Yule Cat (Jólakötturinn)", note: "The legend encouraged people to finish their wool work before the holidays." },
-        { q: "Krampusnacht, when people in Krampus costumes parade through Alpine towns, is held on which date?", a: "December 5", note: "It is the eve of Saint Nicholas Day, December 6.", special: "cat" },
+        { q: "Krampusnacht, when people in Krampus costumes parade through Alpine towns, is held on which date?", a: "December 5", note: "It is the eve of Saint Nicholas Day, December 6." },
         { q: "In a Ukrainian Christmas legend, which creature decorated a poor family's tree overnight, which is why it appears on tree ornaments?", a: "A spider", note: "In the story, the spider's webs turned to silver and gold in the morning light, the origin of tinsel." }
       ]},
       { name: "Holiday Hits", qs: [
@@ -71,7 +71,7 @@ const DEFAULT_Q = {
         { q: "The first commercial Christmas cards were printed in 1843 in which country?", a: "England (United Kingdom)", note: "Sir Henry Cole ordered 1,000 cards because he had no time to write letters by hand." },
         { q: "What does the 'X' in 'Xmas' originally stand for?", a: "The Greek letter chi, for Christ", note: "Chi, written X, is the first letter of 'Christ' in Greek, so Xmas is centuries old, not a modern shortcut." },
         { q: "Electric Christmas tree lights were first shown in 1882 by Edward H. Johnson, a business partner of which inventor?", a: "Thomas Edison", note: "Johnson's tree in New York had 80 red, white and blue bulbs." },
-        { q: "From 1659 to 1681, celebrating Christmas was against the law in the Massachusetts Bay Colony. Which group passed the ban?", a: "The Puritans", note: "Anyone caught celebrating could be fined five shillings.", special: "witch" }
+        { q: "From 1659 to 1681, celebrating Christmas was against the law in the Massachusetts Bay Colony. Which group passed the ban?", a: "The Puritans", note: "Anyone caught celebrating could be fined five shillings." }
       ]}
     ]}
   ],
