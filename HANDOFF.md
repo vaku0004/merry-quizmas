@@ -111,7 +111,7 @@ Decisions she made: name **Victoria's Pot o' Gold**; surprise 1 **Leprechaun's T
 - Look: emerald night `#0c1a12`, gold `#e8b84a`, green `#5fbf73`, sky blue `#7fb8e8` for the rainbow; display font **Uncial Antiqua** (fontsource `uncial-antiqua`, added to fontify.py and make_og.py); gold and green specks drifting up; a lilting tune with soft bodhrán taps in the final. Art: shamrock, leprechaun hat, rainbow with clouds, pot of gold, four-leaf clover, coin.
 - Questions: 50 + final "Irish in America" (John Barry) + tiebreaker (Ireland joined the EEC in 1973); checked from memory, worth a second look before launch. Categories R1: The Emerald Isle, Luck & Legends, Myths of Ireland, Going Green, Around the World; R2: The Real St. Patrick, Irish Words, Famous Irish, Music & Dance, A Taste of Ireland.
 - Checks: game test (`tools/e2e_game.js`) passes; preview site 58 URLs OK; home page now shows the game cards 2 × 2.
-- Voice made on Nov 4: ID `t6vJ4FT1TpF4LOWRQV9n` (prompts in `games/stpatricks/voice-design-prompts.md`). Kit with it as default: `games/stpatricks/voice-kit/` (sent as PotOGold-voice.zip). Remaining: she runs it in a **new folder** and sends `audio`; check against `games/stpatricks/voice-lines.json` and put it in `audio/stpatricks/`.
+- Voice made on Nov 4: ID `t6vJ4FT1TpF4LOWRQV9n` (prompts in `games/stpatricks/voice-design-prompts.md`). Kit with it as default: `games/stpatricks/voice-kit/` (sent as PotOGold-voice.zip). **Audio done (Nov 4):** 136/136 lines (voice name in ElevenLabs "Patrick", eleven_v4) checked and committed to `audio/stpatricks/`.
 
 ## Fact check of all questions (November 4, 2026)
 
@@ -144,7 +144,7 @@ Direction: **the whole English-speaking world, US first**, neutral English for t
 4. **November 15:** rebuild (Christmas appears by date), push, request indexing for the Christmas pages.
 5. **She reviews the Christmas game** (offline file sent on Nov 3) and sends changes in one list. Changed narrator text needs re-voicing of those lines only (`voice-kit/start-voice.bat` on her PC, same folder; ElevenLabs is not reachable from the cloud). She sends audio as .rar; `node-unrar-js` (npm, WASM) extracts it in the cloud.
 6. **Valentine's Day game:** built on Nov 4 (see "Sweetheart Showdown"). Voice and audio done. Remaining: her review. Goes live by date on January 20, 2027.
-7. **St. Patrick's Day game:** built on Nov 4 (see "Pot o' Gold"). Remaining: voice, audio, her review. Goes live by date on February 10, 2027.
+7. **St. Patrick's Day game:** built on Nov 4 (see "Pot o' Gold"). Voice and audio done. Remaining: her review. Goes live by date on February 10, 2027.
 
 ## Things to keep in mind
 
