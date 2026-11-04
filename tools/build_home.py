@@ -3,7 +3,7 @@
 From Python: home_page(published_games, today) and privacy_page().
 """
 import html, json
-from site_common import GA_HEAD, PAGE_EVENTS_JS, URL, BRAND
+from site_common import GA_HEAD, PAGE_EVENTS_JS, URL, BRAND, CONTACT_HREF
 import games as G
 
 e = lambda s: html.escape(s, quote=True)
@@ -40,6 +40,8 @@ a:hover{color:var(--candle)}
 h1{font-weight:800;font-size:clamp(2.6rem,7vw,4.4rem);line-height:1;margin:.2em 0 .35em;color:var(--ember)}
 h1 i{font-style:italic;color:var(--candle)}
 .lede{font-size:1.3rem;margin:0 0 .6em}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:22px 0 0}
+.hero-cta .muted{font-family:var(--f-ui);font-size:.95rem}
 .muted{color:var(--ash)}
 h2{font-weight:800;font-size:clamp(1.8rem,4vw,2.4rem);line-height:1.1;margin:2em 0 .5em;color:var(--ember)}
 .games{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%%,440px),1fr));gap:20px;margin:18px 0 0}
@@ -163,7 +165,7 @@ def _shell(title, desc, canonical, body, ld=None, og_img=None):
 {body}
 </main>
 <footer class="site-foot"><div class="wrap">
-  <nav aria-label="Footer"><a href="/">All games</a><a href="/privacy/">Privacy</a></nav>
+  <nav aria-label="Footer"><a href="/">All games</a><a href="{CONTACT_HREF}" data-contact>Write to Victoria</a><a href="/privacy/">Privacy</a></nav>
   <span>{e(BRAND)} · quiz games for office parties and team events, made in Regina, Saskatchewan.</span>
 </div></footer>
 {PAGE_EVENTS_JS}
@@ -188,6 +190,7 @@ def home_page(out_slugs, today):
 <h1>Victoria’s <i>Game Nights</i></h1>
 <p class="lede">Quiz games for office parties and team events, for the holidays and any day of the year. One laptop, one big screen, a narrator who reads every question, and teams playing in the room and on the video call.</p>
 <p class="muted">No sign-up, no download, nothing for players to install.</p>
+<p class="hero-cta"><a class="btn" href="{CONTACT_HREF}" data-contact>Write to Victoria</a><span class="muted">Questions, ideas or a custom game for your office? Victoria reads every message.</span></p>
 </section>
 
 <section id="games" aria-labelledby="games-h"><h2 id="games-h" style="margin-top:.6em">Pick a game</h2>

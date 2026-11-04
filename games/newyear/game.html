@@ -56,6 +56,13 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .btn.primary:hover{background:var(--ember);border-color:var(--ember)}
 .btn.ghost{background:transparent}
 .btn.warn{border-color:var(--bad);color:var(--bad)}
+/* Bug button: small and quiet in the bottom-left corner of every screen */
+.bug-btn{position:fixed;left:10px;bottom:10px;z-index:80;display:inline-flex;align-items:center;gap:.3em;
+  font:700 .72rem/1 var(--f-ui);letter-spacing:.04em;color:var(--ash);background:color-mix(in srgb,var(--night) 80%,transparent);
+  border:1px solid var(--line);border-radius:999px;padding:.4em .75em .4em .55em;opacity:.55;cursor:pointer;transition:opacity .15s,color .15s}
+.bug-btn:hover,.bug-btn:focus-visible{opacity:1;color:var(--bone)}
+.bug-btn svg{width:14px;height:14px}
+@media print{.bug-btn{display:none}}
 .btn.small{padding:.35em .8em;font-size:.88rem}
 .btn[disabled]{opacity:.4;cursor:not-allowed}
 .eyebrow{font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;color:var(--ash)}
@@ -1457,6 +1464,32 @@ document.addEventListener("keydown", e => {
     else if (S.q && S.q.stage !== "answer"){ actions.cancel(); }
   }
 });
+
+/* ===================== Bug report =====================
+   A small "Bug" button on every screen opens an e-mail to Victoria with the game, the screen and the browser filled in. */
+const BUG_TO = ["vvakulenko.work", "gmail.com"].join("@");
+function bugReport(){
+  const q = S.q, rnd = Q.rounds[S.round] || {}, cat = q && rnd.categories ? rnd.categories[q.c] : null;
+  const info = [
+    "Game: " + document.title,
+    "Screen: " + S.screen + ", round " + (S.round + 1) + ", " + S.teamCount + " teams",
+    q ? "Question: " + (cat ? cat.name : "?") + " for " + q.value + (q.special ? " (surprise " + q.special + ")" : "") + ", step " + q.stage : "",
+    S.screen === "final" && S.final ? "Final: step " + S.final.stage : "",
+    "Browser: " + navigator.userAgent,
+    "Window: " + innerWidth + " x " + innerHeight,
+    "Page: " + (location.protocol === "file:" ? "file on this computer" : location.origin + location.pathname)
+  ].filter(Boolean).join("\n");
+  const body = "What happened?\n\n\nWhat did you expect to happen?\n\n\n" +
+    "----- Please keep the lines below. They help find the bug. -----\n" + info;
+  location.href = "mailto:" + BUG_TO + "?subject=" + encodeURIComponent("Bug report: " + document.title) + "&body=" + encodeURIComponent(body);
+}
+(function(){
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "bug-btn"; b.title = "Found a bug? Write to Victoria"; b.setAttribute("aria-label", "Report a bug");
+  b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="14" rx="5" ry="6.5"/><path d="M12 7.5V20.5M9 5.5l1.5 2M15 5.5l-1.5 2M7 11H3.5M7 15.5H3.5M17 11h3.5M17 15.5h3.5M7.5 19l-2.5 2M16.5 19l2.5 2"/></svg>Bug';
+  b.addEventListener("click", bugReport);
+  document.body.appendChild(b);
+})();
 
 /* ===================== Boot ===================== */
 function start(data){

@@ -67,6 +67,9 @@ def game_events_js(game):
 </script>''').replace('__KEY__', game['slug'] + '-ga').replace('__SPECIALS__', __import__('json').dumps(game['specials']))
 
 # Content pages: clicks that lead into the game, printing and copying.
+CONTACT_EMAIL = "vvakulenko.work@gmail.com"   # "Write to Victoria" on the site and the Bug button in every game (engine/game.html has its own copy)
+CONTACT_HREF = "mailto:" + "".join(f"&#{ord(c)};" for c in CONTACT_EMAIL) + "?subject=Victoria%E2%80%99s%20Game%20Nights"   # entities: a little harder for address harvesters
+
 PAGE_EVENTS_JS = '''<script>
 (function(){
   if (typeof gtag !== 'function') return;
@@ -78,6 +81,7 @@ PAGE_EVENTS_JS = '''<script>
     if (p) gtag('event', 'print_questions', { with_answers: p.getAttribute('data-print') === 'answers' ? 'yes' : 'no' });
     if (e.target.closest && e.target.closest('[data-toggle-all]')) gtag('event', 'show_all_answers');
     if (e.target.closest && e.target.closest('[data-copy]')) gtag('event', 'copy_invite');
+    if (e.target.closest && e.target.closest('[data-contact]')) gtag('event', 'contact_click', { from_page: page });
     var s = e.target.closest && e.target.closest('summary');
     if (s && s.parentElement && !s.parentElement.open) gtag('event', 'show_answer', { question: (s.closest('li') || {}).id || '' });
   }, true);

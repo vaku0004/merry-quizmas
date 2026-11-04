@@ -167,6 +167,13 @@ All 3 × 52 questions reviewed; doubtful facts checked online. Fixed: Halloween 
 
 No "ElevenLabs" or model name on screen any more. The button is "Game narrator" / "Browser voice", and the line under it reads "Narrator: <name>. All 136 lines are recorded." Names: Halloween "The Spooky Narrator", Christmas "Grandpa Noel", Valentine's "Valentine Vic" (`const NARRATOR` in `night-of-frights.html`, replaced in `build_quizmas.py` / `build_valentines.py`). ElevenLabs is still mentioned only in code comments and the voice kit. The "Copy voice lines for the generator" button was removed (use `node tools/export_lines.js <game.html> <out.json>` instead).
 
+## Contact and bug reports (November 4, 2026)
+
+- Address: **vvakulenko.work@gmail.com** (`CONTACT_EMAIL` in `tools/site_common.py`; written as HTML entities in links, a little harder for harvesters).
+- Home page: a **"Write to Victoria"** button under the intro ("Questions, ideas or a custom game for your office? Victoria reads every message."), plus "Write to Victoria" in the footer of the home page and of every game page. GA event `contact_click`.
+- Every game: a small, semi-transparent **"Bug"** button in the bottom-left corner of every screen (`bugReport()` in `engine/game.html`, address in `BUG_TO`). It opens an e-mail "Bug report: <game>" with "What happened? / What did you expect?" and the game, screen, round, teams, open question, browser and window size filled in (a local file shows "file on this computer", not its path). Checked: no overlap with buttons at 1366×768 and 1920×1080; on a phone it floats over scrolling text in the editor and voice panel.
+- The Ko-fi "Support" link and the "custom office edition, Contact us" text from the money plan below can now point to the same address.
+
 ## Money and growth plan (agreed November 3, 2026; do it when the site is published)
 
 She liked this three-step test of demand and wants it built **together with the website**:

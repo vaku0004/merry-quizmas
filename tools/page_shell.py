@@ -5,7 +5,7 @@ globals NAME and Q, which build_site.py sets before rendering. Inside a game's c
 and is turned into the game's own address here.
 """
 import html, json, re
-from site_common import GA_HEAD, PAGE_EVENTS_JS, URL, BRAND
+from site_common import GA_HEAD, PAGE_EVENTS_JS, URL, BRAND, CONTACT_HREF
 import games as G
 
 S = "."
@@ -118,7 +118,7 @@ def page(slug, title, desc, og_title, h1, eyebrow, body, extra_ld=None, crumb=No
 {body}
 </main>
 <footer class="site-foot"><div class="wrap">
-  <nav aria-label="Footer"><a href="/{g['slug']}/" data-play>Play the game</a>{foot}<a href="/">All games</a></nav>
+  <nav aria-label="Footer"><a href="/{g['slug']}/" data-play>Play the game</a>{foot}<a href="/">All games</a><a href="{CONTACT_HREF}" data-contact>Write to Victoria</a></nav>
   <span>{e(g['name'])} · a free {g.get('footer_kind', g['holiday'])} quiz game for teams · part of <a href="/">{e(BRAND)}</a> · <a href="/privacy/">Privacy</a></span>
 </div></footer>
 {scripts}
