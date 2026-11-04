@@ -1,0 +1,682 @@
+[
+  {
+    "file": "l-49c06a17.mp3",
+    "text": "Welcome to Victoria's Decades Showdown. Pick a question, and let's rewind!",
+    "tts": "[cheerfully] Welcome to Victoria's Decades Showdown. Pick a question... and let's rewind!"
+  },
+  {
+    "file": "l-e0f730ff.mp3",
+    "text": "Welcome to Victoria's Decades Showdown! Tonight, our teams travel back to the eighties, the nineties and the two thousands, for glory and for prizes. Here is how it works.",
+    "tts": "[excited] Welcome to Victoria's Decades Showdown! Tonight, our teams travel back to the eighties, the nineties and the two thousands... for glory, and for prizes. Here is how it works."
+  },
+  {
+    "file": "l-e9702d4e.mp3",
+    "text": "Rules of the game. Pick a question from the board. Watch out for the tangled tape, and for the time machine. Play two rounds and the Time Capsule finale.",
+    "tts": "[cheerfully] Rules of the game. Pick a question from the board. [mischievously] Watch out for the tangled tape... and for the time machine. [cheerfully] Play two rounds... and the Time Capsule finale."
+  },
+  {
+    "file": "l-964fe525.mp3",
+    "text": "Pick a question. Five categories with five questions each. The higher the value, the harder the question. Teams take turns choosing a cell.",
+    "tts": "Pick a question. Five categories with five questions each. The higher the value, the harder the question. Teams take turns choosing a cell."
+  },
+  {
+    "file": "l-7f45ca59.mp3",
+    "text": "30 seconds. The question is read aloud, then the clock starts. Only the team that picked it may answer. Everyone else stays quiet. Right: win the points. Wrong: lose them.",
+    "tts": "30 seconds. The question is read aloud, then the clock starts. Only the team that picked it may answer. Everyone else stays quiet. Right: win the points. Wrong: lose them."
+  },
+  {
+    "file": "l-ded15c76.mp3",
+    "text": "Play fair. No phones and no Googling. The host has the final word on close answers. Only one team rocks the decades.",
+    "tts": "Play fair. No phones and no Googling. The host has the final word on close answers. Only one team rocks the decades."
+  },
+  {
+    "file": "l-f490517d.mp3",
+    "text": "Ready? The first team, pick a question. Good luck, and may the most awesome team win.",
+    "tts": "[cheerfully] Ready? The first team, pick a question. Good luck... and may the most awesome team win! [laughs]"
+  },
+  {
+    "file": "l-f24d1bde.mp3",
+    "text": "Fast forward. Five new categories. Every value is doubled: 200 to 1,000. Same rules, bigger risks.",
+    "tts": "Fast forward. Five new categories. Every value is doubled: 200 to 1,000. Same rules, bigger risks."
+  },
+  {
+    "file": "l-317a5c2f.mp3",
+    "text": "The Time Capsule. One final question. You see only the category first. Secretly wager up to half of your score. Low on points? You can always bet up to 500. You get 60 seconds. Right: add your wager. Wrong: lose it.",
+    "tts": "The Time Capsule. One final question. You see only the category first. Secretly wager up to half of your score. Low on points? You can always bet up to 500. You get 60 seconds. Right: add your wager. Wrong: lose it."
+  },
+  {
+    "file": "l-9655cdb5.mp3",
+    "text": "Oh no, a tangled tape! The team that found it must give this question to another team.",
+    "tts": "[gasps] Oh no, a tangled tape! [mischievously] The team that found it... must give this question to another team."
+  },
+  {
+    "file": "l-79659c5b.mp3",
+    "text": "Who gets the tangled tape?",
+    "tts": "[mischievously] So... who gets the tangled tape?"
+  },
+  {
+    "file": "l-a89330e7.mp3",
+    "text": "The time machine!",
+    "tts": "[whispers] The time... [excited] machine!"
+  },
+  {
+    "file": "l-6b45afd7.mp3",
+    "text": "Step into the time machine! The first trip picks the price. The second trip picks the team that must answer. Answer right, and win it. Answer wrong, and lose it.",
+    "tts": "[excited] Step into the time machine! [laughs] The first trip picks the price. The second trip picks the team that must answer. Answer right... and win it. Answer wrong... [whispers] and lose it."
+  },
+  {
+    "file": "l-85b11123.mp3",
+    "text": "It's a tie! Time for a tiebreaker.",
+    "tts": "[gasps] It's a tie! Time for a tiebreaker."
+  },
+  {
+    "file": "l-99f98e1f.mp3",
+    "text": "Which round, yellow, dot-eating arcade character first appeared in 1980?",
+    "tts": "Which round, yellow, dot-eating arcade character first appeared in 1980?"
+  },
+  {
+    "file": "l-24ecebf0.mp3",
+    "text": "The answer is: Pac-Man. Namco released it in Japan in 1980. It became one of the most famous video games of all time.",
+    "tts": "The answer is: Pac-Man. Namco released it in Japan in 1980. It became one of the most famous video games of all time."
+  },
+  {
+    "file": "l-16ace3e9.mp3",
+    "text": "Which colorful cube puzzle, invented by a Hungarian architect, became a worldwide craze in the early 1980s?",
+    "tts": "Which colorful cube puzzle, invented by a Hungarian architect, became a worldwide craze in the early 1980s?"
+  },
+  {
+    "file": "l-18326294.mp3",
+    "text": "The answer is: The Rubik's Cube. Ernő Rubik invented it in 1974. It went on sale around the world in 1980.",
+    "tts": "The answer is: The Rubik's Cube. Ernő Rubik invented it in 1974. It went on sale around the world in 1980."
+  },
+  {
+    "file": "l-fe7d0523.mp3",
+    "text": "Which singer's 1982 album 'Thriller' became the best-selling album of all time?",
+    "tts": "Which singer's 1982 album 'Thriller' became the best-selling album of all time?"
+  },
+  {
+    "file": "l-0ba4be03.mp3",
+    "text": "The answer is: Michael Jackson. It has sold an estimated 70 million copies worldwide.",
+    "tts": "The answer is: Michael Jackson. It has sold an estimated 70 million copies worldwide."
+  },
+  {
+    "file": "l-2206f9dc.mp3",
+    "text": "In 1981, which TV channel launched in the US by playing the music video 'Video Killed the Radio Star'?",
+    "tts": "In 1981, which TV channel launched in the US by playing the music video 'Video Killed the Radio Star'?"
+  },
+  {
+    "file": "l-b85bc606.mp3",
+    "text": "The answer is: MTV. MTV went on the air on August 1, 1981. The song is by the British band The Buggles.",
+    "tts": "The answer is: MTV. MTV went on the air on August 1, 1981. The song is by the British band The Buggles."
+  },
+  {
+    "file": "l-0f5971dd.mp3",
+    "text": "Which wall, a symbol of the Cold War, opened in November 1989?",
+    "tts": "Which wall, a symbol of the Cold War, opened in November 1989?"
+  },
+  {
+    "file": "l-7e462aa6.mp3",
+    "text": "The answer is: The Berlin Wall. The border opened on November 9, 1989. East and West Germany reunited less than a year later.",
+    "tts": "The answer is: The Berlin Wall. The border opened on November 9, 1989. East and West Germany reunited less than a year later."
+  },
+  {
+    "file": "l-1977e410.mp3",
+    "text": "Which virtual pet from Japan, kept on a keychain, became a worldwide craze in 1997?",
+    "tts": "Which virtual pet from Japan, kept on a keychain, became a worldwide craze in 1997?"
+  },
+  {
+    "file": "l-41360b9a.mp3",
+    "text": "The answer is: Tamagotchi. Bandai released it in Japan in 1996. Forget to feed it, and your pet would get sick.",
+    "tts": "The answer is: Tamagotchi. Bandai released it in Japan in 1996. Forget to feed it, and your pet would get sick."
+  },
+  {
+    "file": "l-2d9b4961.mp3",
+    "text": "In the TV show 'Friends', what is the name of the coffee shop where the friends hang out?",
+    "tts": "In the TV show 'Friends', what is the name of the coffee shop where the friends hang out?"
+  },
+  {
+    "file": "l-88b0e352.mp3",
+    "text": "The answer is: Central Perk. The show ran for ten seasons, from 1994 to 2004.",
+    "tts": "The answer is: Central Perk. The show ran for ten seasons, from 1994 to 2004."
+  },
+  {
+    "file": "l-d2180634.mp3",
+    "text": "Which British girl group, with members nicknamed Scary, Sporty, Baby, Ginger and Posh, had a 1996 hit with 'Wannabe'?",
+    "tts": "Which British girl group, with members nicknamed Scary, Sporty, Baby, Ginger and Posh, had a 1996 hit with 'Wannabe'?"
+  },
+  {
+    "file": "l-f908b6b5.mp3",
+    "text": "The answer is: The Spice Girls. 'Wannabe' reached number one in more than 30 countries.",
+    "tts": "The answer is: The Spice Girls. 'Wannabe' reached number one in more than 30 countries."
+  },
+  {
+    "file": "l-566a8d3a.mp3",
+    "text": "What was the name of the sheep that, in 1996, became the first mammal cloned from an adult cell?",
+    "tts": "What was the name of the sheep that, in 1996, became the first mammal cloned from an adult cell?"
+  },
+  {
+    "file": "l-f7e8681b.mp3",
+    "text": "The answer is: Dolly. She was born at the Roslin Institute in Scotland.",
+    "tts": "The answer is: Dolly. She was born at the Roslin Institute in Scotland."
+  },
+  {
+    "file": "l-669015e6.mp3",
+    "text": "Which Seattle band, fronted by Kurt Cobain, released the 1991 album 'Nevermind'?",
+    "tts": "Which Seattle band, fronted by Kurt Cobain, released the 1991 album 'Nevermind'?"
+  },
+  {
+    "file": "l-c2b7d13c.mp3",
+    "text": "The answer is: Nirvana. Its single 'Smells Like Teen Spirit' helped bring grunge music to the world.",
+    "tts": "The answer is: Nirvana. Its single 'Smells Like Teen Spirit' helped bring grunge music to the world."
+  },
+  {
+    "file": "l-44515293.mp3",
+    "text": "Which Apple music player, launched in 2001, promised '1,000 songs in your pocket'?",
+    "tts": "Which Apple music player, launched in 2001, promised '1,000 songs in your pocket'?"
+  },
+  {
+    "file": "l-976e962e.mp3",
+    "text": "The answer is: The iPod. The first model had a 5 GB hard drive and a scroll wheel.",
+    "tts": "The answer is: The iPod. The first model had a 5 GB hard drive and a scroll wheel."
+  },
+  {
+    "file": "l-d27a4158.mp3",
+    "text": "Which social network did Mark Zuckerberg launch from his college dorm room in 2004?",
+    "tts": "Which social network did Mark Zuckerberg launch from his college dorm room in 2004?"
+  },
+  {
+    "file": "l-25fb443a.mp3",
+    "text": "The answer is: Facebook. It started as 'TheFacebook', open only to Harvard students.",
+    "tts": "The answer is: Facebook. It started as 'TheFacebook', open only to Harvard students."
+  },
+  {
+    "file": "l-a4945735.mp3",
+    "text": "What was the 'Y2K bug' that people feared would crash computers on January 1, 2000?",
+    "tts": "What was the 'Y2K bug' that people feared would crash computers on January 1, 2000?"
+  },
+  {
+    "file": "l-622f8b73.mp3",
+    "text": "The answer is: Many computers stored years with two digits, so 2000 could look like 1900. Companies spent billions fixing it in advance, and very little went wrong.",
+    "tts": "The answer is: Many computers stored years with two digits, so 2000 could look like 1900. Companies spent billions fixing it in advance, and very little went wrong."
+  },
+  {
+    "file": "l-818018fb.mp3",
+    "text": "Which video-sharing website was founded in 2005 and bought by Google in 2006?",
+    "tts": "Which video-sharing website was founded in 2005 and bought by Google in 2006?"
+  },
+  {
+    "file": "l-e35ad3a0.mp3",
+    "text": "The answer is: YouTube. The first video ever uploaded, 'Me at the zoo', is 19 seconds long.",
+    "tts": "The answer is: YouTube. The first video ever uploaded, 'Me at the zoo', is 19 seconds long."
+  },
+  {
+    "file": "l-14e62a08.mp3",
+    "text": "Which Nintendo console, released in 2006, was famous for its motion-sensing remote?",
+    "tts": "Which Nintendo console, released in 2006, was famous for its motion-sensing remote?"
+  },
+  {
+    "file": "l-cb77e385.mp3",
+    "text": "The answer is: The Wii. Its bowling game turned many grandparents into gamers.",
+    "tts": "The answer is: The Wii. Its bowling game turned many grandparents into gamers."
+  },
+  {
+    "file": "l-471fe008.mp3",
+    "text": "Which small plush toys filled with plastic pellets, made by Ty, sparked a collecting frenzy in the late 1990s?",
+    "tts": "Which small plush toys filled with plastic pellets, made by Ty, sparked a collecting frenzy in the late 1990s?"
+  },
+  {
+    "file": "l-071cbb3c.mp3",
+    "text": "The answer is: Beanie Babies. Collectors kept the heart-shaped tags on, hoping the toys would be worth a fortune one day.",
+    "tts": "The answer is: Beanie Babies. Collectors kept the heart-shaped tags on, hoping the toys would be worth a fortune one day."
+  },
+  {
+    "file": "l-45af3f06.mp3",
+    "text": "Which handheld Nintendo console, released in 1989, came with the game Tetris in North America?",
+    "tts": "Which handheld Nintendo console, released in 1989, came with the game Tetris in North America?"
+  },
+  {
+    "file": "l-166eeeb6.mp3",
+    "text": "The answer is: The Game Boy. Tetris was created in 1984 by Alexey Pajitnov, a Soviet computer scientist.",
+    "tts": "The answer is: The Game Boy. Tetris was created in 1984 by Alexey Pajitnov, a Soviet computer scientist."
+  },
+  {
+    "file": "l-10b2a693.mp3",
+    "text": "Which Hasbro toy line of robots that change into vehicles launched in 1984?",
+    "tts": "Which Hasbro toy line of robots that change into vehicles launched in 1984?"
+  },
+  {
+    "file": "l-86ae1a3d.mp3",
+    "text": "The answer is: Transformers. The toys came with a TV cartoon the same year.",
+    "tts": "The answer is: Transformers. The toys came with a TV cartoon the same year."
+  },
+  {
+    "file": "l-5accfb4f.mp3",
+    "text": "Which talking, furry toy with big eyes was the must-have holiday gift of 1998?",
+    "tts": "Which talking, furry toy with big eyes was the must-have holiday gift of 1998?"
+  },
+  {
+    "file": "l-8693b9e7.mp3",
+    "text": "The answer is: Furby. Furbies seemed to 'learn' English over time, starting out speaking their own language.",
+    "tts": "The answer is: Furby. Furbies seemed to 'learn' English over time, starting out speaking their own language."
+  },
+  {
+    "file": "l-c0609b58.mp3",
+    "text": "Which game franchise, born in Japan in 1996, invites players to 'catch 'em all'?",
+    "tts": "Which game franchise, born in Japan in 1996, invites players to 'catch 'em all'?"
+  },
+  {
+    "file": "l-0f29a849.mp3",
+    "text": "The answer is: Pokémon. The first games, Pokémon Red and Green, came out on the Game Boy.",
+    "tts": "The answer is: Pokémon. The first games, Pokémon Red and Green, came out on the Game Boy."
+  },
+  {
+    "file": "l-ace0f75e.mp3",
+    "text": "Which animated family from the town of Springfield got its own TV show in 1989?",
+    "tts": "Which animated family from the town of Springfield got its own TV show in 1989?"
+  },
+  {
+    "file": "l-1f068b5e.mp3",
+    "text": "The answer is: The Simpsons. It is the longest-running American scripted primetime series.",
+    "tts": "The answer is: The Simpsons. It is the longest-running American scripted primetime series."
+  },
+  {
+    "file": "l-4f376bf6.mp3",
+    "text": "In the TV show 'Baywatch', what job do the main characters have?",
+    "tts": "In the TV show 'Baywatch', what job do the main characters have?"
+  },
+  {
+    "file": "l-7315eefa.mp3",
+    "text": "The answer is: Lifeguards. At its peak in the 1990s, it was one of the most-watched shows in the world.",
+    "tts": "The answer is: Lifeguards. At its peak in the 1990s, it was one of the most-watched shows in the world."
+  },
+  {
+    "file": "l-9d41338b.mp3",
+    "text": "Which 1990s children's TV show starred Tinky Winky, Dipsy, Laa-Laa and Po?",
+    "tts": "Which 1990s children's TV show starred Tinky Winky, Dipsy, Laa-Laa and Po?"
+  },
+  {
+    "file": "l-ad3608f1.mp3",
+    "text": "The answer is: Teletubbies. The British show first aired in 1997.",
+    "tts": "The answer is: Teletubbies. The British show first aired in 1997."
+  },
+  {
+    "file": "l-ee62ff1a.mp3",
+    "text": "Which reality show, first aired in the US in 2000, asks contestants on an island to 'outwit, outplay, outlast'?",
+    "tts": "Which reality show, first aired in the US in 2000, asks contestants on an island to 'outwit, outplay, outlast'?"
+  },
+  {
+    "file": "l-bc7956f7.mp3",
+    "text": "The answer is: Survivor. It was based on a Swedish show called 'Expedition Robinson'.",
+    "tts": "The answer is: Survivor. It was based on a Swedish show called 'Expedition Robinson'."
+  },
+  {
+    "file": "l-8d538583.mp3",
+    "text": "Which sitcom, famously called 'a show about nothing', ended in 1998 after nine seasons?",
+    "tts": "Which sitcom, famously called 'a show about nothing', ended in 1998 after nine seasons?"
+  },
+  {
+    "file": "l-c0918841.mp3",
+    "text": "The answer is: Seinfeld. It starred Jerry Seinfeld as a version of himself, a comedian in New York.",
+    "tts": "The answer is: Seinfeld. It starred Jerry Seinfeld as a version of himself, a comedian in New York."
+  },
+  {
+    "file": "l-d18972a4.mp3",
+    "text": "Round Two. The stakes just went up.",
+    "tts": "Round Two. [mischievously] The stakes just went up."
+  },
+  {
+    "file": "l-3f4abf41.mp3",
+    "text": "In 'E.T. the Extra-Terrestrial' (1982), which candy does Elliott use to lure E.T.?",
+    "tts": "In 'E.T. the Extra-Terrestrial' (1982), which candy does Elliott use to lure E.T.?"
+  },
+  {
+    "file": "l-61157726.mp3",
+    "text": "The answer is: Reese's Pieces. Sales of the candy jumped after the film came out.",
+    "tts": "The answer is: Reese's Pieces. Sales of the candy jumped after the film came out."
+  },
+  {
+    "file": "l-156d7d8e.mp3",
+    "text": "Which 1993 film brought dinosaurs back to life in an island theme park?",
+    "tts": "Which 1993 film brought dinosaurs back to life in an island theme park?"
+  },
+  {
+    "file": "l-066a3ece.mp3",
+    "text": "The answer is: Jurassic Park. It was directed by Steven Spielberg, based on the novel by Michael Crichton.",
+    "tts": "The answer is: Jurassic Park. It was directed by Steven Spielberg, based on the novel by Michael Crichton."
+  },
+  {
+    "file": "l-85438715.mp3",
+    "text": "Which 1997 film became the first to earn more than one billion dollars worldwide?",
+    "tts": "Which 1997 film became the first to earn more than one billion dollars worldwide?"
+  },
+  {
+    "file": "l-37955bd2.mp3",
+    "text": "The answer is: Titanic. It also won 11 Oscars, tying the record.",
+    "tts": "The answer is: Titanic. It also won 11 Oscars, tying the record."
+  },
+  {
+    "file": "l-c5160b2c.mp3",
+    "text": "Which 1999 science-fiction film made 'bullet time', a slow-motion camera effect, famous?",
+    "tts": "Which 1999 science-fiction film made 'bullet time', a slow-motion camera effect, famous?"
+  },
+  {
+    "file": "l-c3ccd67b.mp3",
+    "text": "The answer is: The Matrix. Keanu Reeves played Neo.",
+    "tts": "The answer is: The Matrix. Keanu Reeves played Neo."
+  },
+  {
+    "file": "l-e9f28b52.mp3",
+    "text": "Which film won the first ever Oscar for Best Animated Feature, for films of 2001?",
+    "tts": "Which film won the first ever Oscar for Best Animated Feature, for films of 2001?"
+  },
+  {
+    "file": "l-c037d1ea.mp3",
+    "text": "The answer is: Shrek. It beat 'Monsters, Inc.' and 'Jimmy Neutron: Boy Genius'.",
+    "tts": "The answer is: Shrek. It beat 'Monsters, Inc.' and 'Jimmy Neutron: Boy Genius'."
+  },
+  {
+    "file": "l-539d264c.mp3",
+    "text": "Which singer, called the 'Queen of Pop', had a 1985 hit with 'Material Girl'?",
+    "tts": "Which singer, called the 'Queen of Pop', had a 1985 hit with 'Material Girl'?"
+  },
+  {
+    "file": "l-0c97d66e.mp3",
+    "text": "The answer is: Madonna. She is often listed as the best-selling female recording artist of all time.",
+    "tts": "The answer is: Madonna. She is often listed as the best-selling female recording artist of all time."
+  },
+  {
+    "file": "l-dd2c7363.mp3",
+    "text": "Which boy band had a 1999 hit with 'I Want It That Way'?",
+    "tts": "Which boy band had a 1999 hit with 'I Want It That Way'?"
+  },
+  {
+    "file": "l-addd6d8d.mp3",
+    "text": "The answer is: The Backstreet Boys. The group formed in Orlando, Florida, in 1993.",
+    "tts": "The answer is: The Backstreet Boys. The group formed in Orlando, Florida, in 1993."
+  },
+  {
+    "file": "l-eee8fa8a.mp3",
+    "text": "Which Canadian singer released the hugely successful 1995 album 'Jagged Little Pill'?",
+    "tts": "Which Canadian singer released the hugely successful 1995 album 'Jagged Little Pill'?"
+  },
+  {
+    "file": "l-c2c2a394.mp3",
+    "text": "The answer is: Alanis Morissette. It has sold more than 30 million copies.",
+    "tts": "The answer is: Alanis Morissette. It has sold more than 30 million copies."
+  },
+  {
+    "file": "l-6ccaa340.mp3",
+    "text": "Which 1984 charity single, organized by Bob Geldof and Midge Ure, raised money for famine relief in Ethiopia?",
+    "tts": "Which 1984 charity single, organized by Bob Geldof and Midge Ure, raised money for famine relief in Ethiopia?"
+  },
+  {
+    "file": "l-000082aa.mp3",
+    "text": "The answer is: Do They Know It's Christmas? (Band Aid). It led to the Live Aid concerts in London and Philadelphia in 1985.",
+    "tts": "The answer is: Do They Know It's Christmas? (Band Aid). It led to the Live Aid concerts in London and Philadelphia in 1985."
+  },
+  {
+    "file": "l-37b42deb.mp3",
+    "text": "Which British singer named her 2008 debut album '19', after her age when she wrote it?",
+    "tts": "Which British singer named her 2008 debut album '19', after her age when she wrote it?"
+  },
+  {
+    "file": "l-e4516e8c.mp3",
+    "text": "The answer is: Adele. Her later albums were named '21', '25' and '30'.",
+    "tts": "The answer is: Adele. Her later albums were named '21', '25' and '30'."
+  },
+  {
+    "file": "l-4e3819db.mp3",
+    "text": "What noisy device did people use in the 1990s to connect a home computer to the internet over a phone line?",
+    "tts": "What noisy device did people use in the 1990s to connect a home computer to the internet over a phone line?"
+  },
+  {
+    "file": "l-42070e89.mp3",
+    "text": "The answer is: A dial-up modem. While you were online, nobody could use the phone.",
+    "tts": "The answer is: A dial-up modem. While you were online, nobody could use the phone."
+  },
+  {
+    "file": "l-b567efe7.mp3",
+    "text": "Which Microsoft operating system launched in 1995 with a brand-new 'Start' button?",
+    "tts": "Which Microsoft operating system launched in 1995 with a brand-new 'Start' button?"
+  },
+  {
+    "file": "l-34a74039.mp3",
+    "text": "The answer is: Windows 95. Its launch ads used the Rolling Stones song 'Start Me Up'.",
+    "tts": "The answer is: Windows 95. Its launch ads used the Rolling Stones song 'Start Me Up'."
+  },
+  {
+    "file": "l-756de526.mp3",
+    "text": "What does 'DVD' stand for?",
+    "tts": "What does 'DVD' stand for?"
+  },
+  {
+    "file": "l-93f03e4b.mp3",
+    "text": "The answer is: Digital Versatile Disc (first 'Digital Video Disc'). DVDs went on sale in Japan in 1996 and in the US in 1997.",
+    "tts": "The answer is: Digital Versatile Disc (first 'Digital Video Disc'). DVDs went on sale in Japan in 1996 and in the US in 1997."
+  },
+  {
+    "file": "l-edd24df7.mp3",
+    "text": "Which Canadian company made the BlackBerry smartphone?",
+    "tts": "Which Canadian company made the BlackBerry smartphone?"
+  },
+  {
+    "file": "l-c39ab209.mp3",
+    "text": "The answer is: Research In Motion (RIM). The company was based in Waterloo, Ontario, and renamed itself BlackBerry in 2013.",
+    "tts": "The answer is: Research In Motion (RIM). The company was based in Waterloo, Ontario, and renamed itself BlackBerry in 2013."
+  },
+  {
+    "file": "l-47e896e2.mp3",
+    "text": "In 1997, which IBM computer became the first to beat a reigning world chess champion, Garry Kasparov, in a match?",
+    "tts": "In 1997, which IBM computer became the first to beat a reigning world chess champion, Garry Kasparov, in a match?"
+  },
+  {
+    "file": "l-503dd81e.mp3",
+    "text": "The answer is: Deep Blue. It won the six-game match 3½ to 2½.",
+    "tts": "The answer is: Deep Blue. It won the six-game match 3½ to 2½."
+  },
+  {
+    "file": "l-9b47fd86.mp3",
+    "text": "Which hairstyle, short at the front and long at the back, is described as 'business in the front, party in the back'?",
+    "tts": "Which hairstyle, short at the front and long at the back, is described as 'business in the front, party in the back'?"
+  },
+  {
+    "file": "l-5f971ba7.mp3",
+    "text": "The answer is: The mullet. It was everywhere in the 1980s, from rock stars to hockey players.",
+    "tts": "The answer is: The mullet. It was everywhere in the 1980s, from rock stars to hockey players."
+  },
+  {
+    "file": "l-09d92847.mp3",
+    "text": "What were the bracelets called that curled around your wrist with one slap, a school craze around 1990?",
+    "tts": "What were the bracelets called that curled around your wrist with one slap, a school craze around 1990?"
+  },
+  {
+    "file": "l-ea71edc2.mp3",
+    "text": "The answer is: Slap bracelets. Some schools banned them because the metal strips inside could break through.",
+    "tts": "The answer is: Slap bracelets. Some schools banned them because the metal strips inside could break through."
+  },
+  {
+    "file": "l-032ad7fa.mp3",
+    "text": "In a 1990s schoolyard craze, kids collected and played with flat, round cardboard discs. What were they called?",
+    "tts": "In a 1990s schoolyard craze, kids collected and played with flat, round cardboard discs. What were they called?"
+  },
+  {
+    "file": "l-79b18702.mp3",
+    "text": "The answer is: Pogs. The name came from a Hawaiian juice whose bottle caps were used in the first games.",
+    "tts": "The answer is: Pogs. The name came from a Hawaiian juice whose bottle caps were used in the first games."
+  },
+  {
+    "file": "l-ad8ebb9d.mp3",
+    "text": "Which dance move, made famous by Michael Jackson in 1983, makes a dancer look like they are walking forward while sliding backward?",
+    "tts": "Which dance move, made famous by Michael Jackson in 1983, makes a dancer look like they are walking forward while sliding backward?"
+  },
+  {
+    "file": "l-5222b704.mp3",
+    "text": "The answer is: The moonwalk. He first performed it on TV during the Motown 25 special.",
+    "tts": "The answer is: The moonwalk. He first performed it on TV during the Motown 25 special."
+  },
+  {
+    "file": "l-d5235054.mp3",
+    "text": "Which brand of colorful foam clogs, first shown at a 2002 boat show, became a love-it-or-hate-it fashion trend?",
+    "tts": "Which brand of colorful foam clogs, first shown at a 2002 boat show, became a love-it-or-hate-it fashion trend?"
+  },
+  {
+    "file": "l-63b8772d.mp3",
+    "text": "The answer is: Crocs. They were first made as boating shoes, because they float and don't slip.",
+    "tts": "The answer is: Crocs. They were first made as boating shoes, because they float and don't slip."
+  },
+  {
+    "file": "l-3fe957b5.mp3",
+    "text": "Which country hosted the 2000 Summer Olympics in Sydney?",
+    "tts": "Which country hosted the 2000 Summer Olympics in Sydney?"
+  },
+  {
+    "file": "l-fd4d617b.mp3",
+    "text": "The answer is: Australia. Cathy Freeman lit the Olympic flame and later won the 400 meters.",
+    "tts": "The answer is: Australia. Cathy Freeman lit the Olympic flame and later won the 400 meters."
+  },
+  {
+    "file": "l-795e1e8a.mp3",
+    "text": "Which space telescope, launched in 1990, has taken some of the most famous pictures of the universe?",
+    "tts": "Which space telescope, launched in 1990, has taken some of the most famous pictures of the universe?"
+  },
+  {
+    "file": "l-03a55761.mp3",
+    "text": "The answer is: The Hubble Space Telescope. Its first pictures were blurry because of a flaw in its mirror. Astronauts fixed it in 1993.",
+    "tts": "The answer is: The Hubble Space Telescope. Its first pictures were blurry because of a flaw in its mirror. Astronauts fixed it in 1993."
+  },
+  {
+    "file": "l-7e3cb37c.mp3",
+    "text": "Which tunnel, opened in 1994, links Britain and France under the sea?",
+    "tts": "Which tunnel, opened in 1994, links Britain and France under the sea?"
+  },
+  {
+    "file": "l-e3f8d577.mp3",
+    "text": "The answer is: The Channel Tunnel. It is about 50 kilometers (31 miles) long.",
+    "tts": "The answer is: The Channel Tunnel. It is about 50 kilometers (31 miles) long."
+  },
+  {
+    "file": "l-427cd42e.mp3",
+    "text": "In 1997, the United Kingdom handed which territory back to China?",
+    "tts": "In 1997, the United Kingdom handed which territory back to China?"
+  },
+  {
+    "file": "l-c75496c8.mp3",
+    "text": "The answer is: Hong Kong. The handover took place at midnight on June 30, 1997.",
+    "tts": "The answer is: Hong Kong. The handover took place at midnight on June 30, 1997."
+  },
+  {
+    "file": "l-fc9d0748.mp3",
+    "text": "Which currency went into circulation as coins and notes in 12 European countries on January 1, 2002?",
+    "tts": "Which currency went into circulation as coins and notes in 12 European countries on January 1, 2002?"
+  },
+  {
+    "file": "l-9fd16a86.mp3",
+    "text": "The answer is: The euro. It had existed only for banks and electronic payments since 1999.",
+    "tts": "The answer is: The euro. It had existed only for banks and electronic payments since 1999."
+  },
+  {
+    "file": "l-15e3785f.mp3",
+    "text": "It is time to open the Time Capsule. The final category is: Inventions That Changed Everything. Write down your secret wagers. You may bet up to half of your score, or up to 500 if that is more.",
+    "tts": "[whispers] It is time to open the Time Capsule. The final category is: Inventions That Changed Everything. Write down your secret wagers. You may bet up to half of your score, or up to 500 if that is more."
+  },
+  {
+    "file": "l-ae50f8af.mp3",
+    "text": "In 1989, while working at CERN in Switzerland, Tim Berners-Lee proposed a system that changed everyday life. What was it?",
+    "tts": "In 1989, while working at CERN in Switzerland, Tim Berners-Lee proposed a system that changed everyday life. What was it?"
+  },
+  {
+    "file": "l-0f1c1c4b.mp3",
+    "text": "The answer is: The World Wide Web. The first website went online at CERN in 1991. It is still there today.",
+    "tts": "The answer is: The World Wide Web. The first website went online at CERN in 1991. It is still there today."
+  },
+  {
+    "file": "l-1b05ff18.mp3",
+    "text": "In what year was the first text message (SMS) sent?",
+    "tts": "In what year was the first text message (SMS) sent?"
+  },
+  {
+    "file": "l-e4d5b54b.mp3",
+    "text": "The answer is: 1992. On December 3, 1992, engineer Neil Papworth sent 'Merry Christmas' to a colleague's phone.",
+    "tts": "The answer is: 1992. On December 3, 1992, engineer Neil Papworth sent 'Merry Christmas' to a colleague's phone."
+  },
+  {
+    "file": "l-a1d03600.mp3",
+    "text": "Team Cassettes rocked the decades!",
+    "tts": "[excited] Team Cassettes rocked the decades! [applause]"
+  },
+  {
+    "file": "l-d8f80035.mp3",
+    "text": "Team Arcade rocked the decades!",
+    "tts": "[excited] Team Arcade rocked the decades! [applause]"
+  },
+  {
+    "file": "l-996cd61d.mp3",
+    "text": "Team Neon rocked the decades!",
+    "tts": "[excited] Team Neon rocked the decades! [applause]"
+  },
+  {
+    "file": "l-6b6e2b85.mp3",
+    "text": "Team Dial-Up rocked the decades!",
+    "tts": "[excited] Team Dial-Up rocked the decades! [applause]"
+  },
+  {
+    "file": "l-d212a1cc.mp3",
+    "text": "The price: 100 points!",
+    "tts": "[mischievously] The price... 100 points!"
+  },
+  {
+    "file": "l-494dcb81.mp3",
+    "text": "The price: 200 points!",
+    "tts": "[mischievously] The price... 200 points!"
+  },
+  {
+    "file": "l-53fff7fa.mp3",
+    "text": "The price: 300 points!",
+    "tts": "[mischievously] The price... 300 points!"
+  },
+  {
+    "file": "l-3f1e82cf.mp3",
+    "text": "The price: 400 points!",
+    "tts": "[mischievously] The price... 400 points!"
+  },
+  {
+    "file": "l-2e88ad90.mp3",
+    "text": "The price: 500 points!",
+    "tts": "[mischievously] The price... 500 points!"
+  },
+  {
+    "file": "l-cbe0a1b5.mp3",
+    "text": "The price: 600 points!",
+    "tts": "[mischievously] The price... 600 points!"
+  },
+  {
+    "file": "l-cc27cd63.mp3",
+    "text": "The price: 800 points!",
+    "tts": "[mischievously] The price... 800 points!"
+  },
+  {
+    "file": "l-b9ee2660.mp3",
+    "text": "The price: 1000 points!",
+    "tts": "[mischievously] The price... 1000 points!"
+  },
+  {
+    "file": "l-840ef7aa.mp3",
+    "text": "Team Cassettes, the time machine picked you!",
+    "tts": "Team Cassettes, the time machine picked you!"
+  },
+  {
+    "file": "l-d89cdd7b.mp3",
+    "text": "Team Arcade, the time machine picked you!",
+    "tts": "Team Arcade, the time machine picked you!"
+  },
+  {
+    "file": "l-f40fa653.mp3",
+    "text": "Team Neon, the time machine picked you!",
+    "tts": "Team Neon, the time machine picked you!"
+  },
+  {
+    "file": "l-c0f6528b.mp3",
+    "text": "Team Dial-Up, the time machine picked you!",
+    "tts": "Team Dial-Up, the time machine picked you!"
+  }
+]

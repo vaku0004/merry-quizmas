@@ -122,7 +122,7 @@ Decisions she made: name **Victoria's Decades Showdown**, decades **'80s, '90s a
 - Questions: 50 + final "Inventions That Changed Everything" (World Wide Web) + tiebreaker (first SMS, 1992). Categories R1: Totally ’80s, All That ’90s, Y2K & the 2000s, Toys & Games, TV Time; R2: Movie Flashback, Chart Toppers, Tech Flashback, Fads & Fashion, Headlines. Checked from memory.
 - Home page now: playable games 2 per row, then a "Coming soon" row of smaller cards. Preview images scale wide display fonts (Righteous, Eagle Lake) down.
 - Checks: game test passes; preview site 71 URLs OK; today's build shows Decades + Halloween playable.
-- **Voice not made yet:** prompts in `games/decades/voice-design-prompts.md` (main: retro radio DJ, male; B: female). 136 lines, 12,094 characters. After the voice ID: copy a voice kit, set the default voice ID and the name.
+- Voice made on Nov 4: ID `dLA2DLXZxgLToYRsB6Bb` (prompts in `games/decades/voice-design-prompts.md`; suggested ElevenLabs name "DJ Rewind"). Kit with it as default: `games/decades/voice-kit/` (sent as DecadesShowdown-voice.zip). Remaining: she runs it in a **new folder** and sends `audio`; check against `games/decades/voice-lines.json` and put it in `audio/decades/`.
 
 ## Fact check of all questions (November 4, 2026)
 
