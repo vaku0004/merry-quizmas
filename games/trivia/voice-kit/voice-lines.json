@@ -1,0 +1,682 @@
+[
+  {
+    "file": "l-0973e95f.mp3",
+    "text": "Welcome to Victoria's Big Brain Battle. Pick a question, and use your head!",
+    "tts": "[cheerfully] Welcome to Victoria's Big Brain Battle. Pick a question... and use your head!"
+  },
+  {
+    "file": "l-4ff904b9.mp3",
+    "text": "Welcome to Victoria's Big Brain Battle! Tonight, our teams put their brains to the test, for glory and for prizes. Here is how it works.",
+    "tts": "[excited] Welcome to Victoria's Big Brain Battle! Tonight, our teams put their brains to the test... for glory, and for prizes. Here is how it works."
+  },
+  {
+    "file": "l-5b3482c1.mp3",
+    "text": "Rules of the game. Pick a question from the board. Watch out for the wild card, and for the mystery box. Play two rounds and the All In finale.",
+    "tts": "[cheerfully] Rules of the game. Pick a question from the board. [mischievously] Watch out for the wild card... and for the mystery box. [cheerfully] Play two rounds... and the All In finale."
+  },
+  {
+    "file": "l-964fe525.mp3",
+    "text": "Pick a question. Five categories with five questions each. The higher the value, the harder the question. Teams take turns choosing a cell.",
+    "tts": "Pick a question. Five categories with five questions each. The higher the value, the harder the question. Teams take turns choosing a cell."
+  },
+  {
+    "file": "l-7f45ca59.mp3",
+    "text": "30 seconds. The question is read aloud, then the clock starts. Only the team that picked it may answer. Everyone else stays quiet. Right: win the points. Wrong: lose them.",
+    "tts": "30 seconds. The question is read aloud, then the clock starts. Only the team that picked it may answer. Everyone else stays quiet. Right: win the points. Wrong: lose them."
+  },
+  {
+    "file": "l-976082b2.mp3",
+    "text": "Play fair. No phones and no Googling. The host has the final word on close answers. Only one team wins the Big Brain Battle.",
+    "tts": "Play fair. No phones and no Googling. The host has the final word on close answers. Only one team wins the Big Brain Battle."
+  },
+  {
+    "file": "l-73bff304.mp3",
+    "text": "Ready? The first team, pick a question. Good luck, and may the biggest brains win.",
+    "tts": "[cheerfully] Ready? The first team, pick a question. Good luck... and may the biggest brains win! [laughs]"
+  },
+  {
+    "file": "l-6f34b950.mp3",
+    "text": "Brain boost. Five new categories. Every value is doubled: 200 to 1,000. Same rules, bigger risks.",
+    "tts": "Brain boost. Five new categories. Every value is doubled: 200 to 1,000. Same rules, bigger risks."
+  },
+  {
+    "file": "l-7f545794.mp3",
+    "text": "All In. One final question. You see only the category first. Secretly wager up to half of your score. Low on points? You can always bet up to 500. You get 60 seconds. Right: add your wager. Wrong: lose it.",
+    "tts": "All In. One final question. You see only the category first. Secretly wager up to half of your score. Low on points? You can always bet up to 500. You get 60 seconds. Right: add your wager. Wrong: lose it."
+  },
+  {
+    "file": "l-332d4d7c.mp3",
+    "text": "A wild card! The team that drew it must give this question to another team.",
+    "tts": "[gasps] A wild card! [mischievously] The team that drew it... must give this question to another team."
+  },
+  {
+    "file": "l-57706d5a.mp3",
+    "text": "Who gets the wild card?",
+    "tts": "[mischievously] So... who gets the wild card?"
+  },
+  {
+    "file": "l-bc0e4af7.mp3",
+    "text": "The mystery box!",
+    "tts": "[whispers] The mystery... [excited] box!"
+  },
+  {
+    "file": "l-2b2329d4.mp3",
+    "text": "Let's open the mystery box! The first ticket picks the price. The second ticket picks the team that must answer. Answer right, and win it. Answer wrong, and lose it.",
+    "tts": "[excited] Let's open the mystery box! [laughs] The first ticket picks the price. The second ticket picks the team that must answer. Answer right... and win it. Answer wrong... [whispers] and lose it."
+  },
+  {
+    "file": "l-85b11123.mp3",
+    "text": "It's a tie! Time for a tiebreaker.",
+    "tts": "[gasps] It's a tie! Time for a tiebreaker."
+  },
+  {
+    "file": "l-5f442766.mp3",
+    "text": "What is the largest ocean on Earth?",
+    "tts": "What is the largest ocean on Earth?"
+  },
+  {
+    "file": "l-0835fa3d.mp3",
+    "text": "The answer is: The Pacific Ocean. It covers about a third of the planet's surface, more than all the land put together.",
+    "tts": "The answer is: The Pacific Ocean. It covers about a third of the planet's surface, more than all the land put together."
+  },
+  {
+    "file": "l-2712c90a.mp3",
+    "text": "What is the longest river in Africa?",
+    "tts": "What is the longest river in Africa?"
+  },
+  {
+    "file": "l-c40fbcb4.mp3",
+    "text": "The answer is: The Nile. It is often called the longest river in the world, though some measurements give that title to the Amazon.",
+    "tts": "The answer is: The Nile. It is often called the longest river in the world, though some measurements give that title to the Amazon."
+  },
+  {
+    "file": "l-6c50c2f5.mp3",
+    "text": "What is the capital city of Australia?",
+    "tts": "What is the capital city of Australia?"
+  },
+  {
+    "file": "l-ba3f0584.mp3",
+    "text": "The answer is: Canberra. It was built as a compromise, because Sydney and Melbourne both wanted to be the capital.",
+    "tts": "The answer is: Canberra. It was built as a compromise, because Sydney and Melbourne both wanted to be the capital."
+  },
+  {
+    "file": "l-ffd70607.mp3",
+    "text": "What is the largest hot desert in the world?",
+    "tts": "What is the largest hot desert in the world?"
+  },
+  {
+    "file": "l-8c9943d1.mp3",
+    "text": "The answer is: The Sahara. The largest desert of all is Antarctica, because so little snow or rain falls there.",
+    "tts": "The answer is: The Sahara. The largest desert of all is Antarctica, because so little snow or rain falls there."
+  },
+  {
+    "file": "l-4e7ec142.mp3",
+    "text": "Mount Everest sits on the border between Nepal and which other country?",
+    "tts": "Mount Everest sits on the border between Nepal and which other country?"
+  },
+  {
+    "file": "l-894dfaf0.mp3",
+    "text": "The answer is: China (Tibet). Its official height is 8,849 meters (29,032 feet).",
+    "tts": "The answer is: China (Tibet). Its official height is 8,849 meters (29,032 feet)."
+  },
+  {
+    "file": "l-112a726b.mp3",
+    "text": "Which gas do plants take in from the air to make their food?",
+    "tts": "Which gas do plants take in from the air to make their food?"
+  },
+  {
+    "file": "l-e275ab9c.mp3",
+    "text": "The answer is: Carbon dioxide. They give off oxygen in return.",
+    "tts": "The answer is: Carbon dioxide. They give off oxygen in return."
+  },
+  {
+    "file": "l-e2b8239e.mp3",
+    "text": "What is the chemical symbol for gold?",
+    "tts": "What is the chemical symbol for gold?"
+  },
+  {
+    "file": "l-1b45478e.mp3",
+    "text": "The answer is: Au. It comes from the Latin word for gold, 'aurum'.",
+    "tts": "The answer is: Au. It comes from the Latin word for gold, 'aurum'."
+  },
+  {
+    "file": "l-f49fd984.mp3",
+    "text": "What is the hardest natural substance on Earth?",
+    "tts": "What is the hardest natural substance on Earth?"
+  },
+  {
+    "file": "l-0ba35a35.mp3",
+    "text": "The answer is: Diamond. A diamond is made of pure carbon, the same element as the graphite in a pencil.",
+    "tts": "The answer is: Diamond. A diamond is made of pure carbon, the same element as the graphite in a pencil."
+  },
+  {
+    "file": "l-d47882df.mp3",
+    "text": "How many bones are in the adult human body?",
+    "tts": "How many bones are in the adult human body?"
+  },
+  {
+    "file": "l-d2071b69.mp3",
+    "text": "The answer is: 206. Babies are born with around 300 bones, and many of them fuse together as they grow.",
+    "tts": "The answer is: 206. Babies are born with around 300 bones, and many of them fuse together as they grow."
+  },
+  {
+    "file": "l-865baa3a.mp3",
+    "text": "What is the only metal that is liquid at normal room temperature?",
+    "tts": "What is the only metal that is liquid at normal room temperature?"
+  },
+  {
+    "file": "l-1dd9bd07.mp3",
+    "text": "The answer is: Mercury. Gallium comes close: it melts at about 30 °C (86 °F), so it melts in your hand.",
+    "tts": "The answer is: Mercury. Gallium comes close: it melts at about 30 °C (86 °F), so it melts in your hand."
+  },
+  {
+    "file": "l-f8418f60.mp3",
+    "text": "Guacamole is made mainly from which fruit?",
+    "tts": "Guacamole is made mainly from which fruit?"
+  },
+  {
+    "file": "l-ebec2619.mp3",
+    "text": "The answer is: Avocado. Yes, botanically the avocado is a fruit: a large berry with a single seed.",
+    "tts": "The answer is: Avocado. Yes, botanically the avocado is a fruit: a large berry with a single seed."
+  },
+  {
+    "file": "l-40b61771.mp3",
+    "text": "What is the main ingredient of hummus?",
+    "tts": "What is the main ingredient of hummus?"
+  },
+  {
+    "file": "l-b2b279d1.mp3",
+    "text": "The answer is: Chickpeas. They are blended with tahini, lemon juice, garlic and olive oil.",
+    "tts": "The answer is: Chickpeas. They are blended with tahini, lemon juice, garlic and olive oil."
+  },
+  {
+    "file": "l-b0b06566.mp3",
+    "text": "Which spice, made from the threads of a crocus flower, is the most expensive in the world by weight?",
+    "tts": "Which spice, made from the threads of a crocus flower, is the most expensive in the world by weight?"
+  },
+  {
+    "file": "l-3e982805.mp3",
+    "text": "The answer is: Saffron. Each flower has only three threads, and they are picked by hand.",
+    "tts": "The answer is: Saffron. Each flower has only three threads, and they are picked by hand."
+  },
+  {
+    "file": "l-5fc7f810.mp3",
+    "text": "Which Italian city is the home of the pizza margherita?",
+    "tts": "Which Italian city is the home of the pizza margherita?"
+  },
+  {
+    "file": "l-b12b9819.mp3",
+    "text": "The answer is: Naples. Legend says it was named in 1889 for Queen Margherita, with toppings in the colors of the Italian flag.",
+    "tts": "The answer is: Naples. Legend says it was named in 1889 for Queen Margherita, with toppings in the colors of the Italian flag."
+  },
+  {
+    "file": "l-edcdfad6.mp3",
+    "text": "Outside Japan, the 'wasabi' served with sushi is usually made mostly from which other plant?",
+    "tts": "Outside Japan, the 'wasabi' served with sushi is usually made mostly from which other plant?"
+  },
+  {
+    "file": "l-85f94523.mp3",
+    "text": "The answer is: Horseradish. Real wasabi is rare and expensive, so most of it is horseradish with mustard and green coloring.",
+    "tts": "The answer is: Horseradish. Real wasabi is rare and expensive, so most of it is horseradish with mustard and green coloring."
+  },
+  {
+    "file": "l-ab1d9fa0.mp3",
+    "text": "What is the fastest land animal?",
+    "tts": "What is the fastest land animal?"
+  },
+  {
+    "file": "l-31c789f2.mp3",
+    "text": "The answer is: The cheetah. In short sprints it can reach about 100 km/h (over 60 mph).",
+    "tts": "The answer is: The cheetah. In short sprints it can reach about 100 km/h (over 60 mph)."
+  },
+  {
+    "file": "l-ee067123.mp3",
+    "text": "How many hearts does an octopus have?",
+    "tts": "How many hearts does an octopus have?"
+  },
+  {
+    "file": "l-62c4c886.mp3",
+    "text": "The answer is: Three. Two pump blood through the gills, and one pumps it around the body.",
+    "tts": "The answer is: Three. Two pump blood through the gills, and one pumps it around the body."
+  },
+  {
+    "file": "l-df8363c6.mp3",
+    "text": "What is a baby kangaroo called?",
+    "tts": "What is a baby kangaroo called?"
+  },
+  {
+    "file": "l-9a1be1f8.mp3",
+    "text": "The answer is: A joey. A newborn joey is about the size of a jelly bean.",
+    "tts": "The answer is: A joey. A newborn joey is about the size of a jelly bean."
+  },
+  {
+    "file": "l-6305ff33.mp3",
+    "text": "What is the largest animal known to have ever lived?",
+    "tts": "What is the largest animal known to have ever lived?"
+  },
+  {
+    "file": "l-94dabe2d.mp3",
+    "text": "The answer is: The blue whale. It can grow to about 30 meters (100 feet) long, bigger than any dinosaur.",
+    "tts": "The answer is: The blue whale. It can grow to about 30 meters (100 feet) long, bigger than any dinosaur."
+  },
+  {
+    "file": "l-aa93d65c.mp3",
+    "text": "Which is the only bird that can fly backward?",
+    "tts": "Which is the only bird that can fly backward?"
+  },
+  {
+    "file": "l-34ccd550.mp3",
+    "text": "The answer is: The hummingbird. Its wings can beat around 50 times a second, or even faster.",
+    "tts": "The answer is: The hummingbird. Its wings can beat around 50 times a second, or even faster."
+  },
+  {
+    "file": "l-5241e607.mp3",
+    "text": "What is a word that reads the same forward and backward, like 'level', called?",
+    "tts": "What is a word that reads the same forward and backward, like 'level', called?"
+  },
+  {
+    "file": "l-b17cf2c8.mp3",
+    "text": "The answer is: A palindrome. Whole sentences can be palindromes too: 'Was it a car or a cat I saw?'",
+    "tts": "The answer is: A palindrome. Whole sentences can be palindromes too: 'Was it a car or a cat I saw?'"
+  },
+  {
+    "file": "l-af6743a7.mp3",
+    "text": "Which letter appears most often in English writing?",
+    "tts": "Which letter appears most often in English writing?"
+  },
+  {
+    "file": "l-c5408fb5.mp3",
+    "text": "The answer is: E. The least common letters include Z, Q and X.",
+    "tts": "The answer is: E. The least common letters include Z, Q and X."
+  },
+  {
+    "file": "l-426e0554.mp3",
+    "text": "What do you call a word made from the first letters of other words, like NASA?",
+    "tts": "What do you call a word made from the first letters of other words, like NASA?"
+  },
+  {
+    "file": "l-dd6780f0.mp3",
+    "text": "The answer is: An acronym. NASA stands for National Aeronautics and Space Administration.",
+    "tts": "The answer is: An acronym. NASA stands for National Aeronautics and Space Administration."
+  },
+  {
+    "file": "l-31c7fa51.mp3",
+    "text": "What is special about the sentence 'The quick brown fox jumps over the lazy dog'?",
+    "tts": "What is special about the sentence 'The quick brown fox jumps over the lazy dog'?"
+  },
+  {
+    "file": "l-688958c6.mp3",
+    "text": "The answer is: It uses every letter of the alphabet (a pangram). Typists have used it for more than a century to test keyboards.",
+    "tts": "The answer is: It uses every letter of the alphabet (a pangram). Typists have used it for more than a century to test keyboards."
+  },
+  {
+    "file": "l-fad48aab.mp3",
+    "text": "From which language does the English word 'kindergarten' come?",
+    "tts": "From which language does the English word 'kindergarten' come?"
+  },
+  {
+    "file": "l-bc2be82a.mp3",
+    "text": "The answer is: German. It means 'children's garden'. Friedrich Fröbel opened the first one in 1837.",
+    "tts": "The answer is: German. It means 'children's garden'. Friedrich Fröbel opened the first one in 1837."
+  },
+  {
+    "file": "l-d18972a4.mp3",
+    "text": "Round Two. The stakes just went up.",
+    "tts": "Round Two. [mischievously] The stakes just went up."
+  },
+  {
+    "file": "l-f0120cc1.mp3",
+    "text": "Which ancient civilization built Machu Picchu, high in the mountains of Peru?",
+    "tts": "Which ancient civilization built Machu Picchu, high in the mountains of Peru?"
+  },
+  {
+    "file": "l-8ee5459b.mp3",
+    "text": "The answer is: The Inca. It was built in the 1400s and was rediscovered by the wider world in 1911.",
+    "tts": "The answer is: The Inca. It was built in the 1400s and was rediscovered by the wider world in 1911."
+  },
+  {
+    "file": "l-59ea7ac4.mp3",
+    "text": "Which ancient empire built the Colosseum in Rome?",
+    "tts": "Which ancient empire built the Colosseum in Rome?"
+  },
+  {
+    "file": "l-18623588.mp3",
+    "text": "The answer is: The Roman Empire. It was completed in 80 AD and could hold around 50,000 spectators.",
+    "tts": "The answer is: The Roman Empire. It was completed in 80 AD and could hold around 50,000 spectators."
+  },
+  {
+    "file": "l-23f2ac42.mp3",
+    "text": "Which famous wall, about 21,000 kilometers long with all its branches, was built over many centuries in northern China?",
+    "tts": "Which famous wall, about 21,000 kilometers long with all its branches, was built over many centuries in northern China?"
+  },
+  {
+    "file": "l-e0b6b0e0.mp3",
+    "text": "The answer is: The Great Wall of China. Contrary to popular belief, it cannot be seen from space with the naked eye.",
+    "tts": "The answer is: The Great Wall of China. Contrary to popular belief, it cannot be seen from space with the naked eye."
+  },
+  {
+    "file": "l-8eae12ac.mp3",
+    "text": "Which British monarch reigned for 70 years, longer than any other?",
+    "tts": "Which British monarch reigned for 70 years, longer than any other?"
+  },
+  {
+    "file": "l-6abe95f7.mp3",
+    "text": "The answer is: Queen Elizabeth II. She reigned from 1952 until her death in 2022.",
+    "tts": "The answer is: Queen Elizabeth II. She reigned from 1952 until her death in 2022."
+  },
+  {
+    "file": "l-c1e5f087.mp3",
+    "text": "The Magna Carta, agreed in 1215, limited the power of which English king?",
+    "tts": "The Magna Carta, agreed in 1215, limited the power of which English king?"
+  },
+  {
+    "file": "l-0b131de7.mp3",
+    "text": "The answer is: King John. It is one of the most famous documents in the history of democracy.",
+    "tts": "The answer is: King John. It is one of the most famous documents in the history of democracy."
+  },
+  {
+    "file": "l-6c7119ae.mp3",
+    "text": "Which planet is known as the Red Planet?",
+    "tts": "Which planet is known as the Red Planet?"
+  },
+  {
+    "file": "l-c67e3d7d.mp3",
+    "text": "The answer is: Mars. Its red color comes from iron oxide, or rust, in its dust.",
+    "tts": "The answer is: Mars. Its red color comes from iron oxide, or rust, in its dust."
+  },
+  {
+    "file": "l-1c9741ae.mp3",
+    "text": "Who was the first person to walk on the Moon?",
+    "tts": "Who was the first person to walk on the Moon?"
+  },
+  {
+    "file": "l-e9d5aa4e.mp3",
+    "text": "The answer is: Neil Armstrong. He stepped onto the Moon on July 20, 1969, during the Apollo 11 mission.",
+    "tts": "The answer is: Neil Armstrong. He stepped onto the Moon on July 20, 1969, during the Apollo 11 mission."
+  },
+  {
+    "file": "l-30d54bb6.mp3",
+    "text": "What is the largest planet in our solar system?",
+    "tts": "What is the largest planet in our solar system?"
+  },
+  {
+    "file": "l-0c1730a2.mp3",
+    "text": "The answer is: Jupiter. More than 1,000 Earths could fit inside it.",
+    "tts": "The answer is: Jupiter. More than 1,000 Earths could fit inside it."
+  },
+  {
+    "file": "l-fccaa829.mp3",
+    "text": "About how long does sunlight take to reach Earth?",
+    "tts": "About how long does sunlight take to reach Earth?"
+  },
+  {
+    "file": "l-0db79b1b.mp3",
+    "text": "The answer is: About 8 minutes. Light travels about 300,000 kilometers every second.",
+    "tts": "The answer is: About 8 minutes. Light travels about 300,000 kilometers every second."
+  },
+  {
+    "file": "l-8c57c4f8.mp3",
+    "text": "In 2006, which planet was reclassified as a dwarf planet?",
+    "tts": "In 2006, which planet was reclassified as a dwarf planet?"
+  },
+  {
+    "file": "l-3517dc02.mp3",
+    "text": "The answer is: Pluto. Astronomers decided a planet must clear its orbit of other objects, which Pluto does not.",
+    "tts": "The answer is: Pluto. Astronomers decided a planet must clear its orbit of other objects, which Pluto does not."
+  },
+  {
+    "file": "l-c7dd25bd.mp3",
+    "text": "How many sides does a hexagon have?",
+    "tts": "How many sides does a hexagon have?"
+  },
+  {
+    "file": "l-2a1b086e.mp3",
+    "text": "The answer is: Six. Honeycomb cells are hexagons.",
+    "tts": "The answer is: Six. Honeycomb cells are hexagons."
+  },
+  {
+    "file": "l-e421b4a8.mp3",
+    "text": "What is the Roman numeral for 50?",
+    "tts": "What is the Roman numeral for 50?"
+  },
+  {
+    "file": "l-c23798e8.mp3",
+    "text": "The answer is: L. C is 100, D is 500 and M is 1,000.",
+    "tts": "The answer is: L. C is 100, D is 500 and M is 1,000."
+  },
+  {
+    "file": "l-bb35fac9.mp3",
+    "text": "How many minutes are in a full day?",
+    "tts": "How many minutes are in a full day?"
+  },
+  {
+    "file": "l-41bf10c1.mp3",
+    "text": "The answer is: 1,440. 24 hours times 60 minutes.",
+    "tts": "The answer is: 1,440. 24 hours times 60 minutes."
+  },
+  {
+    "file": "l-98c63838.mp3",
+    "text": "What is 15 percent of 200?",
+    "tts": "What is 15 percent of 200?"
+  },
+  {
+    "file": "l-c99b16f9.mp3",
+    "text": "The answer is: 30. 10 percent is 20 and 5 percent is 10, so 15 percent is 30.",
+    "tts": "The answer is: 30. 10 percent is 20 and 5 percent is 10, so 15 percent is 30."
+  },
+  {
+    "file": "l-4bde24ca.mp3",
+    "text": "What is the smallest prime number?",
+    "tts": "What is the smallest prime number?"
+  },
+  {
+    "file": "l-7dfcda45.mp3",
+    "text": "The answer is: 2. It is also the only even prime number.",
+    "tts": "The answer is: 2. It is also the only even prime number."
+  },
+  {
+    "file": "l-f0388c3d.mp3",
+    "text": "How many players from one team are on a basketball court at a time?",
+    "tts": "How many players from one team are on a basketball court at a time?"
+  },
+  {
+    "file": "l-ad7bb78f.mp3",
+    "text": "The answer is: Five. Basketball was invented in 1891 by James Naismith, a Canadian.",
+    "tts": "The answer is: Five. Basketball was invented in 1891 by James Naismith, a Canadian."
+  },
+  {
+    "file": "l-50b49138.mp3",
+    "text": "In which sport do players hit a shuttlecock over a net?",
+    "tts": "In which sport do players hit a shuttlecock over a net?"
+  },
+  {
+    "file": "l-3c2a06bc.mp3",
+    "text": "The answer is: Badminton. A shuttlecock can leave the racket at more than 400 km/h.",
+    "tts": "The answer is: Badminton. A shuttlecock can leave the racket at more than 400 km/h."
+  },
+  {
+    "file": "l-bd2d1375.mp3",
+    "text": "How many squares are on a chessboard?",
+    "tts": "How many squares are on a chessboard?"
+  },
+  {
+    "file": "l-4b95ea4c.mp3",
+    "text": "The answer is: 64. Eight rows of eight squares.",
+    "tts": "The answer is: 64. Eight rows of eight squares."
+  },
+  {
+    "file": "l-2c94fb42.mp3",
+    "text": "Which country has won the men's FIFA World Cup the most times?",
+    "tts": "Which country has won the men's FIFA World Cup the most times?"
+  },
+  {
+    "file": "l-9bdee687.mp3",
+    "text": "The answer is: Brazil. Brazil has won it five times.",
+    "tts": "The answer is: Brazil. Brazil has won it five times."
+  },
+  {
+    "file": "l-27137dc0.mp3",
+    "text": "In tennis, what word means a score of zero?",
+    "tts": "In tennis, what word means a score of zero?"
+  },
+  {
+    "file": "l-33563bbc.mp3",
+    "text": "The answer is: Love. Nobody knows for sure where the term comes from.",
+    "tts": "The answer is: Love. Nobody knows for sure where the term comes from."
+  },
+  {
+    "file": "l-e5e4c8aa.mp3",
+    "text": "Who painted the Mona Lisa?",
+    "tts": "Who painted the Mona Lisa?"
+  },
+  {
+    "file": "l-264ead3f.mp3",
+    "text": "The answer is: Leonardo da Vinci. It hangs in the Louvre in Paris, behind bulletproof glass.",
+    "tts": "The answer is: Leonardo da Vinci. It hangs in the Louvre in Paris, behind bulletproof glass."
+  },
+  {
+    "file": "l-1117666d.mp3",
+    "text": "How many keys does a standard piano have?",
+    "tts": "How many keys does a standard piano have?"
+  },
+  {
+    "file": "l-0823dfeb.mp3",
+    "text": "The answer is: 88. 52 white keys and 36 black keys.",
+    "tts": "The answer is: 88. 52 white keys and 36 black keys."
+  },
+  {
+    "file": "l-8762bdfa.mp3",
+    "text": "Which Dutch artist painted 'The Starry Night' in 1889?",
+    "tts": "Which Dutch artist painted 'The Starry Night' in 1889?"
+  },
+  {
+    "file": "l-e74f95bb.mp3",
+    "text": "The answer is: Vincent van Gogh. He painted it at an asylum in Saint-Rémy, in southern France, based on the view from his window.",
+    "tts": "The answer is: Vincent van Gogh. He painted it at an asylum in Saint-Rémy, in southern France, based on the view from his window."
+  },
+  {
+    "file": "l-782cd306.mp3",
+    "text": "Which composer kept writing music after losing his hearing, including his famous Ninth Symphony?",
+    "tts": "Which composer kept writing music after losing his hearing, including his famous Ninth Symphony?"
+  },
+  {
+    "file": "l-b35e6217.mp3",
+    "text": "The answer is: Ludwig van Beethoven. At its first performance in 1824 he had to be turned around to see the audience applauding.",
+    "tts": "The answer is: Ludwig van Beethoven. At its first performance in 1824 he had to be turned around to see the audience applauding."
+  },
+  {
+    "file": "l-8b4595e3.mp3",
+    "text": "Which Spanish artist co-founded Cubism and painted 'Guernica'?",
+    "tts": "Which Spanish artist co-founded Cubism and painted 'Guernica'?"
+  },
+  {
+    "file": "l-7646294b.mp3",
+    "text": "The answer is: Pablo Picasso. He founded Cubism with the French painter Georges Braque.",
+    "tts": "The answer is: Pablo Picasso. He founded Cubism with the French painter Georges Braque."
+  },
+  {
+    "file": "l-77330939.mp3",
+    "text": "It is time to go all in. The final category is: Wonders of the World. Write down your secret wagers. You may bet up to half of your score, or up to 500 if that is more.",
+    "tts": "[whispers] It is time to go all in. The final category is: Wonders of the World. Write down your secret wagers. You may bet up to half of your score, or up to 500 if that is more."
+  },
+  {
+    "file": "l-3758d76a.mp3",
+    "text": "Which is the only one of the Seven Wonders of the Ancient World that is still standing?",
+    "tts": "Which is the only one of the Seven Wonders of the Ancient World that is still standing?"
+  },
+  {
+    "file": "l-5ca77aa0.mp3",
+    "text": "The answer is: The Great Pyramid of Giza. It was the tallest structure made by humans for about 3,800 years.",
+    "tts": "The answer is: The Great Pyramid of Giza. It was the tallest structure made by humans for about 3,800 years."
+  },
+  {
+    "file": "l-9176c8af.mp3",
+    "text": "How tall is the Eiffel Tower today, in meters, including its antennas?",
+    "tts": "How tall is the Eiffel Tower today, in meters, including its antennas?"
+  },
+  {
+    "file": "l-2b435ad5.mp3",
+    "text": "The answer is: 330. It was about 300 meters tall when it opened in 1889. Antennas added over the years made it taller.",
+    "tts": "The answer is: 330. It was about 300 meters tall when it opened in 1889. Antennas added over the years made it taller."
+  },
+  {
+    "file": "l-1d727d5e.mp3",
+    "text": "Team Brainiacs win the Big Brain Battle!",
+    "tts": "[excited] Team Brainiacs win the Big Brain Battle! [applause]"
+  },
+  {
+    "file": "l-644b2d00.mp3",
+    "text": "Team Know-It-Alls win the Big Brain Battle!",
+    "tts": "[excited] Team Know-It-Alls win the Big Brain Battle! [applause]"
+  },
+  {
+    "file": "l-8edb937c.mp3",
+    "text": "Team Smarty Pants win the Big Brain Battle!",
+    "tts": "[excited] Team Smarty Pants win the Big Brain Battle! [applause]"
+  },
+  {
+    "file": "l-a622d705.mp3",
+    "text": "Team Quizzards win the Big Brain Battle!",
+    "tts": "[excited] Team Quizzards win the Big Brain Battle! [applause]"
+  },
+  {
+    "file": "l-d212a1cc.mp3",
+    "text": "The price: 100 points!",
+    "tts": "[mischievously] The price... 100 points!"
+  },
+  {
+    "file": "l-494dcb81.mp3",
+    "text": "The price: 200 points!",
+    "tts": "[mischievously] The price... 200 points!"
+  },
+  {
+    "file": "l-53fff7fa.mp3",
+    "text": "The price: 300 points!",
+    "tts": "[mischievously] The price... 300 points!"
+  },
+  {
+    "file": "l-3f1e82cf.mp3",
+    "text": "The price: 400 points!",
+    "tts": "[mischievously] The price... 400 points!"
+  },
+  {
+    "file": "l-2e88ad90.mp3",
+    "text": "The price: 500 points!",
+    "tts": "[mischievously] The price... 500 points!"
+  },
+  {
+    "file": "l-cbe0a1b5.mp3",
+    "text": "The price: 600 points!",
+    "tts": "[mischievously] The price... 600 points!"
+  },
+  {
+    "file": "l-cc27cd63.mp3",
+    "text": "The price: 800 points!",
+    "tts": "[mischievously] The price... 800 points!"
+  },
+  {
+    "file": "l-b9ee2660.mp3",
+    "text": "The price: 1000 points!",
+    "tts": "[mischievously] The price... 1000 points!"
+  },
+  {
+    "file": "l-b41f628d.mp3",
+    "text": "Team Brainiacs, the mystery box picked you!",
+    "tts": "Team Brainiacs, the mystery box picked you!"
+  },
+  {
+    "file": "l-d05b58ff.mp3",
+    "text": "Team Know-It-Alls, the mystery box picked you!",
+    "tts": "Team Know-It-Alls, the mystery box picked you!"
+  },
+  {
+    "file": "l-62da406b.mp3",
+    "text": "Team Smarty Pants, the mystery box picked you!",
+    "tts": "Team Smarty Pants, the mystery box picked you!"
+  },
+  {
+    "file": "l-beb7478c.mp3",
+    "text": "Team Quizzards, the mystery box picked you!",
+    "tts": "Team Quizzards, the mystery box picked you!"
+  }
+]

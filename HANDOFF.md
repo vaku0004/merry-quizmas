@@ -121,7 +121,7 @@ Decisions she made: name **Victoria's Big Brain Battle**; surprise 1 **Wild Card
 - Look: deep teal night `#0b1a22`, electric yellow `#ffd23f`, violet `#b48cff`; display font **Lilita One** (fontsource `lilita-one`); yellow and violet specks; bouncy game-show tune with the engine's ticking clock. Art: pink brain, wild card, mystery gift box, stack of poker chips (All In), light bulb, ticket.
 - Questions: 50 + final "Wonders of the World" (Great Pyramid of Giza) + tiebreaker (Eiffel Tower height with antennas, 330 m). Categories R1: Planet Earth, Science Lab, Food & Drink, Animal Kingdom, Words & Wordplay; R2: History Mystery, Space, Numbers Game, Sports & Games, Art & Music. Checked from memory.
 - Checks: game test passes; preview site (6 games) 84 URLs OK.
-- **Voice not made yet:** prompts in `games/trivia/voice-design-prompts.md` (main: female TV quiz host; B: male). 136 lines, 10,213 characters.
+- Voice made on Nov 4: ID `6t3wUwKWAogfOUr44ltj` (prompts in `games/trivia/voice-design-prompts.md`; suggested ElevenLabs name "Quizmaster Quinn"). Kit with it as default: `games/trivia/voice-kit/` (sent as BigBrainBattle-voice.zip). 136 lines, 10,213 characters. Remaining: she runs it in a **new folder** and sends `audio`; check against `games/trivia/voice-lines.json` and put it in `audio/trivia/`.
 
 ## Decades Showdown (all-year retro game, made November 4, 2026)
 
