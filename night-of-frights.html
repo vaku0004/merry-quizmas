@@ -495,6 +495,7 @@ const SPEAK_SVG = `<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="
 /* ===================== Narrator pack (ElevenLabs audio files) =====================
    audio/manifest.json maps each spoken line (exact text) to an MP3 file in audio/.
    Lines without a file fall back to the browser voice. */
+const NARRATOR = "The Spooky Narrator";   // the narrator's name in Voice settings
 const LINES = {
   test: "Welcome to Victoria's Night of Frights. Pick a question... if you dare.",
   welcome: "Welcome to Victoria's Night of Frights! Tonight, our teams battle for glory, and for prizes. Here is how it works.",
@@ -1132,11 +1133,11 @@ function viewVoice(){
   const narrator = `<div class="panel vgrid" style="margin-bottom:16px">
       <div class="field"><span class="eyebrow">Narrator</span>
         <div class="pick">
-          <button class="btn small ${V.engine !== "browser" ? "primary" : ""}" data-act="vengine" data-e="pack" aria-pressed="${V.engine !== "browser"}">ElevenLabs narrator</button>
+          <button class="btn small ${V.engine !== "browser" ? "primary" : ""}" data-act="vengine" data-e="pack" aria-pressed="${V.engine !== "browser"}">Game narrator</button>
           <button class="btn small ${V.engine === "browser" ? "primary" : ""}" data-act="vengine" data-e="browser" aria-pressed="${V.engine === "browser"}">Browser voice</button>
         </div></div>
       <p class="hint" style="margin:0">${PACK
-        ? `Narrator audio: ${esc(PACK.voice)}${PACK.model ? " · " + esc(PACK.model) : ""}. ${ready} of ${lines.length} lines are voiced.${ready < lines.length ? " Lines without audio use the browser voice." : ""}`
+        ? `Narrator: ${esc(NARRATOR)}. ${ready === lines.length ? `All ${lines.length} lines are recorded.` : `${ready} of ${lines.length} lines are recorded. The rest use the browser voice.`}`
         : "No narrator audio has been added yet, so the browser voice is used."}</p>
       <div class="actions" style="margin-top:0"><button class="btn small" data-act="vcopy">Copy voice lines for the generator</button></div>
       ${S.voiceExport ? `<textarea id="v-export" rows="6" readonly>${esc(S.voiceExport)}</textarea><p class="hint" style="margin:0">Select all, copy, and save it as voice-lines.json next to the generator.</p>` : ""}

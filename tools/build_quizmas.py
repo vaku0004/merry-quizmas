@@ -74,6 +74,7 @@ for old, new in [("CAT_SVG", "COAL_SVG"), ("HAT_SVG", "KRAMPUS_SVG"), ("MOON_SVG
     rep_re(rf"^const {old} = `.*?`;$", grab(new).replace(f"const {new} =", f"const {old} =", 1), flags=re.M)
 
 # ---------- Narrator ----------
+rep('const NARRATOR = "The Spooky Narrator";', 'const NARRATOR = "Grandpa Noel";')
 LINES = '''const LINES = {
   test: "Welcome to Victoria's Merry Quizmas. Pick a question, and make it merry!",
   welcome: "Welcome to Victoria's Merry Quizmas! Tonight, our teams compete for glory, and for prizes. Here is how it works.",
