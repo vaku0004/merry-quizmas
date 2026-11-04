@@ -1175,8 +1175,6 @@ function viewVoice(){
       <p class="hint" style="margin:0">${PACK
         ? `Narrator: ${esc(NARRATOR)}. ${ready === lines.length ? `All ${lines.length} lines are recorded.` : `${ready} of ${lines.length} lines are recorded. The rest use the browser voice.`}`
         : "No narrator audio has been added yet, so the browser voice is used."}</p>
-      <div class="actions" style="margin-top:0"><button class="btn small" data-act="vcopy">Copy voice lines for the generator</button></div>
-      ${S.voiceExport ? `<textarea id="v-export" rows="6" readonly>${esc(S.voiceExport)}</textarea><p class="hint" style="margin:0">Select all, copy, and save it as voice-lines.json next to the generator.</p>` : ""}
     </div>`;
   body = narrator + body;
   return `<div class="overlay" role="dialog" aria-modal="true" aria-label="Voice settings">

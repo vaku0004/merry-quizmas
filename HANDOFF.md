@@ -104,7 +104,7 @@ All 3 × 52 questions reviewed; doubtful facts checked online. Fixed: Halloween 
 
 ## Narrator names in Voice settings (November 4, 2026)
 
-No "ElevenLabs" or model name on screen any more. The button is "Game narrator" / "Browser voice", and the line under it reads "Narrator: <name>. All 136 lines are recorded." Names: Halloween "The Spooky Narrator", Christmas "Grandpa Noel", Valentine's "Valentine Vic" (`const NARRATOR` in `night-of-frights.html`, replaced in `build_quizmas.py` / `build_valentines.py`). ElevenLabs is still mentioned only in code comments and the voice kit.
+No "ElevenLabs" or model name on screen any more. The button is "Game narrator" / "Browser voice", and the line under it reads "Narrator: <name>. All 136 lines are recorded." Names: Halloween "The Spooky Narrator", Christmas "Grandpa Noel", Valentine's "Valentine Vic" (`const NARRATOR` in `night-of-frights.html`, replaced in `build_quizmas.py` / `build_valentines.py`). ElevenLabs is still mentioned only in code comments and the voice kit. The "Copy voice lines for the generator" button was removed (use `node tools/export_lines.js <game.html> <out.json>` instead).
 
 ## Money and growth plan (agreed November 3, 2026; do it when the site is published)
 
