@@ -6,7 +6,7 @@ MOBILE_CSS is the phone layout from tools/site_common.py."""
 
 VALUES = {
     'page_title': '<title>Victoria’s Pot o’ Gold</title>',
-    'font_link': '&family=Uncial+Antiqua&display=swap',
+    'font_link': '&family=Eagle+Lake&display=swap',
     'css_comment_theme': "Single dark theme by design (a green St. Patrick's night).",
     'css_comment_table': 'one cosy game table in the pub corner',
     'color_night': '--night:#0c1a12',
@@ -21,7 +21,7 @@ VALUES = {
     'color_good': '--good:#5fbf73',
     'color_bad': '--bad:#e2604f',
     'color_witch': '--witch:#7fb8e8',
-    'display_font': '--f-display:"Uncial Antiqua","Georgia","Times New Roman",serif;',
+    'display_font': '--f-display:"Eagle Lake","Georgia","Times New Roman",serif;',
     'atmosphere_css': '''
 /* ---------- Gold dust: two slow layers of golden and green specks drifting up behind the game ---------- */
 body::before,body::after{content:"";position:fixed;inset:-20vh 0 0;pointer-events:none;z-index:0;
