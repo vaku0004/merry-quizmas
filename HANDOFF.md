@@ -169,7 +169,7 @@ No "ElevenLabs" or model name on screen any more. The button is "Game narrator" 
 
 ## Contact and bug reports (November 4, 2026)
 
-- Address: **vvakulenko.work@gmail.com** (`CONTACT_EMAIL` in `tools/site_common.py`; written as HTML entities in links, a little harder for harvesters).
+- Address: **hello@gamenights.quest** (since Nov 5), a free Namecheap email forwarder (Redirect Email, alias `hello`) to her Gmail vvakulenko.work@gmail.com; tested, mail arrives. Replies go out from the Gmail. `CONTACT_EMAIL` in `tools/site_common.py` (written as HTML entities in links) and `BUG_TO` in `engine/game.html`.
 - Home page: a **"Write to Victoria"** button under the intro ("Questions, ideas or a custom game for your office? Victoria reads every message."), plus "Write to Victoria" in the footer of the home page and of every game page. GA event `contact_click`.
 - Every game: a small, semi-transparent **"Bug"** button in the bottom-left corner of every screen (`bugReport()` in `engine/game.html`, address in `BUG_TO`). It opens an e-mail "Bug report: <game>" with "What happened? / What did you expect?" and the game, screen, round, teams, open question, browser and window size filled in (a local file shows "file on this computer", not its path). Checked: no overlap with buttons at 1366×768 and 1920×1080; on a phone it floats over scrolling text in the editor and voice panel.
 - The Ko-fi "Support" link and the "custom office edition, Contact us" text from the money plan below can now point to the same address.
@@ -210,7 +210,7 @@ Direction: **the whole English-speaking world, US first**, neutral English for t
 
 ## Next steps (in order)
 
-1. **Domain: done (Nov 5)**: `gamenights.quest`, set in `tools/site_common.py`. Still to do at Namecheap (Advanced DNS): four A records `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; CNAME `www` → `vaku0004.github.io.`; remove the parking records. Then set the custom domain in GitHub Pages of `game-nights`, **Enforce HTTPS** once the certificate is issued (about a day last time; removing and re-adding the domain helped). Optional: free Namecheap email forwarding (e.g. hello@gamenights.quest → her Gmail) and use it as `CONTACT_EMAIL`.
+1. **Domain: done (Nov 5)**: `gamenights.quest`, set in `tools/site_common.py`. Still to do at Namecheap (Advanced DNS): four A records `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; CNAME `www` → `vaku0004.github.io.`; remove the parking records. Then set the custom domain in GitHub Pages of `game-nights`, **Enforce HTTPS** once the certificate is issued (about a day last time; removing and re-adding the domain helped). Email forwarding hello@gamenights.quest → her Gmail: done Nov 5.
 2. **Repo `vaku0004/game-nights`:** she creates it (public, for free Pages) and adds it to the session. Move the sources there, or keep the sources here and publish only the built site there. Publish the `build_site.py` output (without Christmas until Nov 15).
 3. **After the new site is live:** run `build_redirects.py` on the night-of-frights repo and push. Search Console: add the new domain (HTML-file verification, she can't give Namecheap passwords), submit the sitemap, use the Change of Address tool from nightoffrights.monster; IndexNow for Bing. Update or retire the night-of-frights-game mirror. In GA: rename the property, add the new domain.
 4. **November 15:** rebuild (Christmas appears by date), push, request indexing for the Christmas pages.

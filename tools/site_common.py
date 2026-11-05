@@ -67,7 +67,7 @@ def game_events_js(game):
 </script>''').replace('__KEY__', game['slug'] + '-ga').replace('__SPECIALS__', __import__('json').dumps(game['specials']))
 
 # Content pages: clicks that lead into the game, printing and copying.
-CONTACT_EMAIL = "vvakulenko.work@gmail.com"   # "Write to Victoria" on the site and the Bug button in every game (engine/game.html has its own copy)
+CONTACT_EMAIL = "hello@gamenights.quest"   # "Write to Victoria" on the site and the Bug button in every game (engine/game.html has its own copy)
 CONTACT_HREF = "mailto:" + "".join(f"&#{ord(c)};" for c in CONTACT_EMAIL) + "?subject=Victoria%E2%80%99s%20Game%20Nights"   # entities: a little harder for address harvesters
 
 PAGE_EVENTS_JS = '''<script>
