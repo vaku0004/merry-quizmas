@@ -2,7 +2,7 @@
 
 From Python: make_all(games_out) (called by build_site.py). Art comes from each game's source, fonts from fontpkgs/.
 """
-import glob, os, sys
+import glob, os, pathlib, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from site_common import HOST, BRAND
 import games as G
@@ -12,7 +12,7 @@ S = "."
 OUT = f"{S}/build/seo"
 F = f"{S}/fontpkgs"
 font = lambda slug, w, st: os.path.abspath(glob.glob(f"{F}/fontsource-{slug}-[0-9]*/package/files/{slug}-latin-{w}-{st}.woff2")[0])
-FACES = "".join(f"@font-face{{font-family:'{fam}';font-style:{st};font-weight:{w};src:url(file://{font(slug, w, st)})}}"
+FACES = "".join(f"@font-face{{font-family:'{fam}';font-style:{st};font-weight:{w};src:url({pathlib.Path(font(slug, w, st)).as_uri()})}}"
                 for fam, slug, w, st in [("Mountains of Christmas", "mountains-of-christmas", 700, "normal"), ("Pirata One", "pirata-one", 400, "normal"), ("Yeseva One", "yeseva-one", 400, "normal"), ("Eagle Lake", "eagle-lake", 400, "normal"), ("Righteous", "righteous", 400, "normal"), ("Lilita One", "lilita-one", 400, "normal"), ("Limelight", "limelight", 400, "normal"), ("Bungee", "bungee", 400, "normal"),
                                          ("Alegreya", "alegreya", 500, "italic"), ("Alegreya", "alegreya", 800, "normal"), ("Alegreya", "alegreya", 800, "italic"),
                                          ("Alegreya Sans", "alegreya-sans", 500, "normal"), ("Alegreya Sans", "alegreya-sans", 800, "normal")])

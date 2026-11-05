@@ -4,3 +4,4 @@ voice-kit/voice-config.json
 voice-kit/generate-report.txt
 *.part
 build/
+node_modules/

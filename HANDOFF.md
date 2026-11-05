@@ -2,6 +2,16 @@
 
 Start here. This file carries everything decided so far, so a new session can continue without the original chat.
 
+## Working on her own computer (Windows), prepared Nov 5, 2026
+
+She wants to move the work from the cloud to her PC (Claude desktop app → Code, a local session in the project folder). Prepared so the build runs there:
+- `tools/get_fonts.py` downloads the fonts into `fontpkgs/` (not in git) from the npm registry; Python only.
+- `package.json` (Playwright 1.63.0) and `requirements.txt` (Pillow). Setup in the repo folder: `pip install -r requirements.txt`, `npm install`, `npx playwright install chromium`, `python tools/get_fonts.py`.
+- Windows fixes: the build calls Python through `sys.executable` (no `python3` on Windows) and makes `file://` URLs with `pathlib`/`pathToFileURL` (C:\ paths). Checked in the cloud: the site build is byte-identical to the published one, game test and offline build pass. Not yet tried on Windows itself.
+- Install on the PC: Git for Windows, Python 3.12+ ("Add python.exe to PATH"), Node.js LTS, the Claude desktop app. Clone `vaku0004/merry-quizmas` (sources) and `vaku0004/game-nights` (published site) side by side, e.g. `C:\Users\<her>\Projects\`.
+- Locally the voice generator (`voice-kit/start-voice.bat`) writes `audio/` straight into the project, so no more .rar uploads; the ElevenLabs key rule stays: she types it only into the generator window.
+- If a console error mentions an encoding (cp1252), set `PYTHONUTF8=1` for the session.
+
 ## Who and how
 
 - Owner: Victoria (legal spelling Viktoriia; she wants **"Victoria" everywhere** in the games and on the site), web designer in Regina, Saskatchewan. GitHub: `vaku0004`.

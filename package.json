@@ -1,0 +1,8 @@
+{
+  "name": "game-nights-tools",
+  "private": true,
+  "description": "Build and test tools for Victoria's Game Nights (Playwright renders preview images, screenshots and runs the game tests).",
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}

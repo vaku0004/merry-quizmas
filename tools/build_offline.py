@@ -11,7 +11,7 @@ game = next(g for g in G.PLAYABLE if g['slug'] == sys.argv[1])
 out = sys.argv[2]
 A = f"{S}/{game['audio']}"
 os.makedirs(f"{S}/build", exist_ok=True)
-subprocess.run(["python3", f"{S}/tools/build_index.py", f"{S}/{game['src']}", f"{S}/build/_page.html", "--mobile"], check=True)
+subprocess.run([sys.executable, f"{S}/tools/build_index.py", f"{S}/{game['src']}", f"{S}/build/_page.html", "--mobile"], check=True)
 html = open(f"{S}/build/_page.html", encoding="utf-8").read()
 
 # 1. fonts: replace Google Fonts links with embedded @font-face rules

@@ -19,7 +19,7 @@ const shots=[
 ];
 (async()=>{const b=await chromium.launch();const res=[];
  for(const [name,st] of shots){const ctx=await b.newContext({viewport:{width:+W,height:+H},deviceScaleFactor:1,isMobile:true,hasTouch:true});const p=await ctx.newPage();
-  await p.goto('file://'+PAGE);await p.evaluate(s=>{localStorage.clear();if(s)localStorage.setItem("mq-state-v1",JSON.stringify(s));},st);
+  await p.goto(require('url').pathToFileURL(require('path').resolve(PAGE)).href);await p.evaluate(s=>{localStorage.clear();if(s)localStorage.setItem("mq-state-v1",JSON.stringify(s));},st);
   await p.reload();await p.waitForTimeout(600);
   const m=await p.evaluate(()=>({sw:document.documentElement.scrollWidth,iw:innerWidth,sh:document.documentElement.scrollHeight,
     wide:[...document.querySelectorAll('body *')].filter(e=>{const r=e.getBoundingClientRect();return r.width>0&&r.right>innerWidth+1&&getComputedStyle(e).position!=='fixed'}).slice(0,3).map(e=>e.className||e.tagName)}));

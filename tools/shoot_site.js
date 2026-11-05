@@ -9,13 +9,13 @@ const jobs = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
   const b = await chromium.launch(); const errs = [];
   for (const r of jobs.renders || []) {
     const p = await b.newPage({viewport: {width: r.w, height: r.h}, deviceScaleFactor: r.scale || 1});
-    await p.goto('file://' + r.src); await p.waitForTimeout(400);
+    await p.goto(require('url').pathToFileURL(r.src).href); await p.waitForTimeout(400);
     await p.screenshot({path: r.out, omitBackground: !!r.transparent}); await p.close();
   }
   for (const s of jobs.shots || []) {
     const ctx = await b.newContext({viewport: {width: 1366, height: 768}}); const p = await ctx.newPage();
     p.on('pageerror', e => errs.push(s.out + ': ' + e.message));
-    await p.goto('file://' + s.page); await p.evaluate(([k, st]) => { localStorage.clear(); localStorage.setItem(k, JSON.stringify(st)); }, [s.key, s.state]);
+    await p.goto(require('url').pathToFileURL(s.page).href); await p.evaluate(([k, st]) => { localStorage.clear(); localStorage.setItem(k, JSON.stringify(st)); }, [s.key, s.state]);
     await p.reload(); await p.waitForTimeout(900);
     await p.screenshot({path: s.out}); await ctx.close();
   }

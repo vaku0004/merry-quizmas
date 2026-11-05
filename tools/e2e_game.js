@@ -22,7 +22,7 @@ const files = process.argv.slice(2);
       window.Audio = function(src){ const a = new A(src); window.__played++;
         a.play = () => { setTimeout(() => a.dispatchEvent(new Event('ended')), 60); return Promise.resolve(); }; return a; };
     });
-    await p.goto(/^https?:/.test(file) ? file : 'file://' + require('path').resolve(file));
+    await p.goto(/^https?:/.test(file) ? file : require('url').pathToFileURL(require('path').resolve(file)).href);
     await p.evaluate(() => localStorage.clear()); await p.reload(); await p.waitForTimeout(500);
     const has = async sel => (await p.$(sel)) !== null;
     const click = async (sel, wait = 250) => {

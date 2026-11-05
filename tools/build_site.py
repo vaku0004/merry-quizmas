@@ -23,7 +23,7 @@ os.makedirs(OUT, exist_ok=True); os.makedirs(f"{B}/seo", exist_ok=True)
 run = lambda *cmd: subprocess.run(list(cmd), check=True)
 write = lambda path, text: (os.makedirs(os.path.dirname(path), exist_ok=True), open(path, "w", encoding="utf-8").write(text))
 
-run("python3", f"{S}/tools/build_game.py", "--all")   # games from the engine and their themes
+run(sys.executable, f"{S}/tools/build_game.py", "--all")   # games from the engine and their themes
 out_games = [g for g in G.PLAYABLE if G.is_out(g, TODAY, PREVIEW)]
 print(f"Building {OUT} for {TODAY}{' (preview)' if PREVIEW else ''}: games", [g["slug"] for g in out_games])
 
@@ -118,7 +118,7 @@ for g in out_games:
     run("node", f"{S}/tools/dump_q.js", f"{S}/{g['src']}", f"{B}/{slug}-q.json")
     shots = f"{S}/games/{slug}/shots"
     if not os.path.isdir(shots):
-        run("python3", f"{S}/tools/fontify.py", f"{OUT}/{slug}/index.html", f"{B}/{slug}-local.html")
+        run(sys.executable, f"{S}/tools/fontify.py", f"{OUT}/{slug}/index.html", f"{B}/{slug}-local.html")
         os.makedirs(f"{B}/{slug}-shots", exist_ok=True)
         for n, st in SHOT_STATES[slug].items():
             jobs["shots"].append({"page": f"{B}/{slug}-local.html", "key": g["state_key"], "state": st, "out": f"{B}/{slug}-shots/{n}.png"})
