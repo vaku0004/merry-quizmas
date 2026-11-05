@@ -3,7 +3,7 @@
 Site settings live here, so the domain or the Analytics ID change in one place.
 """
 
-URL = "https://victoriasgamenights.com/"   # TODO: the domain Victoria buys (with the trailing slash)
+URL = "https://gamenights.quest/"   # bought by Victoria on Namecheap, Nov 5, 2026 (renews Nov 5, 2027)
 HOST = URL.split("/")[2]
 BRAND = "Victoria’s Game Nights"
 GA_ID = "G-JL1KBEZPQX"                      # the Night of Frights GA4 property, reused for the whole site
