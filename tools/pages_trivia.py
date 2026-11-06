@@ -326,7 +326,7 @@ FAQ = [
     ("Are there games for other holidays?",
      "Yes. Victoria’s Big Brain Battle is one of the free quiz games on <a href=\"/\" data-home>Victoria’s Game Nights</a>, with a new game for each season."),
     ("Who made the game?",
-     f"{NAME} was designed and written by Victoria for office game nights, then shared free for anyone to use."),
+     "It was designed and written by Victoria for office game nights, then shared free for anyone to use."),
 ]
 
 
