@@ -36,13 +36,16 @@ a:hover{color:var(--candle)}
 .site-nav{display:flex;gap:4px 18px;flex-wrap:wrap;font-family:var(--f-ui);font-weight:700;font-size:.98rem}
 .site-nav a{color:var(--bone);text-decoration:none}
 .site-nav a:hover{color:var(--ember)}
-.hero{padding:64px 0 28px;max-width:46rem}
+.hero{padding:40px 0 8px;max-width:46rem}
+.reach{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%%,340px),1fr));gap:16px;margin:40px 0 0}
+.reach>div{border:1px solid var(--line);border-radius:20px;padding:22px 24px;background:rgba(26,31,54,.7)}
+.reach-h{font-weight:800;font-size:1.35rem;color:var(--ember);margin:0 0 4px;line-height:1.2}
+.reach .muted{font-family:var(--f-ui);font-size:1rem;margin:0 0 16px}
+.reach-btns{display:flex;flex-wrap:wrap;gap:10px}
 .eyebrow{font-family:var(--f-ui);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;color:var(--ash);margin:0}
 h1{font-weight:800;font-size:clamp(2.6rem,7vw,4.4rem);line-height:1;margin:.2em 0 .35em;color:var(--ember)}
 h1 i{font-style:italic;color:var(--candle)}
 .lede{font-size:1.3rem;margin:0 0 .6em}
-.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:22px 0 0}
-.hero-cta .muted{font-family:var(--f-ui);font-size:.95rem}
 .muted{color:var(--ash)}
 h2{font-weight:800;font-size:clamp(1.8rem,4vw,2.4rem);line-height:1.1;margin:2em 0 .5em;color:var(--ember)}
 .games{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%%,440px),1fr));gap:20px;margin:18px 0 0}
@@ -192,8 +195,6 @@ def home_page(out_slugs, today):
 <h1>Victoria’s <i>Game Nights</i></h1>
 <p class="lede">Quiz games for office parties and team events, for the holidays and any day of the year. One laptop, one big screen, a narrator who reads every question, and teams playing in the room and on the video call.</p>
 <p class="muted">No sign-up, no download, nothing for players to install.</p>
-<p class="hero-cta"><a class="btn" href="{CONTACT_HREF}" data-contact>Write to Victoria</a><span class="muted">Questions, ideas or a custom game for your office? Victoria reads every message.</span></p>
-<p class="hero-cta">{SH.buttons(URL, BRAND, SH.SITE_TEXT, URL + "og-image.png", "Share", "Bookmark")}<span class="muted">Planning a party later? Bookmark the site or send it to the organizer.</span></p>
 </section>
 
 <section id="games" aria-labelledby="games-h"><h2 id="games-h" style="margin-top:.6em">Pick a game</h2>
@@ -201,6 +202,13 @@ def home_page(out_slugs, today):
 {cards}
 </div>
 {soon_block}</section>
+
+<section class="reach" aria-label="Share and contact">
+<div><p class="reach-h">Planning a party later?</p><p class="muted">Bookmark the site or send it to the person organizing it.</p>
+<div class="reach-btns">{SH.buttons(URL, BRAND, SH.SITE_TEXT, URL + "og-image.png", "Share", "Bookmark")}</div></div>
+<div><p class="reach-h">Questions or a custom game?</p><p class="muted">Ideas, or a game made for your office? Victoria reads every message.</p>
+<div class="reach-btns"><a class="btn" href="{CONTACT_HREF}" data-contact>Write to Victoria</a></div></div>
+</section>
 
 <section id="how" aria-labelledby="how-h"><h2 id="how-h">How a game night works</h2>
 <ol class="steps">

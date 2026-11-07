@@ -60,13 +60,14 @@ JS = '''<script>
                                   img: b.getAttribute('data-img'), target: b.getAttribute('data-target') }; };
   var show = function(btn, html){
     close();
+    var vw = document.documentElement.clientWidth, vh = document.documentElement.clientHeight;   // before the menu exists: on phones it would widen the page
     var pop = document.createElement('div'); pop.className = 'gn-pop'; pop.setAttribute('role', 'dialog'); pop.innerHTML = html;
     btn.parentNode.appendChild(pop);
     pop.style.left = (btn.offsetLeft) + 'px';
     var r = pop.getBoundingClientRect();
-    if (r.right > innerWidth - 12) pop.style.left = Math.max(btn.offsetLeft - (r.right - innerWidth + 12), -btn.parentNode.getBoundingClientRect().left + 12) + 'px';
+    if (r.right > vw - 12) pop.style.left = Math.max(btn.offsetLeft - (r.right - vw + 12), -btn.parentNode.getBoundingClientRect().left + 12) + 'px';
     var br = btn.getBoundingClientRect();
-    if (r.bottom > innerHeight - 8 && br.top - 8 > r.height){ pop.style.top = 'auto'; pop.style.bottom = 'calc(100% + 8px)'; }   // no room below: open upwards
+    if (r.bottom > vh - 8 && br.top - 8 > r.height){ pop.style.top = 'auto'; pop.style.bottom = 'calc(100% + 8px)'; }   // no room below: open upwards
     btn.setAttribute('aria-expanded', 'true'); open = { btn: btn, pop: pop };
     var first = pop.querySelector('a,button'); if (first) first.focus();
     return pop;

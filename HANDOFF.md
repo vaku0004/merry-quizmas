@@ -199,6 +199,7 @@ She asked for "add to bookmarks" and "share" buttons. Browsers do not let a page
 - GA: `share_click` {method: system/copy/email/whatsapp/linkedin/facebook/x/pinterest, from_page, target: site or game slug}, `bookmark_click` {device, from_page}; podium clicks have from_page `podium`.
 - Checks: narrator lines unchanged in all 8 games (136/136 each); game tests pass; 32 URLs OK, no JS errors, no sideways scroll at 390px with a menu open.
 - **Published Nov 7** (game-nights commit fad6949, published PNGs kept); live check: 32 URLs OK, no JS errors.
+- **Same day, her request: games first on the home page.** "Write to Victoria", Share and Bookmark moved out of the hero into a two-card band right under the games ("Planning a party later?" / "Questions or a custom game?"); hero padding 64px → 40px. First game card now starts at about 490px on a 1618×760 screen (was about 690) and 611px on a phone. Also fixed: on phones an open menu widened the page, so the right-edge check measured the widened width and the Bookmark tip ran off screen; the width is now measured before the menu opens.
 - Fixed on the way: `tools/export_lines.js` had been broken since the Bug button (Nov 4: `document.createElement` missing in its fake DOM).
 
 ## Money and growth plan (agreed November 3, 2026; do it when the site is published)
