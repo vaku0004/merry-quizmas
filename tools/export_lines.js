@@ -5,7 +5,8 @@ const el = () => ({ addEventListener(){}, set innerHTML(v){}, querySelector: () 
 const ctx = { console, setTimeout: () => 0, clearTimeout(){}, setInterval: () => 0, clearInterval(){}, Promise,
   fetch: () => Promise.reject(new Error("offline")),
   localStorage: { getItem: () => null, setItem(){}, removeItem(){} },
-  document: { getElementById: el, addEventListener(){}, querySelectorAll: () => [] } };
+  document: { getElementById: el, addEventListener(){}, querySelectorAll: () => [], querySelector: () => null,
+              createElement: el, body: { appendChild(){} } } };
 ctx.window = ctx; vm.createContext(ctx);
 vm.runInContext(code + "\n;globalThis.__lines = voiceLines();", ctx);
 const lines = ctx.__lines;

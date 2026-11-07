@@ -191,6 +191,15 @@ No "ElevenLabs" or model name on screen any more. The button is "Game narrator" 
 - Every game: a small, semi-transparent **"Bug"** button in the bottom-left corner of every screen (`bugReport()` in `engine/game.html`, address in `BUG_TO`). It opens an e-mail "Bug report: <game>" with "What happened? / What did you expect?" and the game, screen, round, teams, open question, browser and window size filled in (a local file shows "file on this computer", not its path). Checked: no overlap with buttons at 1366×768 and 1920×1080; on a phone it floats over scrolling text in the editor and voice panel.
 - The Ko-fi "Support" link and the "custom office edition, Contact us" text from the money plan below can now point to the same address.
 
+## Share and Bookmark buttons (November 7, 2026)
+
+She asked for "add to bookmarks" and "share" buttons. Browsers do not let a page create a bookmark, so Bookmark shows how on this device (Ctrl+D / ⌘+D; Safari Share → Add Bookmark on iPhone; ⋮ → ☆ on Android) plus "Email/Send the link to myself". Share opens the system share sheet on phones/tablets (`navigator.share`); on computers a small menu: Copy link, Email, WhatsApp, LinkedIn, Facebook, X, Pinterest (with the og image), and "More options…" where the browser has a system dialog. Plain links only: no social scripts, no third-party cookies, so the privacy text stays true.
+- Code: `tools/share.py` (`buttons()`, `WIDGET` = CSS + JS). Home: a second row under "Write to Victoria" (`build_home.py`, shares the site). Content pages: next to "Play …" in every play box (`page_shell.share_buttons()`, shares `/<game>/`). Game page: "Share this game · Bookmark" in the link row under the start screen (`build_index.py`). The menu opens upwards when there is no room below.
+- Podium (engine, all games): "Share this game" next to "Back to the board"; system share dialog, or copies the address and shows "Link copied". Hidden in the offline file (file://).
+- GA: `share_click` {method: system/copy/email/whatsapp/linkedin/facebook/x/pinterest, from_page, target: site or game slug}, `bookmark_click` {device, from_page}; podium clicks have from_page `podium`.
+- Checks: narrator lines unchanged in all 8 games (136/136 each); game tests pass; 32 URLs OK, no JS errors, no sideways scroll at 390px with a menu open.
+- Fixed on the way: `tools/export_lines.js` had been broken since the Bug button (Nov 4: `document.createElement` missing in its fake DOM).
+
 ## Money and growth plan (agreed November 3, 2026; do it when the site is published)
 
 She liked this three-step test of demand and wants it built **together with the website**:

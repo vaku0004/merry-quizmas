@@ -7,6 +7,7 @@ import html, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from site_common import GA_HEAD, MOBILE_CSS, URL, BRAND, game_events_js
 import games as G
+import share as SH
 
 BASE_CSS = "<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>"
 
@@ -104,6 +105,7 @@ def game_page(g, src):
                     for s, t in G.PAGES)
     nav = f'''<nav class="nof-links" aria-label="More about the game">
 {links}<a href="/">All games</a>
+{SH.buttons(url, g["name"], g.get("og_desc") or g["desc"], url + "og-image.png", "Share this game", "Bookmark", g["slug"], "nof-sb")}
 </nav>
 <style>
 .nof-links{{display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:center;max-width:1400px;margin:0 auto;padding:8px 16px 36px;
@@ -111,6 +113,9 @@ def game_page(g, src):
 .nof-links a{{color:{th['ash']};text-decoration:none}}
 .nof-links a:hover,.nof-links a:focus-visible{{color:{th['ember']};text-decoration:underline}}
 .nof-links[hidden]{{display:none!important}}
+.nof-links .gn-share{{gap:6px 22px}}
+.nof-sb{{display:inline-flex;align-items:center;gap:6px;background:none;border:0;padding:0;color:{th['ash']};font:inherit;cursor:pointer}}
+.nof-sb:hover,.nof-sb:focus-visible{{color:{th['ember']};text-decoration:underline}}
 </style>
 <script>
 (function(){{
@@ -120,7 +125,7 @@ def game_page(g, src):
 }})();
 </script>'''
     body = body.replace('<div id="app"></div>', static, 1)
-    body = body.rstrip() + "\n" + nav + "\n" + game_events_js(g)
+    body = body.rstrip() + "\n" + nav + "\n" + SH.WIDGET + "\n" + game_events_js(g)
     return _doc(meta, head, body, True)
 
 

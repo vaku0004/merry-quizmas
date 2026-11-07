@@ -497,6 +497,7 @@ if (!Q.tiebreak) Q.tiebreak = clone(DEFAULT_Q.tiebreak);
 let S = load(KEY_S) || freshState(3);
 let hist = [];
 let armed = null;            // two-click confirmations
+let shareMsg = "";           // "Link copied" on the podium's Share button
 let timer = { id: null, left: 0, total: 0, running: false };
 
 function persist(){ const s = clone(S); s.editor = null; s.voicePanel = null; s.voiceExport = null; save(KEY_S, s); }
@@ -1106,6 +1107,7 @@ function viewPodium(){
     ${rest.length ? `<div class="rest">${rest.map(t=>`<div><span>${t.rank}. ${esc(t.name)}</span><span class="num">${fmt(t.score)}</span></div>`).join("")}</div>` : ""}
     <div class="actions">
       <button class="btn" data-act="toboard">Back to the board</button>
+      ${/^https?:$/.test(location.protocol) ? `<button class="btn" data-act="share">${shareMsg || "Share this game"}</button>` : ""}
       <button class="btn ghost ${armed==="new"?"warn":""}" data-act="new">${armed==="new" ? "Click again to end this game" : "New game"}</button>
     </div></div>`;
 }
@@ -1374,6 +1376,15 @@ const actions = {
   tbpick(el){ const i = +el.dataset.i, o = S.tbOrder, k = o.indexOf(i); if (k >= 0) o.splice(k, 1); else o.push(i); persist(); render(); },
   tbdone(){ stopSpeech(); S.screen = "podium"; S.tb = null; persist(); render(); SFX.good(); announceWinners(); },
   toboard(){ stopSpeech(); S.screen = "board"; persist(); render(); },
+  share(){   // podium: the system share dialog, or copy the game's address where there is none
+    const url = location.origin + location.pathname, title = document.title.split(" · ")[0];
+    const d = document.querySelector('meta[name="description"]'), text = d ? d.content : "";
+    if (navigator.share){ navigator.share({ title, text, url }).catch(() => {}); return; }
+    if (navigator.clipboard) navigator.clipboard.writeText(url).then(() => {
+      shareMsg = "Link copied"; render();
+      setTimeout(() => { shareMsg = ""; if (S.screen === "podium") render(); }, 2000);
+    }, () => {});
+  },
   voice(){ S.voicePanel = true; armed = null; render(); },
   vdone(){ S.voicePanel = null; S.voiceExport = null; persistV(); render(); },
   vengine(el){ V.engine = el.dataset.e; persistV(); render(); actions.vtest(); },

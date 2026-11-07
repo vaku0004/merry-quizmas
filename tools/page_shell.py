@@ -7,6 +7,7 @@ and is turned into the game's own address here.
 import html, json, re
 from site_common import GA_HEAD, PAGE_EVENTS_JS, URL, BRAND, CONTACT_HREF
 import games as G
+import share as SH
 
 S = "."
 CUR = {}          # the game being rendered (set by use())
@@ -42,10 +43,16 @@ def icon():
     return G.art(CUR, CUR["icon"])
 
 
+def share_buttons(cls="btn"):
+    g = CUR
+    return SH.buttons(f"{URL}{g['slug']}/", g["name"], g.get("og_desc") or g["desc"], f"{URL}{g['slug']}/og-image.png",
+                      "Share this game", "Bookmark", g["slug"], cls)
+
+
 def play_box(title="Play it free tonight", text="Open the game on the computer connected to your big screen, name your teams and press Start. No sign-up, no download, nothing for players to install."):
     return f'''<section class="play" aria-labelledby="play-h">
   <div><h2 id="play-h">{title}</h2><p>{text}</p>
-  <div class="cta-row"><a class="btn primary big" href="/">Play {e(CUR["name"])}</a></div></div>
+  <div class="cta-row"><a class="btn primary big" href="/">Play {e(CUR["name"])}</a>{share_buttons()}</div></div>
   {icon()}
 </section>'''
 
@@ -122,6 +129,7 @@ def page(slug, title, desc, og_title, h1, eyebrow, body, extra_ld=None, crumb=No
   <span>{e(g['name'])} · a free {g.get('footer_kind', g['holiday'])} quiz game for teams · part of <a href="/">{e(BRAND)}</a> · <a href="/privacy/">Privacy</a></span>
 </div></footer>
 {scripts}
+{SH.WIDGET if 'data-gn-' in body else ''}
 {PAGE_EVENTS_JS}
 </body>
 </html>

@@ -61,10 +61,11 @@ def game_events_js(game):
     if (act === 'edit') gtag('event', 'open_question_editor');
     if (act === 'voice') gtag('event', 'open_voice_settings');
     if (act === 'edone') gtag('event', 'questions_edited');
+    if (act === 'share') gtag('event', 'share_click', { method: navigator.share ? 'system' : 'copy', from_page: 'podium', target: '__SLUG__' });
   }, true);
   check();
 })();
-</script>''').replace('__KEY__', game['slug'] + '-ga').replace('__SPECIALS__', __import__('json').dumps(game['specials']))
+</script>''').replace('__KEY__', game['slug'] + '-ga').replace('__SLUG__', game['slug']).replace('__SPECIALS__', __import__('json').dumps(game['specials']))
 
 # Content pages: clicks that lead into the game, printing and copying.
 CONTACT_EMAIL = "hello@gamenights.quest"   # "Write to Victoria" on the site and the Bug button in every game (engine/game.html has its own copy)

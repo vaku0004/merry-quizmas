@@ -5,6 +5,7 @@ From Python: home_page(published_games, today) and privacy_page().
 import html, json
 from site_common import GA_HEAD, PAGE_EVENTS_JS, URL, BRAND, CONTACT_HREF
 import games as G
+import share as SH
 
 e = lambda s: html.escape(s, quote=True)
 HUB = dict(night="#111526", dusk="#1a1f36", cell="#232a47", line="#363f66", bone="#f4efe6", ash="#a9aec8",
@@ -168,6 +169,7 @@ def _shell(title, desc, canonical, body, ld=None, og_img=None):
   <nav aria-label="Footer"><a href="/">All games</a><a href="{CONTACT_HREF}" data-contact>Write to Victoria</a><a href="/privacy/">Privacy</a></nav>
   <span>{e(BRAND)} · quiz games for office parties and team events, made in Regina, Saskatchewan.</span>
 </div></footer>
+{SH.WIDGET if 'data-gn-' in body else ''}
 {PAGE_EVENTS_JS}
 </body>
 </html>
@@ -191,6 +193,7 @@ def home_page(out_slugs, today):
 <p class="lede">Quiz games for office parties and team events, for the holidays and any day of the year. One laptop, one big screen, a narrator who reads every question, and teams playing in the room and on the video call.</p>
 <p class="muted">No sign-up, no download, nothing for players to install.</p>
 <p class="hero-cta"><a class="btn" href="{CONTACT_HREF}" data-contact>Write to Victoria</a><span class="muted">Questions, ideas or a custom game for your office? Victoria reads every message.</span></p>
+<p class="hero-cta">{SH.buttons(URL, BRAND, SH.SITE_TEXT, URL + "og-image.png", "Share", "Bookmark")}<span class="muted">Planning a party later? Bookmark the site or send it to the organizer.</span></p>
 </section>
 
 <section id="games" aria-labelledby="games-h"><h2 id="games-h" style="margin-top:.6em">Pick a game</h2>
