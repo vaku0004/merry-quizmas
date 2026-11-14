@@ -9,6 +9,7 @@ import datetime, html, json
 from site_common import GA_HEAD, PAGE_EVENTS_JS, URL, BRAND, CONTACT_HREF
 import games as G
 import share as SH
+import trailer as TR
 
 e = lambda s: html.escape(s, quote=True)
 # night = page ground, dusk = boxes, line = borders, bone = text, ash = muted text, ember = accent (lime). The share menu uses these too.
@@ -30,6 +31,8 @@ TILES = {
     "valentines": ("#4f4aab", "#373478", "#9d98ff", "Valentine’s Day",   "Cupid’s Arrow, a box of chocolates and a love-letter wager."),
     "stpatricks": ("#22805f", "#185a42", "#3fe0a8", "St. Patrick’s Day", "A leprechaun’s trick, a rainbow and a pot-of-gold wager."),
 }
+# The season trailer on top of the home page (tools/trailer.py); GN_TRAILER=0 builds the page without it.
+TRAILER = __import__('os').environ.get('GN_TRAILER', '1') != '0'
 # The game in season goes first, MM-DD to MM-DD (may wrap the year end).
 FEATURE = {"halloween": ("10-01", "10-31"), "christmas": ("11-01", "12-25"), "newyear": ("12-26", "01-01"),
            "valentines": ("01-20", "02-14"), "stpatricks": ("02-10", "03-17")}
@@ -247,7 +250,7 @@ FAQ = [
 ]
 
 
-def _shell(title, desc, canonical, body, ld=None, og_img=None):
+def _shell(title, desc, canonical, body, ld=None, og_img=None, before_main="", extra_css="", extra_js=""):
     og_img = og_img or URL + "og-image.png"
     ld_tag = f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")}</script>' if ld else ""
     return f'''<!doctype html>
@@ -277,7 +280,7 @@ def _shell(title, desc, canonical, body, ld=None, og_img=None):
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="{og_img}">
 {FONTS}
-<style>{CSS}</style>
+<style>{CSS}{extra_css}</style>
 {ld_tag}
 </head>
 <body>
@@ -285,6 +288,7 @@ def _shell(title, desc, canonical, body, ld=None, og_img=None):
   <a class="brand" href="/"><i class="dot"></i>Victoria’s <span>Game Nights</span></a>
   <nav class="site-nav" aria-label="Main"><a href="/#how">How it works</a><a href="/#faq">FAQ</a><a class="cta" href="{CONTACT_HREF}" data-contact>Write to Victoria</a></nav>
 </div></header>
+{before_main}
 <main id="main" class="wrap">
 {body}
 </main>
@@ -293,7 +297,8 @@ def _shell(title, desc, canonical, body, ld=None, og_img=None):
   <nav aria-label="Footer"><a href="/#games">Games</a><a href="/#how">How it works</a><a href="{CONTACT_HREF}" data-contact>Write to Victoria</a><a href="/privacy/">Privacy</a></nav>
   <span>Quiz games for office parties and team events, made in Regina, Saskatchewan.</span>
 </div></footer>
-{SH.WIDGET if 'data-gn-' in body else ''}
+{SH.WIDGET if 'data-gn-' in body or 'data-gn-' in before_main else ''}
+{extra_js}
 {PAGE_EVENTS_JS}
 </body>
 </html>
@@ -316,6 +321,12 @@ def home_page(out_slugs, today):
     steps_html = "".join(f'<li><span class="n" style="color:{colors[k]}">0{k + 1}</span><span><b>{e(t)}</b><span>{e(d)}</span></span></li>'
                          for k, (t, d) in enumerate(steps))
     share = SH.buttons(URL, BRAND, SH.SITE_TEXT, URL + "og-image.png", "Share", "Bookmark", "site", "sbtn")
+    # Season trailer (Nov 14): the game in season, or Movie Night (any day) when no holiday game is in season
+    star = next((g for g in playable if _in_season(g["slug"], today)), None) or next((g for g in playable if g["slug"] == "movies"), None)
+    tr_html = tr_css = tr_js = ""
+    if star and TRAILER:
+        is_new = bool(star.get("launch")) and 0 <= (datetime.date.fromisoformat(today) - datetime.date.fromisoformat(star["launch"])).days <= 45
+        tr_html, tr_css, tr_js = TR.trailer(star, is_new)
     body = f'''<section class="hero">
 <h1>Game nights<br><span>for teams</span></h1>
 <p>Quiz games for office parties and team events, for the holidays and any day of the year: one laptop, one big screen, a narrator who reads every question, and teams in the room and on the call. No sign-up, nothing to install.</p>
@@ -360,7 +371,7 @@ def home_page(out_slugs, today):
     ]}
     return _shell(f"{BRAND} · Quiz Games for Office Parties and Teams",
                   "Trivia games for office parties and hybrid teams, for the holidays and any day of the year: a game-show board on the big screen, a narrator and teams in the room and on the call.",
-                  URL, body, ld)
+                  URL, body, ld, before_main=tr_html, extra_css=tr_css, extra_js=tr_js)
 
 
 def privacy_page():
