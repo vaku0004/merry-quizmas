@@ -41,10 +41,10 @@ ARROW = ('<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="cu
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800'
          + "".join(f"&family={g['gfont']}" for g in G.GAMES if "gfont" in g) + '&display=swap">')   # every tile's title font
-# Tile colours: "muted" (published Nov 14) or "original" (each game's own dark palette with its glow, as on the first site
-# version). Preview the other one with the environment variable GN_TILES=original.
+# Tile colours: "original" (her choice, Nov 14: each game's own dark palette with its glow, as on the first site
+# version) or "muted" (the gradients published earlier on Nov 14). Preview the other one with GN_TILES=muted.
 import os
-TILE_COLORS = os.environ.get("GN_TILES", "muted")
+TILE_COLORS = os.environ.get("GN_TILES", "original")
 # Title size per display font: wide or tall faces are scaled so every title fits its tile.
 FONT_SCALE = {"Bungee": .66, "Limelight": .8, "Righteous": .82, "Eagle Lake": .72, "Lilita One": .95, "Pirata One": 1.08,
               "Mountains of Christmas": 1.0, "Yeseva One": .86}
