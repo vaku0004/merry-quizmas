@@ -41,10 +41,10 @@ ARROW = ('<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="cu
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800'
          + "".join(f"&family={g['gfont']}" for g in G.GAMES if "gfont" in g) + '&display=swap">')   # every tile's title font
-# Tile colours: "muted" (her choice, Nov 14), "original" (each game's own dark palette with its glow; she tried it and went
+# Tile colours: "juicy" (her choice, Nov 14, from PALETTES), "muted" (published earlier that day), "original" (each game's own dark palette with its glow; she tried it and went
 # back), or a set from PALETTES. Preview one with the environment variable GN_TILES=<name>.
 import os
-TILE_COLORS = os.environ.get("GN_TILES", "muted")
+TILE_COLORS = os.environ.get("GN_TILES", "juicy")
 # Other colour sets tried on Nov 14 (start, end of the gradient); "dusty" and "juicy" use dark text, the others white. Contrast checked:
 # white text 4.6:1 or more at both ends, dark text 4.8:1 or more.
 PALETTES = {
