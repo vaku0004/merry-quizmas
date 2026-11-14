@@ -41,10 +41,23 @@ ARROW = ('<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="cu
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800'
          + "".join(f"&family={g['gfont']}" for g in G.GAMES if "gfont" in g) + '&display=swap">')   # every tile's title font
-# Tile colours: "original" (her choice, Nov 14: each game's own dark palette with its glow, as on the first site
-# version) or "muted" (the gradients published earlier on Nov 14). Preview the other one with GN_TILES=muted.
+# Tile colours: "muted" (her choice, Nov 14), "original" (each game's own dark palette with its glow; she tried it and went
+# back), or a set from PALETTES. Preview one with the environment variable GN_TILES=<name>.
 import os
-TILE_COLORS = os.environ.get("GN_TILES", "original")
+TILE_COLORS = os.environ.get("GN_TILES", "muted")
+# Other colour sets tried on Nov 14 (start, end of the gradient); "dusty" uses dark text, the others white. Contrast checked:
+# white text 4.6:1 or more at both ends, dark text 4.8:1 or more.
+PALETTES = {
+    "jewel": {"christmas": ("#1f7a4f", "#0d3b2a"), "movies": ("#a3222f", "#4a0f18"), "halloween": ("#7b3fb0", "#2e1650"),
+              "newyear": ("#2f3f9e", "#141a4a"), "trivia": ("#0f7a8a", "#083b44"), "decades": ("#8a2fb0", "#3a1260"),
+              "valentines": ("#b02a5c", "#4f1028"), "stpatricks": ("#198346", "#0b3f22")},
+    "duotone": {"christmas": ("#1e7a50", "#8a2a2a"), "movies": ("#a3222f", "#5e2a8a"), "halloween": ("#6a3aa8", "#a8501f"),
+                "newyear": ("#2a3a9e", "#8a2a6a"), "trivia": ("#0f7a8a", "#5a3aa8"), "decades": ("#a02a8a", "#2a5aa8"),
+                "valentines": ("#b02a5c", "#6a2a9a"), "stpatricks": ("#198346", "#8a6a14")},
+    "dusty": {"christmas": ("#b6dccb", "#86bba5"), "movies": ("#ebbdaf", "#d69584"), "halloween": ("#d3c0ea", "#ae95d4"),
+              "newyear": ("#bcc5ec", "#95a2de"), "trivia": ("#b0e0e6", "#83c6d0"), "decades": ("#e2bdec", "#c696d8"),
+              "valentines": ("#f3bfcf", "#e195ad"), "stpatricks": ("#bce2c3", "#8fca9d")},
+}
 # Title size per display font: wide or tall faces are scaled so every title fits its tile.
 FONT_SCALE = {"Bungee": .66, "Limelight": .8, "Righteous": .82, "Eagle Lake": .72, "Lilita One": .95, "Pirata One": 1.08,
               "Mountains of Christmas": 1.0, "Yeseva One": .86}
@@ -86,7 +99,10 @@ a:hover{color:var(--bone)}
 /* 2-3-3 on a computer: the first two tiles (the game in season and the next one) are wide, then rows of three */
 .tiles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
 .tile{grid-column:span 2;--h:2rem;display:flex;flex-direction:column;gap:12px;padding:20px;border-radius:20px;
- background:radial-gradient(120%% 90%% at 100%% 0%%,rgba(255,255,255,.2),transparent 60%%),linear-gradient(200deg,var(--t-a),var(--t-b));color:#ffffff;--t-soft:rgba(0,0,0,.24);--t-rule:rgba(255,255,255,.22)}
+ background:radial-gradient(120%% 90%% at 100%% 0%%,rgba(255,255,255,.2),transparent 60%%),linear-gradient(200deg,var(--t-a),var(--t-b));color:#ffffff;--t-soft:rgba(0,0,0,.24);--t-rule:color-mix(in srgb,currentColor 24%%,transparent)}
+.tile.ink-dark{color:#16141a;--t-soft:rgba(0,0,0,.12)}
+.tile.ink-dark .play{background:#16141a;color:#ffffff}
+.tile.ink-dark .play:hover{color:#ffffff}
 .tile:nth-child(-n+2){grid-column:span 3;--h:2.7rem}
 .tile:nth-child(-n+2) .disc{width:104px;height:104px}
 .tile:nth-child(-n+2) .disc svg{width:74px;height:74px}
@@ -96,16 +112,16 @@ a:hover{color:var(--bone)}
 .tile .tag{font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:6px;background:var(--t-soft);text-align:right}
 .tile .tag.new{background:#0c0c0e;color:var(--t-acc)}
 .tile h3{margin:6px 0 0;font-family:var(--t-font);font-weight:var(--t-w);font-size:calc(var(--h) * var(--t-fs));line-height:1.05}
-.tile .blurb{margin:0;font-size:.92rem;font-weight:500;line-height:1.5;flex:1;color:rgba(255,255,255,.92)}
+.tile .blurb{margin:0;font-size:.92rem;font-weight:500;line-height:1.5;flex:1}
 .tile .chips{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 0;padding:0;list-style:none}
-.tile .chips li{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:2px 10px;font-size:.75rem;font-weight:600}
+.tile .chips li{border:1px solid color-mix(in srgb,currentColor 40%%,transparent);border-radius:999px;padding:2px 10px;font-size:.75rem;font-weight:600}
 .tile .foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 16px;border-top:1px solid var(--t-rule);padding-top:12px;margin-top:4px}
 .tile .play{display:inline-flex;align-items:center;gap:8px;background:var(--t-acc);color:#0c0c0e;text-decoration:none;font-size:.8rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:10px;padding:10px 14px}
 .tile .play:hover{filter:brightness(1.08);color:#0c0c0e}
 .tile .when{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
 .tile .links{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.8rem;font-weight:600}
-.tile .links a{color:rgba(255,255,255,.88)}
-.tile .links a:hover{color:#ffffff}
+.tile .links a{color:inherit}
+.tile .links a:hover{opacity:.8}
 @media (max-width:900px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.tile,.tile:nth-child(-n+2){grid-column:auto;--h:2rem}
  .tile:nth-child(-n+2) .disc{width:86px;height:86px}.tile:nth-child(-n+2) .disc svg{width:60px;height:60px}}
 @media (max-width:640px){.tiles{grid-template-columns:minmax(0,1fr)}}
@@ -184,6 +200,11 @@ def _tile(g, state, today):
     fam, w = g["display"][3].replace('"', "'"), g["display"][1]
     style = f"--t-a:{c1};--t-b:{c2};--t-acc:{acc};--t-font:{fam};--t-w:{w};--t-fs:{FONT_SCALE.get(g['display'][0], 1)}"
     cls = "tile"
+    if TILE_COLORS in PALETTES and g["slug"] in PALETTES[TILE_COLORS]:
+        c1, c2 = PALETTES[TILE_COLORS][g["slug"]]
+        style = style.replace(f"--t-a:{TILES[g['slug']][0]};--t-b:{TILES[g['slug']][1]}", f"--t-a:{c1};--t-b:{c2}")
+        if TILE_COLORS == "dusty":
+            cls = "tile ink-dark"
     if TILE_COLORS == "original" and "rgb" in g:
         th = g["theme"]
         style += (f";--o-night:{th['night']};--o-line:{th['line']};--o-bone:{th['bone']};--o-ash:{th['ash']};--o-ember:{th['ember']};"
