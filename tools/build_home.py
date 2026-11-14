@@ -61,6 +61,10 @@ PALETTES = {
     "juicy": {"christmas": ("#8ff0e2", "#2fd3c2"), "movies": ("#ffe07a", "#ffb72e"), "halloween": ("#ffc07a", "#ff8a3d"),
               "newyear": ("#cdb4ff", "#a079ff"), "trivia": ("#a8d4ff", "#5aa2ff"), "decades": ("#ffa8e4", "#ff5cc8"),
               "valentines": ("#ffaaae", "#ff6470"), "stpatricks": ("#c4f080", "#7fd447")},
+    # juicy, a little less bright (her request): saturation about 22% lower, lightness 2-3% lower; dark text 5.8:1 or more
+    "juicy_soft": {"christmas": ("#94e4d8", "#3ebdaf"), "movies": ("#f0d682", "#e7ac3d"), "halloween": ("#f0bc82", "#e9894a"),
+                   "newyear": ("#cab5f6", "#9f7eef"), "trivia": ("#aad0f4", "#639fec"), "decades": ("#f4aadd", "#ec65be"),
+                   "valentines": ("#f5acaf", "#ed6c76"), "stpatricks": ("#bee286", "#7ec250")},
 }
 # Title size per display font: wide or tall faces are scaled so every title fits its tile.
 FONT_SCALE = {"Bungee": .66, "Limelight": .8, "Righteous": .82, "Eagle Lake": .72, "Lilita One": .95, "Pirata One": 1.08,
@@ -207,7 +211,7 @@ def _tile(g, state, today):
     if TILE_COLORS in PALETTES and g["slug"] in PALETTES[TILE_COLORS]:
         c1, c2 = PALETTES[TILE_COLORS][g["slug"]]
         style = style.replace(f"--t-a:{TILES[g['slug']][0]};--t-b:{TILES[g['slug']][1]}", f"--t-a:{c1};--t-b:{c2}")
-        if TILE_COLORS in ("dusty", "juicy"):
+        if TILE_COLORS in ("dusty", "juicy", "juicy_soft"):
             cls = "tile ink-dark"
     if TILE_COLORS == "original" and "rgb" in g:
         th = g["theme"]
