@@ -64,14 +64,15 @@ def trailer(g, new=False):
 
 CSS = """
 .trailer{position:relative;height:190vh;background:var(--tr-night);color:var(--tr-bone)}
-.trailer__sticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;
+body:has(.trailer) .site-head{position:absolute;top:0;left:0;right:0;z-index:5;background:transparent;border-bottom-color:transparent}
+.trailer__sticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;--tr-pad:max(clamp(16px,4vw,56px),calc((100% - 1200px) / 2 + 20px));
  background:radial-gradient(70% 60% at 78% 62%,rgba(var(--tr-glow),.20),transparent 70%),radial-gradient(60% 50% at 10% 10%,rgba(var(--tr-glow2),.12),transparent 70%),var(--tr-night)}
 .trailer__fx{position:absolute;inset:0;width:100%;height:100%;display:block}
-.trailer__art{position:absolute;right:7%;bottom:16%;width:min(34vw,440px);aspect-ratio:1;filter:drop-shadow(0 0 60px rgba(var(--tr-glow),.55));
- transform-origin:50% 80%;will-change:transform}
+.trailer__art{position:absolute;right:calc(var(--tr-pad) + 2%);top:clamp(72px,11vh,120px);width:min(30vw,44vh,440px);aspect-ratio:1;filter:drop-shadow(0 0 60px rgba(var(--tr-glow),.55));
+ transform-origin:50% 50%;will-change:transform}
 .trailer__art svg{width:100%;height:100%}
 .trailer__fade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,transparent 62%,rgba(12,12,14,.55) 84%,#0c0c0e 100%)}
-.trailer__hero{position:absolute;inset:0;padding:0 clamp(16px,4vw,56px) clamp(28px,6vh,64px);display:flex;flex-direction:column;justify-content:flex-end;gap:10px}
+.trailer__hero{position:absolute;inset:0;padding:0 var(--tr-pad) clamp(28px,6vh,64px);display:flex;flex-direction:column;justify-content:flex-end;gap:10px}
 .trailer__eyebrow{margin:0;font-family:var(--f-ui);font-weight:800;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--tr-candle)}
 .trailer__title{margin:0;font-family:var(--tr-font);font-weight:var(--tr-w);line-height:.9;letter-spacing:-.01em;white-space:nowrap;
  display:inline-flex;align-self:flex-start;width:max-content;font-size:14vw;color:var(--tr-ember);text-shadow:0 0 50px rgba(var(--tr-glow),.45)}
@@ -85,14 +86,15 @@ CSS = """
 .trailer__orbit{position:absolute;inset:0;opacity:0;pointer-events:none;font-family:var(--f-ui)}
 .trailer__item{position:absolute;margin:0;max-width:30ch;font-size:clamp(.95rem,1.4vw,1.15rem);line-height:1.45;font-weight:600;color:var(--tr-bone)}
 .trailer__item span{display:block;margin-bottom:6px;font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--tr-ash)}
-.trailer__item--tl{top:clamp(24px,7vh,72px);left:clamp(16px,4vw,56px)}
-.trailer__item--tr{top:clamp(24px,7vh,72px);right:clamp(16px,4vw,56px);text-align:right}
-.trailer__item--bl{bottom:clamp(120px,22vh,220px);left:clamp(16px,4vw,56px);list-style:none;padding:0;display:flex;flex-direction:column;gap:6px;
+.trailer__item--tl{top:clamp(88px,12vh,120px);left:var(--tr-pad)}
+.trailer__item--tr{top:clamp(88px,12vh,120px);right:var(--tr-pad);text-align:right}
+.trailer__item--bl{bottom:clamp(120px,22vh,220px);left:var(--tr-pad);list-style:none;padding:0;display:flex;flex-direction:column;gap:6px;
  font-family:var(--tr-font);font-weight:var(--tr-w);font-size:clamp(1.4rem,3.2vw,2.6rem);line-height:1.1;color:var(--tr-ember);max-width:none}
-.trailer__item--br{bottom:clamp(120px,22vh,220px);right:clamp(16px,4vw,56px);text-align:right}
+.trailer__item--br{bottom:clamp(120px,22vh,220px);right:var(--tr-pad);text-align:right}
 @media (max-width:760px){
  .trailer{height:170vh}
- .trailer__art{right:-6%;top:12%;bottom:auto;width:62vw}
+ .trailer__art{right:-4%;top:84px;width:min(60vw,40vh)}
+ .trailer__item--bl{left:var(--tr-pad)}
  .trailer__item--tr,.trailer__item--br{display:none}
  .trailer__item--bl{bottom:auto;top:clamp(110px,20vh,180px)}
 }
@@ -116,7 +118,7 @@ JS = """<script>
   function fit(){
     var cs = getComputedStyle(hero), avail = hero.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
     if (avail <= 0) return; title.style.fontSize = '100px';
-    var w = title.getBoundingClientRect().width; if (w > 0) title.style.fontSize = Math.min(100 * avail / w, innerHeight * 0.34) + 'px';
+    var w = title.getBoundingClientRect().width; if (w > 0) title.style.fontSize = Math.min(100 * avail / w, innerHeight * 0.27) + 'px';
   }
   var progress = 0;
   function read(){ var travel = st.offsetHeight - innerHeight; progress = travel > 0 ? clamp(-st.getBoundingClientRect().top / travel) : 0; }
