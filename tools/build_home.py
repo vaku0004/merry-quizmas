@@ -112,6 +112,11 @@ a:hover{color:var(--bone)}
 .tile.ink-dark .play{background:#16141a;color:#ffffff}
 .tile.ink-dark .play:hover{color:#ffffff}
 .tile:nth-child(-n+2){grid-column:span 3;--h:2.7rem}
+/* hover: lift a little, glow in the tile's colour, slightly brighter (also when a link inside has keyboard focus) */
+.tile{transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}
+.tile:hover,.tile:focus-within{transform:translateY(-4px);filter:brightness(1.06) saturate(1.05);
+ box-shadow:0 0 0 2px color-mix(in srgb,var(--t-b) 55%%,transparent),0 14px 38px color-mix(in srgb,var(--t-b) 45%%,transparent)}
+@media (prefers-reduced-motion:reduce){.tile{transition:none}.tile:hover,.tile:focus-within{transform:none}}
 .tile:nth-child(-n+2) .disc{width:104px;height:104px}
 .tile:nth-child(-n+2) .disc svg{width:74px;height:74px}
 .tile .top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
