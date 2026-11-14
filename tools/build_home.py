@@ -39,7 +39,11 @@ HEART = ('<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 56 C14 43 6 3
 ARROW = ('<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">'
          '<path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>')
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
-         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">')
+         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800'
+         + "".join(f"&family={g['gfont']}" for g in G.GAMES if "gfont" in g) + '&display=swap">')   # every tile's title font
+# Title size per display font: wide or tall faces are scaled so every title fits its tile.
+FONT_SCALE = {"Bungee": .66, "Limelight": .8, "Righteous": .82, "Eagle Lake": .72, "Lilita One": .95, "Pirata One": 1.08,
+              "Mountains of Christmas": 1.0, "Yeseva One": .86}
 
 CSS = """
 :root{color-scheme:dark;--night:%(night)s;--dusk:%(dusk)s;--line:%(line)s;--line2:%(line2)s;--bone:%(bone)s;--ash:%(ash)s;--dim:%(dim)s;
@@ -77,28 +81,30 @@ a:hover{color:var(--bone)}
 .bar span{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ash)}
 /* 2-3-3 on a computer: the first two tiles (the game in season and the next one) are wide, then rows of three */
 .tiles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
-.tile{grid-column:span 2;display:flex;flex-direction:column;gap:14px;min-height:270px;padding:20px;border-radius:20px;
- background:radial-gradient(120%% 90%% at 100%% 0%%,rgba(255,255,255,.2),transparent 60%%),linear-gradient(200deg,var(--t-a),var(--t-b));color:#ffffff;text-decoration:none;--t-soft:rgba(0,0,0,.24);--t-rule:rgba(255,255,255,.22)}
-.tile:nth-child(-n+2){grid-column:span 3;min-height:300px}
-.tile:nth-child(-n+2) h3{font-size:1.75rem}
+.tile{grid-column:span 2;--h:2rem;display:flex;flex-direction:column;gap:12px;padding:20px;border-radius:20px;
+ background:radial-gradient(120%% 90%% at 100%% 0%%,rgba(255,255,255,.2),transparent 60%%),linear-gradient(200deg,var(--t-a),var(--t-b));color:#ffffff;--t-soft:rgba(0,0,0,.24);--t-rule:rgba(255,255,255,.22)}
+.tile:nth-child(-n+2){grid-column:span 3;--h:2.7rem}
 .tile:nth-child(-n+2) .disc{width:104px;height:104px}
 .tile:nth-child(-n+2) .disc svg{width:74px;height:74px}
-a.tile:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.45);color:#ffffff}
-a.tile{transition:transform .15s ease,box-shadow .15s ease}
 .tile .top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
 .tile .disc{width:86px;height:86px;border-radius:50%%;background:rgba(12,12,14,.82);display:grid;place-items:center;flex:none}
 .tile .disc svg{width:60px;height:60px}
 .tile .tag{font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:6px;background:var(--t-soft);text-align:right}
 .tile .tag.new{background:#0c0c0e;color:var(--t-acc)}
-@media (max-width:900px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.tile,.tile:nth-child(-n+2){grid-column:auto;min-height:250px}
- .tile:nth-child(-n+2) h3{font-size:1.3rem}.tile:nth-child(-n+2) .disc{width:86px;height:86px}.tile:nth-child(-n+2) .disc svg{width:60px;height:60px}}
-.tile h3{margin:auto 0 0;font-size:1.3rem;font-weight:800;letter-spacing:-.01em;line-height:1.1;text-transform:uppercase}
-.tile p{margin:-6px 0 0;font-size:.82rem;font-weight:500;line-height:1.4}
-.tile .foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--t-rule);padding-top:10px;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-.tile .go{width:30px;height:30px;border-radius:8px;border:1px solid var(--t-rule);display:grid;place-items:center}
-.more{display:flex;flex-wrap:wrap;gap:6px 18px;margin:16px 0 0;font-size:.85rem;font-weight:600;color:var(--ash)}
-.more a{color:#c9c9d1}
-.more a:hover{color:var(--ember)}
+.tile h3{margin:6px 0 0;font-family:var(--t-font);font-weight:var(--t-w);font-size:calc(var(--h) * var(--t-fs));line-height:1.05}
+.tile .blurb{margin:0;font-size:.92rem;font-weight:500;line-height:1.5;flex:1;color:rgba(255,255,255,.92)}
+.tile .chips{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 0;padding:0;list-style:none}
+.tile .chips li{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:2px 10px;font-size:.75rem;font-weight:600}
+.tile .foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 16px;border-top:1px solid var(--t-rule);padding-top:12px;margin-top:4px}
+.tile .play{display:inline-flex;align-items:center;gap:8px;background:var(--t-acc);color:#0c0c0e;text-decoration:none;font-size:.8rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:10px;padding:10px 14px}
+.tile .play:hover{filter:brightness(1.08);color:#0c0c0e}
+.tile .when{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.tile .links{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.8rem;font-weight:600}
+.tile .links a{color:rgba(255,255,255,.88)}
+.tile .links a:hover{color:#ffffff}
+@media (max-width:900px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.tile,.tile:nth-child(-n+2){grid-column:auto;--h:2rem}
+ .tile:nth-child(-n+2) .disc{width:86px;height:86px}.tile:nth-child(-n+2) .disc svg{width:60px;height:60px}}
+@media (max-width:640px){.tiles{grid-template-columns:minmax(0,1fr)}}
 .stats{margin-top:40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;border-block:1px solid #1c1c22;padding:26px 0}
 .stats b{display:block;font-size:clamp(1.9rem,5vw,3.25rem);font-weight:800;letter-spacing:-.03em;line-height:1}
 .stats span{display:block;margin-top:8px;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ash)}
@@ -137,9 +143,7 @@ a.tile{transition:transform .15s ease,box-shadow .15s ease}
 .site-foot nav{display:flex;flex-wrap:wrap;gap:8px 20px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
 .site-foot a{color:var(--ash);text-decoration:none}
 .site-foot a:hover{color:var(--bone)}
-@media (max-width:420px){.tile,.tile:nth-child(-n+2){min-height:230px;padding:14px}.tile h3,.tile:nth-child(-n+2) h3{font-size:1.05rem}
- .tile .disc,.tile:nth-child(-n+2) .disc{width:64px;height:64px}.tile .disc svg,.tile:nth-child(-n+2) .disc svg{width:44px;height:44px}
- .tile .top{flex-direction:column;align-items:flex-start}.tile .tag{text-align:left}}
+@media (max-width:420px){.tile,.tile:nth-child(-n+2){padding:16px}.tile .disc,.tile:nth-child(-n+2) .disc{width:72px;height:72px}.tile .disc svg,.tile:nth-child(-n+2) .disc svg{width:50px;height:50px}}
 """ % HUB
 
 
@@ -160,17 +164,22 @@ def _art(g):
 
 def _tile(g, state, today):
     """state: "play" (on the site), "scheduled" (opens on its launch date), "soon"."""
-    c1, c2, acc, tag, line = TILES.get(g["slug"], ("#3a3a44", "#292930", "#cbff38", g["holiday"], g["card"]))
-    style = f"--t-a:{c1};--t-b:{c2};--t-acc:{acc}"
+    c1, c2, acc, tag, _ = TILES.get(g["slug"], ("#3a3a44", "#292930", "#cbff38", g["holiday"], g["card"]))
+    fam, w = g["display"][3].replace('"', "'"), g["display"][1]
+    style = f"--t-a:{c1};--t-b:{c2};--t-acc:{acc};--t-font:{fam};--t-w:{w};--t-fs:{FONT_SCALE.get(g['display'][0], 1)}"
     new = state == "play" and g.get("launch") and 0 <= (datetime.date.fromisoformat(today) - datetime.date.fromisoformat(g["launch"])).days <= 45
     tag_html = f'<span class="tag new">New · {e(tag)}</span>' if new else f'<span class="tag">{e(tag)}</span>'
-    inner = (f'<div class="top"><span class="disc">{_art(g)}</span>{tag_html}</div>'
-             f'<h3>{e(g["short"])}</h3><p>{e(line)}</p>')
+    chips = "".join(f"<li>{e(t)}</li>" for _, t in g["chips"])
+    head = (f'<div class="top"><span class="disc">{_art(g)}</span>{tag_html}</div>'
+            f'<h3>{e(g["short"])}</h3><p class="blurb">{e(g["card"])}</p><ul class="chips">{chips}</ul>')
     if state == "play":
-        return (f'<a class="tile" style="{style}" href="/{g["slug"]}/" data-play>{inner}'
-                f'<div class="foot"><span>Play</span><span class="go">{ARROW}</span></div></a>')
+        slug, label = g["slug"], e(g.get("trivia_label", g["holiday"] + " trivia questions"))
+        return (f'<article class="tile" style="{style}">{head}<div class="foot">'
+                f'<a class="play" href="/{slug}/" data-play>Play {e(g["short"])} {ARROW}</a>'
+                f'<span class="links"><a href="/{slug}/trivia-questions/">{label}</a><a href="/{slug}/how-to-host-a-game-night/">Host guide</a>'
+                f'<a href="/{slug}/faq/">FAQ</a></span></div></article>')
     label = f"Opens {_date_words(g['launch'])}" if state == "scheduled" else "Coming soon"
-    return f'<div class="tile" style="{style}">{inner}<div class="foot"><span>{label}</span></div></div>'
+    return f'<article class="tile" style="{style}">{head}<div class="foot"><span class="when">{label}</span></div></article>'
 
 
 FAQ = [
@@ -242,8 +251,6 @@ def home_page(out_slugs, today):
     soon = [g for g in G.GAMES if g["slug"] not in out_slugs and g["status"] == "soon"]
     tiles = "\n".join([_tile(g, "play", today) for g in playable] + [_tile(g, "scheduled", today) for g in scheduled]
                       + [_tile(g, "soon", today) for g in soon])
-    more = "".join(f'<a href="/{g["slug"]}/trivia-questions/">{e(g.get("trivia_label", g["holiday"] + " trivia questions"))}</a>'
-                   f'<a href="/{g["slug"]}/how-to-host-a-game-night/">{e(g["short"])} host guide</a>' for g in playable)
     faq = "".join(f'<details{" open" if k == 0 else ""}><summary>{e(q)}</summary><p>{a}</p></details>' for k, (q, a) in enumerate(FAQ))
     colors = ["var(--ember)", "var(--coral)", "var(--cyan)", "var(--bone)"]
     steps = [("Open a game on the big screen", "Chrome or Edge on the laptop connected to the TV or projector. Press F11 for full screen."),
@@ -263,7 +270,6 @@ def home_page(out_slugs, today):
 <div class="tiles">
 {tiles}
 </div>
-<nav class="more" aria-label="Questions and host guides">{more}</nav>
 </section>
 
 <section class="stats" aria-label="At a glance">
