@@ -6,7 +6,7 @@ import base64, glob, sys
 
 FAMS = {"Pirata One": "pirata-one", "Mountains of Christmas": "mountains-of-christmas", "Yeseva One": "yeseva-one",
         "Eagle Lake": "eagle-lake", "Righteous": "righteous", "Lilita One": "lilita-one", "Limelight": "limelight",
-        "Bungee": "bungee", "Alegreya": "alegreya", "Alegreya Sans": "alegreya-sans", "Oswald": "oswald"}
+        "Bungee": "bungee", "Alegreya": "alegreya", "Alegreya Sans": "alegreya-sans", "Oswald": "oswald", "Plus Jakarta Sans": "plus-jakarta-sans"}
 
 out = []
 for fam, slug in FAMS.items():

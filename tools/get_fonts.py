@@ -10,7 +10,8 @@ import io, os, sys, tarfile, urllib.request
 VERSION = "5.3.0"
 FONTS = ["alegreya", "alegreya-sans", "oswald",                      # site and game text
          "pirata-one", "mountains-of-christmas", "yeseva-one", "eagle-lake",
-         "righteous", "lilita-one", "limelight", "bungee"]           # each game's title font (see tools/games.py)
+         "righteous", "lilita-one", "limelight", "bungee",            # each game's title font (see tools/games.py)
+         "plus-jakarta-sans"]                                         # home page (design D)
 OUT = "fontpkgs"
 
 

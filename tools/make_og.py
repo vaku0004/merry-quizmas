@@ -71,7 +71,7 @@ h1{{font-family:'{fam}';font-weight:{w};font-size:{int((104 if w == 700 else 112
 
 
 def hub_sources(games_out):
-    th = H.HUB
+    th = H.OG_HUB
     css = base_css(th, "240,180,76", "231,122,149", False)
     arts = "".join(f'<div class="a">{G.art(g, g["icon"]) if "art_src" in g else H.HEART}</div>' for g in G.GAMES)
     og = f"""<!doctype html><html><head><meta charset="utf-8"><style>{css}
