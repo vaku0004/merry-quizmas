@@ -17,17 +17,18 @@ HUB = dict(night="#0c0c0e", dusk="#1b1b20", line="#27272e", line2="#3a3a44", bon
 # The site's preview image and icons (tools/make_og.py) keep the original navy palette, so the published images stay as they are.
 OG_HUB = dict(night="#111526", dusk="#1a1f36", cell="#232a47", line="#363f66", bone="#f4efe6", ash="#a9aec8",
               candle="#f0b44c", ember="#ffe2a3", good="#7cc39a", witch="#e77a95")
-# Tile per game (Nov 14, her request: muted tones, a light gradient): from a muted colour to one about 16% darker, white text (each start colour
+# Tile per game (Nov 14, her request: muted tones, a visible but soft gradient): a soft light patch top right over a
+# gradient from a muted colour to one 30% darker, white text (each start colour
 # checked for 4.6:1 or more), the game's bright colour as an accent (the "New" tag), a tag and one short line.
 TILES = {
-    "christmas":  ("#2b7f88", "#246b72", "#25d5f2", "Christmas",         "Naughty or Nice, Krampus’s Bargain and a Christmas Eve wager."),
-    "movies":     ("#ad5340", "#914636", "#f45837", "Any day",           "A plot twist, a popcorn bucket and a Final Cut wager."),
-    "halloween":  ("#5e7a22", "#4f661d", "#cbff38", "Halloween",         "A black cat, a witch’s deal and a midnight wager."),
-    "newyear":    ("#6a4cb0", "#594094", "#b18cff", "New Year’s Eve",    "A party popper, a fortune cookie and a Midnight Countdown wager."),
-    "trivia":     ("#8c6a14", "#765911", "#ffd000", "Any day",           "A wild card, a mystery box and an all-in wager."),
-    "decades":    ("#a63c55", "#8b3247", "#ff7a93", "’80s · ’90s · 2000s", "A tangled tape, a time machine and a time-capsule wager."),
-    "valentines": ("#4f4aab", "#423e90", "#9d98ff", "Valentine’s Day",   "Cupid’s Arrow, a box of chocolates and a love-letter wager."),
-    "stpatricks": ("#22805f", "#1d6c50", "#3fe0a8", "St. Patrick’s Day", "A leprechaun’s trick, a rainbow and a pot-of-gold wager."),
+    "christmas":  ("#2b7f88", "#1e595f", "#25d5f2", "Christmas",         "Naughty or Nice, Krampus’s Bargain and a Christmas Eve wager."),
+    "movies":     ("#ad5340", "#793a2d", "#f45837", "Any day",           "A plot twist, a popcorn bucket and a Final Cut wager."),
+    "halloween":  ("#5e7a22", "#425518", "#cbff38", "Halloween",         "A black cat, a witch’s deal and a midnight wager."),
+    "newyear":    ("#6a4cb0", "#4a357b", "#b18cff", "New Year’s Eve",    "A party popper, a fortune cookie and a Midnight Countdown wager."),
+    "trivia":     ("#8c6a14", "#624a0e", "#ffd000", "Any day",           "A wild card, a mystery box and an all-in wager."),
+    "decades":    ("#a63c55", "#742a3b", "#ff7a93", "’80s · ’90s · 2000s", "A tangled tape, a time machine and a time-capsule wager."),
+    "valentines": ("#4f4aab", "#373478", "#9d98ff", "Valentine’s Day",   "Cupid’s Arrow, a box of chocolates and a love-letter wager."),
+    "stpatricks": ("#22805f", "#185a42", "#3fe0a8", "St. Patrick’s Day", "A leprechaun’s trick, a rainbow and a pot-of-gold wager."),
 }
 # The game in season goes first, MM-DD to MM-DD (may wrap the year end).
 FEATURE = {"halloween": ("10-01", "10-31"), "christmas": ("11-15", "12-25"), "newyear": ("12-26", "01-01"),
@@ -77,7 +78,7 @@ a:hover{color:var(--bone)}
 /* 2-3-3 on a computer: the first two tiles (the game in season and the next one) are wide, then rows of three */
 .tiles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
 .tile{grid-column:span 2;display:flex;flex-direction:column;gap:14px;min-height:270px;padding:20px;border-radius:20px;
- background:linear-gradient(145deg,var(--t-a),var(--t-b));color:#ffffff;text-decoration:none;--t-soft:rgba(0,0,0,.24);--t-rule:rgba(255,255,255,.22)}
+ background:radial-gradient(120%% 90%% at 100%% 0%%,rgba(255,255,255,.2),transparent 60%%),linear-gradient(200deg,var(--t-a),var(--t-b));color:#ffffff;text-decoration:none;--t-soft:rgba(0,0,0,.24);--t-rule:rgba(255,255,255,.22)}
 .tile:nth-child(-n+2){grid-column:span 3;min-height:300px}
 .tile:nth-child(-n+2) h3{font-size:1.75rem}
 .tile:nth-child(-n+2) .disc{width:104px;height:104px}
@@ -159,7 +160,7 @@ def _art(g):
 
 def _tile(g, state, today):
     """state: "play" (on the site), "scheduled" (opens on its launch date), "soon"."""
-    c1, c2, acc, tag, line = TILES.get(g["slug"], ("#3a3a44", "#313139", "#cbff38", g["holiday"], g["card"]))
+    c1, c2, acc, tag, line = TILES.get(g["slug"], ("#3a3a44", "#292930", "#cbff38", g["holiday"], g["card"]))
     style = f"--t-a:{c1};--t-b:{c2};--t-acc:{acc}"
     new = state == "play" and g.get("launch") and 0 <= (datetime.date.fromisoformat(today) - datetime.date.fromisoformat(g["launch"])).days <= 45
     tag_html = f'<span class="tag new">New · {e(tag)}</span>' if new else f'<span class="tag">{e(tag)}</span>'
