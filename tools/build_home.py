@@ -45,7 +45,7 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel
 # back), or a set from PALETTES. Preview one with the environment variable GN_TILES=<name>.
 import os
 TILE_COLORS = os.environ.get("GN_TILES", "muted")
-# Other colour sets tried on Nov 14 (start, end of the gradient); "dusty" uses dark text, the others white. Contrast checked:
+# Other colour sets tried on Nov 14 (start, end of the gradient); "dusty" and "juicy" use dark text, the others white. Contrast checked:
 # white text 4.6:1 or more at both ends, dark text 4.8:1 or more.
 PALETTES = {
     "jewel": {"christmas": ("#1f7a4f", "#0d3b2a"), "movies": ("#a3222f", "#4a0f18"), "halloween": ("#7b3fb0", "#2e1650"),
@@ -57,6 +57,10 @@ PALETTES = {
     "dusty": {"christmas": ("#b6dccb", "#86bba5"), "movies": ("#ebbdaf", "#d69584"), "halloween": ("#d3c0ea", "#ae95d4"),
               "newyear": ("#bcc5ec", "#95a2de"), "trivia": ("#b0e0e6", "#83c6d0"), "decades": ("#e2bdec", "#c696d8"),
               "valentines": ("#f3bfcf", "#e195ad"), "stpatricks": ("#bce2c3", "#8fca9d")},
+    # brighter, more distinct, by theme: frosty teal, movie gold, pumpkin, party violet, brainy blue, neon pink, heart red, clover green
+    "juicy": {"christmas": ("#8ff0e2", "#2fd3c2"), "movies": ("#ffe07a", "#ffb72e"), "halloween": ("#ffc07a", "#ff8a3d"),
+              "newyear": ("#cdb4ff", "#a079ff"), "trivia": ("#a8d4ff", "#5aa2ff"), "decades": ("#ffa8e4", "#ff5cc8"),
+              "valentines": ("#ffaaae", "#ff6470"), "stpatricks": ("#c4f080", "#7fd447")},
 }
 # Title size per display font: wide or tall faces are scaled so every title fits its tile.
 FONT_SCALE = {"Bungee": .66, "Limelight": .8, "Righteous": .82, "Eagle Lake": .72, "Lilita One": .95, "Pirata One": 1.08,
@@ -203,7 +207,7 @@ def _tile(g, state, today):
     if TILE_COLORS in PALETTES and g["slug"] in PALETTES[TILE_COLORS]:
         c1, c2 = PALETTES[TILE_COLORS][g["slug"]]
         style = style.replace(f"--t-a:{TILES[g['slug']][0]};--t-b:{TILES[g['slug']][1]}", f"--t-a:{c1};--t-b:{c2}")
-        if TILE_COLORS == "dusty":
+        if TILE_COLORS in ("dusty", "juicy"):
             cls = "tile ink-dark"
     if TILE_COLORS == "original" and "rgb" in g:
         th = g["theme"]
