@@ -38,7 +38,7 @@ CSS = '''<style>
   font-size:1rem;line-height:1.4;text-align:left}
 .gn-pop a,.gn-pop button{display:flex;align-items:center;gap:10px;width:100%;padding:8px 10px;border:0;border-radius:8px;background:none;
   color:inherit;font:inherit;font-weight:700;text-decoration:none;cursor:pointer;text-align:left}
-.gn-pop a:hover,.gn-pop button:hover,.gn-pop a:focus-visible,.gn-pop button:focus-visible{background:rgba(255,255,255,.08);color:var(--ember,#ffd58a)}
+.gn-pop a:hover,.gn-pop button:hover,.gn-pop a:focus-visible,.gn-pop button:focus-visible{background:color-mix(in srgb,currentColor 10%,transparent);color:var(--ember,#ffd58a)}
 .gn-pop p{margin:4px 10px 10px;font-weight:400}
 .gn-pop kbd{display:inline-block;min-width:1.6em;padding:1px 7px;border:1px solid var(--line,#3a3248);border-bottom-width:3px;border-radius:6px;
   font:700 .95em var(--f-ui,system-ui,sans-serif);color:var(--ember,#ffd58a);text-align:center}

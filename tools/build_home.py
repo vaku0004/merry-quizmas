@@ -2,14 +2,20 @@
 
 From Python: home_page(published_games, today) and privacy_page().
 """
-import html, json
+import datetime, html, json
 from site_common import GA_HEAD, PAGE_EVENTS_JS, URL, BRAND, CONTACT_HREF
 import games as G
 import share as SH
 
 e = lambda s: html.escape(s, quote=True)
-HUB = dict(night="#111526", dusk="#1a1f36", cell="#232a47", line="#363f66", bone="#f4efe6", ash="#a9aec8",
-           candle="#f0b44c", ember="#ffe2a3", good="#7cc39a", witch="#e77a95")
+# Light page (her choice, Nov 13: design A "Game Night" from the Claude Design canvas, soft grey ground); game cards keep each game's own colours.
+# Names kept from the dark version: night = page ground, dusk = boxes, bone = text, ash = muted text, ember = headings, candle = accent.
+HUB = dict(night="#f1f1ee", dusk="#ffffff", cell="#f7f7f4", line="#dedcd6", line2="#c9c6bd", bone="#222220", ash="#605e59",
+           candle="#a9631a", ember="#26233a", link="#8a5512", good="#3f8a5a", witch="#c4486b")
+# A game is featured (wide card at the top) while today falls in its season, MM-DD to MM-DD (may wrap the year end).
+FEATURE = {"halloween": ("10-01", "10-31"), "christmas": ("11-15", "12-25"), "newyear": ("12-26", "01-01"),
+           "valentines": ("01-20", "02-14"), "stpatricks": ("02-10", "03-17")}
+MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 HEART = ('<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 56 C14 43 6 33 6 22 C6 13 13 7 21 7 C26 7 30 10 32 14 '
          'C34 10 38 7 43 7 C51 7 58 13 58 22 C58 33 50 43 32 56 Z" fill="#e77a95"/><path d="M17 16 C13 18 12 22 13 26" '
          'stroke="#ffd1dc" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/></svg>')
@@ -18,68 +24,85 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel
          '&family=Alegreya+Sans:wght@400;700;800' + "".join(f"&family={g['gfont']}" for g in G.GAMES if "gfont" in g) + '&display=swap">')   # every card's title font
 
 CSS = """
-:root{color-scheme:dark;--night:%(night)s;--dusk:%(dusk)s;--cell:%(cell)s;--line:%(line)s;--bone:%(bone)s;--ash:%(ash)s;
- --candle:%(candle)s;--ember:%(ember)s;--good:%(good)s;--heart:%(witch)s;
+:root{color-scheme:light;--night:%(night)s;--dusk:%(dusk)s;--cell:%(cell)s;--line:%(line)s;--line2:%(line2)s;--bone:%(bone)s;--ash:%(ash)s;
+ --candle:%(candle)s;--ember:%(ember)s;--link:%(link)s;--good:%(good)s;--heart:%(witch)s;
  --f-text:"Alegreya",Georgia,serif;--f-ui:"Alegreya Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--wrap:1120px}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--night);color:var(--bone);font-family:var(--f-text);font-size:1.125rem;line-height:1.6;
- background-image:radial-gradient(ellipse 55%% 45%% at 85%% -10%%,rgba(240,180,76,.16),transparent 70%%),
- radial-gradient(ellipse 60%% 45%% at 0%% 105%%,rgba(231,122,149,.12),transparent 70%%);background-attachment:fixed}
-a{color:var(--ember);text-underline-offset:.18em}
-a:hover{color:var(--candle)}
-:focus-visible{outline:3px solid var(--ember);outline-offset:3px}
+body{margin:0;background:var(--night);color:var(--bone);font-family:var(--f-text);font-size:1.125rem;line-height:1.6}
+a{color:var(--link);text-underline-offset:.18em}
+a:hover{color:var(--ember)}
+:focus-visible{outline:3px solid var(--candle);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .wrap{max-width:var(--wrap);margin:0 auto;padding-inline:16px}
-.site-head{border-bottom:1px solid var(--line)}
-.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;flex-wrap:wrap}
-.brand{font-family:var(--f-text);font-weight:800;font-style:italic;font-size:1.35rem;color:var(--ember);text-decoration:none}
-.site-nav{display:flex;gap:4px 18px;flex-wrap:wrap;font-family:var(--f-ui);font-weight:700;font-size:.98rem}
+.site-head{border-bottom:1px solid var(--line);background:var(--night)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px 16px;min-height:64px;flex-wrap:wrap;padding-block:10px}
+.brand{font-family:var(--f-text);font-weight:800;font-style:italic;font-size:1.4rem;color:var(--ember);text-decoration:none}
+.site-nav{display:flex;align-items:center;gap:6px 22px;flex-wrap:wrap;font-family:var(--f-ui);font-weight:700;font-size:1rem}
 .site-nav a{color:var(--bone);text-decoration:none}
-.site-nav a:hover{color:var(--ember)}
-.hero{padding:40px 0 8px;max-width:46rem}
-.reach{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%%,340px),1fr));gap:16px;margin:40px 0 0}
-.reach>div{border:1px solid var(--line);border-radius:20px;padding:22px 24px;background:rgba(26,31,54,.7)}
-.reach-h{font-weight:800;font-size:1.35rem;color:var(--ember);margin:0 0 4px;line-height:1.2}
-.reach .muted{font-family:var(--f-ui);font-size:1rem;margin:0 0 16px}
-.reach-btns{display:flex;flex-wrap:wrap;gap:10px}
+.site-nav a:hover{color:var(--candle)}
+.site-nav a.pill{border:1px solid var(--line2);border-radius:999px;padding:.4em 1em;background:var(--dusk)}
+.hero{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 40px;padding:40px 0 28px}
+.hero>div{flex:1 1 560px;min-width:0}
+.hero.prose{display:block;max-width:46rem}
 .eyebrow{font-family:var(--f-ui);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;color:var(--ash);margin:0}
-h1{font-weight:800;font-size:clamp(2.6rem,7vw,4.4rem);line-height:1;margin:.2em 0 .35em;color:var(--ember)}
+h1{font-weight:800;font-size:clamp(2.5rem,6vw,4rem);line-height:1;margin:.15em 0 .3em;color:var(--ember)}
 h1 i{font-style:italic;color:var(--candle)}
-.lede{font-size:1.3rem;margin:0 0 .6em}
+.lede{font-size:1.25rem;margin:0;max-width:40rem}
+.note{font-family:var(--f-ui);font-size:.95rem;margin:0}
 .muted{color:var(--ash)}
 h2{font-weight:800;font-size:clamp(1.8rem,4vw,2.4rem);line-height:1.1;margin:2em 0 .5em;color:var(--ember)}
-.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%%,440px),1fr));gap:20px;margin:18px 0 0}
-.game{position:relative;display:flex;flex-direction:column;border:1px solid var(--g-line);border-radius:20px;padding:26px 24px 24px;
+.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%%,320px),1fr));gap:20px;margin:20px 0 0}
+.game{position:relative;display:flex;flex-direction:column;border:1px solid var(--g-line);border-radius:20px;padding:24px;
  background:radial-gradient(ellipse 80%% 70%% at 100%% 0%%,rgba(var(--g-glow),.22),transparent 65%%),var(--g-night);color:var(--g-bone);overflow:hidden}
-.game svg{width:96px;height:96px;position:absolute;right:20px;top:20px;filter:drop-shadow(0 0 24px rgba(var(--g-glow),.45))}
-.game .when{font-family:var(--f-ui);font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g-ash);margin:0 120px 0 0}
-.game h3{font-family:var(--g-font);font-weight:var(--g-w);font-size:2.4rem;line-height:1;margin:10px 120px 12px 0;color:var(--g-ember)}
-.game p.blurb{margin:0 0 18px;flex:1}
-.game .chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 20px;padding:0;list-style:none;font-family:var(--f-ui);font-size:.9rem}
-.game .chips li{border:1px solid var(--g-line);border-radius:999px;padding:2px 10px}
+.game a{color:var(--g-ember)}
+.game>svg{width:72px;height:72px;position:absolute;right:20px;top:18px;filter:drop-shadow(0 0 20px rgba(var(--g-glow),.45))}
+.game .when{font-family:var(--f-ui);font-weight:800;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g-ash);margin:0 90px 0 0}
+.game h3{font-family:var(--g-font);font-weight:var(--g-w);font-size:2.2rem;line-height:1.05;margin:12px 90px 10px 0;color:var(--g-ember)}
+.game p.blurb{margin:0 0 18px;flex:1;font-size:1.05rem}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;font-family:var(--f-ui);font-weight:800;text-decoration:none;
- border:1px solid var(--line);background:var(--dusk);color:var(--bone);padding:.65em 1.2em;border-radius:999px;line-height:1.2}
+ border:1px solid var(--line2);background:var(--dusk);color:var(--bone);padding:.65em 1.2em;border-radius:999px;line-height:1.2;font-size:1rem}
+.btn:hover{border-color:var(--candle);color:var(--ember)}
 .btn.primary{background:var(--g-candle,var(--candle));border-color:transparent;color:#17121c}
 .btn.primary:hover{filter:brightness(1.08);color:#17121c}
+.btn.big{font-size:1.15rem;padding:.8em 1.6em}
 .game .links{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:14px;font-family:var(--f-ui);font-size:.95rem}
 .game .links a{color:var(--g-ash)}
 .game.soon{border-style:dashed}
-.soon-h{font-family:var(--f-ui);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.85rem;color:var(--ash);margin:34px 0 12px}
-.games.small{grid-template-columns:repeat(auto-fit,minmax(min(100%%,300px),1fr));margin-top:0}
-.games.small .game h3{font-size:2rem}
-.games.small .game svg{width:76px;height:76px}
-.game.soon .btn{background:transparent;border:1px dashed var(--g-line);color:var(--g-ash);cursor:default}
+.game.soon .btn{background:transparent;border:1px dashed var(--g-line);color:var(--g-ash);cursor:default;align-self:flex-start}
+.game.feature{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;align-items:center;gap:20px 36px;padding:32px}
+.game.feature>svg{position:static;flex:0 0 170px;width:170px;height:170px}
+.game.feature .body{flex:1 1 480px;min-width:0;display:flex;flex-direction:column}
+.game.feature .when{margin:0}
+.game.feature h3{font-size:clamp(2.6rem,5vw,3.8rem);margin:10px 0 12px}
+.game.feature p.blurb{font-size:1.2rem;max-width:40rem;flex:none}
+.game.feature .actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;font-family:var(--f-ui);font-weight:700}
+.game.feature .actions a:not(.btn){color:var(--g-ember)}
+.badge{display:inline-block;background:var(--g-candle);color:#17121c;border-radius:999px;padding:2px 10px;margin-right:10px;letter-spacing:.08em}
+.soon-h{font-family:var(--f-ui);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;color:var(--ash);margin:34px 0 12px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%%,240px),1fr));gap:14px}
+.tile{display:flex;align-items:center;gap:14px;border:1px solid var(--g-line);border-radius:16px;padding:14px 16px;background:var(--g-night)}
+.tile svg{flex:none;width:44px;height:44px}
+.tile b{display:block;font-family:var(--g-font);font-weight:var(--g-w);font-size:1.2rem;line-height:1.15;color:var(--g-ember)}
+.tile span{font-family:var(--f-ui);font-size:.88rem;color:var(--g-ash)}
+.reach{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%%,340px),1fr));gap:16px;margin:48px 0 0}
+.reach>div{border:1px solid var(--line);border-radius:20px;padding:22px 24px;background:var(--dusk)}
+.reach-h{font-weight:800;font-size:1.35rem;color:var(--ember);margin:0 0 4px;line-height:1.2}
+.reach .muted{font-family:var(--f-ui);font-size:1rem;margin:0 0 16px}
+.reach-btns{display:flex;flex-wrap:wrap;gap:10px}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%%,240px),1fr));gap:16px;padding:0;margin:0;list-style:none;counter-reset:s}
-.steps li{border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:rgba(26,31,54,.7);font-family:var(--f-ui);font-size:1rem;line-height:1.45}
+.steps li{border:1px solid var(--line);border-radius:16px;padding:20px;background:var(--dusk);font-family:var(--f-ui);font-size:1rem;line-height:1.45}
 .steps li::before{counter-increment:s;content:counter(s);display:block;font-family:var(--f-text);font-weight:800;font-size:2rem;color:var(--candle);line-height:1;margin-bottom:6px}
 .steps b{display:block;font-size:1.1rem;margin-bottom:4px;color:var(--bone)}
-.faq h3{font-family:var(--f-ui);font-size:1.1rem;margin:1.4em 0 .2em}
-.faq p{margin:0;max-width:46rem}
+.faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%%,420px),1fr));gap:4px 48px}
+.faq h3{font-family:var(--f-ui);font-size:1.1rem;margin:1.2em 0 .2em}
+.faq p{margin:0}
 .prose{max-width:46rem}
 .site-foot{border-top:1px solid var(--line);margin-top:72px;padding:28px 0 40px;font-family:var(--f-ui);font-size:.95rem;color:var(--ash)}
 .site-foot nav{display:flex;flex-wrap:wrap;gap:6px 18px;margin-bottom:10px}
 .site-foot a{color:var(--ash)}
-@media (max-width:520px){.game svg{width:72px;height:72px}.game h3{font-size:2rem;margin-right:84px}.game .when{margin-right:84px}}
+@media (max-width:520px){.game>svg{width:60px;height:60px}.game h3{font-size:1.9rem;margin-right:70px}.game .when{margin-right:70px}
+ .game.feature{padding:24px}.game.feature>svg{flex-basis:110px;width:110px;height:110px}}
 """ % HUB
 
 
@@ -92,30 +115,63 @@ def _gvars(g):
             f"--g-candle:{th['candle']};--g-glow:{g['rgb']['glow']};--g-font:{g['display'][3]};--g-w:{g['display'][1]}").replace('"', "'")
 
 
-def _card(g, out):
-    art = G.art(g, g["icon"]) if "art_src" in g else HEART
-    if not out:
-        if g["status"] == "soon":
-            when, btn = "coming soon", "Coming soon"
-        else:
-            d = g["launch"]
-            month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][int(d[5:7]) - 1]
-            when, btn = f"coming {month} {int(d[8:10])}", f"Opens {month} {int(d[8:10])}"
-        return f'''<article class="game soon" style="{_gvars(g)}">{art}
-<p class="when">{e(g['holiday'])} · {when}</p>
+def _date_words(d):
+    return f"{MONTHS[int(d[5:7]) - 1]} {int(d[8:10])}"
+
+
+def _in_season(slug, today):
+    if slug not in FEATURE:
+        return False
+    start, end = FEATURE[slug]; md = today[5:10]
+    return start <= md <= end if start <= end else (md >= start or md <= end)
+
+
+def _links(g):
+    slug, label = g["slug"], e(g.get("trivia_label", g["holiday"] + " trivia questions"))
+    return (f'<a href="/{slug}/trivia-questions/">{label}</a>'
+            f'<a href="/{slug}/how-to-host-a-game-night/">Host guide</a><a href="/{slug}/faq/">FAQ</a>')
+
+
+def _art(g):
+    return G.art(g, g["icon"]) if "art_src" in g else HEART
+
+
+def _featured(g, today):
+    new = ""
+    if g.get("launch"):
+        age = (datetime.date.fromisoformat(today) - datetime.date.fromisoformat(g["launch"])).days
+        new = '<span class="badge">New</span>' if 0 <= age <= 45 else ""
+    return f'''<article class="game feature" style="{_gvars(g)}">{_art(g)}
+<div class="body">
+<p class="when">{new}{e(g['holiday'])} · free to play</p>
 <h3>{e(g['short'])}</h3>
 <p class="blurb">{e(g['card'])}</p>
-<span class="btn" aria-disabled="true">{btn}</span>
+<div class="actions"><a class="btn primary big" href="/{g['slug']}/" data-play>Play {e(g['short'])}</a>{_links(g)}</div>
+</div>
 </article>'''
-    chips = "".join(f"<li>{e(t)}</li>" for _, t in g["chips"])
-    return f'''<article class="game" style="{_gvars(g)}">{G.art(g, g['icon'])}
+
+
+def _card(g):
+    return f'''<article class="game" style="{_gvars(g)}">{_art(g)}
 <p class="when">{e(g['holiday'])} · free to play</p>
 <h3>{e(g['short'])}</h3>
 <p class="blurb">{e(g['card'])}</p>
-<ul class="chips">{chips}</ul>
 <div><a class="btn primary" href="/{g['slug']}/" data-play>Play {e(g['short'])}</a></div>
-<div class="links"><a href="/{g['slug']}/trivia-questions/">{e(g.get('trivia_label', g['holiday'] + ' trivia questions'))}</a><a href="/{g['slug']}/how-to-host-a-game-night/">Host guide</a><a href="/{g['slug']}/faq/">FAQ</a></div>
+<div class="links">{_links(g)}</div>
 </article>'''
+
+
+def _scheduled(g):
+    return f'''<article class="game soon" style="{_gvars(g)}">{_art(g)}
+<p class="when">{e(g['holiday'])} · opens {_date_words(g['launch'])}</p>
+<h3>{e(g['short'])}</h3>
+<p class="blurb">{e(g['card'])}</p>
+<span class="btn" aria-disabled="true">Opens {_date_words(g['launch'])}</span>
+</article>'''
+
+
+def _tile(g):
+    return f'''<div class="tile" style="{_gvars(g)}">{_art(g)}<div><b>{e(g['short'])}</b><span>{e(g['holiday'])}</span></div></div>'''
 
 
 FAQ = [
@@ -163,7 +219,7 @@ def _shell(title, desc, canonical, body, ld=None, og_img=None):
 <body>
 <header class="site-head"><div class="wrap">
   <a class="brand" href="/">{e(BRAND)}</a>
-  <nav class="site-nav" aria-label="Main"><a href="/#games">Games</a><a href="/#how">How it works</a><a href="/#faq">FAQ</a></nav>
+  <nav class="site-nav" aria-label="Main"><a href="/#games">Games</a><a href="/#how">How it works</a><a href="/#faq">FAQ</a><a class="pill" href="{CONTACT_HREF}" data-contact>Write to Victoria</a></nav>
 </div></header>
 <main id="main" class="wrap">
 {body}
@@ -181,23 +237,27 @@ def _shell(title, desc, canonical, body, ld=None, og_img=None):
 
 def home_page(out_slugs, today):
     playable = [g for g in G.GAMES if g["slug"] in out_slugs]
-    upcoming = sorted((g for g in G.GAMES if g["slug"] not in out_slugs), key=lambda g: (g["status"] == "soon", g.get("launch") or ""))
-    cards = "\n".join(_card(g, True) for g in playable)
-    soon = "\n".join(_card(g, False) for g in upcoming)
+    featured = next((g for g in playable if _in_season(g["slug"], today)), None)
+    regular = [g for g in playable if g is not featured]
+    scheduled = sorted((g for g in G.GAMES if g["slug"] not in out_slugs and g["status"] != "soon"), key=lambda g: g.get("launch") or "")
+    soon = [g for g in G.GAMES if g["slug"] not in out_slugs and g["status"] == "soon"]
+    cards = "\n".join(([_featured(featured, today)] if featured else []) + [_card(g) for g in regular] + [_scheduled(g) for g in scheduled])
     soon_block = f'''<h3 class="soon-h">Coming soon</h3>
-<div class="games small">
-{soon}
-</div>''' if upcoming else ""
-    live = [g for g in G.GAMES if g["slug"] in out_slugs]
-    faq = "".join(f"<h3>{e(q)}</h3><p>{a}</p>" for q, a in FAQ)
+<div class="tiles">
+{"".join(_tile(g) for g in soon)}
+</div>''' if soon else ""
+    live = playable
+    faq = "".join(f"<div><h3>{e(q)}</h3><p>{a}</p></div>" for q, a in FAQ)
     body = f'''<section class="hero">
+<div>
 <p class="eyebrow">Team games for the big screen</p>
 <h1>Victoria’s <i>Game Nights</i></h1>
-<p class="lede">Quiz games for office parties and team events, for the holidays and any day of the year. One laptop, one big screen, a narrator who reads every question, and teams playing in the room and on the video call.</p>
-<p class="muted">No sign-up, no download, nothing for players to install.</p>
+<p class="lede">Quiz games for office parties and team events, for the holidays and any day of the year: one laptop, one big screen, a narrator who reads every question, and teams in the room and on the call.</p>
+</div>
+<p class="note muted">No sign-up · no download · nothing for players to install</p>
 </section>
 
-<section id="games" aria-labelledby="games-h"><h2 id="games-h" style="margin-top:.6em">Pick a game</h2>
+<section id="games" aria-labelledby="games-h"><h2 id="games-h" class="sr-only">Pick a game</h2>
 <div class="games">
 {cards}
 </div>
@@ -219,7 +279,7 @@ def home_page(out_slugs, today):
 </ol></section>
 
 <section id="faq" aria-labelledby="faq-h" class="faq"><h2 id="faq-h">Questions</h2>
-{faq}
+<div class="faq-grid">{faq}</div>
 </section>'''
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "WebSite", "@id": URL + "#website", "url": URL, "name": BRAND, "inLanguage": "en"},
