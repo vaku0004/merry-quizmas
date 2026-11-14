@@ -48,7 +48,7 @@ HALLOWEEN = dict(
 )
 
 CHRISTMAS = dict(
-    slug="christmas", status="scheduled", launch="2026-11-15",
+    slug="christmas", status="scheduled", launch="2026-11-14",   # moved up from Nov 15 (her decision, Nov 14)
     name="Victoria’s Merry Quizmas", short="Merry Quizmas", holiday="Christmas",
     src="games/christmas/game.html", art_src="games/christmas/art.js", audio="audio/christmas", state_key="mq-state-v1",
     icon="TREE_SVG", specials={"cat": "naughty_or_nice", "witch": "krampus"},

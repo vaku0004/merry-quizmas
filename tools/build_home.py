@@ -31,7 +31,7 @@ TILES = {
     "stpatricks": ("#22805f", "#185a42", "#3fe0a8", "St. Patrick’s Day", "A leprechaun’s trick, a rainbow and a pot-of-gold wager."),
 }
 # The game in season goes first, MM-DD to MM-DD (may wrap the year end).
-FEATURE = {"halloween": ("10-01", "10-31"), "christmas": ("11-15", "12-25"), "newyear": ("12-26", "01-01"),
+FEATURE = {"halloween": ("10-01", "10-31"), "christmas": ("11-01", "12-25"), "newyear": ("12-26", "01-01"),
            "valentines": ("01-20", "02-14"), "stpatricks": ("02-10", "03-17")}
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 HEART = ('<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 56 C14 43 6 33 6 22 C6 13 13 7 21 7 C26 7 30 10 32 14 '
@@ -41,10 +41,10 @@ ARROW = ('<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="cu
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800'
          + "".join(f"&family={g['gfont']}" for g in G.GAMES if "gfont" in g) + '&display=swap">')   # every tile's title font
-# Tile colours: "juicy" (her choice, Nov 14, from PALETTES), "muted" (published earlier that day), "original" (each game's own dark palette with its glow; she tried it and went
+# Tile colours: "juicy_soft" (her choice, Nov 14, from PALETTES; "juicy" was published first), "muted" (published earlier that day), "original" (each game's own dark palette with its glow; she tried it and went
 # back), or a set from PALETTES. Preview one with the environment variable GN_TILES=<name>.
 import os
-TILE_COLORS = os.environ.get("GN_TILES", "juicy")
+TILE_COLORS = os.environ.get("GN_TILES", "juicy_soft")
 # Other colour sets tried on Nov 14 (start, end of the gradient); "dusty" and "juicy" use dark text, the others white. Contrast checked:
 # white text 4.6:1 or more at both ends, dark text 4.8:1 or more.
 PALETTES = {
