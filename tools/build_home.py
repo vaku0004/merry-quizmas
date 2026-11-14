@@ -41,6 +41,10 @@ ARROW = ('<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="cu
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800'
          + "".join(f"&family={g['gfont']}" for g in G.GAMES if "gfont" in g) + '&display=swap">')   # every tile's title font
+# Tile colours: "muted" (published Nov 14) or "original" (each game's own dark palette with its glow, as on the first site
+# version). Preview the other one with the environment variable GN_TILES=original.
+import os
+TILE_COLORS = os.environ.get("GN_TILES", "muted")
 # Title size per display font: wide or tall faces are scaled so every title fits its tile.
 FONT_SCALE = {"Bungee": .66, "Limelight": .8, "Righteous": .82, "Eagle Lake": .72, "Lilita One": .95, "Pirata One": 1.08,
               "Mountains of Christmas": 1.0, "Yeseva One": .86}
@@ -143,6 +147,18 @@ a:hover{color:var(--bone)}
 .site-foot nav{display:flex;flex-wrap:wrap;gap:8px 20px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
 .site-foot a{color:var(--ash);text-decoration:none}
 .site-foot a:hover{color:var(--bone)}
+.tile.orig{background:radial-gradient(90%% 80%% at 100%% 0%%,rgba(var(--o-glow),.32),transparent 70%%),var(--o-night);
+ border:1px solid var(--o-line);color:var(--o-bone);box-shadow:0 0 0 1px rgba(var(--o-glow),.06),0 18px 40px rgba(0,0,0,.35)}
+.tile.orig .disc{background:transparent;filter:drop-shadow(0 0 22px rgba(var(--o-glow),.5))}
+.tile.orig .tag{background:rgba(255,255,255,.07);color:var(--o-ash)}
+.tile.orig .tag.new{background:var(--o-candle);color:#0c0c0e}
+.tile.orig h3{color:var(--o-ember)}
+.tile.orig .blurb{color:var(--o-bone)}
+.tile.orig .chips li{border-color:var(--o-line);color:var(--o-bone)}
+.tile.orig .foot{border-top-color:var(--o-line)}
+.tile.orig .play{background:var(--o-candle)}
+.tile.orig .when,.tile.orig .links a{color:var(--o-ash)}
+.tile.orig .links a:hover{color:var(--o-ember)}
 @media (max-width:420px){.tile,.tile:nth-child(-n+2){padding:16px}.tile .disc,.tile:nth-child(-n+2) .disc{width:72px;height:72px}.tile .disc svg,.tile:nth-child(-n+2) .disc svg{width:50px;height:50px}}
 """ % HUB
 
@@ -167,6 +183,12 @@ def _tile(g, state, today):
     c1, c2, acc, tag, _ = TILES.get(g["slug"], ("#3a3a44", "#292930", "#cbff38", g["holiday"], g["card"]))
     fam, w = g["display"][3].replace('"', "'"), g["display"][1]
     style = f"--t-a:{c1};--t-b:{c2};--t-acc:{acc};--t-font:{fam};--t-w:{w};--t-fs:{FONT_SCALE.get(g['display'][0], 1)}"
+    cls = "tile"
+    if TILE_COLORS == "original" and "rgb" in g:
+        th = g["theme"]
+        style += (f";--o-night:{th['night']};--o-line:{th['line']};--o-bone:{th['bone']};--o-ash:{th['ash']};--o-ember:{th['ember']};"
+                  f"--o-candle:{th['candle']};--o-glow:{g['rgb']['glow']}")
+        cls = "tile orig"
     new = state == "play" and g.get("launch") and 0 <= (datetime.date.fromisoformat(today) - datetime.date.fromisoformat(g["launch"])).days <= 45
     tag_html = f'<span class="tag new">New · {e(tag)}</span>' if new else f'<span class="tag">{e(tag)}</span>'
     chips = "".join(f"<li>{e(t)}</li>" for _, t in g["chips"])
@@ -174,12 +196,12 @@ def _tile(g, state, today):
             f'<h3>{e(g["short"])}</h3><p class="blurb">{e(g["card"])}</p><ul class="chips">{chips}</ul>')
     if state == "play":
         slug, label = g["slug"], e(g.get("trivia_label", g["holiday"] + " trivia questions"))
-        return (f'<article class="tile" style="{style}">{head}<div class="foot">'
+        return (f'<article class="{cls}" style="{style}">{head}<div class="foot">'
                 f'<a class="play" href="/{slug}/" data-play>Play {e(g["short"])} {ARROW}</a>'
                 f'<span class="links"><a href="/{slug}/trivia-questions/">{label}</a><a href="/{slug}/how-to-host-a-game-night/">Host guide</a>'
                 f'<a href="/{slug}/faq/">FAQ</a></span></div></article>')
     label = f"Opens {_date_words(g['launch'])}" if state == "scheduled" else "Coming soon"
-    return f'<article class="tile" style="{style}">{head}<div class="foot"><span class="when">{label}</span></div></article>'
+    return f'<article class="{cls}" style="{style}">{head}<div class="foot"><span class="when">{label}</span></div></article>'
 
 
 FAQ = [
