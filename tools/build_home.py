@@ -34,7 +34,7 @@ TILES = {
 # The season trailer on top of the home page (tools/trailer.py); GN_TRAILER=0 builds the page without it.
 TRAILER = __import__('os').environ.get('GN_TRAILER', '1') != '0'
 # "trailer" (pinned, scroll-scrubbed) or "banner" (video on the top half of the screen, the games right under it)
-TRAILER_MODE = __import__('os').environ.get('GN_TRAILER_MODE', 'trailer')
+TRAILER_MODE = __import__('os').environ.get('GN_TRAILER_MODE', 'banner')   # her choice, Nov 14
 # The game in season goes first, MM-DD to MM-DD (may wrap the year end).
 FEATURE = {"halloween": ("10-01", "10-31"), "christmas": ("11-01", "12-25"), "newyear": ("12-26", "01-01"),
            "valentines": ("01-20", "02-14"), "stpatricks": ("02-10", "03-17")}
