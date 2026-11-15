@@ -33,6 +33,8 @@ TILES = {
 }
 # The season trailer on top of the home page (tools/trailer.py); GN_TRAILER=0 builds the page without it.
 TRAILER = __import__('os').environ.get('GN_TRAILER', '1') != '0'
+# "trailer" (pinned, scroll-scrubbed) or "banner" (video on the top half of the screen, the games right under it)
+TRAILER_MODE = __import__('os').environ.get('GN_TRAILER_MODE', 'trailer')
 # The game in season goes first, MM-DD to MM-DD (may wrap the year end).
 FEATURE = {"halloween": ("10-01", "10-31"), "christmas": ("11-01", "12-25"), "newyear": ("12-26", "01-01"),
            "valentines": ("01-20", "02-14"), "stpatricks": ("02-10", "03-17")}
@@ -105,7 +107,8 @@ a:hover{color:var(--bone)}
 .prose p{color:#c9c9d1;font-weight:500}
 .eyebrow{font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.75rem;color:var(--ash);margin:0}
 .bar{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px}
-.bar h2{margin:0;font-size:.8rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.bar h2,.bar h1{margin:0;font-size:.8rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.trailer.banner + main #games{padding-top:28px}
 .bar span{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ash)}
 /* 2-3-3 on a computer: the first two tiles (the game in season and the next one) are wide, then rows of three */
 .tiles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
@@ -326,14 +329,17 @@ def home_page(out_slugs, today):
     tr_html = tr_css = tr_js = ""
     if star and TRAILER:
         is_new = bool(star.get("launch")) and 0 <= (datetime.date.fromisoformat(today) - datetime.date.fromisoformat(star["launch"])).days <= 45
-        tr_html, tr_css, tr_js = TR.trailer(star, is_new, TR.video_for(star["slug"]))
-    body = f'''<section class="hero">
+        tr_html, tr_css, tr_js = TR.trailer(star, is_new, TR.video_for(star["slug"]), TRAILER_MODE)
+    banner = bool(tr_html) and TRAILER_MODE == "banner"
+    hero = "" if banner else """<section class="hero">
 <h1>Game nights<br><span>for teams</span></h1>
 <p>Quiz games for office parties and team events, for the holidays and any day of the year: one laptop, one big screen, a narrator who reads every question, and teams in the room and on the call. No sign-up, nothing to install.</p>
-</section>
+</section>"""
+    games_h = ('<h1 id="games-h">Quiz games for office parties and teams</h1>' if banner else '<h2 id="games-h">All quiz games</h2>')
+    body = f'''{hero}
 
 <section id="games" aria-labelledby="games-h">
-<div class="bar"><h2 id="games-h">All quiz games</h2><span>{len(playable)} to play · {len(scheduled) + len(soon)} coming</span></div>
+<div class="bar">{games_h}<span>{len(playable)} to play · {len(scheduled) + len(soon)} coming</span></div>
 <div class="tiles">
 {tiles}
 </div>

@@ -37,10 +37,14 @@ def video_for(slug, root="."):
         return None
     has = lambda n: os.path.exists(f"{root}/trailer-video/{n}")
     return {"src": f"/assets/trailer/{slug}.mp4", "mobile": f"/assets/trailer/{slug}-m.mp4" if has(f"{slug}-m.mp4") else f"/assets/trailer/{slug}.mp4",
+            "loop": f"/assets/trailer/{slug}-loop.mp4" if has(f"{slug}-loop.mp4") else f"/assets/trailer/{slug}.mp4",
             "poster": f"/assets/trailer/{slug}-poster.jpg" if has(f"{slug}-poster.jpg") else ""}
 
 
-def trailer(g, new=False, video=None):
+def trailer(g, new=False, video=None, mode="trailer"):
+    """mode "trailer": the pinned scene described above. mode "banner": the same scene as a banner on the top half of the
+    screen (the games follow right under it): the video loops instead of being scrubbed, no corner facts, and the title
+    letters only drop a little as the banner scrolls away."""
     th, rgb = g["theme"], g["rgb"]
     fam, w = g["display"][3].replace('"', "'"), g["display"][1]
     art = G.art(g, g["page_art"].get("trivia-questions", g["icon"]))
@@ -51,8 +55,8 @@ def trailer(g, new=False, video=None):
     style = (f"--tr-night:{th['night']};--tr-dusk:{th['dusk']};--tr-bone:{th['bone']};--tr-ash:{th['ash']};--tr-ember:{th['ember']};"
              f"--tr-candle:{th['candle']};--tr-glow:{rgb['glow']};--tr-glow2:{rgb['glow2']};--tr-font:{fam};--tr-w:{w}")
     vid = (f'<video class="trailer__video" muted playsinline preload="auto" poster="{video["poster"]}" '
-           f'data-src="{video["src"]}" data-src-m="{video["mobile"]}" aria-hidden="true"></video>') if video else ""
-    html_ = f'''<section class="trailer{' has-video' if video else ''}" style="{style}" aria-labelledby="tr-title">
+           f'data-src="{video["src"]}" data-src-m="{video["mobile"]}" data-src-loop="{video["loop"]}" aria-hidden="true"></video>') if video else ""
+    html_ = f'''<section class="trailer{' has-video' if video else ''}{' banner' if mode == 'banner' else ''}" style="{style}" aria-labelledby="tr-title">
 <div class="trailer__sticky">
   {vid}
   <canvas class="trailer__fx" data-fx='{fx}' aria-hidden="true"></canvas>
@@ -80,6 +84,11 @@ body:has(.trailer) .site-head{position:absolute;top:0;left:0;right:0;z-index:5;b
 body:has(.trailer) .site-nav a:not(.cta){background:rgba(12,12,14,.6);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 .trailer__sticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;--tr-pad:max(clamp(16px,4vw,56px),calc((100% - 1200px) / 2 + 20px));
  background:radial-gradient(70% 60% at 78% 62%,rgba(var(--tr-glow),.20),transparent 70%),radial-gradient(60% 50% at 10% 10%,rgba(var(--tr-glow2),.12),transparent 70%),var(--tr-night)}
+.trailer.banner{height:auto}
+.trailer.banner .trailer__sticky{position:relative;height:clamp(360px,54vh,600px)}
+.trailer.banner .trailer__orbit{display:none}
+.trailer.banner .trailer__hero{padding-bottom:clamp(22px,4vh,40px)}
+.trailer.banner .trailer__art{top:clamp(64px,10vh,96px);width:min(24vw,30vh,320px)}
 .trailer__fx{position:absolute;inset:0;width:100%;height:100%;display:block}
 .trailer__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .trailer.has-video .trailer__art,.trailer.has-video .trailer__fx{display:none}
@@ -119,6 +128,7 @@ body:has(.trailer) .site-nav a:not(.cta){background:rgba(12,12,14,.6);-webkit-ba
 JS = """<script>
 (function(){
   var st = document.querySelector('.trailer'); if (!st) return;
+  var banner = st.classList.contains('banner');
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var clamp = function(v,a,b){ return Math.min(b===undefined?1:b, Math.max(a===undefined?0:a, v)); };
   var range = function(v,a,b){ return clamp((v-a)/(b-a)); };
@@ -133,10 +143,12 @@ JS = """<script>
   function fit(){
     var cs = getComputedStyle(hero), avail = hero.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
     if (avail <= 0) return; title.style.fontSize = '100px';
-    var w = title.getBoundingClientRect().width; if (w > 0) title.style.fontSize = Math.min(100 * avail / w, innerHeight * 0.27) + 'px';
+    var cap = banner ? st.querySelector('.trailer__sticky').clientHeight * 0.36 : innerHeight * 0.27;
+    var w = title.getBoundingClientRect().width; if (w > 0) title.style.fontSize = Math.min(100 * avail / w, cap) + 'px';
   }
   var progress = 0;
-  function read(){ var travel = st.offsetHeight - innerHeight; progress = travel > 0 ? clamp(-st.getBoundingClientRect().top / travel) : 0; }
+  function read(){ if (banner){ progress = clamp(-st.getBoundingClientRect().top / st.offsetHeight) * 0.55; return; }
+    var travel = st.offsetHeight - innerHeight; progress = travel > 0 ? clamp(-st.getBoundingClientRect().top / travel) : 0; }
   function render(){
     if (reduce) return;
     var n = chars.length, STAG = 0.32 / Math.max(n, 1), SPAN = 0.16;
@@ -151,14 +163,14 @@ JS = """<script>
   }
   // video: scrubbed by the scroll on computers, a quiet loop on phones and touch screens (seeking there is unreliable)
   var video = st.querySelector('.trailer__video');
-  var touch = matchMedia('(max-width: 860px), (hover: none)').matches, scrub = !!video && !touch && !reduce;
+  var touch = matchMedia('(max-width: 860px), (hover: none)').matches, scrub = !!video && !touch && !reduce && !banner;
   var target = 0, smoothT = 0, seeking = false;
   if (video){
     video.addEventListener('seeked', function(){ seeking = false; });
     video.addEventListener('error', function(){ seeking = false; });
     if (reduce){ video.preload = 'none'; video.removeAttribute('data-src'); }
     else if (scrub){ video.src = video.getAttribute('data-src'); }
-    else { video.src = video.getAttribute('data-src-m'); video.loop = true; video.autoplay = true; video.play().catch(function(){}); }
+    else { video.src = video.getAttribute(touch ? 'data-src-m' : 'data-src-loop'); video.loop = true; video.autoplay = true; video.play().catch(function(){}); }
   }
   var dur = function(){ return video && isFinite(video.duration) && video.duration > 0 ? video.duration : 0; };
   function scrubTick(){
