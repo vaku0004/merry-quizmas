@@ -326,7 +326,7 @@ def home_page(out_slugs, today):
     tr_html = tr_css = tr_js = ""
     if star and TRAILER:
         is_new = bool(star.get("launch")) and 0 <= (datetime.date.fromisoformat(today) - datetime.date.fromisoformat(star["launch"])).days <= 45
-        tr_html, tr_css, tr_js = TR.trailer(star, is_new)
+        tr_html, tr_css, tr_js = TR.trailer(star, is_new, TR.video_for(star["slug"]))
     body = f'''<section class="hero">
 <h1>Game nights<br><span>for teams</span></h1>
 <p>Quiz games for office parties and team events, for the holidays and any day of the year: one laptop, one big screen, a narrator who reads every question, and teams in the room and on the call. No sign-up, nothing to install.</p>

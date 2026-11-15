@@ -173,6 +173,10 @@ write(f"{OUT}/sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xml
       + "".join(f"  <url><loc>{u}</loc><lastmod>{TODAY}</lastmod></url>\n" for u in sitemap) + "</urlset>\n")
 write(f"{OUT}/CNAME", HOST + "\n")
 write(f"{OUT}/404.html", H.not_found_page())
+if os.path.isdir(f"{S}/trailer-video"):                     # season trailer videos (tools/trailer.py), served from /assets/trailer/
+    os.makedirs(f"{OUT}/assets/trailer", exist_ok=True)
+    for f in sorted(os.listdir(f"{S}/trailer-video")):
+        shutil.copy(f"{S}/trailer-video/{f}", f"{OUT}/assets/trailer/{f}")
 for f in sorted(os.listdir(f"{S}/site-root")):   # files that must sit in the site root as they are (IndexNow key, verification files)
     shutil.copy(f"{S}/site-root/{f}", f"{OUT}/{f}")
 print("done:", OUT, "|", len(sitemap), "pages in the sitemap")

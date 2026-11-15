@@ -8,7 +8,7 @@ is drawn by code, so it weighs a few KB, works the same on phones and has no sto
 
 trailer(g) -> (html, css, js). Reduced motion: no falling letters or particles, everything shown at once.
 """
-import html, json
+import html, json, os
 import games as G
 
 e = lambda s: html.escape(s, quote=True)
@@ -30,7 +30,17 @@ DOWN = ('<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="cur
         '<path d="M12 4v16m0 0l-6-6m6 6l6-6"/></svg>')
 
 
-def trailer(g, new=False):
+def video_for(slug, root="."):
+    """The season's video if trailer-video/<slug>.mp4 exists (desktop: every frame a keyframe, for scrubbing;
+    <slug>-m.mp4: a light looping version for phones; <slug>-poster.jpg: the first frame)."""
+    if not os.path.exists(f"{root}/trailer-video/{slug}.mp4"):
+        return None
+    has = lambda n: os.path.exists(f"{root}/trailer-video/{n}")
+    return {"src": f"/assets/trailer/{slug}.mp4", "mobile": f"/assets/trailer/{slug}-m.mp4" if has(f"{slug}-m.mp4") else f"/assets/trailer/{slug}.mp4",
+            "poster": f"/assets/trailer/{slug}-poster.jpg" if has(f"{slug}-poster.jpg") else ""}
+
+
+def trailer(g, new=False, video=None):
     th, rgb = g["theme"], g["rgb"]
     fam, w = g["display"][3].replace('"', "'"), g["display"][1]
     art = G.art(g, g["page_art"].get("trivia-questions", g["icon"]))
@@ -40,8 +50,11 @@ def trailer(g, new=False):
     label = ("New · " if new else "Now playing · ") + g["holiday"]
     style = (f"--tr-night:{th['night']};--tr-dusk:{th['dusk']};--tr-bone:{th['bone']};--tr-ash:{th['ash']};--tr-ember:{th['ember']};"
              f"--tr-candle:{th['candle']};--tr-glow:{rgb['glow']};--tr-glow2:{rgb['glow2']};--tr-font:{fam};--tr-w:{w}")
-    html_ = f'''<section class="trailer" style="{style}" aria-labelledby="tr-title">
+    vid = (f'<video class="trailer__video" muted playsinline preload="auto" poster="{video["poster"]}" '
+           f'data-src="{video["src"]}" data-src-m="{video["mobile"]}" aria-hidden="true"></video>') if video else ""
+    html_ = f'''<section class="trailer{' has-video' if video else ''}" style="{style}" aria-labelledby="tr-title">
 <div class="trailer__sticky">
+  {vid}
   <canvas class="trailer__fx" data-fx='{fx}' aria-hidden="true"></canvas>
   <div class="trailer__art" aria-hidden="true">{art}</div>
   <div class="trailer__fade" aria-hidden="true"></div>
@@ -52,8 +65,7 @@ def trailer(g, new=False):
       <a class="trailer__all" href="#games">All games {DOWN}</a></div>
   </div>
   <div class="trailer__orbit" aria-hidden="true">
-    <p class="trailer__item trailer__item--tl"><span>Victoria’s Game Nights</span>{e(g['name'].replace("Victoria’s ", ""))}, a quiz for the whole office</p>
-    <p class="trailer__item trailer__item--tr">A narrator reads every question.<br>Teams answer out loud.</p>
+    <p class="trailer__item trailer__item--tl"><span>Victoria’s Game Nights</span>{e(g['name'].replace("Victoria’s ", ""))}, a quiz for the whole office.<br>A narrator reads every question, teams answer out loud.</p>
     <ul class="trailer__item trailer__item--bl">{chips}</ul>
     <p class="trailer__item trailer__item--br">2–4 teams · about an hour<br>free, no sign-up</p>
   </div>
@@ -65,9 +77,12 @@ def trailer(g, new=False):
 CSS = """
 .trailer{position:relative;height:190vh;background:var(--tr-night);color:var(--tr-bone)}
 body:has(.trailer) .site-head{position:absolute;top:0;left:0;right:0;z-index:5;background:transparent;border-bottom-color:transparent}
+body:has(.trailer) .site-nav a:not(.cta){background:rgba(12,12,14,.6);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 .trailer__sticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;--tr-pad:max(clamp(16px,4vw,56px),calc((100% - 1200px) / 2 + 20px));
  background:radial-gradient(70% 60% at 78% 62%,rgba(var(--tr-glow),.20),transparent 70%),radial-gradient(60% 50% at 10% 10%,rgba(var(--tr-glow2),.12),transparent 70%),var(--tr-night)}
 .trailer__fx{position:absolute;inset:0;width:100%;height:100%;display:block}
+.trailer__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.trailer.has-video .trailer__art,.trailer.has-video .trailer__fx{display:none}
 .trailer__art{position:absolute;right:calc(var(--tr-pad) + 2%);top:clamp(72px,11vh,120px);width:min(30vw,44vh,440px);aspect-ratio:1;filter:drop-shadow(0 0 60px rgba(var(--tr-glow),.55));
  transform-origin:50% 50%;will-change:transform}
 .trailer__art svg{width:100%;height:100%}
@@ -84,7 +99,7 @@ body:has(.trailer) .site-head{position:absolute;top:0;left:0;right:0;z-index:5;b
 .trailer__all{display:inline-flex;align-items:center;gap:6px;color:var(--tr-bone);font-weight:700;font-size:.9rem;text-decoration:none;opacity:.85}
 .trailer__all:hover{opacity:1;color:var(--tr-ember)}
 .trailer__orbit{position:absolute;inset:0;opacity:0;pointer-events:none;font-family:var(--f-ui)}
-.trailer__item{position:absolute;margin:0;max-width:30ch;font-size:clamp(.95rem,1.4vw,1.15rem);line-height:1.45;font-weight:600;color:var(--tr-bone)}
+.trailer__item{position:absolute;margin:0;max-width:34ch;font-size:clamp(.95rem,1.4vw,1.15rem);line-height:1.45;font-weight:600;color:var(--tr-bone)}
 .trailer__item span{display:block;margin-bottom:6px;font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--tr-ash)}
 .trailer__item--tl{top:clamp(88px,12vh,120px);left:var(--tr-pad)}
 .trailer__item--tr{top:clamp(88px,12vh,120px);right:var(--tr-pad);text-align:right}
@@ -95,7 +110,7 @@ body:has(.trailer) .site-head{position:absolute;top:0;left:0;right:0;z-index:5;b
  .trailer{height:170vh}
  .trailer__art{right:-4%;top:84px;width:min(60vw,40vh)}
  .trailer__item--bl{left:var(--tr-pad)}
- .trailer__item--tr,.trailer__item--br{display:none}
+ .trailer__item--br{display:none}
  .trailer__item--bl{bottom:auto;top:clamp(110px,20vh,180px)}
 }
 @media (prefers-reduced-motion:reduce){.trailer{height:auto}.trailer__sticky{position:relative}.trailer__orbit{opacity:1}}
@@ -134,6 +149,23 @@ JS = """<script>
     items.forEach(function(it, j){ var k = smooth(range(progress, start + j*0.05, start + 0.22 + j*0.05));
       it.style.transform = 'translateY(' + ((1-k)*24) + 'px)'; it.style.opacity = String(k); });
   }
+  // video: scrubbed by the scroll on computers, a quiet loop on phones and touch screens (seeking there is unreliable)
+  var video = st.querySelector('.trailer__video');
+  var touch = matchMedia('(max-width: 860px), (hover: none)').matches, scrub = !!video && !touch && !reduce;
+  var target = 0, smoothT = 0, seeking = false;
+  if (video){
+    video.addEventListener('seeked', function(){ seeking = false; });
+    video.addEventListener('error', function(){ seeking = false; });
+    if (reduce){ video.preload = 'none'; video.removeAttribute('data-src'); }
+    else if (scrub){ video.src = video.getAttribute('data-src'); }
+    else { video.src = video.getAttribute('data-src-m'); video.loop = true; video.autoplay = true; video.play().catch(function(){}); }
+  }
+  var dur = function(){ return video && isFinite(video.duration) && video.duration > 0 ? video.duration : 0; };
+  function scrubTick(){
+    var d = dur(); if (!scrub || !d || video.readyState < 2) return;
+    target = progress * (d - 0.05); smoothT += (target - smoothT) * 0.18;
+    if (!seeking && Math.abs(video.currentTime - smoothT) > 1/36){ seeking = true; video.currentTime = smoothT; }
+  }
   // weather
   var cv = st.querySelector('.trailer__fx'), ctx = cv.getContext('2d'), fx = JSON.parse(cv.getAttribute('data-fx')), parts = [], W = 0, H = 0, dpr = 1;
   function rnd(a,b){ return a + Math.random()*(b-a); }
@@ -154,7 +186,7 @@ JS = """<script>
       else { ctx.beginPath(); ctx.arc(x, p.y, p.r, 0, 6.283); ctx.fill(); } }
     ctx.globalAlpha = 1;
   }
-  function frame(t){ render(); if (visible && !reduce) draw(t); requestAnimationFrame(frame); }
+  function frame(t){ render(); scrubTick(); if (visible && !reduce && !video) draw(t); requestAnimationFrame(frame); }
   new IntersectionObserver(function(es){ visible = es[0].isIntersecting; }).observe(st);
   addEventListener('scroll', read, { passive: true });
   addEventListener('resize', function(){ fit(); size(); read(); });
