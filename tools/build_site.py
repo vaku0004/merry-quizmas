@@ -127,8 +127,10 @@ for g in out_games:
     mod.NAME = g["name"]
     mod.Q = json.load(open(f"{B}/{slug}-q.json", encoding="utf-8"))
     if slug in PDF.PRINTABLE:                                # printable trivia PDF, linked from the trivia-questions page
-        PDF.make(slug, f"{B}/{slug}-q.json", f"{OUT}/{slug}/{PDF.pdf_name(g)}")
-        mod.PDF = f"/{slug}/{PDF.pdf_name(g)}"
+        os.makedirs(f"{OUT}/assets/{slug}", exist_ok=True)
+        PDF.make(slug, f"{B}/{slug}-q.json", f"{OUT}/{slug}/{PDF.pdf_name(g)}", f"{OUT}/assets/{slug}/printable.webp")
+        mod.PDF, mod.PREVIEW = f"/{slug}/{PDF.pdf_name(g)}", f"/assets/{slug}/printable.webp"
+        sitemap.append(f"{URL}{slug}/{PDF.pdf_name(g)}")
     page_ogs[slug] = [(p["slug"], p["og"]) for p in mod.PAGES]
     P.use(g)
     for p in mod.PAGES:

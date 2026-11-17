@@ -8,6 +8,7 @@ from page_shell import e, fig, play_box
 NAME = ""
 Q = {}
 PDF = None          # "/christmas/…pdf" when build_site made the printable PDF (tools/make_pdf.py)
+PREVIEW = None      # its preview picture, "/assets/christmas/printable.webp"
 
 # ---------------------------------------------------------------- 1. Trivia questions
 CATS = {
@@ -77,9 +78,17 @@ def trivia_body():
 </ul>
 </section>'''
     pdf_btn = '<a class="btn" href="%s" download>Download PDF</a>' % PDF if PDF else ""
+    printable = f'''<section class="printable" id="printable" aria-labelledby="printable-h">
+<img src="{PREVIEW}" width="960" height="720" loading="lazy" decoding="async" alt="Two pages of the printable PDF: the cover with 50 Christmas Trivia Questions and the answer key">
+<div><h2 id="printable-h">Free printable PDF</h2>
+<p>All 50 questions on 8 pages, ready to print or share with the party planner.</p>
+<ul><li>Questions by category with point values</li><li>A final with wagers and a tiebreaker</li><li>Answer key with a short note to read out</li></ul>
+<a class="btn primary" href="{PDF}" download>Download the free PDF</a>
+<p class="muted">US Letter · no sign-up · the QR code on the cover opens the game</p></div>
+</section>''' if PDF else ""
     return f'''<div class="prose">
 <p class="lede">Fifty Christmas trivia questions with answers, written for office holiday parties, team events and family quiz nights. They cover decorations, holiday treats, Christmas movies and songs, Santa and his reindeer, winter folklore and Christmas traditions from Canada and around the world.</p>
-<p>Questions get harder within each category: the first ones warm everyone up, and the last ones decide who wins. Each answer comes with a short explanation, so the reveal is half the fun. Read them aloud, print them, or <a href="#play">play them on a big screen as a team game</a> with scores, a timer and a narrator.</p>
+<p>Questions get harder within each category: the first ones warm everyone up, and the last ones decide who wins. Each answer comes with a short explanation, so the reveal is half the fun. Read them aloud, <a href="#printable">download the free printable PDF</a>, or <a href="#play">play them on a big screen as a team game</a> with scores, a timer and a narrator.</p>
 </div>
 <div class="note-box no-print"><strong>How to use this page:</strong> answers are hidden. Read a question, let everyone guess, then press <b>Show answer</b>. Questions 1–25 are easier, 26–50 are harder.</div>
 <div class="cta-row no-print">
@@ -89,6 +98,7 @@ def trivia_body():
 {pdf_btn}
 <button class="btn" type="button" data-toggle-all>Show all answers</button>
 </div>
+{printable}
 <nav class="toc" aria-label="Categories">{"".join(toc_cols)}</nav>
 {"".join(sections)}
 {bonus}
@@ -120,6 +130,10 @@ TRIVIA_JS = '''<script>
 
 
 # ---------------------------------------------------------------- 2. Remote and hybrid teams
+def pdf_also():
+    return f' (also as a <a href="{PDF}" download>printable PDF</a>)' if PDF else ""
+
+
 def virtual_body():
     invite = ("Subject: Christmas trivia, [day] at [time] \U0001F384\n\n"
               "Hi everyone,\n\n"
@@ -185,7 +199,7 @@ def virtual_body():
 <div class="copybox" id="invite">{e(invite)}<button class="btn" type="button" data-copy="invite">Copy</button></div>
 
 {play_box("Ready for a hybrid holiday party?", "Open the game, share it with sound on, and let the narrator do the talking. Free, no sign-up, nothing for players to install.")}
-<div class="prose" style="margin-top:28px"><p class="muted">Also useful: <a href="/christmas/how-to-host-a-game-night/">the host guide</a>, <a href="/christmas/trivia-questions/">all 50 trivia questions with answers</a> and <a href="/christmas/faq/">frequently asked questions</a>.</p></div>'''
+<div class="prose" style="margin-top:28px"><p class="muted">Also useful: <a href="/christmas/how-to-host-a-game-night/">the host guide</a>, <a href="/christmas/trivia-questions/">all 50 trivia questions with answers</a>{pdf_also()} and <a href="/christmas/faq/">frequently asked questions</a>.</p></div>'''
 
 
 COPY_JS = '''<script>
@@ -291,7 +305,7 @@ def host_body():
 </ul></div>
 
 {play_box("Your game night is ready", "Everything above is built into the game: rules slides, the narrator, the timer, scores and the podium. Open it, name your teams and press Start.")}
-<div class="prose" style="margin-top:28px"><p class="muted">Also useful: <a href="/christmas/trivia-questions/">all 50 trivia questions with answers</a>, <a href="/christmas/virtual-games-for-work/">Christmas games for remote and hybrid teams</a> and <a href="/christmas/faq/">frequently asked questions</a>.</p></div>'''
+<div class="prose" style="margin-top:28px"><p class="muted">Also useful: <a href="/christmas/trivia-questions/">all 50 trivia questions with answers</a>{pdf_also()}, <a href="/christmas/virtual-games-for-work/">Christmas games for remote and hybrid teams</a> and <a href="/christmas/faq/">frequently asked questions</a>.</p></div>'''
 
 
 # ---------------------------------------------------------------- 4. FAQ
@@ -317,7 +331,7 @@ FAQ = [
     ("Is it appropriate for work and for kids?",
      "Yes. The questions are about holiday traditions, food, movies, songs, winter and history. Krampus and the Yule Cat appear only as playful folklore, so the game suits all ages; younger kids may need a grown-up on their team."),
     ("Can I see all the questions before playing?",
-     "Yes, all 50 questions and answers are on the <a href=\"/christmas/trivia-questions/\">Christmas trivia questions</a> page. You can also print them for a quiz without a screen."),
+     "Yes, all 50 questions and answers are on the <a href=\"/christmas/trivia-questions/\">Christmas trivia questions</a> page. You can also print them for a quiz without a screen, or download the <a href=\"/christmas/christmas-trivia-questions.pdf\">free printable PDF</a> with an answer key."),
     ("Which browser works best?",
      "Chrome or Microsoft Edge on a laptop or desktop computer. Other modern browsers should work too."),
     ("Is there a Halloween version?",
@@ -345,9 +359,9 @@ def faq_ld():
 
 PAGES = [
     dict(slug="trivia-questions",
-         title="50 Christmas Trivia Questions and Answers for Work & Parties",
-         desc="Holiday trivia for adults and teams: traditions, movies, treats, Santa’s reindeer and Canadian Christmas. Every answer comes with a short explanation.",
-         og_title="50 Christmas Trivia Questions and Answers",
+         title="50 Christmas Trivia Questions and Answers (Free Printable PDF)",
+         desc="Holiday trivia for work and parties, with a free printable PDF and answer key: traditions, movies, treats, Santa’s reindeer and Canadian Christmas.",
+         og_title="50 Christmas Trivia Questions and Answers + Free Printable PDF",
          h1="50 Christmas Trivia Questions and Answers", crumb="Christmas trivia questions",
          eyebrow="For office parties, team events and quiz nights", body=trivia_body, scripts=TRIVIA_JS,
          og=("Trivia with answers", "50 Christmas Trivia Questions", "Traditions · movies · treats · Canada")),

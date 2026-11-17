@@ -213,6 +213,11 @@ def _art(g):
     return G.art(g, g["icon"]) if "art_src" in g else HEART
 
 
+def _pdf_link(g):
+    import make_pdf                                   # the game's free printable trivia PDF, when it has one
+    return f'<a href="/{g["slug"]}/{make_pdf.pdf_name(g)}" download>Printable PDF</a>' if g["slug"] in make_pdf.PRINTABLE else ""
+
+
 def _tile(g, state, today):
     """state: "play" (on the site), "scheduled" (opens on its launch date), "soon"."""
     c1, c2, acc, tag, _ = TILES.get(g["slug"], ("#3a3a44", "#292930", "#cbff38", g["holiday"], g["card"]))
@@ -239,7 +244,7 @@ def _tile(g, state, today):
         return (f'<article class="{cls}" style="{style}">{head}<div class="foot">'
                 f'<a class="play" href="/{slug}/" data-play>Play {e(g["short"])} {ARROW}</a>'
                 f'<span class="links"><a href="/{slug}/trivia-questions/">{label}</a><a href="/{slug}/how-to-host-a-game-night/">Host guide</a>'
-                f'<a href="/{slug}/faq/">FAQ</a></span></div></article>')
+                f'<a href="/{slug}/faq/">FAQ</a>{_pdf_link(g)}</span></div></article>')
     label = f"Opens {_date_words(g['launch'])}" if state == "scheduled" else "Coming soon"
     return f'<article class="{cls}" style="{style}">{head}<div class="foot"><span class="when">{label}</span></div></article>'
 

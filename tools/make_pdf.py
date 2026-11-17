@@ -1,6 +1,6 @@
 """Printable trivia PDF for one game (her request, Nov 17: "50 Christmas Trivia Questions" to download and share).
 
-python tools/make_pdf.py <slug> <questions.json> <out.pdf>     (build_site.py runs it for the games in PRINTABLE)
+python tools/make_pdf.py <slug> <questions.json> <out.pdf> [preview.webp]     (build_site.py runs it for the games in PRINTABLE)
 
 US Letter, light pages (it gets printed in offices), the game's colours and title font, its art on the cover.
 Part 1: the 50 questions by round and category, then the final and the tiebreaker (no answers, for reading out or for a
@@ -138,15 +138,42 @@ a{{color:inherit;text-decoration:none}}
     return f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>{n_q} {e(g["holiday"])} Trivia Questions · {e(g["short"])}</title><style>{css}</style></head><body>{body}</body></html>', footer
 
 
-def make(slug, qjson, out):
+PREVIEW_W, PREVIEW_H = 960, 720    # preview picture on the trivia page (two pages fanned out, transparent ground)
+
+
+def _compose(p1, p2, out):
+    """Cover page in front on the right, answer key page behind it on the left (its numbers and answers show), both a little turned, with soft shadows; saved as WebP."""
+    from PIL import Image, ImageFilter
+    W, H, pw = PREVIEW_W, PREVIEW_H, 440
+    canvas = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    for f, angle, (cx, cy) in [(p2, 5, (W * 0.36, H * 0.5)), (p1, -4, (W * 0.62, H * 0.5))]:
+        pg = Image.open(f).convert("RGBA")
+        pg = pg.resize((pw, round(pg.height * pw / pg.width)), Image.LANCZOS).rotate(angle, Image.BICUBIC, expand=True)
+        shadow = Image.new("RGBA", pg.size, (0, 0, 0, 0))
+        shadow.putalpha(pg.getchannel("A").point(lambda a: a * 0.55))
+        shadow = shadow.filter(ImageFilter.GaussianBlur(14))
+        x, y = round(cx - pg.width / 2), round(cy - pg.height / 2)
+        canvas.alpha_composite(shadow, (x + 6, y + 14))
+        canvas.alpha_composite(pg, (x, y))
+    canvas.save(out, "WEBP", quality=86, method=6)
+
+
+def make(slug, qjson, out, preview=None):
+    """Writes the PDF; with preview (a .webp path) also the preview picture for the site."""
     g = next(x for x in G.GAMES if x["slug"] == slug)
     Q = json.load(open(qjson, encoding="utf-8"))
     doc, footer = page_html(g, Q)
-    tmp = os.path.splitext(out)[0] + ".html"
+    base = os.path.splitext(out)[0]
+    tmp = base + ".html"
     open(tmp, "w", encoding="utf-8").write(doc)
-    subprocess.run(["node", f"{S}/tools/html_to_pdf.js", tmp, out, footer], check=True)
+    args = ["node", f"{S}/tools/html_to_pdf.js", tmp, out, footer] + ([base + "-prev"] if preview else [])
+    subprocess.run(args, check=True)
     os.remove(tmp)
+    if preview:
+        _compose(base + "-prev-1.png", base + "-prev-2.png", preview)
+        for n in (1, 2):
+            os.remove(f"{base}-prev-{n}.png")
 
 
 if __name__ == "__main__":
-    make(*sys.argv[1:4])
+    make(*sys.argv[1:5])
