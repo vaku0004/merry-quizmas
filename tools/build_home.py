@@ -6,7 +6,7 @@ Design D (her choice, Nov 14): made from her Google Stitch design on the Claude 
 Plus Jakarta Sans, one bright tile per game with the game's own art on a dark disc, real names, dates and texts.
 """
 import datetime, html, json
-from site_common import GA_HEAD, PAGE_EVENTS_JS, URL, BRAND, CONTACT_HREF
+from site_common import GA_HEAD, PAGE_EVENTS_JS, URL, BRAND, CONTACT_HREF, PINTEREST_VERIFY
 import games as G
 import share as SH
 import trailer as TR
@@ -266,6 +266,7 @@ def _shell(title, desc, canonical, body, ld=None, og_img=None, before_main="", e
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{PINTEREST_VERIFY}
 {GA_HEAD}
 <title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">

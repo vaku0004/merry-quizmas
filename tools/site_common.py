@@ -14,6 +14,8 @@ MIRROR_BASE = "/game-nights-play"           # the no-redirect copy on github.io 
 _STRICT = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
            "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH", "CA-QC"]
 
+# Pinterest business account "Victoria’s Game Nights" claimed the site with this tag (Nov 17, 2026); keep it on the home page.
+PINTEREST_VERIFY = '<meta name="p:domain_verify" content="6fa011f40507e8426f937057a5e50522"/>'
 GA_HEAD = '' if not GA_ID else f'''<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
