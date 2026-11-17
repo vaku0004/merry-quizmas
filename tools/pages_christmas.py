@@ -7,6 +7,7 @@ from page_shell import e, fig, play_box
 
 NAME = ""
 Q = {}
+PDF = None          # "/christmas/…pdf" when build_site made the printable PDF (tools/make_pdf.py)
 
 # ---------------------------------------------------------------- 1. Trivia questions
 CATS = {
@@ -75,6 +76,7 @@ def trivia_body():
 <li><b>Your own questions</b>Change any question or answer right in the game, for example to add questions about your office.</li>
 </ul>
 </section>'''
+    pdf_btn = '<a class="btn" href="%s" download>Download PDF</a>' % PDF if PDF else ""
     return f'''<div class="prose">
 <p class="lede">Fifty Christmas trivia questions with answers, written for office holiday parties, team events and family quiz nights. They cover decorations, holiday treats, Christmas movies and songs, Santa and his reindeer, winter folklore and Christmas traditions from Canada and around the world.</p>
 <p>Questions get harder within each category: the first ones warm everyone up, and the last ones decide who wins. Each answer comes with a short explanation, so the reveal is half the fun. Read them aloud, print them, or <a href="#play">play them on a big screen as a team game</a> with scores, a timer and a narrator.</p>
@@ -84,6 +86,7 @@ def trivia_body():
 <a class="btn primary" href="/">Play as a game</a>
 <button class="btn" type="button" data-print="answers">Print with answers</button>
 <button class="btn" type="button" data-print="questions">Print questions only</button>
+{pdf_btn}
 <button class="btn" type="button" data-toggle-all>Show all answers</button>
 </div>
 <nav class="toc" aria-label="Categories">{"".join(toc_cols)}</nav>

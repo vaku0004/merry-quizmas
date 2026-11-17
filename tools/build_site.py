@@ -11,7 +11,7 @@ Intermediate files go to build/ (not committed).
 import datetime, importlib, json, os, shutil, subprocess, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from site_common import URL, HOST, BRAND
-import games as G, page_shell as P, build_index as I, build_home as H, make_og as O
+import games as G, page_shell as P, build_index as I, build_home as H, make_og as O, make_pdf as PDF
 
 S = os.path.abspath(".")
 args = sys.argv[1:]
@@ -126,6 +126,9 @@ for g in out_games:
     mod = importlib.import_module(f"pages_{slug}")
     mod.NAME = g["name"]
     mod.Q = json.load(open(f"{B}/{slug}-q.json", encoding="utf-8"))
+    if slug in PDF.PRINTABLE:                                # printable trivia PDF, linked from the trivia-questions page
+        PDF.make(slug, f"{B}/{slug}-q.json", f"{OUT}/{slug}/{PDF.pdf_name(g)}")
+        mod.PDF = f"/{slug}/{PDF.pdf_name(g)}"
     page_ogs[slug] = [(p["slug"], p["og"]) for p in mod.PAGES]
     P.use(g)
     for p in mod.PAGES:
